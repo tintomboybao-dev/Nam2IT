@@ -1,0 +1,1171 @@
+[
+  {
+    "id": "cuong-analysis-theory",
+    "teacher": "cuong",
+    "title": "Đếm phép toán, O / Ω / Θ và các trường hợp",
+    "source": "Review mục3; kiến thức nền minh họa",
+    "formula": "O(g):chặn trên; Ω(g):chặn dưới; Θ(g):chặn hai phía từ một n đủ lớn.",
+    "explain": "Kích thước đầu vào n phải được xác định trước. Chọn phép toán cơ bản rồi đếm số lần thực hiện theo n. Bỏ hằng số và bậc thấp để mô tả tốc độ tăng; không đổi tùy tiện trường hợp đang xét.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>O(g):tồn tại c&gt;0,n₀ sao cho T(n)≤c·g(n) với mọi n≥n₀.</li><li>Ω(g):tồn tại c&gt;0,n₀ sao cho T(n)≥c·g(n). Θ(g) cần cả hai.</li><li>Tốt nhất=min thời gian trên các đầu vào cùng kích thước; xấu nhất=max; trung bình cần phân bố xác suất.</li><li>Hai vòng lặp nối tiếp cộng chi phí; lồng nhau phải tính tổng số lượt thật, không luôn nhân n².</li><li>Mỗi lần chia đôi:⌊log₂n⌋+1 lượt khi n&gt;0 và lặp tới0.</li><li>Bộ nhớ phụ tính cả stack đệ quy; tách dung lượng đầu vào/đầu ra khỏi phần phụ.</li></ol><h3>Ví dụ và đối chiếu</h3><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>T(n)</th><th>Kết luận chặt</th><th>Giải thích</th></tr></thead><tbody><tr><td>3n+2</td><td>Θ(n)</td><td>n≥1 thì3n≤3n+2≤5n</td></tr><tr><td>Σi,i=1..n</td><td>Θ(n²)</td><td>n(n+1)/2</td></tr><tr><td>n lần chia đôi?</td><td>Θ(logn)</td><td>Giá trị giảm theo cấp số nhân, không theo n lượt</td></tr></tbody></table></div><p>Tìm tuần tự n phần tử:tốt1 lần,xấu n lần;nếu chắc có và vị trí đều nhau,trung bình(n+1)/2. Không suy ra trung bình nếu chưa có giả thiết.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">O không đồng nghĩa với xấu nhất và Ω không đồng nghĩa với tốt nhất. Cả ba ký hiệu đều có thể áp dụng một hàm thời gian của một trường hợp đã xác định.</div>",
+    "programs": [
+      "cuong-complexity",
+      "cuong-linear",
+      "cuong-binary"
+    ],
+    "group": "analysis"
+  },
+  {
+    "id": "cuong-arrays-theory",
+    "teacher": "cuong",
+    "title": "Mảng, con trỏ và chi phí chèn/xóa",
+    "source": "Review mục1–2",
+    "formula": "a[i]≡*(a+i);chèn tại k dịch n−k phần tử;xóa tại k dịch n−k−1.",
+    "explain": "Mảng có các phần tử cùng kiểu nằm liên tiếp. Chỉ số từ0 đến n−1. Dung lượng cấp phát khác số phần tử đang dùng; chỉ chèn nếu còn chỗ hoặc đã mở rộng vùng nhớ.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>&amp;x lấy địa chỉ;int* p=&amp;x;p lưu địa chỉ còn *p là giá trị tại địa chỉ. Chỉ đọc con trỏ hợp lệ.</li><li>int&amp; r=x tạo bí danh;truyền int&amp; cho hàm cho phép sửa biến gốc. int** pp=&amp;p trỏ tới một biến con trỏ.</li><li>Trong tham số hàm,int a[] suy biến thành int*;cần truyền n riêng,không dùng sizeof(a) để suy ra chiều dài.</li><li>Chèn k:dịch từ cuối về k để không ghi đè;gán x rồi tăng n. Xóa:dịch từ k về cuối rồi giảm n.</li><li>new T[n] dùng delete[];new T dùng delete. Sau giải phóng không đọc con trỏ treo.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Mảng[2,5,9],chèn7 tại k=2:dịch9 sang ô3,rồi ghi7 vào ô2→[2,5,7,9]. Xóa k=1:dịch7,9 về trái→[2,7,9].</p><p>int* a[3] là mảng ba con trỏ, khác int (*p)[3] là con trỏ tới một hàng ba số. int** chỉ dùng khi thực sự có một bảng các con trỏ.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không dereference NULL/con trỏ chưa khởi tạo. Không dùng delete đơn cho mảng;không trả con trỏ tới biến cục bộ.</div>",
+    "programs": [
+      "cuong-pointer",
+      "cuong-array-edit"
+    ],
+    "group": "array"
+  },
+  {
+    "id": "cuong-list-theory",
+    "teacher": "cuong",
+    "title": "DSLK: bất biến và bảng độ phức tạp",
+    "source": "linked-list.pdf trang3–30",
+    "formula": "Rỗng:head=NULL;đơn:đuôi.next=NULL;kép:head.prev=NULL,tail.next=NULL.",
+    "explain": "Mỗi nút chứa dữ liệu và liên kết. Con trỏ head là cửa vào toàn bộ chuỗi; thay đổi head cần trả con trỏ mới hoặc truyền tham chiếu con trỏ. Khi xóa,phải sửa liên kết trước khi giải phóng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Khai báo và khởi tạo các liên kết. Cương dùng lớp List,Node.data;Văn dùng hàm với Node.info và Node*&amp; head.</li><li>Tìm nút trước khi sửa. Chèn giữa:p-&gt;next=prev-&gt;next rồi prev-&gt;next=p.</li><li>Xóa giữa:old=prev-&gt;next;prev-&gt;next=old-&gt;next;delete old.</li><li>Đảo:lưu next,đổi current-&gt;next=previous rồi tiến;cuối cùng head=previous.</li><li>Tách bằng slow/fast;đặt slow-&gt;next=NULL để hai chuỗi tách hẳn.</li><li>Duyệt vòng phải dừng khi quay về head;kép phải sửa cả prev và next.</li></ol><h3>Ví dụ và đối chiếu</h3><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>Thao tác</th><th>Chi phí</th><th>Điều kiện</th></tr></thead><tbody><tr><td>Truy cập vị trí i/tìm x</td><td>O(n)</td><td>Duyệt từ head</td></tr><tr><td>Chèn/xóa đầu</td><td>O(1)</td><td>Biết head</td></tr><tr><td>Chèn cuối</td><td>O(1) có tail;O(n) không tail</td><td>Cập nhật tail khi rỗng</td></tr><tr><td>Chèn sau nút p</td><td>O(1)</td><td>Đã có p hợp lệ</td></tr><tr><td>Xóa cuối đơn</td><td>O(n)</td><td>Dù có tail,vẫn cần nút trước</td></tr><tr><td>Đảo/hủy/tách</td><td>O(n)</td><td>Đi qua các nút</td></tr></tbody></table></div><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không nói chèn/xóa theo vị trí luôn O(1):tìm vị trí có thể O(n). Không giữ hai chủ sở hữu cùng vùng nút rồi hủy hai lần.</div>",
+    "programs": [
+      "cuong-list",
+      "cuong-doubly",
+      "cuong-circular",
+      "cuong-polynomial"
+    ],
+    "group": "list"
+  },
+  {
+    "id": "cuong-stack-queue-theory",
+    "teacher": "cuong",
+    "title": "Phân biệt Stack / Queue / Priority Queue",
+    "source": "Stack.pdf trang4–25;Queue.pdf trang4–37",
+    "formula": "Stack:LIFO;Queue:FIFO;ưu tiên:lấy theo mức ưu tiên.",
+    "explain": "Stack lấy cuối vào trước;queue lấy đầu vào trước. STL là giao diện,không phải lý do để bỏ kiểm tra rỗng. Mô phỏng hiển thị từ đáy tới đỉnh cho stack và từ front tới rear cho queue;nhãn chỉ rõ hai đầu.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Stack:push thêm đỉnh,top xem đỉnh,pop xóa đỉnh.</li><li>Queue:push thêm cuối,front xem đầu,back xem cuối,pop xóa đầu.</li><li>pop của STL trả void:đọc top/front trước rồi mới pop.</li><li>Với mảng cố định,đầy/rỗng theo chỉ số hoặc counter;bản liên kết hết khi con trỏ đầu=NULL.</li><li>Cài DSLK:stack dùng đầu;queue giữ đầu và cuối để không duyệt.</li></ol><h3>Ví dụ và đối chiếu</h3><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>Dãy thao tác</th><th>Stack</th><th>Queue</th></tr></thead><tbody><tr><td>Thêm3,7,2</td><td>[3,7,2],đỉnh2</td><td>[3,7,2],đầu3</td></tr><tr><td>Lấy một</td><td>2;còn3,7</td><td>3;còn7,2</td></tr><tr><td>Thêm9,lấy tiếp</td><td>9</td><td>7</td></tr></tbody></table></div><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không nhầm top với pop. Mảng cấp phát động nhưng không resize vẫn có sức chứa cố định.</div>",
+    "programs": [
+      "cuong-stack-stl",
+      "cuong-queue-stl",
+      "cuong-base"
+    ],
+    "group": "stack"
+  },
+  {
+    "id": "cuong-tree-theory",
+    "teacher": "cuong",
+    "title": "Cây: thuật ngữ, duyệt và chiều cao",
+    "source": "bst.pdf trang3–19",
+    "formula": "n nút→n−1 cạnh(cây không rỗng);độ sâu gốc0;NLR/LNR/LRN.",
+    "explain": "Một nút có cha,con và có thể là lá. Cây nhị phân có tối đa hai con phân biệt trái/phải. Cây biểu thức dùng toán tử làm nút trong,toán hạng làm lá. Một lần duyệt đúng thăm mỗi nút một lần.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Hàm đệ quy luôn xét NULL trước khi đọc nút.</li><li>Đếm:0 nếu rỗng,ngược lại1+đếm trái+đếm phải.</li><li>Chiều cao:1+max(htrái,hphải);ghi rõ quy ước chiều cao cây rỗng.</li><li>NLR làm việc tại gốc trước;LNR giữa;LRN sau hai cây con.</li><li>Nếu dùng mảng mức0-based:con trái2i+1,phải2i+2;chỉ dùng khi chỉ số tồn tại.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Cây gốc2,con trái1,phải3:NLR=2 1 3,LNR=1 2 3,LRN=1 3 2. Theo Cương:rỗng−1,lá0,cây này cao1. Bản ví dụ Văn đo số nút:rỗng0,lá1,cây này cao2;đổi hệ đo không đổi chênh lệch hai chiều cao.</p><p>Cây nhị phân đầy đủ:xếp đầy các mức trước,mức cuối lấp từ trái. Cây hoàn hảo:mỗi mức đầy. Cân bằng chiều cao AVL khác cả hai khái niệm đó.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Cây nhị phân không mặc nhiên là BST. LNR chỉ ra thứ tự tăng nếu mọi nút thỏa tính chất BST.</div>",
+    "programs": [
+      "cuong-tree",
+      "cuong-bst"
+    ],
+    "group": "tree"
+  },
+  {
+    "id": "cuong-avl-theory",
+    "teacher": "cuong",
+    "title": "Chọn phép quay AVL và tránh nhầm dấu",
+    "source": "AVL tree (1).pdf trang3–39",
+    "formula": "Cương:BF=hL−hR;Văn:bal=hR−hL;mọi nút phải|hL−hR|≤1.",
+    "explain": "AVL thêm điều kiện chiều cao vào BST để h=O(logn). Một phép quay đổi vài liên kết,không đổi thứ tự LNR. Nên đọc thao tác “đưa con trái/phải lên” để không nhầm khi hai tài liệu đặt tên khác nhau.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Xác định bên cao và hướng lệch của con phía cao.</li><li>LL:đưa con trái lên;RR:đưa con phải lên.</li><li>LR:đưa cháu phải của con trái lên trước,rồi đưa con trái mới lên. RL làm đối xứng.</li><li>Sau quay,cập nhật chiều cao nút đi xuống trước,nút đi lên sau.</li><li>Thêm có thể dừng sau sửa vùng lệch sâu nhất;xóa có thể tiếp tục lệch ở tổ tiên nên phải đi lên hết.</li></ol><h3>Ví dụ và đối chiếu</h3><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>Hình</th><th>Dãy tối giản</th><th>Quay vật lý</th></tr></thead><tbody><tr><td>LL</td><td>30,20,10</td><td>Phải ở30</td></tr><tr><td>RR</td><td>10,20,30</td><td>Trái ở10</td></tr><tr><td>LR</td><td>30,10,20</td><td>Trái ở10,rồi phải ở30</td></tr><tr><td>RL</td><td>10,30,20</td><td>Phải ở30,rồi trái ở10</td></tr></tbody></table></div><div class=\"focus-block\">Văn:LH=−1,EQ=0,RH=1;hàm RotateLeft trong slide đưa con trái lên,tức quay vật lý phải. Code nhánh Văn giữ quy ước ấy. Cương dùng cách gọi theo hướng quay vật lý.</div><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">BF0 không nói hai phía có cùng số nút. Khi xóa,bên cao có BF0 vẫn có thể quay đơn. Không chọn phép quay xóa bằng so khóa vừa xóa với khóa con.</div>",
+    "programs": [
+      "cuong-avl"
+    ],
+    "group": "avl"
+  },
+  {
+    "id": "van-analysis-theory",
+    "teacher": "van",
+    "title": "Đếm phép toán, O / Ω / Θ và các trường hợp",
+    "source": "1_DoPhucTapGiaiThuat slide2–17",
+    "formula": "O(g):chặn trên; Ω(g):chặn dưới; Θ(g):chặn hai phía từ một n đủ lớn.",
+    "explain": "Kích thước đầu vào n phải được xác định trước. Chọn phép toán cơ bản rồi đếm số lần thực hiện theo n. Bỏ hằng số và bậc thấp để mô tả tốc độ tăng; không đổi tùy tiện trường hợp đang xét.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>O(g):tồn tại c&gt;0,n₀ sao cho T(n)≤c·g(n) với mọi n≥n₀.</li><li>Ω(g):tồn tại c&gt;0,n₀ sao cho T(n)≥c·g(n). Θ(g) cần cả hai.</li><li>Tốt nhất=min thời gian trên các đầu vào cùng kích thước; xấu nhất=max; trung bình cần phân bố xác suất.</li><li>Hai vòng lặp nối tiếp cộng chi phí; lồng nhau phải tính tổng số lượt thật, không luôn nhân n².</li><li>Mỗi lần chia đôi:⌊log₂n⌋+1 lượt khi n&gt;0 và lặp tới0.</li><li>Bộ nhớ phụ tính cả stack đệ quy; tách dung lượng đầu vào/đầu ra khỏi phần phụ.</li></ol><h3>Ví dụ và đối chiếu</h3><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>T(n)</th><th>Kết luận chặt</th><th>Giải thích</th></tr></thead><tbody><tr><td>3n+2</td><td>Θ(n)</td><td>n≥1 thì3n≤3n+2≤5n</td></tr><tr><td>Σi,i=1..n</td><td>Θ(n²)</td><td>n(n+1)/2</td></tr><tr><td>n lần chia đôi?</td><td>Θ(logn)</td><td>Giá trị giảm theo cấp số nhân, không theo n lượt</td></tr></tbody></table></div><p>Tìm tuần tự n phần tử:tốt1 lần,xấu n lần;nếu chắc có và vị trí đều nhau,trung bình(n+1)/2. Không suy ra trung bình nếu chưa có giả thiết.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">O không đồng nghĩa với xấu nhất và Ω không đồng nghĩa với tốt nhất. Cả ba ký hiệu đều có thể áp dụng một hàm thời gian của một trường hợp đã xác định.</div>",
+    "programs": [
+      "van-complexity",
+      "van-linear",
+      "van-binary"
+    ],
+    "group": "analysis"
+  },
+  {
+    "id": "van-arrays-theory",
+    "teacher": "van",
+    "title": "Mảng, con trỏ và chi phí chèn/xóa",
+    "source": "3_Mang slide2–11; phần ôn nền bổ trợ",
+    "formula": "a[i]≡*(a+i);chèn tại k dịch n−k phần tử;xóa tại k dịch n−k−1.",
+    "explain": "Mảng có các phần tử cùng kiểu nằm liên tiếp. Chỉ số từ0 đến n−1. Dung lượng cấp phát khác số phần tử đang dùng; chỉ chèn nếu còn chỗ hoặc đã mở rộng vùng nhớ.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>&amp;x lấy địa chỉ;int* p=&amp;x;p lưu địa chỉ còn *p là giá trị tại địa chỉ. Chỉ đọc con trỏ hợp lệ.</li><li>int&amp; r=x tạo bí danh;truyền int&amp; cho hàm cho phép sửa biến gốc. int** pp=&amp;p trỏ tới một biến con trỏ.</li><li>Trong tham số hàm,int a[] suy biến thành int*;cần truyền n riêng,không dùng sizeof(a) để suy ra chiều dài.</li><li>Chèn k:dịch từ cuối về k để không ghi đè;gán x rồi tăng n. Xóa:dịch từ k về cuối rồi giảm n.</li><li>new T[n] dùng delete[];new T dùng delete. Sau giải phóng không đọc con trỏ treo.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Mảng[2,5,9],chèn7 tại k=2:dịch9 sang ô3,rồi ghi7 vào ô2→[2,5,7,9]. Xóa k=1:dịch7,9 về trái→[2,7,9].</p><p>int* a[3] là mảng ba con trỏ, khác int (*p)[3] là con trỏ tới một hàng ba số. int** chỉ dùng khi thực sự có một bảng các con trỏ.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không dereference NULL/con trỏ chưa khởi tạo. Không dùng delete đơn cho mảng;không trả con trỏ tới biến cục bộ.</div>",
+    "programs": [
+      "van-pointer",
+      "van-array-edit"
+    ],
+    "group": "array"
+  },
+  {
+    "id": "van-list-theory",
+    "teacher": "van",
+    "title": "DSLK: bất biến và bảng độ phức tạp",
+    "source": "5_DanhSachLienKet slide2–37",
+    "formula": "Rỗng:head=NULL;đơn:đuôi.next=NULL;kép:head.prev=NULL,tail.next=NULL.",
+    "explain": "Mỗi nút chứa dữ liệu và liên kết. Con trỏ head là cửa vào toàn bộ chuỗi; thay đổi head cần trả con trỏ mới hoặc truyền tham chiếu con trỏ. Khi xóa,phải sửa liên kết trước khi giải phóng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Khai báo và khởi tạo các liên kết. Cương dùng lớp List,Node.data;Văn dùng hàm với Node.info và Node*&amp; head.</li><li>Tìm nút trước khi sửa. Chèn giữa:p-&gt;next=prev-&gt;next rồi prev-&gt;next=p.</li><li>Xóa giữa:old=prev-&gt;next;prev-&gt;next=old-&gt;next;delete old.</li><li>Đảo:lưu next,đổi current-&gt;next=previous rồi tiến;cuối cùng head=previous.</li><li>Tách bằng slow/fast;đặt slow-&gt;next=NULL để hai chuỗi tách hẳn.</li><li>Duyệt vòng phải dừng khi quay về head;kép phải sửa cả prev và next.</li></ol><h3>Ví dụ và đối chiếu</h3><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>Thao tác</th><th>Chi phí</th><th>Điều kiện</th></tr></thead><tbody><tr><td>Truy cập vị trí i/tìm x</td><td>O(n)</td><td>Duyệt từ head</td></tr><tr><td>Chèn/xóa đầu</td><td>O(1)</td><td>Biết head</td></tr><tr><td>Chèn cuối</td><td>O(1) có tail;O(n) không tail</td><td>Cập nhật tail khi rỗng</td></tr><tr><td>Chèn sau nút p</td><td>O(1)</td><td>Đã có p hợp lệ</td></tr><tr><td>Xóa cuối đơn</td><td>O(n)</td><td>Dù có tail,vẫn cần nút trước</td></tr><tr><td>Đảo/hủy/tách</td><td>O(n)</td><td>Đi qua các nút</td></tr></tbody></table></div><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không nói chèn/xóa theo vị trí luôn O(1):tìm vị trí có thể O(n). Không giữ hai chủ sở hữu cùng vùng nút rồi hủy hai lần.</div>",
+    "programs": [
+      "van-list",
+      "van-doubly",
+      "van-circular",
+      "van-polynomial"
+    ],
+    "group": "list"
+  },
+  {
+    "id": "van-stack-queue-theory",
+    "teacher": "van",
+    "title": "Phân biệt Stack / Queue / Priority Queue",
+    "source": "6_NganXepHangDoi slide2–21",
+    "formula": "Stack:LIFO;Queue:FIFO;ưu tiên:lấy theo mức ưu tiên.",
+    "explain": "Stack lấy cuối vào trước;queue lấy đầu vào trước. STL là giao diện,không phải lý do để bỏ kiểm tra rỗng. Mô phỏng hiển thị từ đáy tới đỉnh cho stack và từ front tới rear cho queue;nhãn chỉ rõ hai đầu.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Stack:push thêm đỉnh,top xem đỉnh,pop xóa đỉnh.</li><li>Queue:push thêm cuối,front xem đầu,back xem cuối,pop xóa đầu.</li><li>pop của STL trả void:đọc top/front trước rồi mới pop.</li><li>Với mảng cố định,đầy/rỗng theo chỉ số hoặc counter;bản liên kết hết khi con trỏ đầu=NULL.</li><li>Cài DSLK:stack dùng đầu;queue giữ đầu và cuối để không duyệt.</li></ol><h3>Ví dụ và đối chiếu</h3><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>Dãy thao tác</th><th>Stack</th><th>Queue</th></tr></thead><tbody><tr><td>Thêm3,7,2</td><td>[3,7,2],đỉnh2</td><td>[3,7,2],đầu3</td></tr><tr><td>Lấy một</td><td>2;còn3,7</td><td>3;còn7,2</td></tr><tr><td>Thêm9,lấy tiếp</td><td>9</td><td>7</td></tr></tbody></table></div><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không nhầm top với pop. Mảng cấp phát động nhưng không resize vẫn có sức chứa cố định.</div>",
+    "programs": [
+      "van-stack-stl",
+      "van-queue-stl",
+      "van-base"
+    ],
+    "group": "stack"
+  },
+  {
+    "id": "van-tree-theory",
+    "teacher": "van",
+    "title": "Cây: thuật ngữ, duyệt và chiều cao",
+    "source": "7_CayNhiPhan slide2–18",
+    "formula": "n nút→n−1 cạnh(cây không rỗng);độ sâu gốc0;NLR/LNR/LRN.",
+    "explain": "Một nút có cha,con và có thể là lá. Cây nhị phân có tối đa hai con phân biệt trái/phải. Cây biểu thức dùng toán tử làm nút trong,toán hạng làm lá. Một lần duyệt đúng thăm mỗi nút một lần.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Hàm đệ quy luôn xét NULL trước khi đọc nút.</li><li>Đếm:0 nếu rỗng,ngược lại1+đếm trái+đếm phải.</li><li>Chiều cao:1+max(htrái,hphải);ghi rõ quy ước chiều cao cây rỗng.</li><li>NLR làm việc tại gốc trước;LNR giữa;LRN sau hai cây con.</li><li>Nếu dùng mảng mức0-based:con trái2i+1,phải2i+2;chỉ dùng khi chỉ số tồn tại.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Cây gốc2,con trái1,phải3:NLR=2 1 3,LNR=1 2 3,LRN=1 3 2. Theo Cương:rỗng−1,lá0,cây này cao1. Bản ví dụ Văn đo số nút:rỗng0,lá1,cây này cao2;đổi hệ đo không đổi chênh lệch hai chiều cao.</p><p>Cây nhị phân đầy đủ:xếp đầy các mức trước,mức cuối lấp từ trái. Cây hoàn hảo:mỗi mức đầy. Cân bằng chiều cao AVL khác cả hai khái niệm đó.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Cây nhị phân không mặc nhiên là BST. LNR chỉ ra thứ tự tăng nếu mọi nút thỏa tính chất BST.</div>",
+    "programs": [
+      "van-tree",
+      "van-bst"
+    ],
+    "group": "tree"
+  },
+  {
+    "id": "van-avl-theory",
+    "teacher": "van",
+    "title": "Chọn phép quay AVL và tránh nhầm dấu",
+    "source": "8_CauTrucTimKiem slide19–39",
+    "formula": "Cương:BF=hL−hR;Văn:bal=hR−hL;mọi nút phải|hL−hR|≤1.",
+    "explain": "AVL thêm điều kiện chiều cao vào BST để h=O(logn). Một phép quay đổi vài liên kết,không đổi thứ tự LNR. Nên đọc thao tác “đưa con trái/phải lên” để không nhầm khi hai tài liệu đặt tên khác nhau.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Xác định bên cao và hướng lệch của con phía cao.</li><li>LL:đưa con trái lên;RR:đưa con phải lên.</li><li>LR:đưa cháu phải của con trái lên trước,rồi đưa con trái mới lên. RL làm đối xứng.</li><li>Sau quay,cập nhật chiều cao nút đi xuống trước,nút đi lên sau.</li><li>Thêm có thể dừng sau sửa vùng lệch sâu nhất;xóa có thể tiếp tục lệch ở tổ tiên nên phải đi lên hết.</li></ol><h3>Ví dụ và đối chiếu</h3><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>Hình</th><th>Dãy tối giản</th><th>Quay vật lý</th></tr></thead><tbody><tr><td>LL</td><td>30,20,10</td><td>Phải ở30</td></tr><tr><td>RR</td><td>10,20,30</td><td>Trái ở10</td></tr><tr><td>LR</td><td>30,10,20</td><td>Trái ở10,rồi phải ở30</td></tr><tr><td>RL</td><td>10,30,20</td><td>Phải ở30,rồi trái ở10</td></tr></tbody></table></div><div class=\"focus-block\">Văn:LH=−1,EQ=0,RH=1;hàm RotateLeft trong slide đưa con trái lên,tức quay vật lý phải. Code nhánh Văn giữ quy ước ấy. Cương dùng cách gọi theo hướng quay vật lý.</div><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">BF0 không nói hai phía có cùng số nút. Khi xóa,bên cao có BF0 vẫn có thể quay đơn. Không chọn phép quay xóa bằng so khóa vừa xóa với khóa con.</div>",
+    "programs": [
+      "van-avl"
+    ],
+    "group": "avl"
+  },
+  {
+    "id": "van-intro",
+    "teacher": "van",
+    "title": "Lộ trình và cách học DSA của Thầy Văn",
+    "source": "0_GioiThieu slide1–21",
+    "formula": "Dữ liệu + thao tác + bất biến + độ phức tạp.",
+    "explain": "Bài mở đầu giới thiệu môn học,tài liệu,hình thức học và thực hành. Lộ trình đi từ phân tích/đệ quy đến tìm kiếm,sắp xếp,DSLK,stack/queue,cây và cấu trúc tìm kiếm. Tách việc hiểu ý tưởng khỏi thuộc mã.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Đọc khái niệm và ví dụ slide trước.</li><li>Tự chạy tay một đầu vào nhỏ,ghi biến và kết quả.</li><li>Viết lại bằng C++11,đúng kiểu Node,tên trường và quy ước bài đang học.</li><li>Kiểm tra rỗng,một phần tử,trùng,âm và giới hạn chỉ số.</li><li>Đối chiếu độ phức tạp bằng số thao tác,không chỉ thời gian một lần chạy.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Với tìm nhị phân:điều kiện là mảng đã sắp. Nếu nhập mảng chưa sắp rồi áp dụng ngay,kết quả sai dù chương trình biên dịch được. Hiểu tiền điều kiện quan trọng hơn nhớ nguyên một hàm.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Các mốc lịch học/đánh giá trong file là thông tin của tài liệu gốc,không tự xem là lịch hiện hành.</div>",
+    "programs": [
+      "van-linear",
+      "van-complexity"
+    ],
+    "group": "intro"
+  },
+  {
+    "id": "van-loops-exercises",
+    "teacher": "van",
+    "title": "Giải đủ bài đếm vòng lặp a–f và đổi nhị phân",
+    "source": "1_DoPhucTapGiaiThuat slide18–22",
+    "formula": "Σi=n(n+1)/2;Σi²=n(n+1)(2n+1)/6.",
+    "explain": "Đếm số lần thân vòng trong chạy với mỗi i,rồi cộng. Một biến tích khởi tạo0 vẫn không làm các vòng lặp biến mất trong mô hình đếm mã nguồn.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>a:j=i..i+3 luôn4 lượt→4n.</li><li>b:j=1..2i có2i lượt→n(n+1).</li><li>c:i=n..1,j=i..1→Σi.</li><li>d:mỗi i có i·2i lượt→2Σi².</li><li>e:mỗi i cóΣj=i(i+1)/2→n(n+1)(n+2)/6.</li><li>f:so mọi cặp i&lt;j→n(n−1)/2.</li></ol><h3>Ví dụ và đối chiếu</h3><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>Câu</th><th>Số lượt chính xác</th><th>Bậc chặt</th></tr></thead><tbody><tr><td>a</td><td>4n</td><td>Θ(n)</td></tr><tr><td>b</td><td>n(n+1)</td><td>Θ(n²)</td></tr><tr><td>c</td><td>n(n+1)/2</td><td>Θ(n²)</td></tr><tr><td>d</td><td>n(n+1)(2n+1)/3</td><td>Θ(n³)</td></tr><tr><td>e</td><td>n(n+1)(n+2)/6</td><td>Θ(n³)</td></tr><tr><td>f</td><td>n(n−1)/2</td><td>Θ(n²)</td></tr></tbody></table></div><p>Chia nguyên n cho2 đến0: n&gt;0 có⌊log₂n⌋+1 lượt. Nếu n=2^k+a,0≤a&lt;2^k vẫn k+1 lượt. n=0 có0 lượt với while,nhưng đổi cơ số nên xử lý để in “0”. Bài tính x^n dùng bình phương nhanh:giải n/2 rồi bình phương,mỗi mức O(1) nhân→O(logn).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không đếm j=i..i+3 là i+3 lượt;không suy ra mọi ba vòng lặp đều n³ nếu biên thay đổi khác.</div>",
+    "programs": [
+      "van-complexity",
+      "van-base",
+      "van-power"
+    ],
+    "group": "analysis"
+  },
+  {
+    "id": "van-recursion-theory",
+    "teacher": "van",
+    "title": "Đệ quy, truy hồi, chia để trị và quay lui",
+    "source": "2_GiaiThuatDeQuy slide2–34",
+    "formula": "Có cơ sở dừng + bài nhỏ hơn + ghép kết quả;quay lui:chọn→thử→đệ quy→hoàn tác.",
+    "explain": "Mỗi lời gọi có khung stack riêng gồm tham số,biến cục bộ và vị trí quay về. Một lời gọi tự gọi không tự động đúng:phải chứng minh tiến tới cơ sở dừng. Đệ quy tuyến tính,mỗi nhánh hai lời gọi,phi tuyến và hỗ tương có hình cây lời gọi khác nhau.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Đặt miền đầu vào và cơ sở dừng.</li><li>Biểu diễn đáp án qua bài nhỏ hơn.</li><li>Xác định tiến độ giảm n/đoạn/khoảng trống để tránh vô hạn.</li><li>Tách chi phí mỗi lời gọi và số lời gọi.</li><li>Quay lui:chỉ thêm lựa chọn hợp lệ,sau trở về phải bỏ dấu đã dùng nếu nhánh sau còn cần.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Slide A(n) in n trước rồi if(n&lt;=7)A(n+1). Gọi A(5) in5,6,7,8,không phải chỉ5,6,7:với n=8 vẫn in rồi mới không gọi tiếp.</p><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>Bài</th><th>Truy hồi</th><th>Chi phí bản mẫu</th></tr></thead><tbody><tr><td>Giai thừa</td><td>F(0)=1,F(n)=nF(n−1)</td><td>Θ(n),stackΘ(n)</td></tr><tr><td>Fibonacci ngây thơ</td><td>F1=F2=1,Fn=F(n−1)+F(n−2)</td><td>O(2^n),stackO(n)</td></tr><tr><td>Hà Nội</td><td>H(n)=2H(n−1)+1</td><td>2^n−1 bước</td></tr><tr><td>Nhị phân độ dài n</td><td>2 lựa chọn ở mỗi vị trí</td><td>Θ(n·2^n) gồm in</td></tr><tr><td>Hoán vị</td><td>Chọn số chưa dùng</td><td>Θ(n·n!) gồm in</td></tr></tbody></table></div><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không ghi bộ nhớ O(1) cho đệ quy sâu n. Các ví dụ không có điều kiện dừng trên slide chỉ minh họa hình lời gọi,không chạy nguyên như chương trình đúng.</div>",
+    "programs": [
+      "van-sum",
+      "van-factorial",
+      "van-fibonacci",
+      "van-power",
+      "van-gcd",
+      "van-combination",
+      "van-hanoi",
+      "van-binary-strings",
+      "van-permutation",
+      "van-queens"
+    ],
+    "group": "recursion"
+  },
+  {
+    "id": "van-sort-theory",
+    "teacher": "van",
+    "title": "Chọn thuật toán sắp xếp và tính ổn định",
+    "source": "4_SapXepMang slide2–49;7_CayNhiPhan phần Heapsort",
+    "formula": "Ổn định:khóa bằng nhau giữ thứ tự tương đối ban đầu;in-place không đồng nghĩa bộ nhớ tổng O(1) nếu có stack.",
+    "explain": "Mọi mẫu ở đây sắp tăng. Selection tìm min rồi đổi một lần;Insertion chèn vào tiền tố đã sắp;Bubble quét từ phải về trái đúng slide. Quick có hai phân hoạch khác nhau,không ghép tùy tiện biên đệ quy. Merge dùng bộ đệm;Heap dùng cây hoàn chỉnh biểu diễn bằng mảng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Selection:tiền tố đầu đã cố định sau mỗi i.</li><li>Insertion:lưu x,dịch những phần tử&gt;x,đặt x vào lỗ trống.</li><li>Bubble:so cặp kề từ phải về trái,đẩy min về đầu vùng.</li><li>Quick:phân hoạch rồi giải hai vùng nhỏ hơn;chọn pivot ảnh hưởng trường hợp xấu.</li><li>Merge:chia,giải hai nửa,ghép bằng hai chỉ số.</li><li>Heap:xây max-heap từ n/2−1 về0,đổi max ra cuối rồi vun đoạn còn lại.</li></ol><h3>Ví dụ và đối chiếu</h3><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>Thuật toán</th><th>Tốt/trung bình/xấu</th><th>Phụ</th><th>Ổn định</th></tr></thead><tbody><tr><td>Selection</td><td>n²/n²/n²</td><td>O(1)</td><td>Không</td></tr><tr><td>Insertion</td><td>n/n²/n²</td><td>O(1)</td><td>Có khi dùng&gt;</td></tr><tr><td>Bubble đúng bản slide</td><td>n²/n²/n²</td><td>O(1)</td><td>Có khi dùng&gt;</td></tr><tr><td>Quick</td><td>nlogn/nlogn/n²</td><td>stackTB logn,xấun</td><td>Không</td></tr><tr><td>Merge</td><td>nlogn/nlogn/nlogn</td><td>O(n)+stacklogn</td><td>Có khi chọn trái nếu bằng</td></tr><tr><td>Heap</td><td>O(nlogn) chặn trên</td><td>stackO(logn) bản Adjust đệ quy</td><td>Không</td></tr></tbody></table></div><p>BuildHeap là O(n),không phải mọi nút đều cần logn bước:đa số nút ở thấp. Slide Merge dùng giá trị canh INT_MAX có thể sai khi dữ liệu bằng đúng INT_MAX;mẫu thay bằng kiểm tra biên.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Bubble không cờ dừng sớm không có tốt Θ(n). ^ trong C++ là XOR,không phải lũy thừa.</div>",
+    "programs": [
+      "van-selection",
+      "van-insertion",
+      "van-bubble",
+      "van-quick-lomuto",
+      "van-quick-hoare",
+      "van-merge",
+      "van-heap"
+    ],
+    "group": "sort"
+  },
+  {
+    "id": "van-balanced-count",
+    "teacher": "van",
+    "title": "Cân bằng hoàn toàn theo số nút và AVL theo chiều cao",
+    "source": "7_CayNhiPhan phần cây cân bằng;8_CauTrucTimKiem phầnAVL",
+    "formula": "Cân bằng số nút:mỗi nút|nL−nR|≤1;AVL:mỗi nút|hL−hR|≤1.",
+    "explain": "Hai điều kiện dùng hai đại lượng khác nhau. Chương7 dùng số lượng nút để mô tả cân bằng hoàn toàn;chương8 dùng chiều cao cho AVL. Tạo BST từ mảng tăng bằng chọn phần tử giữa giúp hai nửa có số nút chênh không quá1.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Với mảng tăng đoạn[l,r],lấy m=l+(r−l)/2.</li><li>Tạo gốc a[m],đệ quy trái[l,m−1],phải[m+1,r].</li><li>Kiểm tra cân bằng số nút bằng hậu tự trả size của cây con.</li><li>Kiểm tra AVL bằng hậu tự trả height;đừng thay height bằng size trong điều kiện quay.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Cây bên trái có7 nút cao3 mức,bên phải có4 nút cũng có thể cao3 mức:gốc có chênh chiều cao0 nhưng chênh số nút3. Vì vậy chỉ BF=0 không đủ kết luận cân bằng hoàn toàn theo số nút.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không dịch mọi chữ “balanced” thành một điều kiện duy nhất.</div>",
+    "programs": [
+      "van-tree",
+      "van-avl"
+    ],
+    "group": "tree"
+  },
+  {
+    "id": "van-hash-theory",
+    "teacher": "van",
+    "title": "Băm, đụng độ và giải bài cuối chương",
+    "source": "8_CauTrucTimKiem slide40–51",
+    "formula": "H(x)=x mod7;α=n/m;kỳ vọngO(1+α) nếu phân bố hợp lý.",
+    "explain": "Bảng băm dùng chỉ số nhỏ từ khóa. Hai khóa khác nhau có thể cùng giá trị băm,phải xử lý đụng độ. Móc xích giữ mỗi bucket là một DSLK;dùng tìm khóa thật trong chuỗi thay vì coi hash là định danh duy nhất.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tính x%7 cho mỗi số trong dãy nguồn.</li><li>Tạo nút tại đầu bucket tương ứng.</li><li>Cùng bucket,số đến sau nằm trước.</li><li>Tìm x bằng hash rồi duyệt bucket;không tìm toàn bộ bảng khi không cần.</li></ol><h3>Ví dụ và đối chiếu</h3><div class=\"db-table\" tabindex=\"0\" role=\"region\" aria-label=\"Bảng học tập\"><table><thead><tr><th>Bucket</th><th>Dãy cuối(chèn đầu)</th></tr></thead><tbody><tr><td>0</td><td>rỗng</td></tr><tr><td>1</td><td>8</td></tr><tr><td>2</td><td>9→30→2</td></tr><tr><td>3</td><td>10→3</td></tr><tr><td>4</td><td>18→11</td></tr><tr><td>5</td><td>12→5</td></tr><tr><td>6</td><td>20</td></tr></tbody></table></div><p>Dãy đúng slide51:8,3,5,2,20,11,30,9,18,12,10. Ví dụ15 không có trong dãy này;không dùng trạng thái minh họa khác thay đáp án bài nguồn.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">O(n/m) trong slide bỏ mất hằng số thao tác;viết O(1+α) rõ hơn. Xấu nhất mọi khóa cùng bucket vẫn O(n).</div>",
+    "programs": [
+      "van-hash"
+    ],
+    "group": "hash"
+  },
+  {
+    "id": "van-bst-exercises",
+    "teacher": "van",
+    "title": "Giải bài BST cuối chương và so sánh mảng đã sắp",
+    "source": "8_CauTrucTimKiem slide48–50",
+    "formula": "BST O(h);mảng tăng tìmO(logn),chèn/xóaO(n);AVL cập nhậtO(logn).",
+    "explain": "Bài48 thêm theo thứ tự8,3,5,2,20,11,30,9,18,4. Bắt đầu gốc8;3,20 ở hai phía;2,5 dưới3;11,30 dưới20;4 dưới5;9,18 dưới11. Thứ tự chèn quyết định hình cây.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Vẽ8;với mỗi x,lần theo điều kiện nhỏ→trái,lớn→phải đến ô trống.</li><li>Bài49 đọc cây gốc60:trái25,phải73;25 có14,50;73 có66,80;50 có33;33 có44;14 có20;20 có17.</li><li>Xóa66 là xóa lá;thêm11 đi về trái14,thêm55 vào phải50.</li><li>Nếu xét độc lập:xóa73 dùng successor80;xóa25 dùng successor33,giữ44 làm liên kết thay thế ở chỗ33 cũ.</li><li>Bài50 AVL dùng cây gốc60 với25,73;25 có14,50;73 có66,80;50 có33. Xóa25 dùng predecessor14 theo yêu cầu,không dùng33.</li><li>Mỗi yêu cầu “sau khi” có thể hiểu độc lập hoặc nối tiếp;trong thực hành phải ghi trạng thái xuất phát. Mẫu bổ sung có nhãn rõ và giữ từng trường hợp độc lập.</li></ol><h3>Ví dụ và đối chiếu</h3><p>BST bài48 có LNR2,3,4,5,8,9,11,18,20,30. Mảng sắp cho tìm nhị phân bảo đảm logn nhưng cần dịch khi chèn/xóa;BST thường chỉ đảm bảo O(h),nên chỉ AVL mới có chặn logn sau cập nhật.</p><p>AVL bài50 độc lập:xóa66 chỉ bỏ lá,cây vẫn cân bằng;thêm47 vào phải33 gâyLR tại50,đưa47 lên vùng đó;xóa73 có thể thay bằng66 theo predecessor,cây vẫn cân bằng;xóa25 thay14 rồi cân bằng vùng14 bằngRL,đưa33 lên. Dùng code để đối chiếu hình thay vì chỉ đọc kết quả LNR.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Hình trong nguồn là dữ liệu của bài;không thay bằng một cây tự chọn mà vẫn gọi đó là lời giải bài nguồn.</div>",
+    "programs": [
+      "van-bst",
+      "van-avl"
+    ],
+    "group": "bst"
+  },
+  {
+    "id": "van-learn-selection",
+    "teacher": "van",
+    "title": "Selection Sort",
+    "source": "4_SapXepMang;7_CayNhiPhan nếu HeapSort",
+    "formula": "Đưa mảng về thứ tự không giảm.",
+    "explain": "Selection Sort theo phiên bản được trình bày trong bộ Thầy Văn.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Đọc n và n giá trị.</li><li>Thực hiện đúng quy tắc phân hoạch/chọn/chèn hoặc vun đống của thuật toán.</li><li>Theo dõi chỉ số hoạt động và phần mảng đã cố định.</li><li>In mảng cuối;thử thêm dữ liệu trùng và mảng rỗng.</li></ol><h3>Ví dụ và đối chiếu</h3><p>8,5,2,7,9,3 →2,3,5,7,8,9.</p><h3>Chi phí</h3><p>Θ(n²) so sánh;O(1) bộ nhớ phụ;không ổn định.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Ở mỗi i,chọn min một lần rồi đổi. Không gọi mọi hoán đổi cặp là SelectionSort.</div>",
+    "programs": [
+      "van-selection"
+    ],
+    "group": "sort"
+  },
+  {
+    "id": "van-learn-insertion",
+    "teacher": "van",
+    "title": "Insertion Sort",
+    "source": "4_SapXepMang;7_CayNhiPhan nếu HeapSort",
+    "formula": "Đưa mảng về thứ tự không giảm.",
+    "explain": "Insertion Sort theo phiên bản được trình bày trong bộ Thầy Văn.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Đọc n và n giá trị.</li><li>Thực hiện đúng quy tắc phân hoạch/chọn/chèn hoặc vun đống của thuật toán.</li><li>Theo dõi chỉ số hoạt động và phần mảng đã cố định.</li><li>In mảng cuối;thử thêm dữ liệu trùng và mảng rỗng.</li></ol><h3>Ví dụ và đối chiếu</h3><p>8,5,2,7,9,3 →2,3,5,7,8,9.</p><h3>Chi phí</h3><p>Tốt Θ(n);xấu Θ(n²);phụ O(1);ổn định khi chỉ dịch giá trị &gt;x.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Trong bước dịch,mảng có thể tạm lặp giá trị vì x đang giữ ở biến tạm;không mất dữ liệu.</div>",
+    "programs": [
+      "van-insertion"
+    ],
+    "group": "sort"
+  },
+  {
+    "id": "van-learn-bubble",
+    "teacher": "van",
+    "title": "Bubble Sort:quét từ phải sang trái",
+    "source": "4_SapXepMang;7_CayNhiPhan nếu HeapSort",
+    "formula": "Đưa mảng về thứ tự không giảm.",
+    "explain": "Bubble Sort:quét từ phải sang trái theo phiên bản được trình bày trong bộ Thầy Văn.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Đọc n và n giá trị.</li><li>Thực hiện đúng quy tắc phân hoạch/chọn/chèn hoặc vun đống của thuật toán.</li><li>Theo dõi chỉ số hoạt động và phần mảng đã cố định.</li><li>In mảng cuối;thử thêm dữ liệu trùng và mảng rỗng.</li></ol><h3>Ví dụ và đối chiếu</h3><p>8,5,2,7,9,3 →2,3,5,7,8,9.</p><h3>Chi phí</h3><p>Bản không cờ dừng sớm:Θ(n²) ở cả tốt/xấu;phụ O(1);ổn định.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không ghi tốt O(n) cho đúng bản vòng lặp này;muốn O(n) phải thêm cờ đổi chỗ.</div>",
+    "programs": [
+      "van-bubble"
+    ],
+    "group": "sort"
+  },
+  {
+    "id": "van-learn-quick-lomuto",
+    "teacher": "van",
+    "title": "Quick Sort:Lomuto,chốt cuối",
+    "source": "4_SapXepMang;7_CayNhiPhan nếu HeapSort",
+    "formula": "Đưa mảng về thứ tự không giảm.",
+    "explain": "Quick Sort:Lomuto,chốt cuối theo phiên bản được trình bày trong bộ Thầy Văn.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Đọc n và n giá trị.</li><li>Thực hiện đúng quy tắc phân hoạch/chọn/chèn hoặc vun đống của thuật toán.</li><li>Theo dõi chỉ số hoạt động và phần mảng đã cố định.</li><li>In mảng cuối;thử thêm dữ liệu trùng và mảng rỗng.</li></ol><h3>Ví dụ và đối chiếu</h3><p>8,5,2,7,9,3 →2,3,5,7,8,9.</p><h3>Chi phí</h3><p>Trung bình Θ(nlog n);xấu Θ(n²);stack đệ quy trung bình O(log n),xấu O(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không ghép biên đệ quy kiểu Hoare với vị trí chốt trả về của Lomuto.</div>",
+    "programs": [
+      "van-quick-lomuto"
+    ],
+    "group": "sort"
+  },
+  {
+    "id": "van-learn-quick-hoare",
+    "teacher": "van",
+    "title": "Quick Sort:hai con trỏ,chốt giữa",
+    "source": "4_SapXepMang;7_CayNhiPhan nếu HeapSort",
+    "formula": "Đưa mảng về thứ tự không giảm.",
+    "explain": "Quick Sort:hai con trỏ,chốt giữa theo phiên bản được trình bày trong bộ Thầy Văn.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Đọc n và n giá trị.</li><li>Thực hiện đúng quy tắc phân hoạch/chọn/chèn hoặc vun đống của thuật toán.</li><li>Theo dõi chỉ số hoạt động và phần mảng đã cố định.</li><li>In mảng cuối;thử thêm dữ liệu trùng và mảng rỗng.</li></ol><h3>Ví dụ và đối chiếu</h3><p>8,5,2,7,9,3 →2,3,5,7,8,9.</p><h3>Chi phí</h3><p>Trung bình Θ(nlog n);xấu Θ(n²);có bộ nhớ call stack.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Sau khi đổi phải i++,j-- để tiến qua trường hợp hai giá trị bằng chốt.</div>",
+    "programs": [
+      "van-quick-hoare"
+    ],
+    "group": "sort"
+  },
+  {
+    "id": "van-learn-merge",
+    "teacher": "van",
+    "title": "Merge Sort và trộn hai đoạn",
+    "source": "4_SapXepMang;7_CayNhiPhan nếu HeapSort",
+    "formula": "Đưa mảng về thứ tự không giảm.",
+    "explain": "Merge Sort và trộn hai đoạn theo phiên bản được trình bày trong bộ Thầy Văn.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Đọc n và n giá trị.</li><li>Thực hiện đúng quy tắc phân hoạch/chọn/chèn hoặc vun đống của thuật toán.</li><li>Theo dõi chỉ số hoạt động và phần mảng đã cố định.</li><li>In mảng cuối;thử thêm dữ liệu trùng và mảng rỗng.</li></ol><h3>Ví dụ và đối chiếu</h3><p>8,5,2,7,9,3 →2,3,5,7,8,9.</p><h3>Chi phí</h3><p>Θ(nlog n) thời gian;O(n) bộ nhớ phụ;ổn định với &lt;=.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Dùng kiểm tra biên thay sentinel INT_MAX để không nhầm dữ liệu thật bằng INT_MAX với dấu vô cực.</div>",
+    "programs": [
+      "van-merge"
+    ],
+    "group": "sort"
+  },
+  {
+    "id": "van-learn-heap",
+    "teacher": "van",
+    "title": "Heap Sort và AdjustHeap",
+    "source": "4_SapXepMang;7_CayNhiPhan nếu HeapSort",
+    "formula": "Đưa mảng về thứ tự không giảm.",
+    "explain": "Heap Sort và AdjustHeap theo phiên bản được trình bày trong bộ Thầy Văn.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Đọc n và n giá trị.</li><li>Thực hiện đúng quy tắc phân hoạch/chọn/chèn hoặc vun đống của thuật toán.</li><li>Theo dõi chỉ số hoạt động và phần mảng đã cố định.</li><li>In mảng cuối;thử thêm dữ liệu trùng và mảng rỗng.</li></ol><h3>Ví dụ và đối chiếu</h3><p>8,5,2,7,9,3 →2,3,5,7,8,9.</p><h3>Chi phí</h3><p>BuildHeap O(n);sort Θ(nlog n);bản AdjustHeap đệ quy có stack O(log n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Heap không phải BST:chỉ đảm bảo cha≥con,không yêu cầu mọi nút trái nhỏ hơn mọi nút phải.</div>",
+    "programs": [
+      "van-heap"
+    ],
+    "group": "sort"
+  },
+  {
+    "id": "cuong-learn-linear",
+    "teacher": "cuong",
+    "title": "Tìm kiếm tuần tự",
+    "source": "Ôn thi,mảng",
+    "formula": "Trả chỉ số 0-based;nếu không thấy trả −1.",
+    "explain": "Tìm kiếm tuần tự và điều kiện áp dụng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>So với giá trị cần tìm.</li><li>Cập nhật vị trí/đoạn tìm.</li><li>Chỉ trả kết quả khi đã chứng minh tìm thấy hoặc hết ứng viên.</li></ol><h3>Ví dụ và đối chiếu</h3><p>[1,4,7,8,11,15,19],x=11 →4.</p><h3>Chi phí</h3><p>Tốt O(1);xấu O(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không đọc a[n] khi vòng lặp đã vượt phần tử cuối.</div>",
+    "programs": [
+      "cuong-linear"
+    ],
+    "group": "search"
+  },
+  {
+    "id": "cuong-learn-binary",
+    "teacher": "cuong",
+    "title": "Tìm kiếm nhị phân",
+    "source": "Ôn thi,mảng",
+    "formula": "Trả chỉ số 0-based;nếu không thấy trả −1.",
+    "explain": "Tìm kiếm nhị phân và điều kiện áp dụng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>So với giá trị cần tìm.</li><li>Cập nhật vị trí/đoạn tìm.</li><li>Chỉ trả kết quả khi đã chứng minh tìm thấy hoặc hết ứng viên.</li></ol><h3>Ví dụ và đối chiếu</h3><p>[1,4,7,8,11,15,19],x=11 →4.</p><h3>Chi phí</h3><p>Tốt O(1);xấu O(log n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Nhị phân cần mảng tăng trước khi chạy;không tự sắp rồi trả chỉ số như thể đó là vị trí ban đầu.</div>",
+    "programs": [
+      "cuong-binary"
+    ],
+    "group": "search"
+  },
+  {
+    "id": "cuong-learn-array-edit",
+    "teacher": "cuong",
+    "title": "Chèn,xóa và đảo mảng",
+    "source": "Review mục2",
+    "formula": "Chèn vị trí k∈[0,n];xóa k∈[0,n−1].",
+    "explain": "Các vòng dịch khác hướng để không ghi đè dữ liệu.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Chèn:dịch phải từ cuối về k.</li><li>Xóa:dịch trái từ k đến n−2.</li><li>Đảo:hai con trỏ đổi đầu/cuối rồi tiến vào trong.</li></ol><h3>Ví dụ và đối chiếu</h3><p>[1,5,4,7],chèn9 ở1,xóa lại vị trí1,đảo →7,4,5,1.</p><h3>Chi phí</h3><p>O(n) cho mỗi thao tác;phụ O(1).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Phải còn sức chứa;phân biệt số phần tử n với capacity.</div>",
+    "programs": [
+      "cuong-array-edit"
+    ],
+    "group": "array"
+  },
+  {
+    "id": "cuong-learn-pointer",
+    "teacher": "cuong",
+    "title": "Con trỏ,tham chiếu và cấp phát động",
+    "source": "Review mục1",
+    "formula": "p=&a;*p truy cập a;int& r=a là bí danh.",
+    "explain": "Phân biệt địa chỉ,giá trị và thay đổi nơi con trỏ trỏ tới.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>&amp; lấy địa chỉ;* khai báo con trỏ hoặc giải tham chiếu tùy ngữ cảnh.</li><li>Tham chiếu r cùng đại diện a;gán p=&amp;b chỉ đổi p,không chép a sang b.</li><li>Hai tham số có thể cùng trỏ một biến,hai lần tăng cùng tác động biến đó.</li><li>new/delete ghép đúng;new[] phải dùng delete[].</li></ol><h3>Ví dụ và đối chiếu</h3><p>Kết quả11 11 7;địa chỉ được mô phỏng bằng nhãn,không bịa địa chỉ RAM thật.</p><h3>Chi phí</h3><p>Các thao tác trực tiếp O(1).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Sau delete không đọc *q;không delete một con trỏ chỉ tới biến local.</div>",
+    "programs": [
+      "cuong-pointer"
+    ],
+    "group": "pointer"
+  },
+  {
+    "id": "cuong-learn-complexity",
+    "teacher": "cuong",
+    "title": "Đếm số bước và Big-O/Ω/Θ",
+    "source": "Review mục3",
+    "formula": "Σi=n(n+1)/2;chia đôi:⌊log₂n⌋+1 lần khi n>0.",
+    "explain": "Đếm số lần phép cơ bản thật sự chạy.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tổng lượt của hai vòng là1+2+...+n.</li><li>Hai vòng không mặc nhiên O(n²):nếu vòng trong chỉ4lượt thì O(n).</li><li>Big-O là chặn trên;Ω chặn dưới;Θ chặn chặt;cả ba không đồng nghĩa tốt/xấu/trung bình.</li></ol><h3>Ví dụ và đối chiếu</h3><p>n=5 →15 lượt tam giác,3lần chia2.</p><h3>Chi phí</h3><p>Θ(n²) đoạn tam giác;Θ(log n) đoạn chia đôi.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Tích khởi tạo0 có thể luôn0 nhưng vòng lặp vẫn tốn thời gian.</div>",
+    "programs": [
+      "cuong-complexity"
+    ],
+    "group": "complexity"
+  },
+  {
+    "id": "van-learn-linear",
+    "teacher": "van",
+    "title": "Tìm kiếm tuần tự",
+    "source": "3_Mang,slide2–10",
+    "formula": "Trả chỉ số 0-based;nếu không thấy trả −1.",
+    "explain": "Tìm kiếm tuần tự và điều kiện áp dụng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>So với giá trị cần tìm.</li><li>Cập nhật vị trí/đoạn tìm.</li><li>Chỉ trả kết quả khi đã chứng minh tìm thấy hoặc hết ứng viên.</li></ol><h3>Ví dụ và đối chiếu</h3><p>[1,4,7,8,11,15,19],x=11 →4.</p><h3>Chi phí</h3><p>Tốt O(1);xấu O(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không đọc a[n] khi vòng lặp đã vượt phần tử cuối.</div>",
+    "programs": [
+      "van-linear"
+    ],
+    "group": "search"
+  },
+  {
+    "id": "van-learn-binary",
+    "teacher": "van",
+    "title": "Tìm kiếm nhị phân",
+    "source": "3_Mang,slide2–10",
+    "formula": "Trả chỉ số 0-based;nếu không thấy trả −1.",
+    "explain": "Tìm kiếm nhị phân và điều kiện áp dụng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>So với giá trị cần tìm.</li><li>Cập nhật vị trí/đoạn tìm.</li><li>Chỉ trả kết quả khi đã chứng minh tìm thấy hoặc hết ứng viên.</li></ol><h3>Ví dụ và đối chiếu</h3><p>[1,4,7,8,11,15,19],x=11 →4.</p><h3>Chi phí</h3><p>Tốt O(1);xấu O(log n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Nhị phân cần mảng tăng trước khi chạy;không tự sắp rồi trả chỉ số như thể đó là vị trí ban đầu.</div>",
+    "programs": [
+      "van-binary"
+    ],
+    "group": "search"
+  },
+  {
+    "id": "van-learn-array-edit",
+    "teacher": "van",
+    "title": "Chèn,xóa và đảo mảng",
+    "source": "3_Mang slide11",
+    "formula": "Chèn vị trí k∈[0,n];xóa k∈[0,n−1].",
+    "explain": "Các vòng dịch khác hướng để không ghi đè dữ liệu.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Chèn:dịch phải từ cuối về k.</li><li>Xóa:dịch trái từ k đến n−2.</li><li>Đảo:hai con trỏ đổi đầu/cuối rồi tiến vào trong.</li></ol><h3>Ví dụ và đối chiếu</h3><p>[1,5,4,7],chèn9 ở1,xóa lại vị trí1,đảo →7,4,5,1.</p><h3>Chi phí</h3><p>O(n) cho mỗi thao tác;phụ O(1).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Phải còn sức chứa;phân biệt số phần tử n với capacity.</div>",
+    "programs": [
+      "van-array-edit"
+    ],
+    "group": "array"
+  },
+  {
+    "id": "van-learn-pointer",
+    "teacher": "van",
+    "title": "Con trỏ,tham chiếu và cấp phát động",
+    "source": "5_DanhSachLienKet slide3–13",
+    "formula": "p=&a;*p truy cập a;int& r=a là bí danh.",
+    "explain": "Phân biệt địa chỉ,giá trị và thay đổi nơi con trỏ trỏ tới.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>&amp; lấy địa chỉ;* khai báo con trỏ hoặc giải tham chiếu tùy ngữ cảnh.</li><li>Tham chiếu r cùng đại diện a;gán p=&amp;b chỉ đổi p,không chép a sang b.</li><li>Hai tham số có thể cùng trỏ một biến,hai lần tăng cùng tác động biến đó.</li><li>new/delete ghép đúng;new[] phải dùng delete[].</li></ol><h3>Ví dụ và đối chiếu</h3><p>Kết quả11 11 7;địa chỉ được mô phỏng bằng nhãn,không bịa địa chỉ RAM thật.</p><h3>Chi phí</h3><p>Các thao tác trực tiếp O(1).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Sau delete không đọc *q;không delete một con trỏ chỉ tới biến local.</div>",
+    "programs": [
+      "van-pointer"
+    ],
+    "group": "pointer"
+  },
+  {
+    "id": "van-learn-complexity",
+    "teacher": "van",
+    "title": "Đếm số bước và Big-O/Ω/Θ",
+    "source": "1_DoPhucTapGiaiThuat",
+    "formula": "Σi=n(n+1)/2;chia đôi:⌊log₂n⌋+1 lần khi n>0.",
+    "explain": "Đếm số lần phép cơ bản thật sự chạy.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tổng lượt của hai vòng là1+2+...+n.</li><li>Hai vòng không mặc nhiên O(n²):nếu vòng trong chỉ4lượt thì O(n).</li><li>Big-O là chặn trên;Ω chặn dưới;Θ chặn chặt;cả ba không đồng nghĩa tốt/xấu/trung bình.</li></ol><h3>Ví dụ và đối chiếu</h3><p>n=5 →15 lượt tam giác,3lần chia2.</p><h3>Chi phí</h3><p>Θ(n²) đoạn tam giác;Θ(log n) đoạn chia đôi.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Tích khởi tạo0 có thể luôn0 nhưng vòng lặp vẫn tốn thời gian.</div>",
+    "programs": [
+      "van-complexity"
+    ],
+    "group": "complexity"
+  },
+  {
+    "id": "van-learn-sum",
+    "teacher": "van",
+    "title": "Tổng đệ quy",
+    "source": "2_GiaiThuatDeQuy slide13–20,33",
+    "formula": "S(0)=0;S(n)=n+S(n−1).",
+    "explain": "Tổng đệ quy kèm cả lúc gọi và lúc trả về.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Xác định điều kiện dừng.</li><li>Gọi bài toán nhỏ hơn,không tăng n đi xa điều kiện dừng.</li><li>Khi lời gọi con trả về,thực hiện phép tính còn chờ.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Mô phỏng hiển thị n ở lượt gọi và kết quả ở lượt trả về.</p><h3>Chi phí</h3><p>Θ(n) thời gian và stack.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không dùng một điều kiện dừng tùy ý làm n âm cũng được coi hợp lệ.</div>",
+    "programs": [
+      "van-sum"
+    ],
+    "group": "recursion"
+  },
+  {
+    "id": "van-learn-factorial",
+    "teacher": "van",
+    "title": "Giai thừa",
+    "source": "2_GiaiThuatDeQuy slide13–20,33",
+    "formula": "0!=1;n!=n×(n−1)!.",
+    "explain": "Giai thừa kèm cả lúc gọi và lúc trả về.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Xác định điều kiện dừng.</li><li>Gọi bài toán nhỏ hơn,không tăng n đi xa điều kiện dừng.</li><li>Khi lời gọi con trả về,thực hiện phép tính còn chờ.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Mô phỏng hiển thị n ở lượt gọi và kết quả ở lượt trả về.</p><h3>Chi phí</h3><p>Θ(n);long long chứa được20!,không chứa21!.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không dùng một điều kiện dừng tùy ý làm n âm cũng được coi hợp lệ.</div>",
+    "programs": [
+      "van-factorial"
+    ],
+    "group": "recursion"
+  },
+  {
+    "id": "van-learn-fibonacci",
+    "teacher": "van",
+    "title": "Fibonacci đệ quy",
+    "source": "2_GiaiThuatDeQuy slide13–20,33",
+    "formula": "F1=F2=1;Fn=Fn−1+Fn−2.",
+    "explain": "Fibonacci đệ quy kèm cả lúc gọi và lúc trả về.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Xác định điều kiện dừng.</li><li>Gọi bài toán nhỏ hơn,không tăng n đi xa điều kiện dừng.</li><li>Khi lời gọi con trả về,thực hiện phép tính còn chờ.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Mô phỏng hiển thị n ở lượt gọi và kết quả ở lượt trả về.</p><h3>Chi phí</h3><p>O(2^n) là chặn trên;stack O(n).Có tính lặp bài toán con.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không dùng một điều kiện dừng tùy ý làm n âm cũng được coi hợp lệ.</div>",
+    "programs": [
+      "van-fibonacci"
+    ],
+    "group": "recursion"
+  },
+  {
+    "id": "van-learn-power",
+    "teacher": "van",
+    "title": "Lũy thừa chia để trị",
+    "source": "1_DoPhucTap slide22;2_DeQuy slide33",
+    "formula": "x^(2k)=(x^k)²;x^(2k+1)=x×(x^k)².",
+    "explain": "Chỉ tính một lần x^(n/2),không gọi lặp hai lần.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Dừng ở số mũ0.</li><li>Tính tam bằng một lời gọi với n/2.</li><li>Bình phương tam,nhân thêm x nếu n lẻ.</li><li>Số mũ âm dùng nghịch đảo,nếu x=0 thì từ chối.</li></ol><h3>Ví dụ và đối chiếu</h3><p>2^10=1024;2^−3=0,125.</p><h3>Chi phí</h3><p>O(log|n|) thời gian và stack.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Gọi Mu(x,n/2)*Mu(x,n/2) làm mất lợi thế vì tính hai lần.</div>",
+    "programs": [
+      "van-power"
+    ],
+    "group": "recursion"
+  },
+  {
+    "id": "van-learn-gcd",
+    "teacher": "van",
+    "title": "Ước chung lớn nhất Euclid",
+    "source": "2_DeQuy slide33",
+    "formula": "gcd(a,b)=gcd(b,a mod b);gcd(a,0)=|a|.",
+    "explain": "Dùng phép chia lấy dư làm tham số giảm nhanh.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Nhận hai số không âm.</li><li>Nếu b=0 trả a.</li><li>Nếu b≠0 chuyển thành b,a%b.</li></ol><h3>Ví dụ và đối chiếu</h3><p>48,18 →18,12 →12,6 →6,0;kết quả6.</p><h3>Chi phí</h3><p>O(log min(a,b)) lượt trong trường hợp số dương.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">gcd(0,0) chương trình quy ước0;không thực hiện a%b khi b=0.</div>",
+    "programs": [
+      "van-gcd"
+    ],
+    "group": "recursion"
+  },
+  {
+    "id": "van-learn-combination",
+    "teacher": "van",
+    "title": "Tổ hợp bằng công thức Pascal",
+    "source": "2_DeQuy slide34",
+    "formula": "C(n,0)=C(n,n)=1;C(n,k)=C(n−1,k−1)+C(n−1,k).",
+    "explain": "Gọi hai bài toán con với điều kiện biên đúng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Kiểm tra0≤k≤n.</li><li>Hai biên trả1.</li><li>Các trường hợp khác cộng hai nhánh Pascal.</li></ol><h3>Ví dụ và đối chiếu</h3><p>C(5,2)=10.</p><h3>Chi phí</h3><p>Đệ quy thuần có tính lặp,thời gian tăng nhanh;stack O(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Giới hạn mô phỏng nhỏ để không sinh hàng triệu bước;không gọi đây là O(n).</div>",
+    "programs": [
+      "van-combination"
+    ],
+    "group": "recursion"
+  },
+  {
+    "id": "van-learn-hanoi",
+    "teacher": "van",
+    "title": "Tháp Hà Nội",
+    "source": "2_DeQuy slide21–23",
+    "formula": "T(n)=2T(n−1)+1=2^n−1 lượt chuyển.",
+    "explain": "Theo slide:chuyển A sang B,C trung gian.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Chuyển n−1 từ a sang c.</li><li>Chuyển đĩa lớn từ a sang b.</li><li>Chuyển n−1 từ c sang b.</li><li>Mỗi snapshot giữ cả ba cọc,đĩa lớn không được đặt trên đĩa nhỏ.</li></ol><h3>Ví dụ và đối chiếu</h3><p>n=2:1:A→C,2:A→B,1:C→B.</p><h3>Chi phí</h3><p>Θ(2^n) thời gian,O(n) stack.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Thứ tự tham số trong slide là nguồn,đích,trung gian;đừng lẫn với mẫu khác.</div>",
+    "programs": [
+      "van-hanoi"
+    ],
+    "group": "recursion"
+  },
+  {
+    "id": "van-learn-binary-strings",
+    "teacher": "van",
+    "title": "Liệt kê chuỗi nhị phân",
+    "source": "2_DeQuy slide25–30",
+    "formula": "2^n kết quả",
+    "explain": "Thử từng lựa chọn,đi sâu rồi khôi phục trạng thái.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Một mức đệ quy quyết định một vị trí.</li><li>Chỉ in khi đã chọn đủ n vị trí.</li><li>Với hoán vị,đánh dấu used để không dùng lại số.</li><li>Sau nhánh con phải bỏ dấu/khôi phục để xét nhánh khác.</li></ol><h3>Ví dụ và đối chiếu</h3><p>n=3 có6 hoán vị hoặc8chuỗi bit.</p><h3>Chi phí</h3><p>Θ(n·n!) hoặc Θ(n·2^n) nếu tính cả công in mỗi kết quả.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không bỏ hệ số n khi đang đếm thời gian in toàn bộ dãy.</div>",
+    "programs": [
+      "van-binary-strings"
+    ],
+    "group": "backtracking"
+  },
+  {
+    "id": "van-learn-permutation",
+    "teacher": "van",
+    "title": "Liệt kê hoán vị",
+    "source": "2_DeQuy slide25–30",
+    "formula": "n! kết quả",
+    "explain": "Thử từng lựa chọn,đi sâu rồi khôi phục trạng thái.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Một mức đệ quy quyết định một vị trí.</li><li>Chỉ in khi đã chọn đủ n vị trí.</li><li>Với hoán vị,đánh dấu used để không dùng lại số.</li><li>Sau nhánh con phải bỏ dấu/khôi phục để xét nhánh khác.</li></ol><h3>Ví dụ và đối chiếu</h3><p>n=3 có6 hoán vị hoặc8chuỗi bit.</p><h3>Chi phí</h3><p>Θ(n·n!) hoặc Θ(n·2^n) nếu tính cả công in mỗi kết quả.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không bỏ hệ số n khi đang đếm thời gian in toàn bộ dãy.</div>",
+    "programs": [
+      "van-permutation"
+    ],
+    "group": "backtracking"
+  },
+  {
+    "id": "van-learn-queens",
+    "teacher": "van",
+    "title": "N hậu bằng quay lui",
+    "source": "2_DeQuy slide31–34",
+    "formula": "Không trùng hàng;|r1−r2|≠|c1−c2| để tránh cùng đường chéo.",
+    "explain": "Đặt từng cột và thử các hàng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Cột c chỉ xét các hậu ở cột trước.</li><li>Bỏ qua hàng trùng hoặc chéo trùng.</li><li>Đặt tạm,gọi c+1 rồi gỡ.</li><li>Đếm khi c=n.</li></ol><h3>Ví dụ và đối chiếu</h3><p>n=4 có2 cách,n=3 không có.</p><h3>Chi phí</h3><p>Đệ quy quay lui phụ thuộc số nhánh;chặn thô O(n!·n),bộ nhớ O(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Mô phỏng dùng n=4 để nhìn hết lượt thử;code hỗ trợ n=8.</div>",
+    "programs": [
+      "van-queens"
+    ],
+    "group": "backtracking"
+  },
+  {
+    "id": "van-learn-prime",
+    "teacher": "van",
+    "title": "Kiểm tra nguyên tố đến căn bậc hai",
+    "source": "1_DoPhucTap slide4–7",
+    "formula": "Nếu n hợp số,n có ước trong[2,√n].",
+    "explain": "Đếm và dừng ngay khi có ước.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>n&lt;2 không nguyên tố.</li><li>Thử i khi i≤n/i để tránh tràn i*i.</li><li>Nếu có một ước thì trả0,không cần thử tiếp.</li></ol><h3>Ví dụ và đối chiếu</h3><p>29 →1;49 →0 ởi=7.</p><h3>Chi phí</h3><p>Tốt O(1),xấu O(√n),phụ O(1).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Mẫu nguồn thiếu kiểm tra n&lt;2;nếu không sửa sẽ kết luận1 nguyên tố.</div>",
+    "programs": [
+      "van-prime"
+    ],
+    "group": "complexity"
+  },
+  {
+    "id": "cuong-learn-list",
+    "teacher": "cuong",
+    "title": "List:chèn,tìm,xóa,đảo và tách",
+    "source": "linked-list.pdf trang4–21;Review mục4",
+    "formula": "InsertNode dùng index0..n;FindNode/DeleteNode trả vị trí1-based hoặc0.",
+    "explain": "Giữ mô hình lớp List có head và Node.data,next như bài giảng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tìm nút trước vị trí cần chèn rồi nối p-&gt;next trước khi đổi liên kết trước nó.</li><li>Xóa:tìm prev,cur;nối bỏ qua cur rồi delete.</li><li>Đảo:giữ next trước khi thay head-&gt;next.</li><li>Tách slow/fast;với độ dài lẻ,nửa đầu dài hơn1.</li></ol><h3>Ví dụ và đối chiếu</h3><p>6,7,5;chèn8 sau nút đầu,xóa7,đảo →5,8,6.</p><h3>Chi phí</h3><p>Tìm/chèn vị trí/xóa O(n);chèn đầu O(1);đảo/tách O(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không nhầm index chèn0-based với vị trí tìm1-based trong chính slide. Return và kiểu hàm trang15 khác trang14/16;code theo chữ ký int đã nhất quán.</div>",
+    "programs": [
+      "cuong-list"
+    ],
+    "group": "list"
+  },
+  {
+    "id": "van-learn-list",
+    "teacher": "van",
+    "title": "DSLK đơn với Node.info,Node*&head",
+    "source": "5_DanhSachLienKet slide19–30,35–37",
+    "formula": "Sửa head của nơi gọi cần Node*&head.",
+    "explain": "Các hàm tự do TaoNut,ChenDau,ChenCuoi,XoaDau,XoaCuoi,Dispose theo slide.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>TaoNut luôn khởi tạo next=NULL.</li><li>ChenDau O(1);ChenCuoi duyệt đến cuối nếu chỉ có head.</li><li>XoaCuoi xử lý riêng rỗng,một nút và nhiều nút.</li><li>Dispose lặp XoaDau;đảo giữ đủ prev,head,next.</li></ol><h3>Ví dụ và đối chiếu</h3><p>3,7,6;thêm5 đầu,xóa cuối,đảo →7,3,5.</p><h3>Chi phí</h3><p>Duyệt/tìm/thêm cuối/xóa cuối O(n),thêm/xóa đầu O(1).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Trước khi đọc p-&gt;next-&gt;next phải biết danh sách có ít nhất2nút.</div>",
+    "programs": [
+      "van-list"
+    ],
+    "group": "list"
+  },
+  {
+    "id": "cuong-learn-doubly",
+    "teacher": "cuong",
+    "title": "Danh sách liên kết kép",
+    "source": "linked-list.pdf trang27–30",
+    "formula": "head->prev=NULL;tail->next=NULL.",
+    "explain": "Nối hai chiều và xuất cả xuôi lẫn ngược.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Nút mới có prev,next khởi tạo NULL.</li><li>Danh sách rỗng:gán cả head và tail.</li><li>Không rỗng:nối tail-&gt;next=p,p-&gt;prev=tail rồi cập nhật tail.</li><li>Duyệt ngược dùng prev,không tìm lại nút trước.</li></ol><h3>Ví dụ và đối chiếu</h3><p>1,2,3 →xuôi1,2,3;ngược3,2,1.</p><h3>Chi phí</h3><p>Có tail:thêm cuối O(1);duyệt O(n);thêm bộ nhớ prev.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Slide Cương trang30 viết pre nhưng khai báo prev;phải thống nhất prev.</div>",
+    "programs": [
+      "cuong-doubly"
+    ],
+    "group": "list"
+  },
+  {
+    "id": "cuong-learn-circular",
+    "teacher": "cuong",
+    "title": "Danh sách liên kết vòng",
+    "source": "linked-list.pdf trang26",
+    "formula": "tail->next=head;dừng khi quay về head.",
+    "explain": "Không duyệt bằng điều kiện p!=NULL trên danh sách vòng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Giữ head,tail.</li><li>Nút cuối luôn trỏ lại head.</li><li>Nếu rỗng không vào do...while.</li><li>Sau một vòng trở lại head phải dừng;hủy danh sách bằng cách cắt vòng trước.</li></ol><h3>Ví dụ và đối chiếu</h3><p>1,2,3 được in đúng một lần.</p><h3>Chi phí</h3><p>Thêm cuối có tail O(1);duyệt/hủy O(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không dùng LV() đơn trên một danh sách vòng vì helper đó đi đến NULL sẽ không dừng.</div>",
+    "programs": [
+      "cuong-circular"
+    ],
+    "group": "list"
+  },
+  {
+    "id": "cuong-learn-polynomial",
+    "teacher": "cuong",
+    "title": "Cộng đa thức bằng danh sách hạng tử",
+    "source": "linked-list.pdf trang22;TongHopCode phần DSLK",
+    "formula": "Cùng số mũ:cộng hệ số;khác mũ:giữ hạng mũ lớn trước.",
+    "explain": "Hai danh sách đầu vào được sắp giảm số mũ.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Mỗi nút giữ hệ số và số mũ.</li><li>Chọn số mũ lớn hơn;trùng mũ cộng hệ số và tiến cả hai con trỏ.</li><li>Không thêm hệ số0 vào kết quả.</li><li>Ví dụ/đầu vào yêu cầu số mũ giảm nghiêm ngặt,không âm.</li></ol><h3>Ví dụ và đối chiếu</h3><p>(3x²+2)+(−3x²+4x) →4x+2.</p><h3>Chi phí</h3><p>O(m+n) thời gian;bộ nhớ kết quả O(m+n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không cộng số mũ khi cộng đa thức;không bỏ những hạng còn lại của một phía.</div>",
+    "programs": [
+      "cuong-polynomial"
+    ],
+    "group": "list"
+  },
+  {
+    "id": "van-learn-doubly",
+    "teacher": "van",
+    "title": "Danh sách liên kết kép",
+    "source": "5_DanhSachLienKet slide32–34",
+    "formula": "head->prev=NULL;tail->next=NULL.",
+    "explain": "Nối hai chiều và xuất cả xuôi lẫn ngược.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Nút mới có prev,next khởi tạo NULL.</li><li>Danh sách rỗng:gán cả head và tail.</li><li>Không rỗng:nối tail-&gt;next=p,p-&gt;prev=tail rồi cập nhật tail.</li><li>Duyệt ngược dùng prev,không tìm lại nút trước.</li></ol><h3>Ví dụ và đối chiếu</h3><p>1,2,3 →xuôi1,2,3;ngược3,2,1.</p><h3>Chi phí</h3><p>Có tail:thêm cuối O(1);duyệt O(n);thêm bộ nhớ prev.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Slide Cương trang30 viết pre nhưng khai báo prev;phải thống nhất prev.</div>",
+    "programs": [
+      "van-doubly"
+    ],
+    "group": "list"
+  },
+  {
+    "id": "van-learn-circular",
+    "teacher": "van",
+    "title": "Danh sách liên kết vòng",
+    "source": "5_DanhSachLienKet slide31",
+    "formula": "tail->next=head;dừng khi quay về head.",
+    "explain": "Không duyệt bằng điều kiện p!=NULL trên danh sách vòng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Giữ head,tail.</li><li>Nút cuối luôn trỏ lại head.</li><li>Nếu rỗng không vào do...while.</li><li>Sau một vòng trở lại head phải dừng;hủy danh sách bằng cách cắt vòng trước.</li></ol><h3>Ví dụ và đối chiếu</h3><p>1,2,3 được in đúng một lần.</p><h3>Chi phí</h3><p>Thêm cuối có tail O(1);duyệt/hủy O(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không dùng LV() đơn trên một danh sách vòng vì helper đó đi đến NULL sẽ không dừng.</div>",
+    "programs": [
+      "van-circular"
+    ],
+    "group": "list"
+  },
+  {
+    "id": "van-learn-polynomial",
+    "teacher": "van",
+    "title": "Cộng đa thức bằng danh sách hạng tử",
+    "source": "5_DanhSachLienKet slide36",
+    "formula": "Cùng số mũ:cộng hệ số;khác mũ:giữ hạng mũ lớn trước.",
+    "explain": "Hai danh sách đầu vào được sắp giảm số mũ.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Mỗi nút giữ hệ số và số mũ.</li><li>Chọn số mũ lớn hơn;trùng mũ cộng hệ số và tiến cả hai con trỏ.</li><li>Không thêm hệ số0 vào kết quả.</li><li>Ví dụ/đầu vào yêu cầu số mũ giảm nghiêm ngặt,không âm.</li></ol><h3>Ví dụ và đối chiếu</h3><p>(3x²+2)+(−3x²+4x) →4x+2.</p><h3>Chi phí</h3><p>O(m+n) thời gian;bộ nhớ kết quả O(m+n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không cộng số mũ khi cộng đa thức;không bỏ những hạng còn lại của một phía.</div>",
+    "programs": [
+      "van-polynomial"
+    ],
+    "group": "list"
+  },
+  {
+    "id": "cuong-learn-stack-array",
+    "teacher": "cuong",
+    "title": "Stack bằng mảng cố định",
+    "source": "Stack.pdf trang8–18",
+    "formula": "Rỗng top=−1;đầy top=capacity−1;push/pop O(1).",
+    "explain": "Cài stack có sức chứa,không dùng −1 làm cả dữ liệu lẫn mã lỗi.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Kiểm tra đầy trước push.</li><li>Tăng top rồi ghi phần tử.</li><li>Kiểm tra rỗng trước pop;trả dữ liệu qua tham chiếu.</li><li>Phân biệt topIndex với phương thức xem đỉnh để tránh trùng tên field/method trong slide.</li></ol><h3>Ví dụ và đối chiếu</h3><p>capacity2;push5,push6,push7 →FULL;pop→6.</p><h3>Chi phí</h3><p>O(1) thao tác,O(capacity) bộ nhớ.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Mảng cấp phát khi chạy vẫn là stack dung lượng cố định nếu không tự mở rộng.</div>",
+    "programs": [
+      "cuong-stack-array"
+    ],
+    "group": "stack"
+  },
+  {
+    "id": "cuong-learn-stack-stl",
+    "teacher": "cuong",
+    "title": "Sử dụng std::stack",
+    "source": "Stack.pdf trang25",
+    "formula": "top() xem;pop() xóa và không trả giá trị.",
+    "explain": "Kiểm tra empty trước khi đọc top.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Push đưa vào đỉnh.</li><li>Đọc top trước rồi mới gọi pop.</li><li>Snapshot trình bày từ đáy bên trái đến đỉnh bên phải.</li></ol><h3>Ví dụ và đối chiếu</h3><p>push1,push2,pop →2;còn1.</p><h3>Chi phí</h3><p>Các thao tác cơ bảnO(1) với container mặc định.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không viết int x=s.pop();vì pop trả void.</div>",
+    "programs": [
+      "cuong-stack-stl"
+    ],
+    "group": "stack"
+  },
+  {
+    "id": "cuong-learn-stack-list",
+    "teacher": "cuong",
+    "title": "Stack bằng DSLK",
+    "source": "Stack.pdf trang19–24;Review mục5",
+    "formula": "top là head;push đầu,pop đầu.",
+    "explain": "Node.data,next và một con trỏ top.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tạo nút p;p-&gt;next=top;top=p.</li><li>Pop giữ nút cũ,chuyển top rồi delete.</li><li>Danh sách không có sức chứa tĩnh nhưng vẫn có thể hết bộ nhớ.</li></ol><h3>Ví dụ và đối chiếu</h3><p>push1,push2,pop→2;đỉnh còn1.</p><h3>Chi phí</h3><p>Push/popO(1);n nútO(n)bộ nhớ.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Slide nói “không bao giờ đầy” cần hiểu không có giới hạn mảng cố định,chứ không phải bộ nhớ vô hạn.</div>",
+    "programs": [
+      "cuong-stack-list"
+    ],
+    "group": "stack"
+  },
+  {
+    "id": "cuong-learn-queue-stl",
+    "teacher": "cuong",
+    "title": "Sử dụng std::queue",
+    "source": "Queue.pdf,ứng dụng và giao diện FIFO",
+    "formula": "FIFO:front lấy trước;push thêm sau.",
+    "explain": "Không dùng top cho queue;dùng front.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Push vào cuối.</li><li>Đọc front trước pop.</li><li>Empty bảo vệ thao tác khi hàng rỗng.</li></ol><h3>Ví dụ và đối chiếu</h3><p>push1,push2,pop→1;còn2.</p><h3>Chi phí</h3><p>O(1) thao tác cơ bản.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Queue thường không phải trình quản lý nút Back/Forward của trình duyệt;ứng dụng đó thường dùng hai stack.</div>",
+    "programs": [
+      "cuong-queue-stl"
+    ],
+    "group": "queue"
+  },
+  {
+    "id": "cuong-learn-queue-circular",
+    "teacher": "cuong",
+    "title": "Queue mảng vòng:front,rear,counter",
+    "source": "Queue.pdf trang10–21",
+    "formula": "rear=(rear+1)%capacity;front=(front+1)%capacity.",
+    "explain": "Giữ counter để phân biệt rỗng/đầy và tận dụng ô trống đầu mảng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>front0,rear−1,counter0 khi mới tạo.</li><li>Đầy counter=cap,rỗng counter=0.</li><li>Chỉ di chuyển chỉ số,không dịch tất cả phần tử khi dequeue.</li><li>Xuất phần tử i bằng(front+i)%capacity.</li></ol><h3>Ví dụ và đối chiếu</h3><p>cap3;thêm1,2,3;lấy1;thêm4 →FIFO2,3,4,dù4 ở ô0.</p><h3>Chi phí</h3><p>Enqueue/dequeueO(1);duyệtO(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Ô đã dequeue có thể còn số cũ trong mảng nhưng không còn là phần tử hợp lệ của queue.</div>",
+    "programs": [
+      "cuong-queue-circular"
+    ],
+    "group": "queue"
+  },
+  {
+    "id": "cuong-learn-queue-list",
+    "teacher": "cuong",
+    "title": "Queue DSLK với front và rear",
+    "source": "Queue.pdf trang23–31",
+    "formula": "Enqueue ở rear;dequeue ở front.",
+    "explain": "Đặt rear=NULL khi xóa nút cuối.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Rỗng:cả front,rear=NULL.</li><li>Thêm đầu tiên gán cả hai.</li><li>Lấy nút cuối cùng phải xóa cả rear để không treo con trỏ.</li><li>Không dùng counter chưa được khai báo như một đoạn in ở slide.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Thêm1,lấy1,thêm2 hoạt động đúng vì rear đã đặt lại.</p><h3>Chi phí</h3><p>Cả enqueue/dequeueO(1).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không dùng rear-&gt;next sau khi nút cuối đã delete.</div>",
+    "programs": [
+      "cuong-queue-list"
+    ],
+    "group": "queue"
+  },
+  {
+    "id": "cuong-learn-base",
+    "teacher": "cuong",
+    "title": "Đổi hệ cơ số bằng stack",
+    "source": "Stack.pdf trang27–29",
+    "formula": "n=b×q+r;đẩy r rồi đọc đảo thứ tự.",
+    "explain": "Ví dụ hỗ trợ cơ số2..16,số nguyên không âm.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Dùng do...while để n=0 vẫn có một chữ số0.</li><li>Lưu số dư từ hàng thấp đến cao.</li><li>Đọc stack để in từ hàng cao xuống thấp.</li></ol><h3>Ví dụ và đối chiếu</h3><p>53 hệ10=110101 hệ2;28=34 hệ8;72=1020 hệ4.</p><h3>Chi phí</h3><p>O(log_b n) thời gian/bộ nhớ với n&gt;0.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Slide ghi72 hệ10=1024 hệ4 là sai vì hệ4 không có chữ số4;đúng là1020.</div>",
+    "programs": [
+      "cuong-base"
+    ],
+    "group": "stack"
+  },
+  {
+    "id": "cuong-learn-brackets",
+    "teacher": "cuong",
+    "title": "Kiểm tra ngoặc đúng",
+    "source": "Stack.pdf trang31–32",
+    "formula": "Ngoặc đóng phải khớp ngoặc mở gần nhất chưa ghép.",
+    "explain": "Kiểm tra cả sai loại,thiếu mở và thừa mở.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Mở:push.</li><li>Đóng:phải có đỉnh và đúng loại.</li><li>Kết thúc phải stackrỗng.</li></ol><h3>Ví dụ và đối chiếu</h3><p>[()] đúng;[(]) sai.</p><h3>Chi phí</h3><p>O(n) thời gian,O(n)bộ nhớ.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Đếm số mở bằng số đóng chưa đủ chứng minh thứ tự đúng.</div>",
+    "programs": [
+      "cuong-brackets"
+    ],
+    "group": "stack"
+  },
+  {
+    "id": "van-learn-stack-stl",
+    "teacher": "van",
+    "title": "Sử dụng std::stack",
+    "source": "6_NganXepHangDoi slide3–5",
+    "formula": "top() xem;pop() xóa và không trả giá trị.",
+    "explain": "Kiểm tra empty trước khi đọc top.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Push đưa vào đỉnh.</li><li>Đọc top trước rồi mới gọi pop.</li><li>Snapshot trình bày từ đáy bên trái đến đỉnh bên phải.</li></ol><h3>Ví dụ và đối chiếu</h3><p>push1,push2,pop →2;còn1.</p><h3>Chi phí</h3><p>Các thao tác cơ bảnO(1) với container mặc định.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không viết int x=s.pop();vì pop trả void.</div>",
+    "programs": [
+      "van-stack-stl"
+    ],
+    "group": "stack"
+  },
+  {
+    "id": "van-learn-queue-stl",
+    "teacher": "van",
+    "title": "Sử dụng std::queue",
+    "source": "6_NganXepHangDoi slide18–20",
+    "formula": "FIFO:front lấy trước;push thêm sau.",
+    "explain": "Không dùng top cho queue;dùng front.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Push vào cuối.</li><li>Đọc front trước pop.</li><li>Empty bảo vệ thao tác khi hàng rỗng.</li></ol><h3>Ví dụ và đối chiếu</h3><p>push1,push2,pop→1;còn2.</p><h3>Chi phí</h3><p>O(1) thao tác cơ bản.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Queue thường không phải trình quản lý nút Back/Forward của trình duyệt;ứng dụng đó thường dùng hai stack.</div>",
+    "programs": [
+      "van-queue-stl"
+    ],
+    "group": "queue"
+  },
+  {
+    "id": "van-learn-base",
+    "teacher": "van",
+    "title": "Đổi hệ cơ số bằng stack",
+    "source": "6_NganXepHangDoi slide6–8",
+    "formula": "n=b×q+r;đẩy r rồi đọc đảo thứ tự.",
+    "explain": "Ví dụ hỗ trợ cơ số2..16,số nguyên không âm.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Dùng do...while để n=0 vẫn có một chữ số0.</li><li>Lưu số dư từ hàng thấp đến cao.</li><li>Đọc stack để in từ hàng cao xuống thấp.</li></ol><h3>Ví dụ và đối chiếu</h3><p>53 hệ10=110101 hệ2;28=34 hệ8;72=1020 hệ4.</p><h3>Chi phí</h3><p>O(log_b n) thời gian/bộ nhớ với n&gt;0.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Slide ghi72 hệ10=1024 hệ4 là sai vì hệ4 không có chữ số4;đúng là1020.</div>",
+    "programs": [
+      "van-base"
+    ],
+    "group": "stack"
+  },
+  {
+    "id": "cuong-learn-infix-postfix",
+    "teacher": "cuong",
+    "title": "Trung tố → hậu tố",
+    "source": "Stack.pdf trang42–47",
+    "formula": "^ kết hợp phải;+,−,*,/ kết hợp trái.",
+    "explain": "Dùng stack toán tử;giữ đúng thứ tự khi toán tử cùng ưu tiên.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tách token:mỗi tên/số nhiều chữ số được giữ nguyên.</li><li>Hậu tố quét trái→phải;tiền tố đảo hướng/đổi ngoặc rồi đảo kết quả.</li><li>Pop khi đỉnh ưu tiên cao hơn;ưu tiên bằng phải xét tính kết hợp của toán tử.</li><li>Bỏ cặp ngoặc khỏi kết quả.</li><li>Kiểm tra số toán hạng/toán tử trước khi chấp nhận.</li></ol><h3>Ví dụ và đối chiếu</h3><p>a+(b*c)/(d-e) →a b c * d e - / +.</p><h3>Chi phí</h3><p>O(n) thời gian/O(n)bộ nhớ theo số token.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">^ là lũy thừa trong ngôn ngữ biểu thức này;trong C++ ^ là XOR,phải dùng pow để tính. Không hỗ trợ dấu âm đơn ngôi/hàm/dấu phẩy thập phân ở đầu vào trung tố.</div>",
+    "programs": [
+      "cuong-infix-postfix"
+    ],
+    "group": "expression"
+  },
+  {
+    "id": "cuong-learn-postfix-eval",
+    "teacher": "cuong",
+    "title": "Tính giá trị hậu tố",
+    "source": "Stack.pdf trang36–41",
+    "formula": "Hậu tố:pop phải trước trái.Tiền tố quét ngược:pop trái trước phải.",
+    "explain": "Các token cách nhau bằng khoảng trắng,hỗ trợ số nhiều chữ số và số âm.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Số:push.</li><li>Toán tử:cần ít nhất2số.</li><li>Phân biệt toán hạng trái/phải cho trừ,chia,mũ.</li><li>Kết thúc chỉ còn đúng1giá trị.</li></ol><h3>Ví dụ và đối chiếu</h3><p>7 8 + 3 2 + / →3.</p><h3>Chi phí</h3><p>O(n) thời gian/O(n)bộ nhớ.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không đảo hai số khi thực hiện a−b,a/b.Các lỗi thiếu toán hạng,chia0 phải được báo.</div>",
+    "programs": [
+      "cuong-postfix-eval"
+    ],
+    "group": "expression"
+  },
+  {
+    "id": "cuong-learn-infix-prefix",
+    "teacher": "cuong",
+    "title": "Trung tố → tiền tố",
+    "source": "Stack.pdf trang42–47",
+    "formula": "^ kết hợp phải;+,−,*,/ kết hợp trái.",
+    "explain": "Dùng stack toán tử;giữ đúng thứ tự khi toán tử cùng ưu tiên.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tách token:mỗi tên/số nhiều chữ số được giữ nguyên.</li><li>Hậu tố quét trái→phải;tiền tố đảo hướng/đổi ngoặc rồi đảo kết quả.</li><li>Pop khi đỉnh ưu tiên cao hơn;ưu tiên bằng phải xét tính kết hợp của toán tử.</li><li>Bỏ cặp ngoặc khỏi kết quả.</li><li>Kiểm tra số toán hạng/toán tử trước khi chấp nhận.</li></ol><h3>Ví dụ và đối chiếu</h3><p>a+(b*c)/(d-e) →a b c * d e - / +.</p><h3>Chi phí</h3><p>O(n) thời gian/O(n)bộ nhớ theo số token.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">^ là lũy thừa trong ngôn ngữ biểu thức này;trong C++ ^ là XOR,phải dùng pow để tính. Không hỗ trợ dấu âm đơn ngôi/hàm/dấu phẩy thập phân ở đầu vào trung tố.</div>",
+    "programs": [
+      "cuong-infix-prefix"
+    ],
+    "group": "expression"
+  },
+  {
+    "id": "cuong-learn-prefix-eval",
+    "teacher": "cuong",
+    "title": "Tính giá trị tiền tố",
+    "source": "Stack.pdf trang36–41",
+    "formula": "Hậu tố:pop phải trước trái.Tiền tố quét ngược:pop trái trước phải.",
+    "explain": "Các token cách nhau bằng khoảng trắng,hỗ trợ số nhiều chữ số và số âm.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Số:push.</li><li>Toán tử:cần ít nhất2số.</li><li>Phân biệt toán hạng trái/phải cho trừ,chia,mũ.</li><li>Kết thúc chỉ còn đúng1giá trị.</li></ol><h3>Ví dụ và đối chiếu</h3><p>7 8 + 3 2 + / →3.</p><h3>Chi phí</h3><p>O(n) thời gian/O(n)bộ nhớ.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không đảo hai số khi thực hiện a−b,a/b.Các lỗi thiếu toán hạng,chia0 phải được báo.</div>",
+    "programs": [
+      "cuong-prefix-eval"
+    ],
+    "group": "expression"
+  },
+  {
+    "id": "van-learn-infix-postfix",
+    "teacher": "van",
+    "title": "Trung tố → hậu tố",
+    "source": "6_NganXepHangDoi slide14–17",
+    "formula": "^ kết hợp phải;+,−,*,/ kết hợp trái.",
+    "explain": "Dùng stack toán tử;giữ đúng thứ tự khi toán tử cùng ưu tiên.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tách token:mỗi tên/số nhiều chữ số được giữ nguyên.</li><li>Hậu tố quét trái→phải;tiền tố đảo hướng/đổi ngoặc rồi đảo kết quả.</li><li>Pop khi đỉnh ưu tiên cao hơn;ưu tiên bằng phải xét tính kết hợp của toán tử.</li><li>Bỏ cặp ngoặc khỏi kết quả.</li><li>Kiểm tra số toán hạng/toán tử trước khi chấp nhận.</li></ol><h3>Ví dụ và đối chiếu</h3><p>a+(b*c)/(d-e) →a b c * d e - / +.</p><h3>Chi phí</h3><p>O(n) thời gian/O(n)bộ nhớ theo số token.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">^ là lũy thừa trong ngôn ngữ biểu thức này;trong C++ ^ là XOR,phải dùng pow để tính. Không hỗ trợ dấu âm đơn ngôi/hàm/dấu phẩy thập phân ở đầu vào trung tố.</div>",
+    "programs": [
+      "van-infix-postfix"
+    ],
+    "group": "expression"
+  },
+  {
+    "id": "van-learn-postfix-eval",
+    "teacher": "van",
+    "title": "Tính giá trị hậu tố",
+    "source": "6_NganXepHangDoi slide9–13",
+    "formula": "Hậu tố:pop phải trước trái.Tiền tố quét ngược:pop trái trước phải.",
+    "explain": "Các token cách nhau bằng khoảng trắng,hỗ trợ số nhiều chữ số và số âm.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Số:push.</li><li>Toán tử:cần ít nhất2số.</li><li>Phân biệt toán hạng trái/phải cho trừ,chia,mũ.</li><li>Kết thúc chỉ còn đúng1giá trị.</li></ol><h3>Ví dụ và đối chiếu</h3><p>7 8 + 3 2 + / →3.</p><h3>Chi phí</h3><p>O(n) thời gian/O(n)bộ nhớ.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không đảo hai số khi thực hiện a−b,a/b.Các lỗi thiếu toán hạng,chia0 phải được báo.</div>",
+    "programs": [
+      "van-postfix-eval"
+    ],
+    "group": "expression"
+  },
+  {
+    "id": "cuong-learn-tree",
+    "teacher": "cuong",
+    "title": "Cây nhị phân và ba thứ tự duyệt",
+    "source": "bst.pdf trang3–19",
+    "formula": "NLR:gốc,trái,phải;LNR:trái,gốc,phải;LRN:trái,phải,gốc.",
+    "explain": "Chiều cao theo cạnh:rỗng−1,lá0.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Mỗi nút giữ hai con trỏ trái/phải.</li><li>Gặp NULL thì dừng.</li><li>Vị trí lệnh thăm trong hàm quyết định NLR/LNR/LRN.</li><li>Đếm=1+đếm trái+đếm phải,chiều cao=1+max(htrái,hphải).</li></ol><h3>Ví dụ và đối chiếu</h3><p>Mảng mức20,8,27,2,13,24,33 dựng cây7nút.</p><h3>Chi phí</h3><p>Duyệt/đếm/chiều caoO(n);stackO(h).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Cây nhị phân không mặc nhiên là BST.LNR chỉ tăng nếu cây thỏa BST.</div>",
+    "programs": [
+      "cuong-tree"
+    ],
+    "group": "tree"
+  },
+  {
+    "id": "cuong-learn-bst",
+    "teacher": "cuong",
+    "title": "BST:tìm,thêm,xóa ba trường hợp",
+    "source": "bst.pdf trang20–34;Review mục6",
+    "formula": "Mọi khóa trái<gốc<mọi khóa phải;khóa trùng bỏ qua.",
+    "explain": "Nút hai con thay bằng khóa nhỏ nhất cây phải theo bài giảng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tìm/thêm chỉ đi một nhánh theo so sánh.</li><li>Lá:đổi con trỏ vềNULL rồi delete.</li><li>Một con:cho con trỏ của cha trỏ trực tiếp con còn lại.</li><li>Hai con:copy khóa successor rồi xóa successor trong cây phải.</li></ol><h3>Ví dụ và đối chiếu</h3><p>20,8,27,2,13,24,33;xóa20→gốc24.</p><h3>Chi phí</h3><p>O(h) mỗi thao tác;BST lệch có h=Θ(n),không bảo đảm logn.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Chỉ so gốc với hai con chưa đủ kiểm tra toàn bộ tính chất BST.Lưu thứ tự thêm làm thay đổi hình cây.</div>",
+    "programs": [
+      "cuong-bst"
+    ],
+    "group": "bst"
+  },
+  {
+    "id": "cuong-learn-avl",
+    "teacher": "cuong",
+    "title": "AVL:chèn,xóa và bốn kiểu cân bằng",
+    "source": "AVL tree (1).pdf trang7–39",
+    "formula": "BF=h(trái)−h(phải);rỗng−1,lá0.",
+    "explain": "Giữ dấu cân bằng và cách đặt tên phép quay riêng của từng thầy.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Thêm/xóa như BST.</li><li>Cập nhật height và bal từ hai con.</li><li>Lệch ngoài:quay đơn;lệch trong:quay con rồi quay gốc.</li><li>Khi xóa,tiếp tục kiểm tra các tổ tiên,không dừng sau một phép quay.</li><li>Kiểm thử cả thứ tự BST lẫn chênh lệch chiều cao tại mọi nút.</li></ol><h3>Ví dụ và đối chiếu</h3><p>30,20,10 tạo LL→đưa20lên;30,10,20 tạoLR→hai phép quay.</p><h3>Chi phí</h3><p>O(logn) mỗi lần thêm/xóa khi height được lưu;quay O(1).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">BF0 chỉ nói hai chiều cao bằng nhau,không bảo đảm số nút hai phía bằng nhau.</div>",
+    "programs": [
+      "cuong-avl"
+    ],
+    "group": "avl"
+  },
+  {
+    "id": "van-learn-tree",
+    "teacher": "van",
+    "title": "Cây nhị phân và ba thứ tự duyệt",
+    "source": "7_CayNhiPhan slide2–18",
+    "formula": "NLR:gốc,trái,phải;LNR:trái,gốc,phải;LRN:trái,phải,gốc.",
+    "explain": "Code này đo chiều cao theo số nút:rỗng0,lá1;đổi về số cạnh bằng h−1 cho cây không rỗng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Mỗi nút giữ hai con trỏ trái/phải.</li><li>Gặp NULL thì dừng.</li><li>Vị trí lệnh thăm trong hàm quyết định NLR/LNR/LRN.</li><li>Đếm=1+đếm trái+đếm phải,chiều cao=1+max(htrái,hphải).</li></ol><h3>Ví dụ và đối chiếu</h3><p>Mảng mức20,8,27,2,13,24,33 dựng cây7nút.</p><h3>Chi phí</h3><p>Duyệt/đếm/chiều caoO(n);stackO(h).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Cây nhị phân không mặc nhiên là BST.LNR chỉ tăng nếu cây thỏa BST.</div>",
+    "programs": [
+      "van-tree"
+    ],
+    "group": "tree"
+  },
+  {
+    "id": "van-learn-bst",
+    "teacher": "van",
+    "title": "BST:tìm,thêm,xóa ba trường hợp",
+    "source": "8_CauTrucTimKiem slide3–18",
+    "formula": "Mọi khóa trái<gốc<mọi khóa phải;khóa trùng bỏ qua.",
+    "explain": "Nút hai con thay bằng khóa nhỏ nhất cây phải theo bài giảng.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tìm/thêm chỉ đi một nhánh theo so sánh.</li><li>Lá:đổi con trỏ vềNULL rồi delete.</li><li>Một con:cho con trỏ của cha trỏ trực tiếp con còn lại.</li><li>Hai con:copy khóa successor rồi xóa successor trong cây phải.</li></ol><h3>Ví dụ và đối chiếu</h3><p>20,8,27,2,13,24,33;xóa20→gốc24.</p><h3>Chi phí</h3><p>O(h) mỗi thao tác;BST lệch có h=Θ(n),không bảo đảm logn.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Chỉ so gốc với hai con chưa đủ kiểm tra toàn bộ tính chất BST.Lưu thứ tự thêm làm thay đổi hình cây.</div>",
+    "programs": [
+      "van-bst"
+    ],
+    "group": "bst"
+  },
+  {
+    "id": "van-learn-avl",
+    "teacher": "van",
+    "title": "AVL:chèn,xóa và bốn kiểu cân bằng",
+    "source": "8_CauTrucTimKiem slide19–39",
+    "formula": "bal=h(phải)−h(trái);LH=−1,EQ=0,RH=1.",
+    "explain": "Giữ dấu cân bằng và cách đặt tên phép quay riêng của từng thầy.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Thêm/xóa như BST.</li><li>Cập nhật height và bal từ hai con.</li><li>Lệch ngoài:quay đơn;lệch trong:quay con rồi quay gốc.</li><li>Khi xóa,tiếp tục kiểm tra các tổ tiên,không dừng sau một phép quay.</li><li>Kiểm thử cả thứ tự BST lẫn chênh lệch chiều cao tại mọi nút.</li></ol><h3>Ví dụ và đối chiếu</h3><p>30,20,10 tạo LL→đưa20lên;30,10,20 tạoLR→hai phép quay.</p><h3>Chi phí</h3><p>O(logn) mỗi lần thêm/xóa khi height được lưu;quay O(1).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Thầy Văn gọi RotateLeft cho việc đưa con trái lên (quay vật lý phải).Giữ tên theo slide và giải thích bằng con trỏ;không trộn với tên Cương.</div>",
+    "programs": [
+      "van-avl"
+    ],
+    "group": "avl"
+  },
+  {
+    "id": "van-learn-hash",
+    "teacher": "van",
+    "title": "Bảng băm móc xích,chèn đầu",
+    "source": "8_CauTrucTimKiem slide40–51",
+    "formula": "H(x)=((x%m)+m)%m;hệ số tải α=n/m.",
+    "explain": "Mỗi ô là head một DSLK;khóa cùng hash được giữ cùng chuỗi.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tính bucket từ hàm băm.</li><li>Chèn đầu chuỗi như bài tập cuối slide.</li><li>Tìm vẫn phải so khóa trong bucket để xử lý đụng độ.</li><li>Hủy từng chuỗi.</li></ol><h3>Ví dụ và đối chiếu</h3><p>m=7,8 và15 vào cùng ô1;chèn đầu nên15đứng trước8.</p><h3>Chi phí</h3><p>Kỳ vọng O(1+α) nếu phân bố tốt;xấu O(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Hash trùng không có nghĩa khóa bằng nhau. MD5 không được coi an toàn chống va chạm cho ứng dụng bảo mật;ở đây chỉ học bảng băm.</div>",
+    "programs": [
+      "van-hash"
+    ],
+    "group": "hash"
+  },
+  {
+    "id": "cuong-learn-priority",
+    "teacher": "cuong",
+    "title": "Hàng đợi ưu tiên",
+    "source": "Queue.pdf trang36–37",
+    "formula": "Max-heap lấy giá trị lớn nhất;không phảiFIFO.",
+    "explain": "Giao diện STL phục vụ ví dụ ưu tiên lớn trước.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Đưa từng yêu cầu vào priority_queue.</li><li>top trả phần tử ưu tiên lớn nhất.</li><li>pop xóa phần tử vừa xem.</li></ol><h3>Ví dụ và đối chiếu</h3><p>3,1,5,2 →5,3,2,1.</p><h3>Chi phí</h3><p>Push/popO(logn);topO(1).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Các phần tử cùng ưu tiên không tự có thứ tựFIFO nếu không thêm khóa phụ thời điểm.</div>",
+    "programs": [
+      "cuong-priority"
+    ],
+    "group": "queue"
+  },
+  {
+    "id": "cuong-learn-list-practice",
+    "teacher": "cuong",
+    "title": "12 bài DSLK trong tài liệu tổng hợp",
+    "source": "TongHopCodeCTDL-GT.pdf trang20–23",
+    "formula": "Chuyển quyền sở hữu nút: nối xong phải đặt danh sách nguồn về NULL.",
+    "explain": "Tài liệu ghi “18 bài” nhưng thực tế chỉ đánh số 1–12. Mẫu này cài đủ 12 hàm và gọi lần lượt.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Count duyệt và đếm, GetNth đánh số từ 0; kiểm tra chỉ số trước khi đọc.</li><li>Pop lấy dữ liệu rồi tháo và hủy đầu; DeleteList lặp đến NULL.</li><li>InsertNth dùng Node** trỏ đến liên kết cần sửa; SortedInsert nhận nút đã cấp phát.</li><li>InsertSort tách từng nút rồi gọi SortedInsert, không cấp phát lại.</li><li>RemoveDuplicates chỉ áp dụng danh sách đã sắp.</li><li>FrontBackSplit dùng slow/fast, Append đặt b=NULL; MoveNode chuyển nút, không copy.</li><li>ShuffleMerge dùng nút giả trên stack để nối xen kẽ; cuối cùng DeleteList đúng một lần.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Đầu vào n rồi n số. Chương trình in các mốc: Count(2), GetNth(0), Pop(9), dãy đã sắp bỏ trùng, dãy ghép xen kẽ, kết quả head==NULL.</p><h3>Chi phí</h3><p>Count/GetNth/DeleteList/Append/split/remove/merge:O(n);Pop/MoveNode:O(1);InsertSort:O(n²).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không giữ hai con trỏ sở hữu cùng một chuỗi rồi delete cả hai. SortedInsert đòi đầu vào đã sắp.</div>",
+    "programs": [
+      "cuong-list-practice"
+    ],
+    "group": "list"
+  },
+  {
+    "id": "cuong-learn-matrix",
+    "teacher": "cuong",
+    "title": "Mảng động một và hai chiều",
+    "source": "Review mục1–2;biên soạn minh họa",
+    "formula": "new int[n] ↔ delete[];new int*[r] và r hàng ↔ hủy r hàng trước bảng con trỏ.",
+    "explain": "Phân biệt con trỏ đến int, con trỏ đến con trỏ và tham chiếu; hàm nhận mảng cần nhận cả kích thước.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Cấp bảng r con trỏ; từng con trỏ sở hữu một hàng c số nguyên.</li><li>Đọc a[i][j] rồi truyền a[i] và c vào Tang.</li><li>Tang sửa đúng dữ liệu gốc qua con trỏ.</li><li>Hủy từng hàng bằng delete[], sau đó hủy bảng và gán NULL.</li></ol><h3>Ví dụ và đối chiếu</h3><p>2×3:1 2 3/4 5 6→2 3 4/5 6 7.</p><h3>Chi phí</h3><p>Đọc/sửa/hủy O(r·c); bộ nhớ O(r·c+r).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">int** không tương đương int a[R][C]; mảng tĩnh 2D suy biến thành con trỏ tới hàng, không thành int**.</div>",
+    "programs": [
+      "cuong-matrix"
+    ],
+    "group": "array"
+  },
+  {
+    "id": "cuong-learn-expression-tree",
+    "teacher": "cuong",
+    "title": "Cây biểu thức từ hậu tố",
+    "source": "bst.pdf trang11–16;Review mục6",
+    "formula": "Toán tử nhị phân: pop phải trước, trái sau; NLR=tiền tố;LRN=hậu tố.",
+    "explain": "Dùng stack<Node*> dựng cây; mỗi token được lưu một lần. Biểu thức trung tố phải giữ ngoặc.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Token là toán hạng: tạo lá rồi push.</li><li>Token toán tử: lấy cây phải trước, cây trái sau; gắn hai cây vào nút toán tử.</li><li>Cuối cùng stack phải còn đúng một gốc.</li><li>NLR in tiền tố; LNR thêm ngoặc quanh toán tử; LRN in lại hậu tố.</li><li>Hủy hậu tự để giải phóng con trước cha.</li></ol><h3>Ví dụ và đối chiếu</h3><p>a b c * + → cây gốc+,trái a,phải* với hai lá b,c;trung tố (a+(b*c)).</p><h3>Chi phí</h3><p>Dựng và duyệt O(n);bộ nhớ O(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Mẫu chỉ nhận toán tử hai ngôi; dấu âm của số như -12 là một toán hạng, không phải toán tử trừ.</div>",
+    "programs": [
+      "cuong-expression-tree"
+    ],
+    "group": "tree"
+  },
+  {
+    "id": "van-learn-factorization",
+    "teacher": "van",
+    "title": "Phân tích thừa số nguyên tố bằng đệ quy",
+    "source": "2_GiaiThuatDeQuy slide33",
+    "formula": "n=d·q;in d rồi phân tích q với ước bắt đầu d.",
+    "explain": "Bài tập nguồn:90=2×3×3×5. Giữ ước hiện tại nếu còn chia hết để không bỏ mất số mũ.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Tìm ước nhỏ nhất d≥ước đã dùng.</li><li>Nếu không có ước≤√n thì n còn lại là nguyên tố.</li><li>In d rồi gọi n/d với cùng d,vì d có thể còn lặp.</li><li>Dừng ở n=1;không in1 như thừa số nguyên tố.</li></ol><h3>Ví dụ và đối chiếu</h3><p>90→in2,gọi45→in3,gọi15→in3,gọi5→in5.</p><h3>Chi phí</h3><p>Số phép thử ước O(√n) là chặn trên;độ sâu≤log₂n.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Không tăng d ngay sau mỗi lần chia:nếu90→45 rồi dùng5 thì bỏ thừa số3.</div>",
+    "programs": [
+      "van-factorization"
+    ],
+    "group": "recursion"
+  },
+  {
+    "id": "van-learn-fibonacci-loop",
+    "teacher": "van",
+    "title": "Fibonacci không đệ quy",
+    "source": "2_GiaiThuatDeQuy slide33",
+    "formula": "F1=F2=1;F(n)=F(n−1)+F(n−2).",
+    "explain": "Giải đúng yêu cầu cả không đệ quy và đệ quy trong bài tập nguồn.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Giữ hai số liền trước thay vì toàn bộ dãy.</li><li>Bắt đầu F1=F2=1;với n1/2 trả1.</li><li>Mỗi lượt tính số tiếp rồi dịch a,b.</li></ol><h3>Ví dụ và đối chiếu</h3><p>n5:a,b từ1,1→1,2→2,3→3,5.</p><h3>Chi phí</h3><p>Θ(n) thời gian;O(1) bộ nhớ phụ.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">long long chỉ chứa tới F92 trong quy ước này;không tăng giới hạn mà quên tràn số.</div>",
+    "programs": [
+      "van-fibonacci-loop"
+    ],
+    "group": "recursion"
+  },
+  {
+    "id": "van-learn-knight",
+    "teacher": "van",
+    "title": "Mã đi tuần: thử và quay lui",
+    "source": "2_GiaiThuatDeQuy slide34;bản minh họa bàn nhỏ",
+    "formula": "Mã đi(±2,±1) hoặc(±1,±2);mỗi ô được thăm đúng một lần.",
+    "explain": "Áp dụng khuôn quay lui của chương2. Mẫu giới hạn n≤5 để chạy tay;không gán thêm thuật toán tối ưu như thể có trong slide.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Đánh số bước ở ô hiện tại.</li><li>Đủ n² ô thì thành công.</li><li>Thử8 hướng,nằm trong bảng và chưa thăm mới đi tiếp.</li><li>Nhánh thất bại thì đặt lại0 để nhánh khác thử được.</li><li>Mẫu chỉ dừng ở một lời giải đầu tiên,không đếm mọi hành trình.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Bàn3×3 không có hành trình đủ9ô;bàn5×5 có hành trình từ góc.</p><h3>Chi phí</h3><p>Chặn thô O(8^(n²));thực tế cắt các ô đã thăm;phụ O(n²) gồm bàn và stack.</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Đây là backtracking thuần,có thể rất chậm trên bàn lớn. Nguồn chỉ nêu tên bài,không có đề NTUcoder đầy đủ;đầu vào trên là ví dụ tự biên soạn.</div>",
+    "programs": [
+      "van-knight"
+    ],
+    "group": "backtracking"
+  },
+  {
+    "id": "cuong-learn-tree-statistics",
+    "teacher": "cuong",
+    "title": "Tổng, lá, sao chép và kiểm tra cây",
+    "source": "TongHopCodeCTDL-GT.pdf trang15–17",
+    "formula": "Hậu tự trả đồng thời size,sum,height và các bộ đếm.",
+    "explain": "Một lần duyệt tính các thống kê;tránh gọi tính tổng/chiều cao lại cho mọi nút.",
+    "body": "<h3>Cách hiểu và cách làm</h3><ol class=\"db-steps\"><li>Stats rỗng:size,sum,leaves đều0,height−1.</li><li>Nhận thống kê hai con rồi cộng với đóng góp của gốc.</li><li>Lá đóng góp1 lá và data vào tổng lá.</li><li>So tổng trái/phải,so chiều cao và điều kiện giá trị hai con ngay tại gốc hiện tại.</li><li>Copy cấp nút mới và sao chép sâu hai con;root và copy phải được hủy độc lập.</li><li>LaBST dùng khoảng(lo,hi) truyền từ tổ tiên;Tim trên cây bất kỳ phải có thể tìm cả hai nhánh.</li></ol><h3>Ví dụ và đối chiếu</h3><p>Cây mức20,8,27,2,13,24,33:size7,sum127,4lá,tổng lá72,height2;mọi nhánh hợpBST.</p><h3>Chi phí</h3><p>Tính thống kê/Copy/kiểm traBST/tìm cây bất kỳ O(n);stackO(h);Copy thêmO(n).</p><h3>Lỗi dễ gặp</h3><div class=\"focus-block\">Chỉ so hai khóa con trực tiếp không đủ kiểm traBST. Copy gán con trỏ đơn thuần là sao chép nông,dễ double-delete.</div>",
+    "programs": [
+      "cuong-tree-statistics"
+    ],
+    "group": "tree"
+  }
+]

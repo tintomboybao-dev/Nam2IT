@@ -1,0 +1,118 @@
+[
+  {
+    "id": "cuong-exam-1",
+    "teacher": "cuong",
+    "title": "1. Con trỏ và tham chiếu",
+    "prompt": "Với int x=5;int* p=&x;int** pp=&p;int& r=x; hãy mô tả từng biểu thức,thay đổi x qua ba cách,và cấp/hủy một mảng con trỏ.",
+    "answer": "p giữ địa chỉ x;*p là x;pp giữ địa chỉ biến p;*pp là p;**pp là x;r là bí danh x. *p=8,**pp=9,r=10 đều sửa x. int* a[3] chỉ tạo ba biến con trỏ,không tự tạo ba số nguyên.",
+    "explain": [
+      "Khai báo int* chỉ nêu kiểu:phải gán địa chỉ hợp lệ trước khi dùng *.",
+      "& là lấy địa chỉ trong biểu thức,nhưng int& trong khai báo là kiểu tham chiếu.",
+      "Hàm void tang(int& v){v++;} sửa biến thật;void tang(int v) chỉ sửa bản sao.",
+      "Cấp a[i]=new int(i) rồi delete a[i] từng ô;nếu bảng cũng cấp new int*[3] thì delete[] bảng sau. Không delete &x vì x không do new tạo."
+    ],
+    "programs": [
+      "cuong-pointer",
+      "cuong-matrix"
+    ]
+  },
+  {
+    "id": "cuong-exam-2",
+    "teacher": "cuong",
+    "title": "2. Mảng một và hai chiều",
+    "prompt": "Cấp mảng n số nguyên và ma trận r×c,truyền một hàng vào hàm,chèn x ở k rồi xóa k. Giải thích hướng dịch và cách hủy.",
+    "answer": "Mảng1D:new int[n],hủy delete[]. Ma trận bảng con trỏ:cấp r hàng,mỗi hàng c số;hủy từng hàng rồi delete[] bảng. Chèn dịch phải từ cuối;xóa dịch trái từ vị trí cần xóa.",
+    "explain": [
+      "Kiểm tra0≤k≤n khi chèn,còn chỗ trống;0≤k<n khi xóa.",
+      "Chèn:lặp i=n;i>k;--i,gán a[i]=a[i−1];sau đó a[k]=x,n++.",
+      "Xóa:lặp i=k;i<n−1;++i,gán a[i]=a[i+1];n--.",
+      "int* truyền địa chỉ phần tử đầu,n truyền riêng. int a[][C] khác int**:không ép kiểu để che sai bố trí bộ nhớ.",
+      "Chèn/xóa đầu có Θ(n) lần dịch,cuối O(1) khi còn dung lượng;truy cập chỉ số O(1)."
+    ],
+    "programs": [
+      "cuong-array-edit",
+      "cuong-matrix"
+    ]
+  },
+  {
+    "id": "cuong-exam-3",
+    "teacher": "cuong",
+    "title": "3. Phân tích giải thuật",
+    "prompt": "Đếm for i=1..n,for j=1..i;so sánh với while(n>0)n/=2. Nêu tốt/xấu/trung bình của tìm tuần tự và phân biệt O,Ω,Θ.",
+    "answer": "Hai vòng có n(n+1)/2 lượt,Θ(n²). Chia đôi có⌊log₂n⌋+1 lượt với n>0,Θ(logn). Tìm tuần tự:tốt1,xấu n,trung bình(n+1)/2 nếu chắc tìm thấy và vị trí đều nhau.",
+    "explain": [
+      "Cố định i thì vòng j chạy i lần,cộng i từ1 đến n.",
+      "Bỏ hệ số và bậc thấp để lấy bậc chặt,không bỏ một vòng phụ thuộc n.",
+      "O là chặn trên,Ω chặn dưới,Θ chặn hai phía;không phải ba tên của xấu/tốt/trung bình.",
+      "Trung bình phải phát biểu giả thiết xác suất. Các đường tìm có thể khác nhau dù cùng n."
+    ],
+    "programs": [
+      "cuong-complexity",
+      "cuong-linear",
+      "cuong-binary"
+    ]
+  },
+  {
+    "id": "cuong-exam-4",
+    "teacher": "cuong",
+    "title": "4. Danh sách liên kết",
+    "prompt": "Khai báo,cài chèn/xóa đầu–giữa–cuối,đảo,hủy,tách danh sách;chạy tay1→2→3→4→5 và phân tích chi phí.",
+    "answer": "Đảo cho5→4→3→2→1. Tách ban đầu bằng slow/fast cho1→2→3 và4→5. Các phép thay head phải cập nhật đầu thật;hủy phải delete đủ từng nút.",
+    "explain": [
+      "Chèn đầu:p->next=head;head=p. Chèn giữa nối next mới trước rồi đổi next nút trước.",
+      "Xóa đầu lưu old,đổi head,delete old;giữa/cuối nối bỏ old rồi hủy.",
+      "Đảo dùng prev,cur,next;không thể chỉ đổi cur->next mà chưa giữ đoạn sau.",
+      "Tách slow=head,fast=head->next;fast đi2,slow đi1;back=slow->next,slow->next=NULL.",
+      "List của Cương dùng InsertNode index0..n,Find/Delete trả vị trí1..n hoặc0. Ghi rõ quy ước khi trình bày.",
+      "Ưu:linh hoạt,nối tại chỗ;nhược:tốn next,không truy cập chỉ sốO(1). Tìm vị trí O(n),đổi liên kết tại vị trí đã biết O(1)."
+    ],
+    "programs": [
+      "cuong-list",
+      "cuong-list-practice",
+      "cuong-doubly",
+      "cuong-circular"
+    ]
+  },
+  {
+    "id": "cuong-exam-5",
+    "teacher": "cuong",
+    "title": "5. Stack và biểu thức",
+    "prompt": "Cài stack liên kết;đổi a+(b*c)/(d-e) sang hậu tố/tiền tố;tính2 4 + 4 6 + *. Giải thích điều kiện rỗng/đầy và thứ tự pop.",
+    "answer": "Hậu tố:a b c * d e - / +. Tiền tố:+ a / * b c - d e. Giá trị biểu thức số:(2+4)×(4+6)=60.",
+    "explain": [
+      "StackLIFO;liên kết push/pop ở head. Rỗng khi top=NULL;giới hạn cấp phát khác dung lượng mảng.",
+      "Mảng:topIndex=-1 khi rỗng,capacity−1 khi đầy. Không push đầy/pop rỗng.",
+      "Hậu tố quét trái→phải,pop phải trước,trái sau. Tiền tố quét ngược,pop trái trước,phải sau.",
+      "Đổi biểu thức phải xử lý ngoặc,ưu tiên và kết hợp.^ kết hợp phải;a^b^c=a^(b^c).",
+      "STL:double x=st.top();st.pop();không viết x=st.pop()."
+    ],
+    "programs": [
+      "cuong-stack-array",
+      "cuong-stack-list",
+      "cuong-stack-stl",
+      "cuong-infix-postfix",
+      "cuong-infix-prefix",
+      "cuong-postfix-eval",
+      "cuong-prefix-eval"
+    ]
+  },
+  {
+    "id": "cuong-exam-6",
+    "teacher": "cuong",
+    "title": "6. Cây nhị phân và BST",
+    "prompt": "Khai báo Node,dựng cây biểu thức a b c * +,duyệt ba kiểu;chèn20,8,27,2,13,24,33 vào BST,giải thích chi phí tìm trường hợp xấu.",
+    "answer": "Cây biểu thức gốc+,trái a,phải* với b,c. NLR:+ a * b c;LNR có ngoặc:(a+(b*c));LRN:a b c * +. BST LNR:2,8,13,20,24,27,33.",
+    "explain": [
+      "Node có data,left,right;NULL là cây rỗng. Mỗi hàm đệ quy kiểm tra NULL trước.",
+      "Vị trí thăm:NLR trước,LNR giữa,LRN sau hai lời gọi. Mỗi nút một lần→Θ(n),stackO(h).",
+      "BST thêm theo một đường so sánh,đến NULL thì tạo lá. Chèn20 rồi8 tạo con trái8,chèn27 tạo con phải27.",
+      "Cây nhị phân bất kỳ tìm khóa có thể cần Θ(n). BST tìmO(h),cân bằngO(logn),lệch xấuO(n);tìm ngay gốc tốtO(1).",
+      "Cây lệch n nút cao n−1 cạnh. Nói “nhị phân nên luôn logn” là sai."
+    ],
+    "programs": [
+      "cuong-tree",
+      "cuong-expression-tree",
+      "cuong-bst"
+    ]
+  }
+]

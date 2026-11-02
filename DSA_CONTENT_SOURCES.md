@@ -68,3 +68,11 @@ Các dạng hiển thị:mảng,heap,DSLK đơn/kép/vòng,stack,queue/vòng,cá
 `tests/verify_dsa.py` biên dịch và chạy toàn bộ mã phát hành,so đầu ra với163ca;kiểm tra245mảng ngẫu nhiên,100cập nhật BST/AVL và một số biên. `tests/verify_dsa_memory.py` kiểm tra truy cập bộ nhớ/hành vi không xác định với AddressSanitizer/UBSan cho nhóm con trỏ;LeakSanitizer bị tắt vì giới hạn /proc/ptrace của môi trường.
 
 UI được kiểm tra chức năng bằng DOM mô phỏng. Chưa có kiểm tra trực quan bằng trình duyệt thật trong môi trường này. C# OOP giữ giới hạn xác minh của v7:chưa biên dịch/thực thi ở đây.
+
+## Trình bày v9
+
+`dsa-tables.js` bổ sung bảng lời giải và sơ đồ SVG trực tiếp trong các bài học/mã mẫu. Với stack/queue,bảng giấy diễn giải đủ lệnh nhập,kể cả lệnh thất bại do đầy/rỗng;được kiểm tra trạng thái cuối với trace C++ đã có. Các bảng trace khác giữ đúng mốc quan sát,không tự thêm các bước chưa được ghi.
+
+Tiền tố/hậu tố hiển thị token,phép tính,stack;chuyển trung tố có đầu ra tạm và stack toán tử. Bảng trong trình mô phỏng đồng bộ mốc chạy;chọn một dòng cũng chuyển được tới mốc đó. Ví dụ trên trang lời giải có bộ chọn ca và hình trạng thái riêng.
+
+Cây giữ quan hệ cha–con trái/phải. DSLK dùng chuỗi nút và liên kết đúng dạng đơn/kép/vòng;không biến cấu trúc tuyến tính thành một cây nhị phân sai bản chất. Stack/queue liên kết thể hiện thêm chuỗi nút phía dưới giao diện LIFO/FIFO. Mã C++11 nằm trong mục mở rộng sau phần bảng.

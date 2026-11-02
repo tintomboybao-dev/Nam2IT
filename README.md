@@ -1,14 +1,36 @@
-# Sủi Study Lab v8
+# Sủi Study Lab v9
 
 Website ôn tập bốn môn độc lập: **Toán rời rạc**, **Cơ sở dữ liệu**, **Lập trình hướng đối tượng (OOP/C#)**, **Cấu trúc dữ liệu & giải thuật (DSA/C++11)**. Giao diện sáng/tối,cỡ chữ,danh mục và tiến độ thống nhất. Website hoạt động offline,không cần npm hay đăng nhập.
 
 ## Cập nhật GitHub Pages
 
-Giải nén ZIP rồi upload **các file và thư mục bên trong** vào thư mục gốc repository,ghi đè file cùng tên và giữ các file mới. `index.html` nằm ngay thư mục gốc; giữ cả `oop-code`, `dsa-code` và `dsa-assets` để tải mã nguồn, PDF, PowerPoint và hình đối chiếu. Không upload nguyên ZIP thay cho bộ mã.
+Giải nén ZIP rồi upload **các file và thư mục bên trong** vào thư mục gốc repository,ghi đè file cùng tên và giữ các file mới. `index.html` nằm ngay thư mục gốc; giữ cả `oop-code`, `dsa-code` và `dsa-assets` và `math-assets` để tải mã nguồn, PDF, PowerPoint và hình đối chiếu. Không upload nguyên ZIP thay cho bộ mã.
 
 Commit lên nhánh GitHub Pages đang dùng,chờ triển khai rồi tải lại trang. Tiến độ cũ được giữ khi mở cùng địa chỉ trên cùng trình duyệt và không xóa dữ liệu trang.
 
-## DSA mới: hai lớp học riêng
+## Cập nhật v9
+
+**Toán rời rạc** có thêm danh mục Kiến thức lý thuyết và Bài giảng theo chủ đề:
+
+- 45bài thuộc9nhóm: tập hợp/ánh xạ bổ trợ,nguyên lý đếm,tổ hợp,đếm suy rộng,sinh cấu hình,truy hồi,hàm sinh,nghiệm đặc trưng,tối ưu.
+- Mỗi bài có định nghĩa,công thức,cách áp dụng,ví dụ/bảng,giải thích vì sao đúng,lỗi dễ nhầm và câu tự kiểm tra có đáp án mở được.
+- Ba PDF của Thầy Nguyễn Hải Triều kèm theo:173trang vật lý/124slide đánh số. Các trang lặp do hiệu ứng được gom dưới cùng số slide;đường dẫn mở đúng trang PDF.
+- Ghi chú hiệu chỉnh lỗi mã giả sinh tổ hợp/hoán vị,cấu hình n hậu,nghiệm phức và bài truy hồi nâng cao;không chép lại đáp án sai trong slide.
+- Tìm kiếm không dấu,lọc chủ đề và đánh dấu đã nắm. Tiến độ Toán gồm45lý thuyết+19đề mẫu+50ôn tập=114nội dung. Tiến độ bài tập cũ được giữ.
+
+**DSA** ưu tiên bảng và hình cấu trúc trước code:
+
+- Mỗi bài học/mã mẫu có bảng ví dụ;stack/queue ghi cả thao tác bị từ chối do đầy/rỗng.
+- Tiền tố/hậu tố có cột token,thao tác/phép tính,stack;chuyển trung tố có thêm đầu ra tạm và stack toán tử. Quy tắc thứ tự lấy hai toán hạng được ghi rõ.
+- Stack có hình chồng ô với nhãn top/đáy;queue có front/rear;queue vòng có bảng vị trí vật lý và thứ tự FIFO.
+- Danh sách liên kết có sơ đồ nút,data,next,head,NULL;danh sách kép thêm prev;vòng có liên kết quay về head. Stack/queue cài DSLK thể hiện cả chuỗi nút bên dưới cách nhìn trừu tượng.
+- Cây nhị phân/BST/AVL/cây biểu thức giữ sơ đồ cây đúng liên kết trái/phải. Những bài còn lại ưu tiên bảng chỉ số,giá trị và biến.
+- Bảng dài chia12dòng/trang,kéo ngang khi cần;chọn dòng để xem hình. Trong mục mô phỏng,bảng và bước chạy đồng bộ hai chiều.
+- Mã C++11 được giữ đầy đủ trong mục mở rộng. 68filecode và163ca thực thi từ v8 được giữ nguyên byte;v9 thay phần trình bày và thêm bảng ví dụ.
+
+`math.js`,nhóm `math-*.json`,`dsa-tables.js` là các nguồn mới;giữ thư mục `math-assets` khi upload. Bảng stack/queue là diễn giải thao tác đầy đủ,có đối chiếu trạng thái với trace C++ đã chạy. Các bảng khác ghi các mốc quan sát đã có;không nhận là từng lệnh máy.
+
+## DSA: hai lớp học riêng
 
 Chọn **DSA → Thầy Cương / Thầy Văn**. Mỗi lớp có Tổng quan, Kiến thức & công thức, Mã mẫu C++11, Mô phỏng và Bài giảng; riêng Thầy Cương có thêm Ôn thi giữa kỳ.
 
@@ -60,7 +82,7 @@ Mỗi bài là project riêng;không dán nhiều Main từ nhiều bài vào c�
 
 ## Tiến độ
 
-Toán tiếp tục dùng `sui-study-lab-v3-progress`;CSDL dùng `sui-db-progress` và hỗ trợ dữ liệu cũ `sui-db-done`;OOP dùng `sui-oop-progress`; DSA dùng `sui-dsa-progress`, tách `cuong`/`van` với kiến thức/mã mẫu/ôn thi riêng. Việc chọn đáp án không tự đánh dấu đã nắm;người học tự đánh dấu khi có thể giải thích. Tiến độ lưu trên trình duyệt,không tự đồng bộ nhiều thiết bị.
+Toán tiếp tục dùng `sui-study-lab-v3-progress`;CSDL dùng `sui-db-progress` và hỗ trợ dữ liệu cũ `sui-db-done`;OOP dùng `sui-oop-progress`; Lý thuyết Toán dùng riêng `sui-math-knowledge-progress`; DSA dùng `sui-dsa-progress`, tách `cuong`/`van` với kiến thức/mã mẫu/ôn thi riêng. Việc chọn đáp án không tự đánh dấu đã nắm;người học tự đánh dấu khi có thể giải thích. Tiến độ lưu trên trình duyệt,không tự đồng bộ nhiều thiết bị.
 
 ## Kiểm tra đã chạy
 
@@ -73,6 +95,9 @@ node --check app.js
 node --check db.js
 node --check oop.js
 node --check dsa.js
+node --check math.js
+node --check dsa-tables.js
+python tests/verify_math_theory.py
 python tests/verify_dsa.py
 python tests/verify_dsa_memory.py
 ```

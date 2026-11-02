@@ -1,0 +1,47 @@
+[
+  {
+    "id": "nen-tang",
+    "title": "Tập hợp và ánh xạ",
+    "description": "Kiến thức nền nối với các bài tập cũ; phần bổ trợ ngoài ba PDF mới."
+  },
+  {
+    "id": "dem",
+    "title": "Nguyên lý đếm",
+    "description": "Cộng, nhân, bù trừ, phần bù và Dirichlet."
+  },
+  {
+    "id": "to-hop",
+    "title": "Hoán vị, chỉnh hợp, tổ hợp",
+    "description": "Nhận diện thứ tự, lặp, chia trường hợp và đếm theo nhóm."
+  },
+  {
+    "id": "suy-rong",
+    "title": "Đếm lặp và phân phối",
+    "description": "Stars and Bars, cận dưới/cận trên, phân chia đồ vật."
+  },
+  {
+    "id": "sinh",
+    "title": "Sinh và liệt kê cấu hình",
+    "description": "Thứ tự từ điển, hoán vị/tổ hợp kế tiếp, quay lui và n hậu."
+  },
+  {
+    "id": "truy-hoi",
+    "title": "Hệ thức truy hồi",
+    "description": "Điều kiện đầu, lặp tìm nghiệm, tăng trưởng, Fibonacci và Hà Nội."
+  },
+  {
+    "id": "ham-sinh",
+    "title": "Hàm sinh",
+    "description": "Hệ số, dịch chỉ số, tích chập và ứng dụng đếm."
+  },
+  {
+    "id": "dac-trung",
+    "title": "Nghiệm đặc trưng",
+    "description": "Nghiệm phân biệt, nghiệm lặp, nghiệm phức và vế không thuần nhất."
+  },
+  {
+    "id": "toi-uu",
+    "title": "Bài toán tối ưu",
+    "description": "Phương án, hàm mục tiêu, ba lô, TSP, quy hoạch động và nhánh cận."
+  }
+]

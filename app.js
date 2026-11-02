@@ -34,6 +34,7 @@
     const n=state.doneSamples.size+state.donePractice.size;
     sideLabel.textContent=`${n} / 69 bài`;
     sideBar.style.width=`${100*n/69}%`;
+    mathSyncProgress();
   }
   function route() {
     let path=location.hash.replace(/^#\/?/,'').split('/').filter(Boolean);
@@ -55,13 +56,13 @@
   function completionTag(page,id) {return (page==='samples'?state.doneSamples:state.donePractice).has(id)?'<span class="tag done">Đã hoàn thành</span>':'';}
   function home() {
     const done=state.doneSamples.size+state.donePractice.size;
-    return `<div class="intro-card"><div><div class="eyebrow">SỔ TAY HỌC TẬP / MÔN 01</div><h1>Học công thức.<br><span class="highlight">Hiểu từng bước.</span></h1><p>Trang học Toán rời rạc theo đúng trình tự: nắm công thức tổng quát, đối chiếu bài mẫu có lời giải, sau đó tự vận dụng qua 50 câu luyện tập. Mỗi phần đều có hướng dẫn để Sủi dễ theo dõi và tự học.</p><div class="actions"><a class="btn primary" href="#/formulas">Bắt đầu từ công thức</a><a class="btn" href="#/practice">Đến 50 bài ôn tập</a></div></div><div class="intro-aside"><div><div class="big-number">20</div><div class="stat-label">công thức trọng tâm</div></div><div><div class="big-number">19</div><div class="stat-label">bài mẫu đã giải</div></div><div><div class="big-number">50</div><div class="stat-label">bài luyện tập mới</div></div></div></div>
-    <div class="section-head"><h2>Lộ trình học đề xuất</h2><p>Ba bước từ hiểu đến vận dụng</p></div><div class="path-grid">
-      <a class="path-card" href="#/formulas"><div class="path-index">BƯỚC 01 / NẮM VỮNG</div><h3>Tổng hợp công thức</h3><p>20 công thức có điều kiện áp dụng, cách sử dụng, ví dụ và lỗi thường gặp.</p><span class="link-text">Mở sổ tay công thức →</span></a>
-      <a class="path-card" href="#/samples"><div class="path-index">BƯỚC 02 / HIỂU PHƯƠNG PHÁP</div><h3>19 đề mẫu giải chi tiết</h3><p>Mỗi bài đi từ nhận dạng đề, công thức tổng quát đến các bước thay số và kết luận.</p><span class="link-text">Xem đề mẫu →</span></a>
-      <a class="path-card" href="#/practice"><div class="path-index">BƯỚC 03 / TỰ VẬN DỤNG</div><h3>50 bài ôn tập</h3><p>Tự làm trước, mở gợi ý để xem công thức và ví dụ, cuối cùng mới xem lời giải.</p><span class="link-text">Bắt đầu ôn tập →</span></a></div>
-      <div class="section-head"><h2>Tổng quan 8 chủ đề</h2><p>${done} / 69 bài đã hoàn thành</p></div><div class="topic-mini-grid">${DATA.topics.map(t=>`<a class="topic-mini" href="#/formulas"><h3>${esc(t.name)}</h3><p>${esc(t.description)}</p></a>`).join('')}</div>
-      ${studyProgressPanel(state.doneSamples.size,19,state.donePractice.size,50,'math')}<div class="reminder"><strong>Về đề gốc:</strong> Câu 8 trong bộ 19 đề mẫu sử dụng số liệu biểu đồ Venn minh họa do Sủi không nhớ dữ kiện ban đầu. Câu 14 phân tích cả hai trường hợp có và không được lặp tuyến. Đây là trang học offline, không cần tài khoản hay thư viện bên ngoài.</div>`;
+    return `<div class="intro-card"><div><div class="eyebrow">SỔ TAY HỌC TẬP / MÔN 01</div><h1>Học công thức.<br><span class="highlight">Hiểu từng bước.</span></h1><p>Học lý thuyết từ bài giảng, hiểu vì sao công thức đúng, đối chiếu bài mẫu rồi vận dụng qua 50 câu luyện tập. Mỗi phần đều có hướng dẫn để Sủi dễ theo dõi và tự học.</p><div class="actions"><a class="btn primary" href="#/math/knowledge">Bắt đầu từ lý thuyết</a><a class="btn" href="#/practice">Đến 50 bài ôn tập</a></div></div><div class="intro-aside"><div><div class="big-number">20</div><div class="stat-label">công thức trọng tâm</div></div><div><div class="big-number">19</div><div class="stat-label">bài mẫu đã giải</div></div><div><div class="big-number">50</div><div class="stat-label">bài luyện tập mới</div></div></div></div>
+    <div class="section-head"><h2>Lộ trình học đề xuất</h2><p>Bốn bước từ hiểu đến vận dụng</p></div><div class="path-grid math-learning-path">
+      <a class="path-card" href="#/math/knowledge"><div class="path-index">BƯỚC 01 / HIỂU BẢN CHẤT</div><h3>45 mục kiến thức lý thuyết</h3><p>Định nghĩa, giải thích, ví dụ bằng bảng, lỗi dễ nhầm và câu tự kiểm tra từ ba PDF bài giảng.</p><span class="link-text">Đọc lý thuyết →</span></a><a class="path-card" href="#/formulas"><div class="path-index">BƯỚC 02 / NẮM VỮNG</div><h3>Tổng hợp công thức</h3><p>20 công thức có điều kiện áp dụng, cách sử dụng, ví dụ và lỗi thường gặp.</p><span class="link-text">Mở sổ tay công thức →</span></a>
+      <a class="path-card" href="#/samples"><div class="path-index">BƯỚC 03 / HIỂU PHƯƠNG PHÁP</div><h3>19 đề mẫu giải chi tiết</h3><p>Mỗi bài đi từ nhận dạng đề, công thức tổng quát đến các bước thay số và kết luận.</p><span class="link-text">Xem đề mẫu →</span></a>
+      <a class="path-card" href="#/practice"><div class="path-index">BƯỚC 04 / TỰ VẬN DỤNG</div><h3>50 bài ôn tập</h3><p>Tự làm trước, mở gợi ý để xem công thức và ví dụ, cuối cùng mới xem lời giải.</p><span class="link-text">Bắt đầu ôn tập →</span></a></div>
+      <div class="section-head"><h2>Tổng quan 8 chủ đề bài tập</h2><p>${done} / 69 bài đã hoàn thành</p></div><div class="topic-mini-grid">${DATA.topics.map(t=>`<a class="topic-mini" href="#/formulas"><h3>${esc(t.name)}</h3><p>${esc(t.description)}</p></a>`).join('')}</div>
+      ${mathTheoryOverview()}${studyProgressPanel(state.doneSamples.size,19,state.donePractice.size,50,'math')}<div class="reminder"><strong>Về đề gốc:</strong> Câu 8 trong bộ 19 đề mẫu sử dụng số liệu biểu đồ Venn minh họa do Sủi không nhớ dữ kiện ban đầu. Câu 14 phân tích cả hai trường hợp có và không được lặp tuyến. Đây là trang học offline, không cần tài khoản hay thư viện bên ngoài.</div>`;
   }
   function toolbar(placeholder) {
     return `<div class="toolbar"><input id="search-box" class="search" type="search" placeholder="${esc(placeholder)}" aria-label="Tìm kiếm" autocomplete="off" value="${esc(state.query)}"><select class="select" id="topic-filter" aria-label="Lọc theo chủ đề"><option value="all">Tất cả 8 chủ đề</option>${DATA.topics.map(t=>`<option value="${esc(t.id)}" ${state.topic===t.id?'selected':''}>${esc(t.short)}</option>`).join('')}</select></div>`;
@@ -110,6 +111,7 @@
   }
   function render(restore=false) {
     window.syncCourseShell();
+    if(location.hash.startsWith('#/math/')){window.mathRender();if(!restore)window.scrollTo(0,0);return;}
     if(location.hash.startsWith('#/dsa')){window.dsaRender();if(!restore)window.scrollTo(0,0);return;}
     if(location.hash.startsWith('#/oop')){window.oopRender();if(!restore)window.scrollTo(0,0);return;}
     if(location.hash.startsWith('#/db')){window.dbRender();if(!restore)window.scrollTo(0,0);return;}

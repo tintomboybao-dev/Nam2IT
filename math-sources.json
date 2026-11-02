@@ -1,0 +1,1520 @@
+[
+  {
+    "id": "dem",
+    "title": "Phương pháp đếm và sinh cấu hình",
+    "file": "Trieu_presentation(2).pdf",
+    "asset": "math-assets/dem.pdf",
+    "physicalPages": 94,
+    "slides": [
+      {
+        "slide": 1,
+        "physical": 1,
+        "text": "TOÁN RỜI RẠC\n                      PHƯƠNG PHÁP ĐẾM\n\n                           NGUYỄN HẢI TRIỀU1\n                            1 Bộ môn Kỹ thuật phần mềm,\n\n                   Khoa Công nghệ thông tin, Trường ĐH Nha Trang\n\n\n\n\n                              NhaTrang, February 2022\n\n\n\n\nTrieu Hai Nguyen                  Discrete Mathematics     BM. KTPM–Khoa CNTT   1 / 53"
+      },
+      {
+        "slide": 2,
+        "physical": 2,
+        "text": "Tổng quan\n\n\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n\n\n\n     Trieu Hai Nguyen   Discrete Mathematics   BM. KTPM–Khoa CNTT   2 / 53"
+      },
+      {
+        "slide": 3,
+        "physical": 3,
+        "text": "Các nguyên lý đếm cơ bản\n\n\n\n\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n\n\n\n     Trieu Hai Nguyen                  Discrete Mathematics   BM. KTPM–Khoa CNTT   3 / 53"
+      },
+      {
+        "slide": 4,
+        "physical": 5,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý cộng\n\n\n\nNguyên lý cộng\n\n\nGiả sử để làm công việc A ta có 2 phương pháp\n    Phương pháp 1: có 𝑛 cách làm\n    Phương pháp 2: có 𝑚 cách làm\nKhi đó số cách làm công việc A là 𝑛 + 𝑚.\n\nVí dụ 1.1\nAn có 3 áo tay dài, 5 áo tay ngắn. Để chọn một cái áo thì An có\nmấy cách?\n->8 cách\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   4 / 53"
+      },
+      {
+        "slide": 5,
+        "physical": 8,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý cộng\n\n\n\n\nVí dụ 1.2\nNhà trường cần chọn một sinh viên khoa CNTT năm hai, năm ba\nhoặc năm tư đi tham gia hội nghị sinh viên thành phố. Biết rằng\ntrường có 501 sinh viên năm hai, 402 sinh viên năm ba, 345 sinh\nviên năm tư. Hỏi có bao nhiêu cách chọn?\n-> 1248 cách\n\nVí dụ 1.3\nMột sinh viên có thể chọn bài thực hành máy tính từ một trong ba\ndanh sách tương ứng có 23, 15 và 19 bài. Hỏi có bao nhiêu cách\nchọn ra một bài thực hành?\n-> 57 cách\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   5 / 53"
+      },
+      {
+        "slide": 6,
+        "physical": 10,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý cộng\n\n\n\n\nVí dụ 1.4\nTrên kệ có 555 viên bi đỏ, 313 viên bi vàng, 123 viên bi xanh. Hỏi\ncó bao nhiêu cách chọn ra một viên bi?\n-> 991 cách\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   6 / 53"
+      },
+      {
+        "slide": 7,
+        "physical": 12,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\nNguyên lý nhân\n\nGiả sử để làm công việc A cần thực hiện 2 bước\n    Bước 1 có 𝑛 cách làm\n    Bước 2 có 𝑚 cách làm\nKhi đó số cách làm công việc A là 𝑛 × 𝑚.\n\nVí dụ 1.5\nCó nhiêu cách đi từ A đến C?\n\n\n\n\n->20\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   7 / 53"
+      },
+      {
+        "slide": 8,
+        "physical": 17,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\n\nVí dụ 1.6\nCó bao nhiêu chuỗi nhị phân có độ dài 6?\n->64\n\nVí dụ 1.7\n(Nâng cao) Cho tập hợp A gồm 6 phần tử và tập hợp B gồm 10\nphần tử. Hỏi\n  1 Có bao nhiêu ánh xạ từ A vào B?\n    -> Với mỗi phần tử x của A ta có 10 cách chọn ảnh của x (vì\n    B có 10 phần tử) vậy nên có 106 cách chọn\n  2 Có bao nhiêu đơn ánh từ A vào B?\n    -> 151200\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   8 / 53"
+      },
+      {
+        "slide": 9,
+        "physical": 20,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\n\nVí dụ 1.8\nTừ các chữ số 0, 1, 2, 3, 4, 5 ta có thể lập được bao nhiêu số tự\nnhiên có ba chữ số khác nhau mà chia hết cho 2?\n-> Gọi số có ba chữ số là 𝑎𝑏𝑐. Dựa vào yêu cầu bài toán số 𝑎 phải\nkhác 0. Xét trường hợp 𝑐 = 0 và trường hợp 𝑐 ̸= 0. Có 52 số.\n\nVí dụ 1.9\nNgười ta có thể ghi nhãn cho những chiếc ghế trong một giảng\nđường bằng một chữ cái trong bảng chữ cái Latinh và một số\nnguyên dương không vượt quá 100. Bằng cách như vậy, nhiều nhất\ncó bao nhiêu chiếc ghế có thể được ghi nhãn khác nhau?\n-> nhiều nhất ta có thể gán nhãn cho 2600 chiếc ghế\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   9 / 53"
+      },
+      {
+        "slide": 10,
+        "physical": 21,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý bù trừ\n\n\n\nNguyên lý bù trừ\nVí dụ 1.10\nCó bao nhiêu chuỗi bit có độ dài 8 hoặc được bắt đầu bằng 1 hoặc\nđược kết thúc bằng 00?\n\nKhi hai hay nhiều công việc có thể được làm đồng thời, để tính\nđúng số cách thực hiện nhiệm vụ này ta cộng số cách làm mỗi một\ntrong hai hay nhiều việc rồi trừ đi số cách làm đồng thời của cả\nhai hay nhiều việc đó. Nguyên lý bù trừ được phát biểu bằng ngôn\nngữ tập hợp như sau: Cho A và B là hai tập hữu hạn. Khi đó\n                  |𝐴 ∪ 𝐵| = |𝐴| + |𝐵| − |𝐴 ∩ 𝐵|\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics           BM. KTPM–Khoa CNTT   10 / 53"
+      },
+      {
+        "slide": 11,
+        "physical": 25,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý bù trừ\n\n\n\nDựa vào nguyên lý bù trừ, ta có thể giải ví dụ 1.10 như sau:\n    Số lượng chuỗi nhị phân bắt đầu bằng 1 là 27 = 128\n    Số lượng chuỗi nhị phân kết thúc bằng 00 là 26 = 64\n    Số lượng chuỗi nhị phân bắt đầu bằng 1 và kết thúc bằng 00\n    là 25 = 32\nVậy số lượng chuỗi thỏa yêu cầu là 128 + 64 − 32 = 160\n\nVí dụ 1.11\nCó 2 bài toán kiểm tra. Trong lớp có 30 sinh viên làm được bài thứ\nnhất và 20 sinh viên làm được bài thứ hai và chỉ có 10 sinh viên\nlàm được cả 2 bài. Biết rằng mỗi sinh viên đều làm ít nhất một\nbài, hỏi lớp có bao nhiêu sinh viên?\n\nĐặt A, B lần lượt là những sinh viên giải được bài 1 và bài 2.\nVậy số sinh viên của lớp chính là số phần tử của |𝐴 ∪ 𝐵|.\n    Trieu Hai Nguyen                  Discrete Mathematics           BM. KTPM–Khoa CNTT   11 / 53"
+      },
+      {
+        "slide": 12,
+        "physical": 26,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý bù trừ\n\n\n\n\nTương tự đối với ba tập hợp hữu hạn A, B, C, ta có\n\n|𝐴∪𝐵 ∪𝐶| = |𝐴|+|𝐵|+|𝐶|−|𝐴∩𝐵|−|𝐵 ∩𝐶|−|𝐴∩𝐶|+|𝐴∩𝐵 ∩𝐶|\n\nVí dụ 1.12\nBài kiểm tra Toán rời rạc có 3 bài. Biết rằng, mỗi sinh viên làm\nđược ít nhất 1 bài, trong đó có\n    20 sinh viên làm được bài 1; 14 sinh viên làm được bài 2; 10\n    sinh viên làm được bài 3\n    6 sinh viên giải được bài 1 và 3; 5 sinh viên giải được bài 2 và\n    bài 3; 2 sinh viên giải được bài 1 và 2\n    1 sinh viên giải được cả 3 bài\nHỏi lớp có bao nhiêu sinh viên?\n\n    Trieu Hai Nguyen                  Discrete Mathematics           BM. KTPM–Khoa CNTT   12 / 53"
+      },
+      {
+        "slide": 13,
+        "physical": 27,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý Dirichlet\n\n\n\nNguyên lý Dirichlet\n\nNguyên lý Dirichlet (chuồng bồ câu) được nhìn từ thực tế như\nsau:\n     Có 20 chim bồ câu ở trong 7 cái chuồng. Khi đó sẽ có ít nhất\n     1 chuồng có 3 con bồ câu trở lên.\n     Trong một nhóm 367 người thì có ít nhất 2 người có cùng\n     ngày sinh nhật.\n\nMệnh đề\nNếu có 𝑘 + 1 (hoặc nhiều hơn) đồ vật được đặt vào trong 𝑘 hộp\nthì tồn tại một hộp có ít nhất hai đồ vật.\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics              BM. KTPM–Khoa CNTT   13 / 53"
+      },
+      {
+        "slide": 14,
+        "physical": 28,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý Dirichlet\n\n\n\n\nĐịnh nghĩa 1.1\nGiá trị trần của 𝑥, ký hiệu là ⌈𝑥⌉, là số nguyên nhỏ nhất mà lớn\nhơn hay bằng x (ý nghĩa tương tự như hàm ceil(x) trong nhiều\nngôn ngữ lập trình).\n\nNguyên lý Dirichlet\nGiả sử có 𝑛 chim bồ ⌈︀câu⌉︀ ở trong 𝑘 chuồng, khi đó tồn tại ít nhất\n                       𝑛\nmột chuồng chứa từ 𝑘 bồ câu trở lên.\n\n\n\n\n     Trieu Hai Nguyen                  Discrete Mathematics              BM. KTPM–Khoa CNTT   14 / 53"
+      },
+      {
+        "slide": 15,
+        "physical": 29,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý Dirichlet\n\n\n\n\nVí dụ 1.13\n    Trong lớp toán rời rạc có 65 bạn SV thì có ít nhất bao nhiêu\n    bạn cùng tháng sinh?\n    Trong một lớp học phải có ít nhất bao nhiêu sinh viên để có ít\n    nhất 6 sinh viên có cùng thứ bậc học tập, biết rằng có 5 loại\n    thứ bậc A, B, C, D và E?\n\nVí dụ 1.14\nTrong kỳ thi học sinh giỏi, điểm bài thi được đánh giá bởi một số\nnguyên trong khoảng từ 0 đến 100. Hỏi rằng ít nhất có bao nhiêu\nhọc sinh dự thi để cho chắc chắn tìm được hai học sinh có kết quả\nthi như nhau?\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics              BM. KTPM–Khoa CNTT   15 / 53"
+      },
+      {
+        "slide": 16,
+        "physical": 31,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý Dirichlet\n\n\n\n\nVí dụ 1.15\nSố mã vùng cần thiết nhỏ nhất phải là bao nhiêu để đảm bảo 25\ntriệu máy điện thoại trong nước có số điện thoại khác nhau, mỗi\nsố có 9 chữ số (giả sử số điện thoại có dạng 0XX - 8XXXXX với\nX nhận các giá trị từ 0 đến 9).\n-> Có 107 = 10000000 số điện thoại khác nhau có dạng 0XX -\n8XXXXX. Vì vậy theo nguyên\n                         ⌈︀ 25000000lý⌉︀ Dirichlet, trong số 25 triệu máy\nđiện thoại thì có ít nhất 10000000 = 3 số điện thoại bị trùng nhau.\nĐể đảm bảo mỗi máy có một số cần có ít nhất 3 mã vùng.\n\n\n\n\n     Trieu Hai Nguyen                  Discrete Mathematics              BM. KTPM–Khoa CNTT   16 / 53"
+      },
+      {
+        "slide": 17,
+        "physical": 32,
+        "text": "Giải tích tổ hợp\n\n\n\n\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n\n\n\n     Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   17 / 53"
+      },
+      {
+        "slide": 18,
+        "physical": 33,
+        "text": "Giải tích tổ hợp   Hoán vị\n\n\n\nHoán vị\nĐịnh nghĩa 2.1\nCho tập hợp A gồm n phần tử. Mỗi cách sắp đặt có thứ tự n\nphần tử của A được gọi là một hoán vị của n phần tử.\n\nVí dụ 2.1\nCho A = {1, 2, 3}. Khi đó A có các hoán vị sau: 123, 132, 213,\n231, 312, 321\n\nĐịnh lý\n𝑃𝑛 là số các hoán vị của 𝑛 phần tử, và\n\n                𝑃𝑛 = 𝑛! = 𝑛 × (𝑛 − 1) × (𝑛 − 2) × . . . × 1\n    Trieu Hai Nguyen             Discrete Mathematics   BM. KTPM–Khoa CNTT   18 / 53"
+      },
+      {
+        "slide": 19,
+        "physical": 35,
+        "text": "Giải tích tổ hợp   Hoán vị\n\n\n\n\nVí dụ 2.2\nCho X = {1, 2, 3, 4, 5}. Hỏi có bao nhiêu số tự nhiên gồm 5 chữ\nsố khác nhau được tạo từ tập X?\n\nVí dụ 2.3\nCần sắp xếp 5 sinh viên A, B, C, D, E thành một dãy hàng dọc\ni) Hỏi có bao nhiêu cách sắp xếp?\nii) Hỏi có bao nhiêu cách sắp xếp sao cho hai sinh viên A và B\nluôn đứng ở đầu hàng?\n-> A và B luôn đứng đầu hàng nên có 2! cách, vì xếp theo thứ tự\nnên 3 sinh viên còn lại có 3! cách. Vậy theo quy tắc nhân có 12\ncách\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   19 / 53"
+      },
+      {
+        "slide": 20,
+        "physical": 36,
+        "text": "Giải tích tổ hợp   Hoán vị\n\n\n\n\nVí dụ 2.4\nTừ 6 chữ số 1, 2, 3, 4, 5, 6 có thể lập được bao nhiêu số tự nhiên\ngồm 6 chữ số khác nhau, trong đó có bao nhiêu số lẻ? bao nhiêu\nsố không chia hết cho 5?\n\nVí dụ 2.5\nCần sắp xếp 3 sinh viên nữ và 5 sinh viên nam thành một hàng\ndọc.\n  1  Hỏi có bao nhiêu cách sắp xếp nếu 3 sinh viên nữ luôn đứng\n     liền nhau ?\n  2  Hỏi có bao nhiêu cách sắp xếp nếu sinh viên đứng đầu hàng\n     là sinh viên nữ và sinh viên cuối hàng là sinh viên nam ?\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   20 / 53"
+      },
+      {
+        "slide": 21,
+        "physical": 37,
+        "text": "Giải tích tổ hợp   Chỉnh hợp\n\n\n\nChỉnh hợp\nĐịnh nghĩa 2.2\nCho A là tập hợp gồm 𝑛 phần tử. Mỗi bộ sắp thứ tự gồm 𝑘 phần\ntử của A được gọi là một chỉnh hợp chập 𝑘 của 𝑛 phần tử.\n\nĐịnh lý\nSố các chỉnh hợp chập 𝑘 của 𝑛, ký hiệu 𝐴𝑘𝑛\n\n                                                              𝑛!\n           𝐴𝑘𝑛 = 𝑛 × (𝑛 − 1) × . . . × (𝑛 − 𝑘 + 1) =\n                                                           (𝑛 − 𝑘)!\n\nVí dụ 2.6\nCho X = {a, b, c}. Khi đó X có các chỉnh hợp chập 2 của 3 là 6\nbộ sắp xếp có thứ tự gồm: ab, ba, ac, ca, bc, cb\n    Trieu Hai Nguyen            Discrete Mathematics     BM. KTPM–Khoa CNTT   21 / 53"
+      },
+      {
+        "slide": 22,
+        "physical": 41,
+        "text": "Giải tích tổ hợp   Chỉnh hợp\n\n\n\nVí dụ 2.7\nCó bao nhiêu số tự nhiên ngồm 3 chữ số khác nhau được tạo\nthành từ 1, 2, 3, 4, 5, 6. Yêu cầu sử dụng cả hai cách: nguyên lý\nnhân và chỉnh hợp.\n\nVí dụ 2.8\nLớp CNTT có 15 sinh viên nam và 20 nữ. Trong buổi tập trung\nlớp đầu năm, giáo viên chọn 3 sinh viên làm ban cán sự lớp gồm:\n1 lớp trưởng, 1 lớp phó và 1 thủ quỹ.\n  1  Hỏi có bao nhiêu cách chọn?\n  2  Hỏi có bao nhiêu cách chọn nếu lớp trưởng là nam?\n  3  Hỏi có bao nhiêu cách chọn nếu trong 3 bạn được chọn phải\n     có ít nhất 1 nữ?\nĐáp án: 𝐴335 ; 15 × 𝐴234 ; 𝐴335 − 𝐴315 .\n    Trieu Hai Nguyen         Discrete Mathematics     BM. KTPM–Khoa CNTT   22 / 53"
+      },
+      {
+        "slide": 23,
+        "physical": 42,
+        "text": "Giải tích tổ hợp     Tổ hợp\n\n\n\nTổ hợp\nĐịnh nghĩa 2.3\nCho A là tập hợp gồm 𝑛 phần tử. Mỗi tập con gồm 𝑘 phần tử của\nA được gọi là một tổ hợp chập 𝑘 của 𝑛 phần tử.\n\nĐịnh lý\n                                           (︀ 𝑛 )︀\nSố tổ hợp chập 𝑘 của 𝑛, ký hiệu              𝑘\n                                                     hay 𝐶𝑛𝑘\n\n                                𝐴𝑘𝑛       𝑛!\n                       𝐶𝑛𝑘 =        =\n                                𝑘!    𝑘!(𝑛 − 𝑘)!\n\nVí dụ 2.9\nCó bao nhiêu cách chọn 10 sinh viên trong một lớp có 30 sinh\nviên?\n    Trieu Hai Nguyen           Discrete Mathematics            BM. KTPM–Khoa CNTT   23 / 53"
+      },
+      {
+        "slide": 24,
+        "physical": 43,
+        "text": "Giải tích tổ hợp   Tổ hợp\n\n\n\n\nVí dụ 2.10\nMột lớp có 40 sinh viên gồm 25 nam và 15 nữ. Ta cần chọn ra 6\nsinh viên tham gia hội nghị của trường. Hỏi có bao nhiêu cách\nchọn nếu:\n     Không phân biệt nam nữ?\n     Có 4 nam và 2 nữ?\n     Có ít nhất là 4 sinh viên nam? (gợi ý: tức là số lượng sv nam\n     có thể là 4 hoặc 5 hoặc 6)\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   24 / 53"
+      },
+      {
+        "slide": 25,
+        "physical": 45,
+        "text": "Giải tích tổ hợp   Tổ hợp\n\n\n\n\nVí dụ 2.11\nCho T = {a, b, c, d, e, f, g, h, i, j, k}. Ký hiệu |𝑋| để chỉ số\nlượng phần tử của tập hợp X.\n  1 T có bao nhiêu tập hợp con A thỏa |A| = 6?\n  2 T có bao nhiêu tập hợp con A thỏa |A| = 6 và 𝑑 ∈ A?\n  3 T có bao nhiêu tập hợp con A thỏa |A| = 6 và 𝑑 ∈    / A?\n          6        5          6       5\nĐáp án: 𝐶11 ;    𝐶10 ;     𝐶11 − 𝐶10 ;\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics   BM. KTPM–Khoa CNTT   25 / 53"
+      },
+      {
+        "slide": 26,
+        "physical": 47,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.12\nCó bao nhiêu cách sắp xếp 5 bác sĩ, 4 kỹ sư, 3 luật sư vào một bàn\ndài có 12 chỗ ngồi (được đánh số từ 1 đến 12) trong mỗi trường\nhợp sau:\n  1  không có điều kiện gì thêm?\n  2  các đồng nghiệp ngồi cạnh nhau?\n  3  các bác sĩ ngồi cạnh nhau ở một đầu bàn, còn các kỹ sư, luật\n     sư ngồi xen kẻ ở đầu bàn còn lại?\nĐáp án:\n  1  12!\n  2  3! × 5! × 4! × 3!\n  3  2! × 5! × 4! × 3!\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   26 / 53"
+      },
+      {
+        "slide": 27,
+        "physical": 53,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\nVí dụ 2.13\nCó bao nhiêu số tự nhiên 𝑁 = 𝑎𝑏𝑐𝑑𝑒𝑓 𝑔ℎ gồm 8 chữ số hệ thập\nphân a, b, c, d, e, f, g, h thỏa các điều kiện a lẻ, b = 4, g > 6, h\nchia hết cho 3 và c, d, e, f tùy ý?\n->5 × 1 × 3 × 4 × 104\n\nVí dụ 2.14\n  1   Có bao nhiêu cách sắp 7 nam và 6 nữ thành 1 hàng dọc mà\n      nam và nữ đứng xen kẽ? -> 7! × 6!\n  2   Có bao nhiêu cách sắp 6 nam và 6 nữ thành 1 hàng dọc mà\n      nam và nữ đứng xen kẽ? -> 6! × 6! + 6! × 6!\n  3   Có bao nhiêu cách sắp 6 nam và 6 nữ thành 1 hàng dọc mà 6\n      nam đứng gần nhau? -> 6! × 6! × 7\n  4   Có bao nhiêu cách sắp 7 nam và 6 nữ thành 1 hàng dọc mà 7\n      nam đứng gần nhau và 6 nữ đứng gần nhau? -> 7! × 6! × 2\n      Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   27 / 53"
+      },
+      {
+        "slide": 28,
+        "physical": 56,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.15\nTừ 9 sinh viên nam và 8 sinh viên nữ, ta muốn chọn ra một đội\ngồm 10 người sao cho trong đội đó có ít nhất 4 nam và 4 nữ. Hỏi\ncó bao nhiêu cách chọn?\nGợi ý: vì đề yêu cầu có ít nhất là 4 nam và 4 nữ nên số lượng\nnam có thể là 4 hoặc 5 hoặc 6. Vậy số cách chọn là:\n𝐶94 × 𝐶86 + 𝐶95 × 𝐶85 + 𝐶96 × 𝐶84\n\nVí dụ 2.16\nCho S = {1, 2, . . . , 9, 10}\n 1  Có bao nhiêu tập hợp con mà mỗi tập có đúng 5 phần tử?\n 2  Có bao nhiêu tập hợp con mà mỗi tập có không quá 4 phần\n    tử?\n    Gợi ý: số lượng phần tử của tập con có thể là 0, 1,2 hoặc 3.\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   28 / 53"
+      },
+      {
+        "slide": 29,
+        "physical": 59,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.17\nTừ 9 nam và 11 nữ, ta muốn chọn ra một đội văn nghệ gồm 10\nngười sao cho số nam và số nữ trong đội chênh lệch nhau không\nquá 2. Hỏi có tất cả bao nhiêu cách chọn đội?\n->𝐶94 × 𝐶11\n          6\n            + 𝐶95 × 𝐶11\n                      5\n                        + 𝐶96 × 𝐶11\n                                 4\n\n\n\nVí dụ 2.18\nTừ các chữ số 1, 2, 3, 4, 5, 6, 7 và 8, ta có thể tạo ra\n  1 bao nhiêu số tự nhiên có 4 chữ số khác nhau?\n  2 bao nhiêu số tự nhiên có 3 chữ số khác nhau trong đó có chữ\n    số 5?\n-> Đáp án: 𝐴48 ; 𝐴38 − 𝐴37 .\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   29 / 53"
+      },
+      {
+        "slide": 30,
+        "physical": 61,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.19\nCó 3 luật sư, 4 bác sĩ và 5 kỹ sư xếp thành một hàng dọc sao cho\ncác đồng nghiệp phải đứng cạnh nhau.\n  1  Hỏi có tất cả bao nhiêu cách xếp?\n  2  Nếu yêu cầu thêm các luật sư không đứng ở đầu hàng thì có\n     tất cả bao nhiêu cách xếp?\n-> Đáp án: 3! × 4! × 5! × 3!; 2 × 2! × 3! × 4! × 5!\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   30 / 53"
+      },
+      {
+        "slide": 31,
+        "physical": 62,
+        "text": "Chỉnh hợp và tổ hợp suy rộng\n\n\n\n\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n\n\n\n     Trieu Hai Nguyen                      Discrete Mathematics   BM. KTPM–Khoa CNTT   31 / 53"
+      },
+      {
+        "slide": 32,
+        "physical": 63,
+        "text": "Chỉnh hợp và tổ hợp suy rộng    Hoán vị lặp\n\n\n\nHoán vị lặp\n\nThực tế trong bài toán đếm, một số phần tử có thể giống nhau.\nKhi đó cần phải cẩn thận, tránh đếm chúng hơn một lần. Ví dụ:\nCó bao nhiêu chuỗi kí tự khác nhau bằng cách sắp xếp các chữ cái\ncủa từ AAABB?\n\nPhân tích ví dụ\nChuỗi AAABB chứa 3 chữ A và 2 chữ B. Để xác định số chuỗi\nkhác nhau có thể được tạo ra ta nhận thấy có 𝐶53 cách chọn 3 chỗ\ncho 3 chữ A. Còn lại 2 chỗ trống, do đó có 𝐶22 cách chọn 2 chỗ cho\n2 chữ B. Theo quy tắc nhân, số chuỗi khác nhau được tạo ra là:\n                                                         5!\n                                𝐶53 × 𝐶22 =                   = 10\n                                                      3! × 2!\n    Trieu Hai Nguyen                      Discrete Mathematics       BM. KTPM–Khoa CNTT   32 / 53"
+      },
+      {
+        "slide": 33,
+        "physical": 64,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Hoán vị lặp\n\n\n\n\nMệnh đề 3.1\nSố hoán vị của 𝑛 phần tử trong đó có 𝑛1 phần tử như nhau thuộc\nloại 1, 𝑛2 phần tử như nhau thuộc loại 2, ..., và 𝑛𝑘 phần tử như\nnhau thuộc loại 𝑘, bằng\n                                               𝑛!\n                                   𝑛1 ! × 𝑛2 ! × . . . × 𝑛𝑘 !\n\nChứng minh\nGợi ý: có 𝐶𝑛𝑛1 cách giữ 𝑛1 chỗ cho 𝑛1 phần tử loại 1. Tương tự có\n 𝑛𝑘\n𝐶𝑛−𝑛1 −...−𝑛𝑘−1\n                cách đặt 𝑛𝑘 phần tử loại 𝑘 vào chỗ trống còn lại.\nÁp dụng quy tắc nhân ta có điều phải chứng minh.                                         \u0004\n\n\n    Trieu Hai Nguyen                      Discrete Mathematics      BM. KTPM–Khoa CNTT   33 / 53"
+      },
+      {
+        "slide": 34,
+        "physical": 67,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Hoán vị lặp\n\n\n\n\nVí dụ 3.1\nCó bao nhiêu chuỗi kí tự khác nhau bằng cách sắp xếp các chữ cái\ncủa từ SUCCESS?\n->\n                             7!\n                                       = 420\n                     3! × 1! × 2! × 1!\n\n\nVí dụ 3.2\nTừ các chữ số 1, 2, 3 lập được bao nhiêu số tự nhiên khác nhau có\nđúng 5 chữ số 1, 2 chữ số 2 và 3 chữ số 3.\n-> gợi ý: số tự nhiên cần lập phải có 10 chữ số.\n\n\n\n    Trieu Hai Nguyen                      Discrete Mathematics      BM. KTPM–Khoa CNTT   34 / 53"
+      },
+      {
+        "slide": 35,
+        "physical": 69,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Chỉnh hợp lặp\n\n\n\nChỉnh hợp lặp\nĐịnh nghĩa 3.1\nCho A là tập hợp gồm n phần tử. Chỉnh hợp lặp chập k của n\nphần tử là một bộ sắp thứ tự k phần tử của A, các phần tử có thể\nlặp lại. Mỗi chỉnh hợp như thế là một phần tử của tập 𝐴𝑘 .\n\nMệnh đề 3.2\nMỗi phần tử của tập 𝐴𝑘 là một hàm từ tập k phần tử vào tập n\nphần tử. Số chỉnh hợp lặp chập k của n là: F𝑘𝑛 = 𝑛𝑘 .\n\nVí dụ 3.3\nTừ bảng chữ cái tiếng Anh, ta lập được bao nhiêu chuỗi chữ cái có\nđộ dài 5? -> 265\n    Trieu Hai Nguyen                      Discrete Mathematics        BM. KTPM–Khoa CNTT   35 / 53"
+      },
+      {
+        "slide": 36,
+        "physical": 70,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\nTổ hợp lặp\nVí dụ 3.4\nCửa hàng có 3 loại nón A, B, C, An muốn mua 2 cái nón. Hỏi An\ncó bao nhiêu cách chọn?\nAn có 6 cách chọn là AA, AB, AC, BB, BC, CC.\n\nĐịnh nghĩa 3.2\nMỗi cách chọn ra k vật không có thứ tự từ n loại vật khác nhau\n(trong đó mỗi loại vật có thể được chọn lại nhiều lần) được gọi là\ntổ hợp lặp chập k của n.\n\nMệnh đề 3.3\n      Số các tổ hợp lặp chập k của n được ký hiệu là K𝑘𝑛 và\n                          K𝑘𝑛 = C𝑘𝑛+𝑘−1\n    Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   36 / 53"
+      },
+      {
+        "slide": 37,
+        "physical": 72,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\nHệ quả\nSố nghiệm nguyên không âm (𝑥1 , 𝑥2 , . . . , 𝑥𝑛 )(𝑥𝑖 ∈ Z, 𝑥𝑖 ≥ 0) của\nphương trình\n                   𝑥1 + 𝑥2 + . . . + 𝑥 𝑛 = 𝑘\nlà 𝐾𝑛𝑘 = 𝐶𝑛+𝑘−1\n          𝑘\n\n\nVí dụ 3.5\nTìm số nghiệm nguyên không âm của phương trình\n\n                                      𝑥1 + 𝑥2 + 𝑥3 = 10\n\n-> Nhận thấy rằng mỗi nghiệm của phương trình ứng với một\ncách chọn 10 phần tử từ một tập có 3 loại, sao cho có 𝑥1 phần tử\nloại 1, 𝑥2 phần tử loại 2 và 𝑥3 phần tử loại 3 được chọn. Vì vậy số\nnghiệm bằng số tổ hợp lặp chập 10 từ tập có 3 phần tử và bằng\nK10       10\n  3 = 𝐶10+3−1 .\n     Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   37 / 53"
+      },
+      {
+        "slide": 38,
+        "physical": 74,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\n\nVí dụ 3.6\nTìm số nghiệm nguyên của phương trình\n\n                                𝑥1 + 𝑥2 + 𝑥3 + 𝑥4 = 20                                  (1)\n\nthỏa điều kiện 𝑥1 ≥ 4; 𝑥2 > 2; 𝑥3 > 5; 𝑥4 ≥ −2.\n\nTa viết điều kiện đã cho thành 𝑥1 ≥ 4; 𝑥2 ≥ 3; 𝑥3 ≥ 6; 𝑥4 ≥ −2.\nĐặt 𝑦1 = 𝑥1 − 4; 𝑦2 = 𝑥2 − 3; 𝑦3 = 𝑥3 − 6; 𝑦4 = 𝑥4 + 2. Khi đó ta\ncó 𝑦𝑖 ≥ 0 (𝑖 = 1, .., 4). Phương trình (1) trở thành\n\n                                  𝑦1 + 𝑦2 + 𝑦3 + 𝑦4 = 9                                 (2)\n\nDo đó, số nghiệm của phương trình (1) chính là số nghiệm của\nphương trình (2) và bằng 𝐾49 = 𝐶12\n                                9\n                                   .\n\n    Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   38 / 53"
+      },
+      {
+        "slide": 39,
+        "physical": 75,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\nSự phân bố các đồ vật vào trong hộp\nHệ quả\nSố cách chia 𝑘 vật giống nhau vào 𝑛 hộp phân biệt cũng chính\nbằng số tổ hợp lặp chập 𝑘 của 𝑛.\n\nVí dụ 3.7\nTìm số cách chia 15 viên bi giống nhau cho 4 đứa trẻ.\n\nVí dụ 3.8\nTìm số nghiệm nguyên không âm của bất phương trình sau:\n\n                                     𝑥1 + 𝑥2 + 𝑥3 ≤ 11\n\ngợi ý: đặt 𝑥4 = 11 − (𝑥1 + 𝑥2 + 𝑥3 ) ⇒ 𝑥1 + 𝑥2 + 𝑥3 + 𝑥4 = 11\n    Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   39 / 53"
+      },
+      {
+        "slide": 40,
+        "physical": 76,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\n\nVí dụ 3.9\n(BTVN) Tìm số nghiệm nguyên của bất phương trình\n\n                                       𝑥 + 𝑦 + 𝑧 ≤ 20,\n\nbiết 𝑥 ≥ 1, 𝑦 ≥ 2, 𝑧 ≥ 3.\n\nVí dụ 3.10\n(BTVN) Có bao nhiêu cách chọn 5 tờ giấy bạc từ một két đựng\ntiền gồm những tờ 1000đ, 2000đ, 5000đ, 10.000đ, 20.000đ,\n50.000đ, 100.000đ. Giả sử thứ tự mà các tờ tiền được chọn là\nkhông quan trọng, các tờ tiền cùng loại là không phân biệt và mỗi\nloại có ít nhất 5 tờ.\n\n\n    Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   40 / 53"
+      },
+      {
+        "slide": 41,
+        "physical": 77,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\nVí dụ 3.11\nCó bao nhiêu cách chia những xấp bài 5 quân cho mỗi một trong 4\nngười chơi từ một cỗ bài chuẩn 52 quân?\n\n 5     5     5     5                                       52!\n𝐶52 × 𝐶47 × 𝐶42 × 𝐶37 =\n                                        5! × 5! × 5! × 5! × (52 − 5 − 5 − 5 − 5)!\n\n\n\nMệnh đề 3.4\nSố cách phân chia 𝑛 đồ vật khác nhau vào trong 𝑘 hộp khác nhau\nsao cho có 𝑛𝑖 vật được đặt vào trong hộp thứ 𝑖, với 𝑖 = 1, 2, ..., 𝑘\nbằng\n                                        𝑛!\n           𝑛1 ! × 𝑛2 ! × . . . × 𝑛𝑘 ! × (𝑛 − 𝑛1 − 𝑛2 − . . . − 𝑛𝑘 )!\n    Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   41 / 53"
+      },
+      {
+        "slide": 42,
+        "physical": 78,
+        "text": "Sinh các hoán vị và tổ hợp\n\n\n\n\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n\n\n\n     Trieu Hai Nguyen                    Discrete Mathematics   BM. KTPM–Khoa CNTT   42 / 53"
+      },
+      {
+        "slide": 43,
+        "physical": 79,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các hoán vị\n\n\n\nSinh các hoán vị\n\n\nĐể sinh ra 𝑛! hoán vị của tập {1, 2, ..., 𝑛}, ta sử dụng phương\npháp phổ biến là liệt kê các hoán vị của tập {1, 2, ..., 𝑛} theo thứ\ntự từ điển.\n\nThuật toán sinh các hoán vị dựa trên thủ tục xây dựng hoán vị kế\ntiếp, theo thứ tự từ điển. Hoán vị {𝑎1 , 𝑎2 , ..., 𝑎𝑛 } được gọi là đi\ntrước hoán vị {𝑏1 , 𝑏2 , ..., 𝑏𝑛 } nếu tồn tại k (1 ≤ 𝑘 ≤ 𝑛) sao cho\n𝑎1 = 𝑏1 , 𝑎2 = 𝑏2 ,..., 𝑎𝑘−1 = 𝑏𝑘−1 và 𝑎𝑘 < 𝑏𝑘 .\n\n\n\n\n     Trieu Hai Nguyen                    Discrete Mathematics           BM. KTPM–Khoa CNTT   43 / 53"
+      },
+      {
+        "slide": 44,
+        "physical": 80,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các hoán vị\n\n\n    Algorithm 1: Tìm hoán vị liền sau\n   Input : Hoán vị liền trước {𝑎1 , 𝑎2 , ..., 𝑎𝑛 } ; // {𝑎1 , 𝑎2 , ..., 𝑎𝑛 } ̸= (𝑛, 𝑛 − 1, ..., 2, 1)\n   Output: Hoán vị kế tiếp của {𝑎1 , 𝑎2 , ..., 𝑎𝑛 }\n 1 Function FnNextP({𝑎1 , 𝑎2 , ..., 𝑎𝑛 })\n       Initial : j ← n-1\n 2     while 𝑎𝑗 > 𝑎𝑗+1 and 𝑗 > 0 do\n 3          𝑗 ← 𝑗 − 1 ; // 𝑗 là chỉ số lớn nhất mà 𝑎𝑗 < 𝑎𝑗+1\n 4     end\n 5     if 𝑗 = 0 then return;\n 6     else\n 7          𝑘←𝑛\n 8          while 𝑎𝑗 > 𝑎𝑘 do\n 9               𝑘 ← 𝑘 − 1 ; // 𝑎𝑘 là số nguyên nhỏ nhất trong các số lớn hơn 𝑎𝑗\n                   và bên phải 𝑎𝑗\n10          end\n11          hoán vị (𝑎𝑗 , 𝑎𝑘 )\n12          𝑟 ← 𝑗 + 1; 𝑠 ← 𝑛\n13          while 𝑟 < 𝑠 do liệt kê theo thứ tự tăng dần của các số còn lại từ 𝑎𝑗+1 đến 𝑎𝑛\n14               hoán vị (𝑎𝑟 , 𝑎𝑠 )\n15               𝑟 ← 𝑟 − 1;       𝑠 ← 𝑠 − 1;\n16          end\n17     end\n18 end\n\n\n           Trieu Hai Nguyen                     Discrete Mathematics           BM. KTPM–Khoa CNTT       44 / 53"
+      },
+      {
+        "slide": 45,
+        "physical": 82,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các hoán vị\n\n\n\n\nVí dụ 4.1\nÁp dụng thuật toán 1, hãy tìm hoán vị liền sau theo thứ tự từ điển\ncủa hoán vị 4736521.\n\nCặp số nguyên đầu tiên tính từ phải qua trái có số trước nhỏ hơn\nsố sau là 𝑎3 = 3 và 𝑎4 = 6 (tìm được 𝑗 thỏa điều kiện 𝑎𝑗 < 𝑎𝑗+1 ).\n     Số nhỏ nhất trong các số bên phải của số 3 mà lại lớn hơn\n     3 là số 𝑎5 = 5\n     Hoán vị (𝑎3 , 𝑎5 )\n     Sau đó đặt các số 3, 6, 1, 2 theo thứ tự tăng dần vào bốn vị\n     trí còn lại\n     Hoán vị liền sau hoán vị đã cho là 4751236\n\n\n    Trieu Hai Nguyen                    Discrete Mathematics           BM. KTPM–Khoa CNTT   45 / 53"
+      },
+      {
+        "slide": 46,
+        "physical": 84,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các hoán vị\n\n\n\n\nVí dụ 4.2\nTìm hoán vị liền sau theo thứ tự từ điển của hoán vị 436521.\n-> 451236\n\nBài tập thực hành\nYêu cầu sinh viên code lại thuật toán 1.\n    Input: số nguyên dương 𝑛 của tập {1, 2, ..., 𝑛}.\n    Output: số lượng hoán vị của tập {1, 2, ..., 𝑛} và liệt kê các\n    hoán vị đó.\n\n\n\n\n    Trieu Hai Nguyen                    Discrete Mathematics           BM. KTPM–Khoa CNTT   46 / 53"
+      },
+      {
+        "slide": 47,
+        "physical": 85,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các tổ hợp\n\n\n\nSinh các tổ hợp\n\n\n\nMỗi tổ hợp chập 𝑘 có thể biểu diễn bằng một chuỗi tăng. Khi đó\ncó thể liệt kê các tổ hợp theo thứ tự từ điển. Chúng ta có thể xây\ndựng tổ hợp liền sau tổ hợp 𝑎1 𝑎2 ...𝑎𝑘 bằng cách:\n  1  tìm phần tử đầu tiên 𝑎𝑖 trong dãy đã cho kể từ phải qua trái\n     sao cho 𝑎𝑖 ̸= 𝑛 − 𝑘 − 𝑖\n  2  thay 𝑎𝑖 bằng 𝑎𝑖 + 1, thay 𝑎𝑗 bằng 𝑎𝑖 + 𝑗 − 𝑖 + 1 với\n     𝑗 = 𝑖 + 1, 𝑖 + 2, ..., 𝑘\n\n\n\n\n    Trieu Hai Nguyen                    Discrete Mathematics          BM. KTPM–Khoa CNTT   47 / 53"
+      },
+      {
+        "slide": 48,
+        "physical": 86,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các tổ hợp\n\n\n\n\n  Algorithm 2: Tìm Tổ hợp liền sau\n  Input : Tổ hợp liền trước 𝑎1 𝑎2 ...𝑎𝑘 ;\n            // {𝑛 − 𝑘 + 1, ..., 𝑛} =\n                                   ̸ {𝑎1 , 𝑎2 , ..., 𝑎𝑘 } ⊂ {1, 2, ..., 𝑛} với\n            𝑎1 < 𝑎2 < ... < 𝑎𝑘\n  Output: Tổ hợp liền sau của 𝑎1 𝑎2 , ..., 𝑎𝑘\n1 Function FnNextCOMBI(𝑎1 𝑎2 ...𝑎𝑘 )\n     Initial : 𝑖 ← 𝑘\n2    while 𝑎𝑖 = 𝑛 − 𝑘 + 𝑖 do\n3        𝑖 ← 𝑖−1\n4        𝑎𝑖 ← 𝑎𝑖 + 1\n5    end\n6    for 𝑗 ← 𝑖 + 1 to 𝑘 do\n7        𝑎𝑗 ← 𝑎𝑖 + 𝑗 − 𝑖\n8    end\n9 end\n\n\n\n        Trieu Hai Nguyen                    Discrete Mathematics          BM. KTPM–Khoa CNTT   48 / 53"
+      },
+      {
+        "slide": 49,
+        "physical": 88,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các tổ hợp\n\n\n\nVí dụ 4.3\nTìm tổ hợp chập 4 từ tập {1, 2, 3, 4, 5, 6} đi liền sau tổ hợp\n{1, 2, 5, 6}.\n\nÁp dụng thuật toán 2, ta thấy từ phải qua trái 𝑎2 = 2 là số hạng\nđầu tiên của tổ hợp đã cho thỏa mãn điều kiện 𝑎𝑖 ̸= 6 − 4 + 𝑖. Để\nnhận được tổ hợp tiếp sau ta:\n  1 tăng 𝑎𝑖 lên một đơn vị, tức 𝑖 = 2, 𝑎2 = 3\n  2 sau đó 𝑗 = 3, 4. Vậy 𝑎3 = 3 + 3 − 2 = 4 và 𝑎4 = 3 + 4 − 2 = 5\n\nBài tập thực hành\nYêu cầu sinh viên code lại thuật toán 2.\n    Input: số nguyên dương 𝑛, 𝑘 (tổ hợp chập 𝑘 của 𝑛 phần tử\n    {1, 2, ..., 𝑛}).\n    Output: liệt kê các tổ hơp đó theo thứ tự từ điển.\n     Trieu Hai Nguyen                    Discrete Mathematics          BM. KTPM–Khoa CNTT   49 / 53"
+      },
+      {
+        "slide": 50,
+        "physical": 90,
+        "text": "Sinh các hoán vị và tổ hợp   Khai triển lũy thừa của đa thức\n\n\n\nKhai triển lũy thừa của đa thức\n\nĐịnh lý\nCho 𝑥, 𝑦 là biến và 𝑛 là số tự nhiên. Khi đó\n              𝑛\n             ∑︁\n(𝑥+𝑦)𝑛 =            𝐶𝑛𝑘 𝑥𝑛−𝑘 𝑦 𝑘 = 𝐶𝑛0 𝑥𝑛 +𝐶𝑛1 𝑥𝑛−1 𝑦+. . .+𝐶𝑛𝑛−1 𝑥𝑦 𝑛−1 +𝐶𝑛𝑛 𝑦 𝑛\n             𝑘=0\n\n\n\nVí dụ 4.4\nKhai triển (𝑥 + 𝑦)4 ?\n                        4\n                       ∑︁\n                4\n    (𝑥 + 𝑦) =                𝐶4𝑘 𝑥4−𝑘 𝑦 𝑘 = 𝑥 + 4𝑥3 𝑦 + 6𝑥2 𝑦 2 + 4𝑥𝑦 3 + 𝑦 4\n                       𝑘=0\n\n\n    Trieu Hai Nguyen                     Discrete Mathematics                BM. KTPM–Khoa CNTT   50 / 53"
+      },
+      {
+        "slide": 51,
+        "physical": 92,
+        "text": "Sinh các hoán vị và tổ hợp    Khai triển lũy thừa của đa thức\n\n\n\n\nVí dụ 4.5\nTìm hệ số của 𝑥12 𝑦 13 trong khai triển (2𝑥 − 3𝑦)25 ?\n                                              25\n                                             ∑︁\n                                    25                 𝑘\n                       [2𝑥 − 3𝑦]         =            𝐶25 (2𝑥)25−𝑘 (−3𝑦)𝑘\n                                             𝑘=0\n\n\nVới 𝑘 = 13 hệ số của 𝑥12 𝑦 13 là 𝐶25\n                                  13 12\n                                     2 (−3)13\n\n\n\n\n    Trieu Hai Nguyen                      Discrete Mathematics                 BM. KTPM–Khoa CNTT   51 / 53"
+      },
+      {
+        "slide": 52,
+        "physical": 93,
+        "text": "Sinh các hoán vị và tổ hợp   Khai triển lũy thừa của đa thức\n\n\n\n\nĐịnh lý\nCho 𝑥1 , 𝑥2 , . . . , 𝑥𝑚 là các biến và 𝑛 là số nguyên dương. Khi đó\n                                                  ∑︁        𝑛!\n  (𝑥1 + 𝑥2 + . . . + 𝑥𝑚 )𝑛 =                                          𝑥𝑘11 𝑥𝑘22 . . . 𝑥𝑘𝑚𝑚\n                                       𝑘 +𝑘 +...+𝑘 =𝑛\n                                                      𝑘1 !𝑘2 !...𝑘𝑚 !\n                                         1    2         𝑚\n\n\n\n\nVí dụ 4.6\nTìm hệ số của 𝑥3 𝑦 5 𝑧 trong khai triển (𝑥 + 2𝑦 − 3𝑧 + 𝑡)9 ?\n\n\n\n\n     Trieu Hai Nguyen                    Discrete Mathematics                BM. KTPM–Khoa CNTT   52 / 53"
+      },
+      {
+        "slide": 53,
+        "physical": 94,
+        "text": "Sinh các hoán vị và tổ hợp   Tài liệu tham khảo\n\n\n\nTài liệu tham khảo\n\n\n   L.V. Luyen\n   Bài giảng Toán Rời Rạc. Trường ĐH KHTN Tp.HCM.\n   (2018), chương 3.\n   Giáo trình Toán rời rạc\n   Giáo trình Toán Rời Rạc. Trường ĐHSP Huế. (2003), 22-35.\n   N.T. Nhựt\n   Bài giảng Toán Rời Rạc. Trường ĐH KHTN Tp.HCM. (2011).\n\n\n\n\n   Trieu Hai Nguyen                    Discrete Mathematics             BM. KTPM–Khoa CNTT   53 / 53"
+      }
+    ],
+    "allPages": [
+      {
+        "physical": 1,
+        "slide": 1,
+        "text": "TOÁN RỜI RẠC\n                      PHƯƠNG PHÁP ĐẾM\n\n                           NGUYỄN HẢI TRIỀU1\n                            1 Bộ môn Kỹ thuật phần mềm,\n\n                   Khoa Công nghệ thông tin, Trường ĐH Nha Trang\n\n\n\n\n                              NhaTrang, February 2022\n\n\n\n\nTrieu Hai Nguyen                  Discrete Mathematics     BM. KTPM–Khoa CNTT   1 / 53"
+      },
+      {
+        "physical": 2,
+        "slide": 2,
+        "text": "Tổng quan\n\n\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n\n\n\n     Trieu Hai Nguyen   Discrete Mathematics   BM. KTPM–Khoa CNTT   2 / 53"
+      },
+      {
+        "physical": 3,
+        "slide": 3,
+        "text": "Các nguyên lý đếm cơ bản\n\n\n\n\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n\n\n\n     Trieu Hai Nguyen                  Discrete Mathematics   BM. KTPM–Khoa CNTT   3 / 53"
+      },
+      {
+        "physical": 4,
+        "slide": 4,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý cộng\n\n\n\nNguyên lý cộng\n\n\nGiả sử để làm công việc A ta có 2 phương pháp\n    Phương pháp 1: có 𝑛 cách làm\n    Phương pháp 2: có 𝑚 cách làm\nKhi đó số cách làm công việc A là 𝑛 + 𝑚.\n\nVí dụ 1.1\nAn có 3 áo tay dài, 5 áo tay ngắn. Để chọn một cái áo thì An có\nmấy cách?\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   4 / 53"
+      },
+      {
+        "physical": 5,
+        "slide": 4,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý cộng\n\n\n\nNguyên lý cộng\n\n\nGiả sử để làm công việc A ta có 2 phương pháp\n    Phương pháp 1: có 𝑛 cách làm\n    Phương pháp 2: có 𝑚 cách làm\nKhi đó số cách làm công việc A là 𝑛 + 𝑚.\n\nVí dụ 1.1\nAn có 3 áo tay dài, 5 áo tay ngắn. Để chọn một cái áo thì An có\nmấy cách?\n->8 cách\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   4 / 53"
+      },
+      {
+        "physical": 6,
+        "slide": 5,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý cộng\n\n\n\n\nVí dụ 1.2\nNhà trường cần chọn một sinh viên khoa CNTT năm hai, năm ba\nhoặc năm tư đi tham gia hội nghị sinh viên thành phố. Biết rằng\ntrường có 501 sinh viên năm hai, 402 sinh viên năm ba, 345 sinh\nviên năm tư. Hỏi có bao nhiêu cách chọn?\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   5 / 53"
+      },
+      {
+        "physical": 7,
+        "slide": 5,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý cộng\n\n\n\n\nVí dụ 1.2\nNhà trường cần chọn một sinh viên khoa CNTT năm hai, năm ba\nhoặc năm tư đi tham gia hội nghị sinh viên thành phố. Biết rằng\ntrường có 501 sinh viên năm hai, 402 sinh viên năm ba, 345 sinh\nviên năm tư. Hỏi có bao nhiêu cách chọn?\n-> 1248 cách\n\nVí dụ 1.3\nMột sinh viên có thể chọn bài thực hành máy tính từ một trong ba\ndanh sách tương ứng có 23, 15 và 19 bài. Hỏi có bao nhiêu cách\nchọn ra một bài thực hành?\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   5 / 53"
+      },
+      {
+        "physical": 8,
+        "slide": 5,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý cộng\n\n\n\n\nVí dụ 1.2\nNhà trường cần chọn một sinh viên khoa CNTT năm hai, năm ba\nhoặc năm tư đi tham gia hội nghị sinh viên thành phố. Biết rằng\ntrường có 501 sinh viên năm hai, 402 sinh viên năm ba, 345 sinh\nviên năm tư. Hỏi có bao nhiêu cách chọn?\n-> 1248 cách\n\nVí dụ 1.3\nMột sinh viên có thể chọn bài thực hành máy tính từ một trong ba\ndanh sách tương ứng có 23, 15 và 19 bài. Hỏi có bao nhiêu cách\nchọn ra một bài thực hành?\n-> 57 cách\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   5 / 53"
+      },
+      {
+        "physical": 9,
+        "slide": 6,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý cộng\n\n\n\n\nVí dụ 1.4\nTrên kệ có 555 viên bi đỏ, 313 viên bi vàng, 123 viên bi xanh. Hỏi\ncó bao nhiêu cách chọn ra một viên bi?\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   6 / 53"
+      },
+      {
+        "physical": 10,
+        "slide": 6,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý cộng\n\n\n\n\nVí dụ 1.4\nTrên kệ có 555 viên bi đỏ, 313 viên bi vàng, 123 viên bi xanh. Hỏi\ncó bao nhiêu cách chọn ra một viên bi?\n-> 991 cách\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   6 / 53"
+      },
+      {
+        "physical": 11,
+        "slide": 7,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\nNguyên lý nhân\n\nGiả sử để làm công việc A cần thực hiện 2 bước\n    Bước 1 có 𝑛 cách làm\n    Bước 2 có 𝑚 cách làm\nKhi đó số cách làm công việc A là 𝑛 × 𝑚.\n\nVí dụ 1.5\nCó nhiêu cách đi từ A đến C?\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   7 / 53"
+      },
+      {
+        "physical": 12,
+        "slide": 7,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\nNguyên lý nhân\n\nGiả sử để làm công việc A cần thực hiện 2 bước\n    Bước 1 có 𝑛 cách làm\n    Bước 2 có 𝑚 cách làm\nKhi đó số cách làm công việc A là 𝑛 × 𝑚.\n\nVí dụ 1.5\nCó nhiêu cách đi từ A đến C?\n\n\n\n\n->20\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   7 / 53"
+      },
+      {
+        "physical": 13,
+        "slide": 8,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\n\nVí dụ 1.6\nCó bao nhiêu chuỗi nhị phân có độ dài 6?\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   8 / 53"
+      },
+      {
+        "physical": 14,
+        "slide": 8,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\n\nVí dụ 1.6\nCó bao nhiêu chuỗi nhị phân có độ dài 6?\n->64\n\nVí dụ 1.7\n(Nâng cao) Cho tập hợp A gồm 6 phần tử và tập hợp B gồm 10\nphần tử. Hỏi\n  1 Có bao nhiêu ánh xạ từ A vào B?\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   8 / 53"
+      },
+      {
+        "physical": 15,
+        "slide": 8,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\n\nVí dụ 1.6\nCó bao nhiêu chuỗi nhị phân có độ dài 6?\n->64\n\nVí dụ 1.7\n(Nâng cao) Cho tập hợp A gồm 6 phần tử và tập hợp B gồm 10\nphần tử. Hỏi\n  1 Có bao nhiêu ánh xạ từ A vào B?\n    -> Với mỗi phần tử x của A ta có 10 cách chọn ảnh của x (vì\n    B có 10 phần tử) vậy nên có 106 cách chọn\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   8 / 53"
+      },
+      {
+        "physical": 16,
+        "slide": 8,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\n\nVí dụ 1.6\nCó bao nhiêu chuỗi nhị phân có độ dài 6?\n->64\n\nVí dụ 1.7\n(Nâng cao) Cho tập hợp A gồm 6 phần tử và tập hợp B gồm 10\nphần tử. Hỏi\n  1 Có bao nhiêu ánh xạ từ A vào B?\n    -> Với mỗi phần tử x của A ta có 10 cách chọn ảnh của x (vì\n    B có 10 phần tử) vậy nên có 106 cách chọn\n  2 Có bao nhiêu đơn ánh từ A vào B?\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   8 / 53"
+      },
+      {
+        "physical": 17,
+        "slide": 8,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\n\nVí dụ 1.6\nCó bao nhiêu chuỗi nhị phân có độ dài 6?\n->64\n\nVí dụ 1.7\n(Nâng cao) Cho tập hợp A gồm 6 phần tử và tập hợp B gồm 10\nphần tử. Hỏi\n  1 Có bao nhiêu ánh xạ từ A vào B?\n    -> Với mỗi phần tử x của A ta có 10 cách chọn ảnh của x (vì\n    B có 10 phần tử) vậy nên có 106 cách chọn\n  2 Có bao nhiêu đơn ánh từ A vào B?\n    -> 151200\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   8 / 53"
+      },
+      {
+        "physical": 18,
+        "slide": 9,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\n\nVí dụ 1.8\nTừ các chữ số 0, 1, 2, 3, 4, 5 ta có thể lập được bao nhiêu số tự\nnhiên có ba chữ số khác nhau mà chia hết cho 2?\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   9 / 53"
+      },
+      {
+        "physical": 19,
+        "slide": 9,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\n\nVí dụ 1.8\nTừ các chữ số 0, 1, 2, 3, 4, 5 ta có thể lập được bao nhiêu số tự\nnhiên có ba chữ số khác nhau mà chia hết cho 2?\n-> Gọi số có ba chữ số là 𝑎𝑏𝑐. Dựa vào yêu cầu bài toán số 𝑎 phải\nkhác 0. Xét trường hợp 𝑐 = 0 và trường hợp 𝑐 ̸= 0. Có 52 số.\n\nVí dụ 1.9\nNgười ta có thể ghi nhãn cho những chiếc ghế trong một giảng\nđường bằng một chữ cái trong bảng chữ cái Latinh và một số\nnguyên dương không vượt quá 100. Bằng cách như vậy, nhiều nhất\ncó bao nhiêu chiếc ghế có thể được ghi nhãn khác nhau?\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   9 / 53"
+      },
+      {
+        "physical": 20,
+        "slide": 9,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý nhân\n\n\n\n\nVí dụ 1.8\nTừ các chữ số 0, 1, 2, 3, 4, 5 ta có thể lập được bao nhiêu số tự\nnhiên có ba chữ số khác nhau mà chia hết cho 2?\n-> Gọi số có ba chữ số là 𝑎𝑏𝑐. Dựa vào yêu cầu bài toán số 𝑎 phải\nkhác 0. Xét trường hợp 𝑐 = 0 và trường hợp 𝑐 ̸= 0. Có 52 số.\n\nVí dụ 1.9\nNgười ta có thể ghi nhãn cho những chiếc ghế trong một giảng\nđường bằng một chữ cái trong bảng chữ cái Latinh và một số\nnguyên dương không vượt quá 100. Bằng cách như vậy, nhiều nhất\ncó bao nhiêu chiếc ghế có thể được ghi nhãn khác nhau?\n-> nhiều nhất ta có thể gán nhãn cho 2600 chiếc ghế\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics         BM. KTPM–Khoa CNTT   9 / 53"
+      },
+      {
+        "physical": 21,
+        "slide": 10,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý bù trừ\n\n\n\nNguyên lý bù trừ\nVí dụ 1.10\nCó bao nhiêu chuỗi bit có độ dài 8 hoặc được bắt đầu bằng 1 hoặc\nđược kết thúc bằng 00?\n\nKhi hai hay nhiều công việc có thể được làm đồng thời, để tính\nđúng số cách thực hiện nhiệm vụ này ta cộng số cách làm mỗi một\ntrong hai hay nhiều việc rồi trừ đi số cách làm đồng thời của cả\nhai hay nhiều việc đó. Nguyên lý bù trừ được phát biểu bằng ngôn\nngữ tập hợp như sau: Cho A và B là hai tập hữu hạn. Khi đó\n                  |𝐴 ∪ 𝐵| = |𝐴| + |𝐵| − |𝐴 ∩ 𝐵|\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics           BM. KTPM–Khoa CNTT   10 / 53"
+      },
+      {
+        "physical": 22,
+        "slide": 11,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý bù trừ\n\n\n\nDựa vào nguyên lý bù trừ, ta có thể giải ví dụ 1.10 như sau:\n    Số lượng chuỗi nhị phân bắt đầu bằng 1 là 27 = 128\n    Số lượng chuỗi nhị phân kết thúc bằng 00 là 26 = 64\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics           BM. KTPM–Khoa CNTT   11 / 53"
+      },
+      {
+        "physical": 23,
+        "slide": 11,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý bù trừ\n\n\n\nDựa vào nguyên lý bù trừ, ta có thể giải ví dụ 1.10 như sau:\n    Số lượng chuỗi nhị phân bắt đầu bằng 1 là 27 = 128\n    Số lượng chuỗi nhị phân kết thúc bằng 00 là 26 = 64\n    Số lượng chuỗi nhị phân bắt đầu bằng 1 và kết thúc bằng 00\n    là 25 = 32\nVậy số lượng chuỗi thỏa yêu cầu là 128 + 64 − 32 = 160\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics           BM. KTPM–Khoa CNTT   11 / 53"
+      },
+      {
+        "physical": 24,
+        "slide": 11,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý bù trừ\n\n\n\nDựa vào nguyên lý bù trừ, ta có thể giải ví dụ 1.10 như sau:\n    Số lượng chuỗi nhị phân bắt đầu bằng 1 là 27 = 128\n    Số lượng chuỗi nhị phân kết thúc bằng 00 là 26 = 64\n    Số lượng chuỗi nhị phân bắt đầu bằng 1 và kết thúc bằng 00\n    là 25 = 32\nVậy số lượng chuỗi thỏa yêu cầu là 128 + 64 − 32 = 160\n\nVí dụ 1.11\nCó 2 bài toán kiểm tra. Trong lớp có 30 sinh viên làm được bài thứ\nnhất và 20 sinh viên làm được bài thứ hai và chỉ có 10 sinh viên\nlàm được cả 2 bài. Biết rằng mỗi sinh viên đều làm ít nhất một\nbài, hỏi lớp có bao nhiêu sinh viên?\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics           BM. KTPM–Khoa CNTT   11 / 53"
+      },
+      {
+        "physical": 25,
+        "slide": 11,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý bù trừ\n\n\n\nDựa vào nguyên lý bù trừ, ta có thể giải ví dụ 1.10 như sau:\n    Số lượng chuỗi nhị phân bắt đầu bằng 1 là 27 = 128\n    Số lượng chuỗi nhị phân kết thúc bằng 00 là 26 = 64\n    Số lượng chuỗi nhị phân bắt đầu bằng 1 và kết thúc bằng 00\n    là 25 = 32\nVậy số lượng chuỗi thỏa yêu cầu là 128 + 64 − 32 = 160\n\nVí dụ 1.11\nCó 2 bài toán kiểm tra. Trong lớp có 30 sinh viên làm được bài thứ\nnhất và 20 sinh viên làm được bài thứ hai và chỉ có 10 sinh viên\nlàm được cả 2 bài. Biết rằng mỗi sinh viên đều làm ít nhất một\nbài, hỏi lớp có bao nhiêu sinh viên?\n\nĐặt A, B lần lượt là những sinh viên giải được bài 1 và bài 2.\nVậy số sinh viên của lớp chính là số phần tử của |𝐴 ∪ 𝐵|.\n    Trieu Hai Nguyen                  Discrete Mathematics           BM. KTPM–Khoa CNTT   11 / 53"
+      },
+      {
+        "physical": 26,
+        "slide": 12,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý bù trừ\n\n\n\n\nTương tự đối với ba tập hợp hữu hạn A, B, C, ta có\n\n|𝐴∪𝐵 ∪𝐶| = |𝐴|+|𝐵|+|𝐶|−|𝐴∩𝐵|−|𝐵 ∩𝐶|−|𝐴∩𝐶|+|𝐴∩𝐵 ∩𝐶|\n\nVí dụ 1.12\nBài kiểm tra Toán rời rạc có 3 bài. Biết rằng, mỗi sinh viên làm\nđược ít nhất 1 bài, trong đó có\n    20 sinh viên làm được bài 1; 14 sinh viên làm được bài 2; 10\n    sinh viên làm được bài 3\n    6 sinh viên giải được bài 1 và 3; 5 sinh viên giải được bài 2 và\n    bài 3; 2 sinh viên giải được bài 1 và 2\n    1 sinh viên giải được cả 3 bài\nHỏi lớp có bao nhiêu sinh viên?\n\n    Trieu Hai Nguyen                  Discrete Mathematics           BM. KTPM–Khoa CNTT   12 / 53"
+      },
+      {
+        "physical": 27,
+        "slide": 13,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý Dirichlet\n\n\n\nNguyên lý Dirichlet\n\nNguyên lý Dirichlet (chuồng bồ câu) được nhìn từ thực tế như\nsau:\n     Có 20 chim bồ câu ở trong 7 cái chuồng. Khi đó sẽ có ít nhất\n     1 chuồng có 3 con bồ câu trở lên.\n     Trong một nhóm 367 người thì có ít nhất 2 người có cùng\n     ngày sinh nhật.\n\nMệnh đề\nNếu có 𝑘 + 1 (hoặc nhiều hơn) đồ vật được đặt vào trong 𝑘 hộp\nthì tồn tại một hộp có ít nhất hai đồ vật.\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics              BM. KTPM–Khoa CNTT   13 / 53"
+      },
+      {
+        "physical": 28,
+        "slide": 14,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý Dirichlet\n\n\n\n\nĐịnh nghĩa 1.1\nGiá trị trần của 𝑥, ký hiệu là ⌈𝑥⌉, là số nguyên nhỏ nhất mà lớn\nhơn hay bằng x (ý nghĩa tương tự như hàm ceil(x) trong nhiều\nngôn ngữ lập trình).\n\nNguyên lý Dirichlet\nGiả sử có 𝑛 chim bồ ⌈︀câu⌉︀ ở trong 𝑘 chuồng, khi đó tồn tại ít nhất\n                       𝑛\nmột chuồng chứa từ 𝑘 bồ câu trở lên.\n\n\n\n\n     Trieu Hai Nguyen                  Discrete Mathematics              BM. KTPM–Khoa CNTT   14 / 53"
+      },
+      {
+        "physical": 29,
+        "slide": 15,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý Dirichlet\n\n\n\n\nVí dụ 1.13\n    Trong lớp toán rời rạc có 65 bạn SV thì có ít nhất bao nhiêu\n    bạn cùng tháng sinh?\n    Trong một lớp học phải có ít nhất bao nhiêu sinh viên để có ít\n    nhất 6 sinh viên có cùng thứ bậc học tập, biết rằng có 5 loại\n    thứ bậc A, B, C, D và E?\n\nVí dụ 1.14\nTrong kỳ thi học sinh giỏi, điểm bài thi được đánh giá bởi một số\nnguyên trong khoảng từ 0 đến 100. Hỏi rằng ít nhất có bao nhiêu\nhọc sinh dự thi để cho chắc chắn tìm được hai học sinh có kết quả\nthi như nhau?\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics              BM. KTPM–Khoa CNTT   15 / 53"
+      },
+      {
+        "physical": 30,
+        "slide": 16,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý Dirichlet\n\n\n\n\nVí dụ 1.15\nSố mã vùng cần thiết nhỏ nhất phải là bao nhiêu để đảm bảo 25\ntriệu máy điện thoại trong nước có số điện thoại khác nhau, mỗi\nsố có 9 chữ số (giả sử số điện thoại có dạng 0XX - 8XXXXX với\nX nhận các giá trị từ 0 đến 9).\n\n\n\n\n    Trieu Hai Nguyen                  Discrete Mathematics              BM. KTPM–Khoa CNTT   16 / 53"
+      },
+      {
+        "physical": 31,
+        "slide": 16,
+        "text": "Các nguyên lý đếm cơ bản   Nguyên lý Dirichlet\n\n\n\n\nVí dụ 1.15\nSố mã vùng cần thiết nhỏ nhất phải là bao nhiêu để đảm bảo 25\ntriệu máy điện thoại trong nước có số điện thoại khác nhau, mỗi\nsố có 9 chữ số (giả sử số điện thoại có dạng 0XX - 8XXXXX với\nX nhận các giá trị từ 0 đến 9).\n-> Có 107 = 10000000 số điện thoại khác nhau có dạng 0XX -\n8XXXXX. Vì vậy theo nguyên\n                         ⌈︀ 25000000lý⌉︀ Dirichlet, trong số 25 triệu máy\nđiện thoại thì có ít nhất 10000000 = 3 số điện thoại bị trùng nhau.\nĐể đảm bảo mỗi máy có một số cần có ít nhất 3 mã vùng.\n\n\n\n\n     Trieu Hai Nguyen                  Discrete Mathematics              BM. KTPM–Khoa CNTT   16 / 53"
+      },
+      {
+        "physical": 32,
+        "slide": 17,
+        "text": "Giải tích tổ hợp\n\n\n\n\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n\n\n\n     Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   17 / 53"
+      },
+      {
+        "physical": 33,
+        "slide": 18,
+        "text": "Giải tích tổ hợp   Hoán vị\n\n\n\nHoán vị\nĐịnh nghĩa 2.1\nCho tập hợp A gồm n phần tử. Mỗi cách sắp đặt có thứ tự n\nphần tử của A được gọi là một hoán vị của n phần tử.\n\nVí dụ 2.1\nCho A = {1, 2, 3}. Khi đó A có các hoán vị sau: 123, 132, 213,\n231, 312, 321\n\nĐịnh lý\n𝑃𝑛 là số các hoán vị của 𝑛 phần tử, và\n\n                𝑃𝑛 = 𝑛! = 𝑛 × (𝑛 − 1) × (𝑛 − 2) × . . . × 1\n    Trieu Hai Nguyen             Discrete Mathematics   BM. KTPM–Khoa CNTT   18 / 53"
+      },
+      {
+        "physical": 34,
+        "slide": 19,
+        "text": "Giải tích tổ hợp   Hoán vị\n\n\n\n\nVí dụ 2.2\nCho X = {1, 2, 3, 4, 5}. Hỏi có bao nhiêu số tự nhiên gồm 5 chữ\nsố khác nhau được tạo từ tập X?\n\nVí dụ 2.3\nCần sắp xếp 5 sinh viên A, B, C, D, E thành một dãy hàng dọc\ni) Hỏi có bao nhiêu cách sắp xếp?\nii) Hỏi có bao nhiêu cách sắp xếp sao cho hai sinh viên A và B\nluôn đứng ở đầu hàng?\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   19 / 53"
+      },
+      {
+        "physical": 35,
+        "slide": 19,
+        "text": "Giải tích tổ hợp   Hoán vị\n\n\n\n\nVí dụ 2.2\nCho X = {1, 2, 3, 4, 5}. Hỏi có bao nhiêu số tự nhiên gồm 5 chữ\nsố khác nhau được tạo từ tập X?\n\nVí dụ 2.3\nCần sắp xếp 5 sinh viên A, B, C, D, E thành một dãy hàng dọc\ni) Hỏi có bao nhiêu cách sắp xếp?\nii) Hỏi có bao nhiêu cách sắp xếp sao cho hai sinh viên A và B\nluôn đứng ở đầu hàng?\n-> A và B luôn đứng đầu hàng nên có 2! cách, vì xếp theo thứ tự\nnên 3 sinh viên còn lại có 3! cách. Vậy theo quy tắc nhân có 12\ncách\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   19 / 53"
+      },
+      {
+        "physical": 36,
+        "slide": 20,
+        "text": "Giải tích tổ hợp   Hoán vị\n\n\n\n\nVí dụ 2.4\nTừ 6 chữ số 1, 2, 3, 4, 5, 6 có thể lập được bao nhiêu số tự nhiên\ngồm 6 chữ số khác nhau, trong đó có bao nhiêu số lẻ? bao nhiêu\nsố không chia hết cho 5?\n\nVí dụ 2.5\nCần sắp xếp 3 sinh viên nữ và 5 sinh viên nam thành một hàng\ndọc.\n  1  Hỏi có bao nhiêu cách sắp xếp nếu 3 sinh viên nữ luôn đứng\n     liền nhau ?\n  2  Hỏi có bao nhiêu cách sắp xếp nếu sinh viên đứng đầu hàng\n     là sinh viên nữ và sinh viên cuối hàng là sinh viên nam ?\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   20 / 53"
+      },
+      {
+        "physical": 37,
+        "slide": 21,
+        "text": "Giải tích tổ hợp   Chỉnh hợp\n\n\n\nChỉnh hợp\nĐịnh nghĩa 2.2\nCho A là tập hợp gồm 𝑛 phần tử. Mỗi bộ sắp thứ tự gồm 𝑘 phần\ntử của A được gọi là một chỉnh hợp chập 𝑘 của 𝑛 phần tử.\n\nĐịnh lý\nSố các chỉnh hợp chập 𝑘 của 𝑛, ký hiệu 𝐴𝑘𝑛\n\n                                                              𝑛!\n           𝐴𝑘𝑛 = 𝑛 × (𝑛 − 1) × . . . × (𝑛 − 𝑘 + 1) =\n                                                           (𝑛 − 𝑘)!\n\nVí dụ 2.6\nCho X = {a, b, c}. Khi đó X có các chỉnh hợp chập 2 của 3 là 6\nbộ sắp xếp có thứ tự gồm: ab, ba, ac, ca, bc, cb\n    Trieu Hai Nguyen            Discrete Mathematics     BM. KTPM–Khoa CNTT   21 / 53"
+      },
+      {
+        "physical": 38,
+        "slide": 22,
+        "text": "Giải tích tổ hợp   Chỉnh hợp\n\n\n\nVí dụ 2.7\nCó bao nhiêu số tự nhiên ngồm 3 chữ số khác nhau được tạo\nthành từ 1, 2, 3, 4, 5, 6. Yêu cầu sử dụng cả hai cách: nguyên lý\nnhân và chỉnh hợp.\n\nVí dụ 2.8\nLớp CNTT có 15 sinh viên nam và 20 nữ. Trong buổi tập trung\nlớp đầu năm, giáo viên chọn 3 sinh viên làm ban cán sự lớp gồm:\n1 lớp trưởng, 1 lớp phó và 1 thủ quỹ.\n  1  Hỏi có bao nhiêu cách chọn?\n  2  Hỏi có bao nhiêu cách chọn nếu lớp trưởng là nam?\n  3  Hỏi có bao nhiêu cách chọn nếu trong 3 bạn được chọn phải\n     có ít nhất 1 nữ?\n\n\n    Trieu Hai Nguyen         Discrete Mathematics     BM. KTPM–Khoa CNTT   22 / 53"
+      },
+      {
+        "physical": 39,
+        "slide": 22,
+        "text": "Giải tích tổ hợp   Chỉnh hợp\n\n\n\nVí dụ 2.7\nCó bao nhiêu số tự nhiên ngồm 3 chữ số khác nhau được tạo\nthành từ 1, 2, 3, 4, 5, 6. Yêu cầu sử dụng cả hai cách: nguyên lý\nnhân và chỉnh hợp.\n\nVí dụ 2.8\nLớp CNTT có 15 sinh viên nam và 20 nữ. Trong buổi tập trung\nlớp đầu năm, giáo viên chọn 3 sinh viên làm ban cán sự lớp gồm:\n1 lớp trưởng, 1 lớp phó và 1 thủ quỹ.\n  1  Hỏi có bao nhiêu cách chọn?\n  2  Hỏi có bao nhiêu cách chọn nếu lớp trưởng là nam?\n  3  Hỏi có bao nhiêu cách chọn nếu trong 3 bạn được chọn phải\n     có ít nhất 1 nữ?\nĐáp án: 𝐴335 ;\n    Trieu Hai Nguyen         Discrete Mathematics     BM. KTPM–Khoa CNTT   22 / 53"
+      },
+      {
+        "physical": 40,
+        "slide": 22,
+        "text": "Giải tích tổ hợp   Chỉnh hợp\n\n\n\nVí dụ 2.7\nCó bao nhiêu số tự nhiên ngồm 3 chữ số khác nhau được tạo\nthành từ 1, 2, 3, 4, 5, 6. Yêu cầu sử dụng cả hai cách: nguyên lý\nnhân và chỉnh hợp.\n\nVí dụ 2.8\nLớp CNTT có 15 sinh viên nam và 20 nữ. Trong buổi tập trung\nlớp đầu năm, giáo viên chọn 3 sinh viên làm ban cán sự lớp gồm:\n1 lớp trưởng, 1 lớp phó và 1 thủ quỹ.\n  1  Hỏi có bao nhiêu cách chọn?\n  2  Hỏi có bao nhiêu cách chọn nếu lớp trưởng là nam?\n  3  Hỏi có bao nhiêu cách chọn nếu trong 3 bạn được chọn phải\n     có ít nhất 1 nữ?\nĐáp án: 𝐴335 ; 15 × 𝐴234 ;\n    Trieu Hai Nguyen         Discrete Mathematics     BM. KTPM–Khoa CNTT   22 / 53"
+      },
+      {
+        "physical": 41,
+        "slide": 22,
+        "text": "Giải tích tổ hợp   Chỉnh hợp\n\n\n\nVí dụ 2.7\nCó bao nhiêu số tự nhiên ngồm 3 chữ số khác nhau được tạo\nthành từ 1, 2, 3, 4, 5, 6. Yêu cầu sử dụng cả hai cách: nguyên lý\nnhân và chỉnh hợp.\n\nVí dụ 2.8\nLớp CNTT có 15 sinh viên nam và 20 nữ. Trong buổi tập trung\nlớp đầu năm, giáo viên chọn 3 sinh viên làm ban cán sự lớp gồm:\n1 lớp trưởng, 1 lớp phó và 1 thủ quỹ.\n  1  Hỏi có bao nhiêu cách chọn?\n  2  Hỏi có bao nhiêu cách chọn nếu lớp trưởng là nam?\n  3  Hỏi có bao nhiêu cách chọn nếu trong 3 bạn được chọn phải\n     có ít nhất 1 nữ?\nĐáp án: 𝐴335 ; 15 × 𝐴234 ; 𝐴335 − 𝐴315 .\n    Trieu Hai Nguyen         Discrete Mathematics     BM. KTPM–Khoa CNTT   22 / 53"
+      },
+      {
+        "physical": 42,
+        "slide": 23,
+        "text": "Giải tích tổ hợp     Tổ hợp\n\n\n\nTổ hợp\nĐịnh nghĩa 2.3\nCho A là tập hợp gồm 𝑛 phần tử. Mỗi tập con gồm 𝑘 phần tử của\nA được gọi là một tổ hợp chập 𝑘 của 𝑛 phần tử.\n\nĐịnh lý\n                                           (︀ 𝑛 )︀\nSố tổ hợp chập 𝑘 của 𝑛, ký hiệu              𝑘\n                                                     hay 𝐶𝑛𝑘\n\n                                𝐴𝑘𝑛       𝑛!\n                       𝐶𝑛𝑘 =        =\n                                𝑘!    𝑘!(𝑛 − 𝑘)!\n\nVí dụ 2.9\nCó bao nhiêu cách chọn 10 sinh viên trong một lớp có 30 sinh\nviên?\n    Trieu Hai Nguyen           Discrete Mathematics            BM. KTPM–Khoa CNTT   23 / 53"
+      },
+      {
+        "physical": 43,
+        "slide": 24,
+        "text": "Giải tích tổ hợp   Tổ hợp\n\n\n\n\nVí dụ 2.10\nMột lớp có 40 sinh viên gồm 25 nam và 15 nữ. Ta cần chọn ra 6\nsinh viên tham gia hội nghị của trường. Hỏi có bao nhiêu cách\nchọn nếu:\n     Không phân biệt nam nữ?\n     Có 4 nam và 2 nữ?\n     Có ít nhất là 4 sinh viên nam? (gợi ý: tức là số lượng sv nam\n     có thể là 4 hoặc 5 hoặc 6)\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   24 / 53"
+      },
+      {
+        "physical": 44,
+        "slide": 25,
+        "text": "Giải tích tổ hợp   Tổ hợp\n\n\n\n\nVí dụ 2.11\nCho T = {a, b, c, d, e, f, g, h, i, j, k}. Ký hiệu |𝑋| để chỉ số\nlượng phần tử của tập hợp X.\n  1 T có bao nhiêu tập hợp con A thỏa |A| = 6?\n  2 T có bao nhiêu tập hợp con A thỏa |A| = 6 và 𝑑 ∈ A?\n  3 T có bao nhiêu tập hợp con A thỏa |A| = 6 và 𝑑 ∈    / A?\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics   BM. KTPM–Khoa CNTT   25 / 53"
+      },
+      {
+        "physical": 45,
+        "slide": 25,
+        "text": "Giải tích tổ hợp   Tổ hợp\n\n\n\n\nVí dụ 2.11\nCho T = {a, b, c, d, e, f, g, h, i, j, k}. Ký hiệu |𝑋| để chỉ số\nlượng phần tử của tập hợp X.\n  1 T có bao nhiêu tập hợp con A thỏa |A| = 6?\n  2 T có bao nhiêu tập hợp con A thỏa |A| = 6 và 𝑑 ∈ A?\n  3 T có bao nhiêu tập hợp con A thỏa |A| = 6 và 𝑑 ∈    / A?\n          6        5          6       5\nĐáp án: 𝐶11 ;    𝐶10 ;     𝐶11 − 𝐶10 ;\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics   BM. KTPM–Khoa CNTT   25 / 53"
+      },
+      {
+        "physical": 46,
+        "slide": 26,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.12\nCó bao nhiêu cách sắp xếp 5 bác sĩ, 4 kỹ sư, 3 luật sư vào một bàn\ndài có 12 chỗ ngồi (được đánh số từ 1 đến 12) trong mỗi trường\nhợp sau:\n  1  không có điều kiện gì thêm?\n  2  các đồng nghiệp ngồi cạnh nhau?\n  3  các bác sĩ ngồi cạnh nhau ở một đầu bàn, còn các kỹ sư, luật\n     sư ngồi xen kẻ ở đầu bàn còn lại?\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   26 / 53"
+      },
+      {
+        "physical": 47,
+        "slide": 26,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.12\nCó bao nhiêu cách sắp xếp 5 bác sĩ, 4 kỹ sư, 3 luật sư vào một bàn\ndài có 12 chỗ ngồi (được đánh số từ 1 đến 12) trong mỗi trường\nhợp sau:\n  1  không có điều kiện gì thêm?\n  2  các đồng nghiệp ngồi cạnh nhau?\n  3  các bác sĩ ngồi cạnh nhau ở một đầu bàn, còn các kỹ sư, luật\n     sư ngồi xen kẻ ở đầu bàn còn lại?\nĐáp án:\n  1  12!\n  2  3! × 5! × 4! × 3!\n  3  2! × 5! × 4! × 3!\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   26 / 53"
+      },
+      {
+        "physical": 48,
+        "slide": 27,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\nVí dụ 2.13\nCó bao nhiêu số tự nhiên 𝑁 = 𝑎𝑏𝑐𝑑𝑒𝑓 𝑔ℎ gồm 8 chữ số hệ thập\nphân a, b, c, d, e, f, g, h thỏa các điều kiện a lẻ, b = 4, g > 6, h\nchia hết cho 3 và c, d, e, f tùy ý?\n\n\n\n\n     Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   27 / 53"
+      },
+      {
+        "physical": 49,
+        "slide": 27,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\nVí dụ 2.13\nCó bao nhiêu số tự nhiên 𝑁 = 𝑎𝑏𝑐𝑑𝑒𝑓 𝑔ℎ gồm 8 chữ số hệ thập\nphân a, b, c, d, e, f, g, h thỏa các điều kiện a lẻ, b = 4, g > 6, h\nchia hết cho 3 và c, d, e, f tùy ý?\n->5 × 1 × 3 × 4 × 104\n\nVí dụ 2.14\n  1   Có bao nhiêu cách sắp 7 nam và 6 nữ thành 1 hàng dọc mà\n      nam và nữ đứng xen kẽ?\n\n\n\n\n      Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   27 / 53"
+      },
+      {
+        "physical": 50,
+        "slide": 27,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\nVí dụ 2.13\nCó bao nhiêu số tự nhiên 𝑁 = 𝑎𝑏𝑐𝑑𝑒𝑓 𝑔ℎ gồm 8 chữ số hệ thập\nphân a, b, c, d, e, f, g, h thỏa các điều kiện a lẻ, b = 4, g > 6, h\nchia hết cho 3 và c, d, e, f tùy ý?\n->5 × 1 × 3 × 4 × 104\n\nVí dụ 2.14\n  1   Có bao nhiêu cách sắp 7 nam và 6 nữ thành 1 hàng dọc mà\n      nam và nữ đứng xen kẽ? -> 7! × 6!\n  2   Có bao nhiêu cách sắp 6 nam và 6 nữ thành 1 hàng dọc mà\n      nam và nữ đứng xen kẽ?\n\n\n\n\n      Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   27 / 53"
+      },
+      {
+        "physical": 51,
+        "slide": 27,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\nVí dụ 2.13\nCó bao nhiêu số tự nhiên 𝑁 = 𝑎𝑏𝑐𝑑𝑒𝑓 𝑔ℎ gồm 8 chữ số hệ thập\nphân a, b, c, d, e, f, g, h thỏa các điều kiện a lẻ, b = 4, g > 6, h\nchia hết cho 3 và c, d, e, f tùy ý?\n->5 × 1 × 3 × 4 × 104\n\nVí dụ 2.14\n  1   Có bao nhiêu cách sắp 7 nam và 6 nữ thành 1 hàng dọc mà\n      nam và nữ đứng xen kẽ? -> 7! × 6!\n  2   Có bao nhiêu cách sắp 6 nam và 6 nữ thành 1 hàng dọc mà\n      nam và nữ đứng xen kẽ? -> 6! × 6! + 6! × 6!\n  3   Có bao nhiêu cách sắp 6 nam và 6 nữ thành 1 hàng dọc mà 6\n      nam đứng gần nhau?\n\n\n      Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   27 / 53"
+      },
+      {
+        "physical": 52,
+        "slide": 27,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\nVí dụ 2.13\nCó bao nhiêu số tự nhiên 𝑁 = 𝑎𝑏𝑐𝑑𝑒𝑓 𝑔ℎ gồm 8 chữ số hệ thập\nphân a, b, c, d, e, f, g, h thỏa các điều kiện a lẻ, b = 4, g > 6, h\nchia hết cho 3 và c, d, e, f tùy ý?\n->5 × 1 × 3 × 4 × 104\n\nVí dụ 2.14\n  1   Có bao nhiêu cách sắp 7 nam và 6 nữ thành 1 hàng dọc mà\n      nam và nữ đứng xen kẽ? -> 7! × 6!\n  2   Có bao nhiêu cách sắp 6 nam và 6 nữ thành 1 hàng dọc mà\n      nam và nữ đứng xen kẽ? -> 6! × 6! + 6! × 6!\n  3   Có bao nhiêu cách sắp 6 nam và 6 nữ thành 1 hàng dọc mà 6\n      nam đứng gần nhau? -> 6! × 6! × 7\n  4   Có bao nhiêu cách sắp 7 nam và 6 nữ thành 1 hàng dọc mà 7\n      nam đứng gần nhau và 6 nữ đứng gần nhau?\n      Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   27 / 53"
+      },
+      {
+        "physical": 53,
+        "slide": 27,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\nVí dụ 2.13\nCó bao nhiêu số tự nhiên 𝑁 = 𝑎𝑏𝑐𝑑𝑒𝑓 𝑔ℎ gồm 8 chữ số hệ thập\nphân a, b, c, d, e, f, g, h thỏa các điều kiện a lẻ, b = 4, g > 6, h\nchia hết cho 3 và c, d, e, f tùy ý?\n->5 × 1 × 3 × 4 × 104\n\nVí dụ 2.14\n  1   Có bao nhiêu cách sắp 7 nam và 6 nữ thành 1 hàng dọc mà\n      nam và nữ đứng xen kẽ? -> 7! × 6!\n  2   Có bao nhiêu cách sắp 6 nam và 6 nữ thành 1 hàng dọc mà\n      nam và nữ đứng xen kẽ? -> 6! × 6! + 6! × 6!\n  3   Có bao nhiêu cách sắp 6 nam và 6 nữ thành 1 hàng dọc mà 6\n      nam đứng gần nhau? -> 6! × 6! × 7\n  4   Có bao nhiêu cách sắp 7 nam và 6 nữ thành 1 hàng dọc mà 7\n      nam đứng gần nhau và 6 nữ đứng gần nhau? -> 7! × 6! × 2\n      Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   27 / 53"
+      },
+      {
+        "physical": 54,
+        "slide": 28,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.15\nTừ 9 sinh viên nam và 8 sinh viên nữ, ta muốn chọn ra một đội\ngồm 10 người sao cho trong đội đó có ít nhất 4 nam và 4 nữ. Hỏi\ncó bao nhiêu cách chọn?\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   28 / 53"
+      },
+      {
+        "physical": 55,
+        "slide": 28,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.15\nTừ 9 sinh viên nam và 8 sinh viên nữ, ta muốn chọn ra một đội\ngồm 10 người sao cho trong đội đó có ít nhất 4 nam và 4 nữ. Hỏi\ncó bao nhiêu cách chọn?\nGợi ý: vì đề yêu cầu có ít nhất là 4 nam và 4 nữ nên số lượng\nnam có thể là 4 hoặc 5 hoặc 6. Vậy số cách chọn là:\n𝐶94 × 𝐶86 + 𝐶95 × 𝐶85 + 𝐶96 × 𝐶84\n\nVí dụ 2.16\nCho S = {1, 2, . . . , 9, 10}\n 1  Có bao nhiêu tập hợp con mà mỗi tập có đúng 5 phần tử?\n 2  Có bao nhiêu tập hợp con mà mỗi tập có không quá 4 phần\n    tử?\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   28 / 53"
+      },
+      {
+        "physical": 56,
+        "slide": 28,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.15\nTừ 9 sinh viên nam và 8 sinh viên nữ, ta muốn chọn ra một đội\ngồm 10 người sao cho trong đội đó có ít nhất 4 nam và 4 nữ. Hỏi\ncó bao nhiêu cách chọn?\nGợi ý: vì đề yêu cầu có ít nhất là 4 nam và 4 nữ nên số lượng\nnam có thể là 4 hoặc 5 hoặc 6. Vậy số cách chọn là:\n𝐶94 × 𝐶86 + 𝐶95 × 𝐶85 + 𝐶96 × 𝐶84\n\nVí dụ 2.16\nCho S = {1, 2, . . . , 9, 10}\n 1  Có bao nhiêu tập hợp con mà mỗi tập có đúng 5 phần tử?\n 2  Có bao nhiêu tập hợp con mà mỗi tập có không quá 4 phần\n    tử?\n    Gợi ý: số lượng phần tử của tập con có thể là 0, 1,2 hoặc 3.\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   28 / 53"
+      },
+      {
+        "physical": 57,
+        "slide": 29,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.17\nTừ 9 nam và 11 nữ, ta muốn chọn ra một đội văn nghệ gồm 10\nngười sao cho số nam và số nữ trong đội chênh lệch nhau không\nquá 2. Hỏi có tất cả bao nhiêu cách chọn đội?\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   29 / 53"
+      },
+      {
+        "physical": 58,
+        "slide": 29,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.17\nTừ 9 nam và 11 nữ, ta muốn chọn ra một đội văn nghệ gồm 10\nngười sao cho số nam và số nữ trong đội chênh lệch nhau không\nquá 2. Hỏi có tất cả bao nhiêu cách chọn đội?\n->𝐶94 × 𝐶11\n          6\n            + 𝐶95 × 𝐶11\n                      5\n                        + 𝐶96 × 𝐶11\n                                 4\n\n\n\nVí dụ 2.18\nTừ các chữ số 1, 2, 3, 4, 5, 6, 7 và 8, ta có thể tạo ra\n 1  bao nhiêu số tự nhiên có 4 chữ số khác nhau?\n 2  bao nhiêu số tự nhiên có 3 chữ số khác nhau trong đó có chữ\n    số 5?\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   29 / 53"
+      },
+      {
+        "physical": 59,
+        "slide": 29,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.17\nTừ 9 nam và 11 nữ, ta muốn chọn ra một đội văn nghệ gồm 10\nngười sao cho số nam và số nữ trong đội chênh lệch nhau không\nquá 2. Hỏi có tất cả bao nhiêu cách chọn đội?\n->𝐶94 × 𝐶11\n          6\n            + 𝐶95 × 𝐶11\n                      5\n                        + 𝐶96 × 𝐶11\n                                 4\n\n\n\nVí dụ 2.18\nTừ các chữ số 1, 2, 3, 4, 5, 6, 7 và 8, ta có thể tạo ra\n  1 bao nhiêu số tự nhiên có 4 chữ số khác nhau?\n  2 bao nhiêu số tự nhiên có 3 chữ số khác nhau trong đó có chữ\n    số 5?\n-> Đáp án: 𝐴48 ; 𝐴38 − 𝐴37 .\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   29 / 53"
+      },
+      {
+        "physical": 60,
+        "slide": 30,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.19\nCó 3 luật sư, 4 bác sĩ và 5 kỹ sư xếp thành một hàng dọc sao cho\ncác đồng nghiệp phải đứng cạnh nhau.\n  1  Hỏi có tất cả bao nhiêu cách xếp?\n  2  Nếu yêu cầu thêm các luật sư không đứng ở đầu hàng thì có\n     tất cả bao nhiêu cách xếp?\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   30 / 53"
+      },
+      {
+        "physical": 61,
+        "slide": 30,
+        "text": "Giải tích tổ hợp   Bài tập\n\n\n\n\nVí dụ 2.19\nCó 3 luật sư, 4 bác sĩ và 5 kỹ sư xếp thành một hàng dọc sao cho\ncác đồng nghiệp phải đứng cạnh nhau.\n  1  Hỏi có tất cả bao nhiêu cách xếp?\n  2  Nếu yêu cầu thêm các luật sư không đứng ở đầu hàng thì có\n     tất cả bao nhiêu cách xếp?\n-> Đáp án: 3! × 4! × 5! × 3!; 2 × 2! × 3! × 4! × 5!\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics   BM. KTPM–Khoa CNTT   30 / 53"
+      },
+      {
+        "physical": 62,
+        "slide": 31,
+        "text": "Chỉnh hợp và tổ hợp suy rộng\n\n\n\n\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n\n\n\n     Trieu Hai Nguyen                      Discrete Mathematics   BM. KTPM–Khoa CNTT   31 / 53"
+      },
+      {
+        "physical": 63,
+        "slide": 32,
+        "text": "Chỉnh hợp và tổ hợp suy rộng    Hoán vị lặp\n\n\n\nHoán vị lặp\n\nThực tế trong bài toán đếm, một số phần tử có thể giống nhau.\nKhi đó cần phải cẩn thận, tránh đếm chúng hơn một lần. Ví dụ:\nCó bao nhiêu chuỗi kí tự khác nhau bằng cách sắp xếp các chữ cái\ncủa từ AAABB?\n\nPhân tích ví dụ\nChuỗi AAABB chứa 3 chữ A và 2 chữ B. Để xác định số chuỗi\nkhác nhau có thể được tạo ra ta nhận thấy có 𝐶53 cách chọn 3 chỗ\ncho 3 chữ A. Còn lại 2 chỗ trống, do đó có 𝐶22 cách chọn 2 chỗ cho\n2 chữ B. Theo quy tắc nhân, số chuỗi khác nhau được tạo ra là:\n                                                         5!\n                                𝐶53 × 𝐶22 =                   = 10\n                                                      3! × 2!\n    Trieu Hai Nguyen                      Discrete Mathematics       BM. KTPM–Khoa CNTT   32 / 53"
+      },
+      {
+        "physical": 64,
+        "slide": 33,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Hoán vị lặp\n\n\n\n\nMệnh đề 3.1\nSố hoán vị của 𝑛 phần tử trong đó có 𝑛1 phần tử như nhau thuộc\nloại 1, 𝑛2 phần tử như nhau thuộc loại 2, ..., và 𝑛𝑘 phần tử như\nnhau thuộc loại 𝑘, bằng\n                                               𝑛!\n                                   𝑛1 ! × 𝑛2 ! × . . . × 𝑛𝑘 !\n\nChứng minh\nGợi ý: có 𝐶𝑛𝑛1 cách giữ 𝑛1 chỗ cho 𝑛1 phần tử loại 1. Tương tự có\n 𝑛𝑘\n𝐶𝑛−𝑛1 −...−𝑛𝑘−1\n                cách đặt 𝑛𝑘 phần tử loại 𝑘 vào chỗ trống còn lại.\nÁp dụng quy tắc nhân ta có điều phải chứng minh.                                         \u0004\n\n\n    Trieu Hai Nguyen                      Discrete Mathematics      BM. KTPM–Khoa CNTT   33 / 53"
+      },
+      {
+        "physical": 65,
+        "slide": 34,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Hoán vị lặp\n\n\n\n\nVí dụ 3.1\nCó bao nhiêu chuỗi kí tự khác nhau bằng cách sắp xếp các chữ cái\ncủa từ SUCCESS?\n\n\n\n\n    Trieu Hai Nguyen                      Discrete Mathematics      BM. KTPM–Khoa CNTT   34 / 53"
+      },
+      {
+        "physical": 66,
+        "slide": 34,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Hoán vị lặp\n\n\n\n\nVí dụ 3.1\nCó bao nhiêu chuỗi kí tự khác nhau bằng cách sắp xếp các chữ cái\ncủa từ SUCCESS?\n->\n                             7!\n                                       = 420\n                     3! × 1! × 2! × 1!\n\n\nVí dụ 3.2\nTừ các chữ số 1, 2, 3 lập được bao nhiêu số tự nhiên khác nhau có\nđúng 5 chữ số 1, 2 chữ số 2 và 3 chữ số 3.\n\n\n\n\n    Trieu Hai Nguyen                      Discrete Mathematics      BM. KTPM–Khoa CNTT   34 / 53"
+      },
+      {
+        "physical": 67,
+        "slide": 34,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Hoán vị lặp\n\n\n\n\nVí dụ 3.1\nCó bao nhiêu chuỗi kí tự khác nhau bằng cách sắp xếp các chữ cái\ncủa từ SUCCESS?\n->\n                             7!\n                                       = 420\n                     3! × 1! × 2! × 1!\n\n\nVí dụ 3.2\nTừ các chữ số 1, 2, 3 lập được bao nhiêu số tự nhiên khác nhau có\nđúng 5 chữ số 1, 2 chữ số 2 và 3 chữ số 3.\n-> gợi ý: số tự nhiên cần lập phải có 10 chữ số.\n\n\n\n    Trieu Hai Nguyen                      Discrete Mathematics      BM. KTPM–Khoa CNTT   34 / 53"
+      },
+      {
+        "physical": 68,
+        "slide": 35,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Chỉnh hợp lặp\n\n\n\nChỉnh hợp lặp\nĐịnh nghĩa 3.1\nCho A là tập hợp gồm n phần tử. Chỉnh hợp lặp chập k của n\nphần tử là một bộ sắp thứ tự k phần tử của A, các phần tử có thể\nlặp lại. Mỗi chỉnh hợp như thế là một phần tử của tập 𝐴𝑘 .\n\nMệnh đề 3.2\nMỗi phần tử của tập 𝐴𝑘 là một hàm từ tập k phần tử vào tập n\nphần tử. Số chỉnh hợp lặp chập k của n là: F𝑘𝑛 = 𝑛𝑘 .\n\nVí dụ 3.3\nTừ bảng chữ cái tiếng Anh, ta lập được bao nhiêu chuỗi chữ cái có\nđộ dài 5?\n    Trieu Hai Nguyen                      Discrete Mathematics        BM. KTPM–Khoa CNTT   35 / 53"
+      },
+      {
+        "physical": 69,
+        "slide": 35,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Chỉnh hợp lặp\n\n\n\nChỉnh hợp lặp\nĐịnh nghĩa 3.1\nCho A là tập hợp gồm n phần tử. Chỉnh hợp lặp chập k của n\nphần tử là một bộ sắp thứ tự k phần tử của A, các phần tử có thể\nlặp lại. Mỗi chỉnh hợp như thế là một phần tử của tập 𝐴𝑘 .\n\nMệnh đề 3.2\nMỗi phần tử của tập 𝐴𝑘 là một hàm từ tập k phần tử vào tập n\nphần tử. Số chỉnh hợp lặp chập k của n là: F𝑘𝑛 = 𝑛𝑘 .\n\nVí dụ 3.3\nTừ bảng chữ cái tiếng Anh, ta lập được bao nhiêu chuỗi chữ cái có\nđộ dài 5? -> 265\n    Trieu Hai Nguyen                      Discrete Mathematics        BM. KTPM–Khoa CNTT   35 / 53"
+      },
+      {
+        "physical": 70,
+        "slide": 36,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\nTổ hợp lặp\nVí dụ 3.4\nCửa hàng có 3 loại nón A, B, C, An muốn mua 2 cái nón. Hỏi An\ncó bao nhiêu cách chọn?\nAn có 6 cách chọn là AA, AB, AC, BB, BC, CC.\n\nĐịnh nghĩa 3.2\nMỗi cách chọn ra k vật không có thứ tự từ n loại vật khác nhau\n(trong đó mỗi loại vật có thể được chọn lại nhiều lần) được gọi là\ntổ hợp lặp chập k của n.\n\nMệnh đề 3.3\n      Số các tổ hợp lặp chập k của n được ký hiệu là K𝑘𝑛 và\n                          K𝑘𝑛 = C𝑘𝑛+𝑘−1\n    Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   36 / 53"
+      },
+      {
+        "physical": 71,
+        "slide": 37,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\nHệ quả\nSố nghiệm nguyên không âm (𝑥1 , 𝑥2 , . . . , 𝑥𝑛 )(𝑥𝑖 ∈ Z, 𝑥𝑖 ≥ 0) của\nphương trình\n                   𝑥1 + 𝑥2 + . . . + 𝑥 𝑛 = 𝑘\nlà 𝐾𝑛𝑘 = 𝐶𝑛+𝑘−1\n          𝑘\n\n\nVí dụ 3.5\nTìm số nghiệm nguyên không âm của phương trình\n\n                                      𝑥1 + 𝑥2 + 𝑥3 = 10\n\n\n\n\n     Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   37 / 53"
+      },
+      {
+        "physical": 72,
+        "slide": 37,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\nHệ quả\nSố nghiệm nguyên không âm (𝑥1 , 𝑥2 , . . . , 𝑥𝑛 )(𝑥𝑖 ∈ Z, 𝑥𝑖 ≥ 0) của\nphương trình\n                   𝑥1 + 𝑥2 + . . . + 𝑥 𝑛 = 𝑘\nlà 𝐾𝑛𝑘 = 𝐶𝑛+𝑘−1\n          𝑘\n\n\nVí dụ 3.5\nTìm số nghiệm nguyên không âm của phương trình\n\n                                      𝑥1 + 𝑥2 + 𝑥3 = 10\n\n-> Nhận thấy rằng mỗi nghiệm của phương trình ứng với một\ncách chọn 10 phần tử từ một tập có 3 loại, sao cho có 𝑥1 phần tử\nloại 1, 𝑥2 phần tử loại 2 và 𝑥3 phần tử loại 3 được chọn. Vì vậy số\nnghiệm bằng số tổ hợp lặp chập 10 từ tập có 3 phần tử và bằng\nK10       10\n  3 = 𝐶10+3−1 .\n     Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   37 / 53"
+      },
+      {
+        "physical": 73,
+        "slide": 38,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\n\nVí dụ 3.6\nTìm số nghiệm nguyên của phương trình\n\n                                𝑥1 + 𝑥2 + 𝑥3 + 𝑥4 = 20                                  (1)\n\nthỏa điều kiện 𝑥1 ≥ 4; 𝑥2 > 2; 𝑥3 > 5; 𝑥4 ≥ −2.\n\n\n\n\n    Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   38 / 53"
+      },
+      {
+        "physical": 74,
+        "slide": 38,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\n\nVí dụ 3.6\nTìm số nghiệm nguyên của phương trình\n\n                                𝑥1 + 𝑥2 + 𝑥3 + 𝑥4 = 20                                  (1)\n\nthỏa điều kiện 𝑥1 ≥ 4; 𝑥2 > 2; 𝑥3 > 5; 𝑥4 ≥ −2.\n\nTa viết điều kiện đã cho thành 𝑥1 ≥ 4; 𝑥2 ≥ 3; 𝑥3 ≥ 6; 𝑥4 ≥ −2.\nĐặt 𝑦1 = 𝑥1 − 4; 𝑦2 = 𝑥2 − 3; 𝑦3 = 𝑥3 − 6; 𝑦4 = 𝑥4 + 2. Khi đó ta\ncó 𝑦𝑖 ≥ 0 (𝑖 = 1, .., 4). Phương trình (1) trở thành\n\n                                  𝑦1 + 𝑦2 + 𝑦3 + 𝑦4 = 9                                 (2)\n\nDo đó, số nghiệm của phương trình (1) chính là số nghiệm của\nphương trình (2) và bằng 𝐾49 = 𝐶12\n                                9\n                                   .\n\n    Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   38 / 53"
+      },
+      {
+        "physical": 75,
+        "slide": 39,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\nSự phân bố các đồ vật vào trong hộp\nHệ quả\nSố cách chia 𝑘 vật giống nhau vào 𝑛 hộp phân biệt cũng chính\nbằng số tổ hợp lặp chập 𝑘 của 𝑛.\n\nVí dụ 3.7\nTìm số cách chia 15 viên bi giống nhau cho 4 đứa trẻ.\n\nVí dụ 3.8\nTìm số nghiệm nguyên không âm của bất phương trình sau:\n\n                                     𝑥1 + 𝑥2 + 𝑥3 ≤ 11\n\ngợi ý: đặt 𝑥4 = 11 − (𝑥1 + 𝑥2 + 𝑥3 ) ⇒ 𝑥1 + 𝑥2 + 𝑥3 + 𝑥4 = 11\n    Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   39 / 53"
+      },
+      {
+        "physical": 76,
+        "slide": 40,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\n\nVí dụ 3.9\n(BTVN) Tìm số nghiệm nguyên của bất phương trình\n\n                                       𝑥 + 𝑦 + 𝑧 ≤ 20,\n\nbiết 𝑥 ≥ 1, 𝑦 ≥ 2, 𝑧 ≥ 3.\n\nVí dụ 3.10\n(BTVN) Có bao nhiêu cách chọn 5 tờ giấy bạc từ một két đựng\ntiền gồm những tờ 1000đ, 2000đ, 5000đ, 10.000đ, 20.000đ,\n50.000đ, 100.000đ. Giả sử thứ tự mà các tờ tiền được chọn là\nkhông quan trọng, các tờ tiền cùng loại là không phân biệt và mỗi\nloại có ít nhất 5 tờ.\n\n\n    Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   40 / 53"
+      },
+      {
+        "physical": 77,
+        "slide": 41,
+        "text": "Chỉnh hợp và tổ hợp suy rộng   Tổ hợp lặp\n\n\n\nVí dụ 3.11\nCó bao nhiêu cách chia những xấp bài 5 quân cho mỗi một trong 4\nngười chơi từ một cỗ bài chuẩn 52 quân?\n\n 5     5     5     5                                       52!\n𝐶52 × 𝐶47 × 𝐶42 × 𝐶37 =\n                                        5! × 5! × 5! × 5! × (52 − 5 − 5 − 5 − 5)!\n\n\n\nMệnh đề 3.4\nSố cách phân chia 𝑛 đồ vật khác nhau vào trong 𝑘 hộp khác nhau\nsao cho có 𝑛𝑖 vật được đặt vào trong hộp thứ 𝑖, với 𝑖 = 1, 2, ..., 𝑘\nbằng\n                                        𝑛!\n           𝑛1 ! × 𝑛2 ! × . . . × 𝑛𝑘 ! × (𝑛 − 𝑛1 − 𝑛2 − . . . − 𝑛𝑘 )!\n    Trieu Hai Nguyen                      Discrete Mathematics     BM. KTPM–Khoa CNTT   41 / 53"
+      },
+      {
+        "physical": 78,
+        "slide": 42,
+        "text": "Sinh các hoán vị và tổ hợp\n\n\n\n\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n\n\n\n     Trieu Hai Nguyen                    Discrete Mathematics   BM. KTPM–Khoa CNTT   42 / 53"
+      },
+      {
+        "physical": 79,
+        "slide": 43,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các hoán vị\n\n\n\nSinh các hoán vị\n\n\nĐể sinh ra 𝑛! hoán vị của tập {1, 2, ..., 𝑛}, ta sử dụng phương\npháp phổ biến là liệt kê các hoán vị của tập {1, 2, ..., 𝑛} theo thứ\ntự từ điển.\n\nThuật toán sinh các hoán vị dựa trên thủ tục xây dựng hoán vị kế\ntiếp, theo thứ tự từ điển. Hoán vị {𝑎1 , 𝑎2 , ..., 𝑎𝑛 } được gọi là đi\ntrước hoán vị {𝑏1 , 𝑏2 , ..., 𝑏𝑛 } nếu tồn tại k (1 ≤ 𝑘 ≤ 𝑛) sao cho\n𝑎1 = 𝑏1 , 𝑎2 = 𝑏2 ,..., 𝑎𝑘−1 = 𝑏𝑘−1 và 𝑎𝑘 < 𝑏𝑘 .\n\n\n\n\n     Trieu Hai Nguyen                    Discrete Mathematics           BM. KTPM–Khoa CNTT   43 / 53"
+      },
+      {
+        "physical": 80,
+        "slide": 44,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các hoán vị\n\n\n    Algorithm 1: Tìm hoán vị liền sau\n   Input : Hoán vị liền trước {𝑎1 , 𝑎2 , ..., 𝑎𝑛 } ; // {𝑎1 , 𝑎2 , ..., 𝑎𝑛 } ̸= (𝑛, 𝑛 − 1, ..., 2, 1)\n   Output: Hoán vị kế tiếp của {𝑎1 , 𝑎2 , ..., 𝑎𝑛 }\n 1 Function FnNextP({𝑎1 , 𝑎2 , ..., 𝑎𝑛 })\n       Initial : j ← n-1\n 2     while 𝑎𝑗 > 𝑎𝑗+1 and 𝑗 > 0 do\n 3          𝑗 ← 𝑗 − 1 ; // 𝑗 là chỉ số lớn nhất mà 𝑎𝑗 < 𝑎𝑗+1\n 4     end\n 5     if 𝑗 = 0 then return;\n 6     else\n 7          𝑘←𝑛\n 8          while 𝑎𝑗 > 𝑎𝑘 do\n 9               𝑘 ← 𝑘 − 1 ; // 𝑎𝑘 là số nguyên nhỏ nhất trong các số lớn hơn 𝑎𝑗\n                   và bên phải 𝑎𝑗\n10          end\n11          hoán vị (𝑎𝑗 , 𝑎𝑘 )\n12          𝑟 ← 𝑗 + 1; 𝑠 ← 𝑛\n13          while 𝑟 < 𝑠 do liệt kê theo thứ tự tăng dần của các số còn lại từ 𝑎𝑗+1 đến 𝑎𝑛\n14               hoán vị (𝑎𝑟 , 𝑎𝑠 )\n15               𝑟 ← 𝑟 − 1;       𝑠 ← 𝑠 − 1;\n16          end\n17     end\n18 end\n\n\n           Trieu Hai Nguyen                     Discrete Mathematics           BM. KTPM–Khoa CNTT       44 / 53"
+      },
+      {
+        "physical": 81,
+        "slide": 45,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các hoán vị\n\n\n\n\nVí dụ 4.1\nÁp dụng thuật toán 1, hãy tìm hoán vị liền sau theo thứ tự từ điển\ncủa hoán vị 4736521.\n\n\n\n\n    Trieu Hai Nguyen                    Discrete Mathematics           BM. KTPM–Khoa CNTT   45 / 53"
+      },
+      {
+        "physical": 82,
+        "slide": 45,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các hoán vị\n\n\n\n\nVí dụ 4.1\nÁp dụng thuật toán 1, hãy tìm hoán vị liền sau theo thứ tự từ điển\ncủa hoán vị 4736521.\n\nCặp số nguyên đầu tiên tính từ phải qua trái có số trước nhỏ hơn\nsố sau là 𝑎3 = 3 và 𝑎4 = 6 (tìm được 𝑗 thỏa điều kiện 𝑎𝑗 < 𝑎𝑗+1 ).\n     Số nhỏ nhất trong các số bên phải của số 3 mà lại lớn hơn\n     3 là số 𝑎5 = 5\n     Hoán vị (𝑎3 , 𝑎5 )\n     Sau đó đặt các số 3, 6, 1, 2 theo thứ tự tăng dần vào bốn vị\n     trí còn lại\n     Hoán vị liền sau hoán vị đã cho là 4751236\n\n\n    Trieu Hai Nguyen                    Discrete Mathematics           BM. KTPM–Khoa CNTT   45 / 53"
+      },
+      {
+        "physical": 83,
+        "slide": 46,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các hoán vị\n\n\n\n\nVí dụ 4.2\nTìm hoán vị liền sau theo thứ tự từ điển của hoán vị 436521.\n\n\n\n\n    Trieu Hai Nguyen                    Discrete Mathematics           BM. KTPM–Khoa CNTT   46 / 53"
+      },
+      {
+        "physical": 84,
+        "slide": 46,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các hoán vị\n\n\n\n\nVí dụ 4.2\nTìm hoán vị liền sau theo thứ tự từ điển của hoán vị 436521.\n-> 451236\n\nBài tập thực hành\nYêu cầu sinh viên code lại thuật toán 1.\n    Input: số nguyên dương 𝑛 của tập {1, 2, ..., 𝑛}.\n    Output: số lượng hoán vị của tập {1, 2, ..., 𝑛} và liệt kê các\n    hoán vị đó.\n\n\n\n\n    Trieu Hai Nguyen                    Discrete Mathematics           BM. KTPM–Khoa CNTT   46 / 53"
+      },
+      {
+        "physical": 85,
+        "slide": 47,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các tổ hợp\n\n\n\nSinh các tổ hợp\n\n\n\nMỗi tổ hợp chập 𝑘 có thể biểu diễn bằng một chuỗi tăng. Khi đó\ncó thể liệt kê các tổ hợp theo thứ tự từ điển. Chúng ta có thể xây\ndựng tổ hợp liền sau tổ hợp 𝑎1 𝑎2 ...𝑎𝑘 bằng cách:\n  1  tìm phần tử đầu tiên 𝑎𝑖 trong dãy đã cho kể từ phải qua trái\n     sao cho 𝑎𝑖 ̸= 𝑛 − 𝑘 − 𝑖\n  2  thay 𝑎𝑖 bằng 𝑎𝑖 + 1, thay 𝑎𝑗 bằng 𝑎𝑖 + 𝑗 − 𝑖 + 1 với\n     𝑗 = 𝑖 + 1, 𝑖 + 2, ..., 𝑘\n\n\n\n\n    Trieu Hai Nguyen                    Discrete Mathematics          BM. KTPM–Khoa CNTT   47 / 53"
+      },
+      {
+        "physical": 86,
+        "slide": 48,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các tổ hợp\n\n\n\n\n  Algorithm 2: Tìm Tổ hợp liền sau\n  Input : Tổ hợp liền trước 𝑎1 𝑎2 ...𝑎𝑘 ;\n            // {𝑛 − 𝑘 + 1, ..., 𝑛} =\n                                   ̸ {𝑎1 , 𝑎2 , ..., 𝑎𝑘 } ⊂ {1, 2, ..., 𝑛} với\n            𝑎1 < 𝑎2 < ... < 𝑎𝑘\n  Output: Tổ hợp liền sau của 𝑎1 𝑎2 , ..., 𝑎𝑘\n1 Function FnNextCOMBI(𝑎1 𝑎2 ...𝑎𝑘 )\n     Initial : 𝑖 ← 𝑘\n2    while 𝑎𝑖 = 𝑛 − 𝑘 + 𝑖 do\n3        𝑖 ← 𝑖−1\n4        𝑎𝑖 ← 𝑎𝑖 + 1\n5    end\n6    for 𝑗 ← 𝑖 + 1 to 𝑘 do\n7        𝑎𝑗 ← 𝑎𝑖 + 𝑗 − 𝑖\n8    end\n9 end\n\n\n\n        Trieu Hai Nguyen                    Discrete Mathematics          BM. KTPM–Khoa CNTT   48 / 53"
+      },
+      {
+        "physical": 87,
+        "slide": 49,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các tổ hợp\n\n\n\nVí dụ 4.3\nTìm tổ hợp chập 4 từ tập {1, 2, 3, 4, 5, 6} đi liền sau tổ hợp\n{1, 2, 5, 6}.\n\n\n\n\n     Trieu Hai Nguyen                    Discrete Mathematics          BM. KTPM–Khoa CNTT   49 / 53"
+      },
+      {
+        "physical": 88,
+        "slide": 49,
+        "text": "Sinh các hoán vị và tổ hợp   Sinh các tổ hợp\n\n\n\nVí dụ 4.3\nTìm tổ hợp chập 4 từ tập {1, 2, 3, 4, 5, 6} đi liền sau tổ hợp\n{1, 2, 5, 6}.\n\nÁp dụng thuật toán 2, ta thấy từ phải qua trái 𝑎2 = 2 là số hạng\nđầu tiên của tổ hợp đã cho thỏa mãn điều kiện 𝑎𝑖 ̸= 6 − 4 + 𝑖. Để\nnhận được tổ hợp tiếp sau ta:\n  1 tăng 𝑎𝑖 lên một đơn vị, tức 𝑖 = 2, 𝑎2 = 3\n  2 sau đó 𝑗 = 3, 4. Vậy 𝑎3 = 3 + 3 − 2 = 4 và 𝑎4 = 3 + 4 − 2 = 5\n\nBài tập thực hành\nYêu cầu sinh viên code lại thuật toán 2.\n    Input: số nguyên dương 𝑛, 𝑘 (tổ hợp chập 𝑘 của 𝑛 phần tử\n    {1, 2, ..., 𝑛}).\n    Output: liệt kê các tổ hơp đó theo thứ tự từ điển.\n     Trieu Hai Nguyen                    Discrete Mathematics          BM. KTPM–Khoa CNTT   49 / 53"
+      },
+      {
+        "physical": 89,
+        "slide": 50,
+        "text": "Sinh các hoán vị và tổ hợp   Khai triển lũy thừa của đa thức\n\n\n\nKhai triển lũy thừa của đa thức\n\nĐịnh lý\nCho 𝑥, 𝑦 là biến và 𝑛 là số tự nhiên. Khi đó\n              𝑛\n             ∑︁\n(𝑥+𝑦)𝑛 =           𝐶𝑛𝑘 𝑥𝑛−𝑘 𝑦 𝑘 = 𝐶𝑛0 𝑥𝑛 +𝐶𝑛1 𝑥𝑛−1 𝑦+. . .+𝐶𝑛𝑛−1 𝑥𝑦 𝑛−1 +𝐶𝑛𝑛 𝑦 𝑛\n             𝑘=0\n\n\n\nVí dụ 4.4\nKhai triển (𝑥 + 𝑦)4 ?\n\n\n\n\n    Trieu Hai Nguyen                    Discrete Mathematics                BM. KTPM–Khoa CNTT   50 / 53"
+      },
+      {
+        "physical": 90,
+        "slide": 50,
+        "text": "Sinh các hoán vị và tổ hợp   Khai triển lũy thừa của đa thức\n\n\n\nKhai triển lũy thừa của đa thức\n\nĐịnh lý\nCho 𝑥, 𝑦 là biến và 𝑛 là số tự nhiên. Khi đó\n              𝑛\n             ∑︁\n(𝑥+𝑦)𝑛 =            𝐶𝑛𝑘 𝑥𝑛−𝑘 𝑦 𝑘 = 𝐶𝑛0 𝑥𝑛 +𝐶𝑛1 𝑥𝑛−1 𝑦+. . .+𝐶𝑛𝑛−1 𝑥𝑦 𝑛−1 +𝐶𝑛𝑛 𝑦 𝑛\n             𝑘=0\n\n\n\nVí dụ 4.4\nKhai triển (𝑥 + 𝑦)4 ?\n                        4\n                       ∑︁\n                4\n    (𝑥 + 𝑦) =                𝐶4𝑘 𝑥4−𝑘 𝑦 𝑘 = 𝑥 + 4𝑥3 𝑦 + 6𝑥2 𝑦 2 + 4𝑥𝑦 3 + 𝑦 4\n                       𝑘=0\n\n\n    Trieu Hai Nguyen                     Discrete Mathematics                BM. KTPM–Khoa CNTT   50 / 53"
+      },
+      {
+        "physical": 91,
+        "slide": 51,
+        "text": "Sinh các hoán vị và tổ hợp   Khai triển lũy thừa của đa thức\n\n\n\n\nVí dụ 4.5\nTìm hệ số của 𝑥12 𝑦 13 trong khai triển (2𝑥 − 3𝑦)25 ?\n\n\n\n\n    Trieu Hai Nguyen                    Discrete Mathematics                BM. KTPM–Khoa CNTT   51 / 53"
+      },
+      {
+        "physical": 92,
+        "slide": 51,
+        "text": "Sinh các hoán vị và tổ hợp    Khai triển lũy thừa của đa thức\n\n\n\n\nVí dụ 4.5\nTìm hệ số của 𝑥12 𝑦 13 trong khai triển (2𝑥 − 3𝑦)25 ?\n                                              25\n                                             ∑︁\n                                    25                 𝑘\n                       [2𝑥 − 3𝑦]         =            𝐶25 (2𝑥)25−𝑘 (−3𝑦)𝑘\n                                             𝑘=0\n\n\nVới 𝑘 = 13 hệ số của 𝑥12 𝑦 13 là 𝐶25\n                                  13 12\n                                     2 (−3)13\n\n\n\n\n    Trieu Hai Nguyen                      Discrete Mathematics                 BM. KTPM–Khoa CNTT   51 / 53"
+      },
+      {
+        "physical": 93,
+        "slide": 52,
+        "text": "Sinh các hoán vị và tổ hợp   Khai triển lũy thừa của đa thức\n\n\n\n\nĐịnh lý\nCho 𝑥1 , 𝑥2 , . . . , 𝑥𝑚 là các biến và 𝑛 là số nguyên dương. Khi đó\n                                                  ∑︁        𝑛!\n  (𝑥1 + 𝑥2 + . . . + 𝑥𝑚 )𝑛 =                                          𝑥𝑘11 𝑥𝑘22 . . . 𝑥𝑘𝑚𝑚\n                                       𝑘 +𝑘 +...+𝑘 =𝑛\n                                                      𝑘1 !𝑘2 !...𝑘𝑚 !\n                                         1    2         𝑚\n\n\n\n\nVí dụ 4.6\nTìm hệ số của 𝑥3 𝑦 5 𝑧 trong khai triển (𝑥 + 2𝑦 − 3𝑧 + 𝑡)9 ?\n\n\n\n\n     Trieu Hai Nguyen                    Discrete Mathematics                BM. KTPM–Khoa CNTT   52 / 53"
+      },
+      {
+        "physical": 94,
+        "slide": 53,
+        "text": "Sinh các hoán vị và tổ hợp   Tài liệu tham khảo\n\n\n\nTài liệu tham khảo\n\n\n   L.V. Luyen\n   Bài giảng Toán Rời Rạc. Trường ĐH KHTN Tp.HCM.\n   (2018), chương 3.\n   Giáo trình Toán rời rạc\n   Giáo trình Toán Rời Rạc. Trường ĐHSP Huế. (2003), 22-35.\n   N.T. Nhựt\n   Bài giảng Toán Rời Rạc. Trường ĐH KHTN Tp.HCM. (2011).\n\n\n\n\n   Trieu Hai Nguyen                    Discrete Mathematics             BM. KTPM–Khoa CNTT   53 / 53"
+      }
+    ]
+  },
+  {
+    "id": "truy-hoi",
+    "title": "Truy hồi, hàm sinh và nghiệm đặc trưng",
+    "file": "Trieu_presentation (1)(2).pdf",
+    "asset": "math-assets/truy-hoi.pdf",
+    "physicalPages": 42,
+    "slides": [
+      {
+        "slide": 1,
+        "physical": 1,
+        "text": "TOÁN RỜI RẠC\n                      PHƯƠNG PHÁP ĐẾM\n\n                           NGUYỄN HẢI TRIỀU1\n                            1 Bộ môn Kỹ thuật phần mềm,\n\n                   Khoa Công nghệ thông tin, Trường ĐH Nha Trang\n\n\n\n\n                              NhaTrang, February 2022\n\n\n\n\nTrieu Hai Nguyen                  Discrete Mathematics      BM. KTPM–Khoa CNTT   1 / 38"
+      },
+      {
+        "slide": 2,
+        "physical": 2,
+        "text": "Tổng quan\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n5   Hệ thức truy hồi\n\n6   Hàm sinh\n\n7   The characteristic Root technique\n     Trieu Hai Nguyen   Discrete Mathematics   BM. KTPM–Khoa CNTT   2 / 38"
+      },
+      {
+        "slide": 3,
+        "physical": 3,
+        "text": "Hệ thức truy hồi\n\n\n\nHệ thức truy hồi\n\nĐịnh nghĩa 5.1\nXét dãy số {𝑎1 , 𝑎2 , ..., 𝑎𝑛 , ...} trong đó 𝑎𝑛 là phần tử thứ 𝑛 của dãy\nsố. Hệ thức truy hồi của dãy số {𝑎𝑛 } là hệ thức biểu diễn số hạng\ntổng quát 𝑎𝑛 qua một hay nhiều số hạng đứng trước nó. Nghiệm\ncủa hệ thức truy hồi của {𝑎𝑛 } là công thức biểu diễn của 𝑎𝑛 qua\ngiá trị của 𝑛.\n\nVí dụ 5.1\nMột quần thể Corona virus sinh trưởng với số lượng tăng gấp đôi\nsau mỗi giờ. Nếu ban đầu chỉ có 1 cá thể thì sau 24 giờ số lượng\ncủa chúng là bao nhiêu?\n\n     Trieu Hai Nguyen           Discrete Mathematics   BM. KTPM–Khoa CNTT   3 / 38"
+      },
+      {
+        "slide": 4,
+        "physical": 4,
+        "text": "Hệ thức truy hồi\n\n\n\n\nGiải ví dụ 5.1\nSố lượng cá thể virus theo giờ là một dãy số: 1, 2, 4, 8, 16,...Để xác\nđịnh hệ thức truy hồi cho dãy số này, gọi 𝑎𝑛 là số virus sau n giờ\n(𝑛 ≥ 0), khi đó 𝑎𝑛−1 là số virus sau 𝑛 − 1 giờ. Ta có hệ thức sau:\n                          {︃\n                            𝑎0 = 1,\n                            𝑎𝑛 = 2𝑎𝑛−1 .\n\nCông thức nghiệm cho dãy {𝑎𝑛 } là\n\n                 𝑎𝑛 = 2𝑎𝑛−1 = 22 𝑎𝑛−2 = 23 𝑎𝑛−3 = ... = 2𝑛 𝑎0\n\nTrong đó, 𝑎0 = 1 được gọi là điều kiện ban đầu hay điều kiện\ndừng của biểu thức đệ quy, 𝑎𝑛 = 2𝑎𝑛−1 , (𝑛 = 1, 2, 3...) được gọi là\nthành phần truy hồi hay thành phần đệ quy.\n\n     Trieu Hai Nguyen              Discrete Mathematics   BM. KTPM–Khoa CNTT   4 / 38"
+      },
+      {
+        "slide": 5,
+        "physical": 6,
+        "text": "Hệ thức truy hồi\n\n\n\n\nVí dụ 5.2\nXác định số hạng tiếp theo của dãy số 1, 3, 7, 15, ?\nGợi ý: Hệ thức truy hồi cho dãy là:\n                       {︃\n                         𝑎1 = 1,\n                         𝑎𝑛 = 2𝑎𝑛−1 + 1.\n\nCông thức nghiệm của dãy là 𝑎𝑛 = 2𝑛 − 1, 𝑛 = 1, 2, 3... Vậy\n𝑎5 = 31\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics   BM. KTPM–Khoa CNTT   5 / 38"
+      },
+      {
+        "slide": 6,
+        "physical": 7,
+        "text": "Hệ thức truy hồi   Giải hệ thức truy hồi\n\n\n\nGiải hệ thức truy hồi\n\nCác bài toán đếm thường được biểu diễn bằng một hệ thức truy\nhồi. Từ hệ thức truy hồi đó làm thể nào để xác định công thức\nnghiệm của nó? Và một hệ thức truy hồi có thể có nhiều nghiệm\nkhác nhau.\n\nVí dụ 5.3\nChứng minh rằng 𝑎𝑛 = 5, 𝑎𝑛 = 3𝑛 là các nghiệm của hệ thức truy\nhồi 𝑎𝑛 = 2𝑎𝑛−1 − 𝑎𝑛−2 .\n\nGiải hệ thức truy hồi thường sử dụng 2 cách sau:\n    Phương pháp lặp tìm nghiệm của hệ thức truy hồi\n    Phương pháp tổng quát tìm nghiệm của hệ thức truy hồi\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   6 / 38"
+      },
+      {
+        "slide": 7,
+        "physical": 9,
+        "text": "Hệ thức truy hồi   Giải hệ thức truy hồi\n\n\n\nPhương pháp lặp tìm nghiệm\nVí dụ 5.4\nBài toán lãi kép: một người gửi 𝑀 = 10000 USD vào tài khoản\ncủa mình với lãi suất 𝑥 = 10% mỗi năm. Hỏi, sau 30 năm anh ta\ncó bao nhiêu tiền trong tài khoản?\nGọi 𝑎𝑛 là số tiền có trong tài khoản sau 𝑛 năm. Số tiền này bằng\nsố tiền trong tài khoản của năm thứ 𝑛 − 1 là 𝑎𝑛−1 cộng với tiền lãi\ncủa năm thứ 𝑛, tức là 𝑥𝑎𝑛−1 . Vậy ta nhận được hệ thức truy hồi\nsau:\n            𝑎0 = 𝑀, 𝑎𝑛 = (1 + 𝑥)𝑎𝑛−1 , 𝑛 = 1, 2, 3...\nBằng phương pháp lặp các phần tử của dãy từ hệ thức truy hồi, ta\nthu được nghiệm như sau\n\n                          𝑎𝑛 = (1 + 𝑥)𝑛 𝑀\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   7 / 38"
+      },
+      {
+        "slide": 8,
+        "physical": 10,
+        "text": "Hệ thức truy hồi   Giải hệ thức truy hồi\n\n\n\nPhương pháp lặp tìm nghiệm\nVí dụ 5.5\nBài toán Tháp Hà Nội: có 3 tháp A, B, C và n đĩa với đường kính\nđôi một khác nhau. Nguyên tắc đặt đĩa vào tháp là: mỗi đĩa chỉ\nđược chồng lên đĩa lớn hơn nó và mỗi lần chỉ chuyển một đĩa từ\ntháp này sang tháp khác. Hãy xác định số lần chuyển 𝑛 ≥ 1 đĩa ở\ntháp A sang tháp C thông qua tháp trung gian B.\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   8 / 38"
+      },
+      {
+        "slide": 9,
+        "physical": 11,
+        "text": "Hệ thức truy hồi   Giải hệ thức truy hồi\n\n\n\nBài toán Tháp Hà Nội\n\n𝑛=1\nGọi 𝑎𝑛 là số lần phải chuyển 𝑛 đĩa từ A sang C mượn B làm trung\ngian. Với 𝑛 = 1 thì 𝑎1 = 1 là điều đầu của dãy truy hồi.\n\n𝑛>1\nNguyên tắc chuyển như sau:\n   ta cần chuyển 𝑛 − 1 đĩa trên cùng (để lại đĩa to nhất) từ A\n   sang B mượn C làm trung gian, số lần phải chuyển là 𝑎𝑛−1 .\n   chuyển đĩa to nhất còn lại ở A sang C mất 1 lần chuyển..\n   chuyển 𝑛 − 1 đĩa từ B sang C mượn A làm trung gian, số lần\n   phải chuyển là 𝑎𝑛−1\n\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   9 / 38"
+      },
+      {
+        "slide": 10,
+        "physical": 12,
+        "text": "Hệ thức truy hồi   Giải hệ thức truy hồi\n\n\n\nBài toán Tháp Hà Nội\n\n𝑛>1\nNhư vậy, số lần chuyển 𝑛 đĩa từ A sang C mượn B làm trung gian\nlà\n                𝑎𝑛 = 2𝑎𝑛−1 + 1, 𝑎1 = 1, 𝑛 ≥ 1.\nSử dụng phép lặp các phần tử của hệ thức trên:\n𝑎1 = 1\n𝑎2 = 2𝑎1 + 1 = 2 + 1\n𝑎3 = 2𝑎2 + 1 = 2(2 + 1) + 1 = 22 + 2 + 1\nMột cách qui nạp, ta được:\n\n          𝑎𝑛 = 2𝑛−1 + 2𝑛−2 + ... + 2 + 1 = 2𝑛 − 1,                    𝑛 ≥ 1.\n\n\n    Trieu Hai Nguyen           Discrete Mathematics                BM. KTPM–Khoa CNTT   10 / 38"
+      },
+      {
+        "slide": 11,
+        "physical": 13,
+        "text": "Hàm sinh   Định nghĩa hàm sinh\n\n\n\nĐịnh nghĩa hàm sinh\n\nTrong thực tế, một số bài toán rời rạc về dãy số, tập hợp thường\nrất khó giải quyết. Vì vậy chúng ta có thể sử dụng hàm sinh\nchuyển những bài toán này thành những bài toán về hàm số để dễ\ndàng giải quyết hơn.\n\nĐịnh nghĩa 6.1\nHàm sinh thường của dãy số vô hạn 𝑎𝑛 = {𝑎0 , 𝑎1 , 𝑎2 , ...}, 𝑛 ≥ 0 là\nchuỗi\n                         ∞\n                        ∑︁\n             𝐺(𝑥) =           𝑎𝑛 𝑥𝑛 = 𝑎0 + 𝑎1 𝑥 + 𝑎2 𝑥2 + 𝑎3 𝑥3 + ...\n                        𝑛=0\n\n\n\n     Trieu Hai Nguyen               Discrete Mathematics             BM. KTPM–Khoa CNTT   11 / 38"
+      },
+      {
+        "slide": 12,
+        "physical": 14,
+        "text": "Hàm sinh   Định nghĩa hàm sinh\n\n\n\nĐịnh nghĩa hàm sinh\nNếu dãy là hữu hạn 𝑎𝑚 = 𝑎0 , 𝑎1 , ..., 𝑎𝑚 thì các hệ số từ 𝑎𝑚+1 trở đi\nsẽ bằng 0. Hàm sinh của dãy trở thành đa thức bậc 𝑚.\n\nĐịnh nghĩa 6.2\nSự tương ứng giữa một dãy số và hàm sinh bằng dấu được kí hiệu\nbằng dấu ⇔\n\nVí dụ 6.1\n    {0, 0, 0, 0, ..., } ⇔ 0 + 0.𝑥 + 0.𝑥2 + 0.𝑥3 + ... = 0\n    {3, 4, 1, 8, 0, ..., }\n    ⇔ 3 + 4.𝑥 + 1.𝑥2 + 8.𝑥3 + 0.𝑥4 + ... = 8𝑥3 + 𝑥2 + 4𝑥 + 3\n    What sequence is represented by the generating series\n                           5\n    3 + 8𝑥2 + 𝑥3 + 𝑥7 + 100𝑥6 + · · ·?\n     Trieu Hai Nguyen       Discrete Mathematics             BM. KTPM–Khoa CNTT   12 / 38"
+      },
+      {
+        "slide": 13,
+        "physical": 16,
+        "text": "Hàm sinh   Định nghĩa hàm sinh\n\n\n\nBuilding Generating Functions\nVí dụ 6.2\nCông thức tính tổng của cấp số nhân lùi vô hạn có dạng\n                                                      1\n                        1 + 𝑧 + 𝑧 2 + ... =\n                                                     1−𝑧\n\nvới |𝑧| < 1. Công thức này cho chúng ta công thức tường minh cho\nhàm sinh của các dãy số\n     {1, 1, 1, 1, ...} ⇔ 1 + 𝑥 + 𝑥2 + 𝑥3 + ... = 1/(1 − 𝑥)\n     {1, −1, 1, −1, ...} ⇔ 1 − 𝑥 + 𝑥2 − 𝑥3 + ... = 1/(1 + 𝑥)\n     {1, 𝑎, 𝑎2 , 𝑎3 , ...} ⇔ 1 + 𝑎𝑥 + 𝑎2 𝑥2 + 𝑎3 𝑥3 + ... = 1/(1 − 𝑎𝑥)\n     {1, 0, 1, 0, ...} ⇔ 1 + 𝑥2 + 𝑥4 + ... = 1/(1 − 𝑥2 )\n     Tìm hàm sinh cho đa thức 1 + 3𝑥 + 9𝑥2 + 27𝑥3 + · · ·\n          1\n     → 1−3𝑥\n     Trieu Hai Nguyen         Discrete Mathematics             BM. KTPM–Khoa CNTT   13 / 38"
+      },
+      {
+        "slide": 14,
+        "physical": 18,
+        "text": "Hàm sinh    Định nghĩa hàm sinh\n\n\n\nVí dụ 6.3\nTìm công thức tổng quát cho dãy (𝑦𝑛 , 𝑛 ≥ 0) với 𝑦0 = 1 và\n𝑦𝑛 = 𝑎𝑦𝑛−1 + 𝑏𝑛 , ∀𝑛 ≥ 1.\nGợi ý\n    Đặt hàm sinh của dãy 𝑦𝑛 là 𝐺(𝑥) = ∞              𝑛\n                                         ∑︀\n                                            𝑛=0 𝑦𝑛 𝑥\n  1\n\n  2 Sau một vài biến đổi, sử dụng phương pháp đồng nhất hệ số,\n    ta thu được hàm sinh tổng quát\n                                   ∞\n                                  ∑︁ 𝑎𝑛+1 − 𝑏𝑛+1\n                         𝐺(𝑥) =                               𝑥𝑛\n                                  𝑛=0\n                                             𝑎−𝑏\n\n  3   Vậy công thức tổng quát của dãy\n\n                                 𝑎𝑛+1 − 𝑏𝑛+1\n                            𝑦𝑛 =\n                                    𝑎−𝑏\n      Trieu Hai Nguyen      Discrete Mathematics               BM. KTPM–Khoa CNTT   14 / 38"
+      },
+      {
+        "slide": 15,
+        "physical": 19,
+        "text": "Hàm sinh   Các phép toán trên hàm sinh\n\n\n\nCác phép toán trên hàm sinh\n\nCác phép toán thực hiện trên dãy số thì cũng có thể thực hiện\ntrên hàm sinh tương ứng của chúng. Cho 𝐹 (𝑥), 𝐺(𝑥) là hàm sinh\ncủa 𝑎𝑛 và 𝑏𝑛 , các phép toán:\n     nhân với hằng số\n                                     ∞\n                                    ∑︁\n                           𝑐𝐹 (𝑥) =    𝑐𝑎𝑛 𝑥𝑛\n                                          𝑛=0\n\n\nVí dụ 6.4\n                           1                               2\n𝑎𝑛 = {1, 1, 1, 1, ...} ⇔ 1−𝑥 ⇒ 2𝑎𝑛 = {2, 2, 2, 2, ...} ⇔ 1−𝑥\n                          1                                   𝑎\n𝑎𝑛 = {1, 𝑎, 𝑎2 , 𝑎3 } ⇔ 1−𝑎𝑥 ⇒ 𝑎𝑎𝑛 = {𝑎, 𝑎2 , 3𝑎3 , 3𝑎4 } ⇔ 1−𝑎𝑥\n\n\n     Trieu Hai Nguyen        Discrete Mathematics               BM. KTPM–Khoa CNTT   15 / 38"
+      },
+      {
+        "slide": 16,
+        "physical": 20,
+        "text": "Hàm sinh    Các phép toán trên hàm sinh\n\n\n\n\n     cộng hai hàm sinh tương ứng với việc cộng các số hạng của\n     dãy số theo đúng chỉ số\n                                              ∞\n                                             ∑︁\n                        𝐹 (𝑥) + 𝐺(𝑥) =          (𝑎𝑛 + 𝑏𝑛 )𝑥𝑛\n                                             𝑛=0\n\n\n\nVí dụ 6.5\n                                  1\n𝑎𝑛 = {1, 1, 1, 1, ...} ⇔ 𝐹 (𝑥) = 1−𝑥 ;         𝑏𝑛 = {1, −1, 1, −1, ...} ⇔\n          1\n𝐺(𝑥) = 1+𝑥\n                              2\n           𝐹 (𝑥) + 𝐺(𝑥) =          ⇔ 𝑎𝑛 + 𝑏𝑛 = {2, 0, 2, 0, ...}\n                            1 − 𝑥2\n\n\n     Trieu Hai Nguyen          Discrete Mathematics               BM. KTPM–Khoa CNTT   16 / 38"
+      },
+      {
+        "slide": 17,
+        "physical": 21,
+        "text": "Hàm sinh   Các phép toán trên hàm sinh\n\n\n\n\n    dịch chuyển sang phải 𝑘 bước bằng cách thêm 𝑘 số 0 vào đầu.\n                                           ∞\n                                          ∑︁\n                          𝑥𝑘 𝐹 (𝑥) =            𝑎𝑛−𝑘 𝑥𝑛\n                                          𝑛=𝑘\n\n\n\nVí dụ 6.6\n                                 1\nCho 𝑎𝑛 = {1, 1, 1, 1, ...} ⇔ 1−𝑥    , dịch chuyển 𝑎𝑛 sang phải 𝑘 bước:\n                                                          𝑥𝑘\n𝑎𝑛 = {0, 0, ..., 0, 1, 1, 1, 1} ⇔ 𝑥 (1 + 𝑥 + 𝑥2 + 𝑥3 ) = 1−𝑥\n                                   𝑘\n\n\nNhận xét: thêm 𝑘 số 0 vào đầu dãy số tương ứng với việc hàm\nsinh nhân với 𝑥𝑘 .\n\n\n\n     Trieu Hai Nguyen        Discrete Mathematics               BM. KTPM–Khoa CNTT   17 / 38"
+      },
+      {
+        "slide": 18,
+        "physical": 22,
+        "text": "Hàm sinh   Các phép toán trên hàm sinh\n\n\n\n\n     đạo hàm: nếu dãy 𝑎𝑛 = {𝑎0 , 𝑎1 , 𝑎2 , ...} ⇔ 𝐹 (𝑥) thì\n                                 ∞\n                        𝑑𝐹 (𝑥) ∑︁\n                              =     𝑛𝑎𝑛 𝑥𝑛−1 ⇔ {𝑎1 , 2𝑎2 , 3𝑎3 , ...}\n                         𝑑𝑥     𝑛=1\n\n\n\nVí dụ 6.7\n      𝑑                                                 1\n        [︀                                                 ]︀\nTính 𝑑𝑥    {1, 1, 1, 1, ...} ⇔ 1 + 𝑥 + 𝑥2 + 𝑥3 + ... = 1−𝑥\n                                                                 1\n                        1 + 2𝑥 + 3𝑥2 + 4𝑥3 + ... =\n                                                              (1 − 𝑥)2\n                                                         1\n                              {1, 2, 3, 4, ...} ⇔\n                                                      (1 − 𝑥)2\nTa tìm được hàm sinh cho dãy số {1, 2, 3, 4, ...}\n\n     Trieu Hai Nguyen                Discrete Mathematics               BM. KTPM–Khoa CNTT   18 / 38"
+      },
+      {
+        "slide": 19,
+        "physical": 23,
+        "text": "Hàm sinh    Các phép toán trên hàm sinh\n\n\n\n\nquy tắc xoắn (nhân): cho hai chuỗi hội tụ 𝑎𝑛 , 𝑏𝑛 . Chuỗi 𝑐𝑛\nđược gọi là chuỗi tích của 2 chuỗi 𝑎𝑛 , 𝑏𝑛 khi\n                                   𝑛\n                                  ∑︁\n                       𝑐𝑛 =             𝑎𝑘 𝑏𝑛−𝑘 .\n                                  𝑘=0\n\n\nVậy chuỗi lũy thừa tích của hai hàm sinh F(x) và G(x) là\n                         ∞\n                           (︃ 𝑛         )︃\n                        ∑︁   ∑︁\n                𝐶(𝑥) =           𝑎𝑘 𝑏𝑛−𝑘 𝑥𝑛 .\n                          𝑛=0      𝑘=0\n\n\n\n\nTrieu Hai Nguyen       Discrete Mathematics                BM. KTPM–Khoa CNTT   19 / 38"
+      },
+      {
+        "slide": 20,
+        "physical": 24,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong tổ hợp\n\n\n\nXử lý các dãy truy hồi\n\n        ∑︀∞số 𝑎𝑛 ,𝑛ta xét hàm sinh bởi dãy 𝑎𝑛 là\nĐể tìm dãy\n𝐹 (𝑥) = 𝑛=0 𝑎𝑛 𝑥 . Dựa vào đặc điểm truy hồi của dãy 𝑎𝑛 ta tìm\nđược 𝐹 (𝑥), sau đó sử dụng đồng nhất thức sẽ thu được dãy 𝑎𝑛 .\n\nDãy số Fibonacci\nDãy Fibonacci được xác định bởi công thức truy hồi\n\n            𝑓0 = 0;    𝑓1 = 1;      𝑓𝑛 = 𝑓𝑛−1 + 𝑓𝑛−2 ,                ∀𝑛 ≥ 2\n\nĐể tìm công thức tổng quát của dãy Fibonacci, ta sẽ thực hiện 2\nbước sau:\n  1 Tìm hàm sinh cho dãy số Fibonacci.\n  2 Tìm công thức tổng quát cho các hệ số của hàm sinh.\n    Trieu Hai Nguyen             Discrete Mathematics               BM. KTPM–Khoa CNTT   20 / 38"
+      },
+      {
+        "slide": 21,
+        "physical": 25,
+        "text": "Hàm sinh       Ứng dụng hàm sinh trong tổ hợp\n\n\n\nXử lý các dãy truy hồi\nDãy số Fibonacci\nTìm hàm sinh cho dãy số Fibonacci:\n                         ∞\n                        ∑︁                                      ∞\n                                                               ∑︁\n                                 𝑛\n            𝐹 (𝑥) =           𝑓𝑛 𝑥 = 𝑓0 + 𝑓1 𝑥 +                     (𝑓𝑛−1 + 𝑓𝑛−2 )𝑥𝑛\n                        𝑛=0                                    𝑛=2\n                                 ∞\n                                ∑︁                                ∞\n                                                                 ∑︁\n                       =𝑥+𝑥           𝑓𝑛−1 𝑥𝑛−1 + 𝑥            2\n                                                                        𝑓𝑛−2 𝑥𝑛−2\n                                𝑛=2                               𝑛=2\n                                 ∞\n                                ∑︁                         ∞\n                                                          ∑︁\n                       =𝑥+𝑥           𝑓 𝑛 𝑥𝑛 + 𝑥2                𝑓 𝑛 𝑥𝑛\n                                𝑛=1                       𝑛=0\n                                                 2\n               = 𝑥 + 𝑥𝐹 (𝑥) + 𝑥 𝐹 (𝑥)\n                      𝑥\n       ⇒ 𝐹 (𝑥) =\n                 1 − 𝑥 − 𝑥2\n    Trieu Hai Nguyen                  Discrete Mathematics                   BM. KTPM–Khoa CNTT   21 / 38"
+      },
+      {
+        "slide": 22,
+        "physical": 26,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong tổ hợp\n\n\n\nXử lý các dãy truy hồi\n\nDãy số Fibonacci\nTìm công thức tổng quát cho các hệ số của hàm sinh: sử dụng\nphương pháp đồng nhất hệ số, phân tích hàm F(x) thành tổng\ncủa hai phân số. Đặt mẫu của F(x)\n\n                       1 − 𝑥 − 𝑥2 = (1 − 𝛼𝑥)(1 − 𝛽𝑥)\n\nGiải hệ phương\n          √      trình 𝛼 + 𝛽√= 1, 𝛼𝛽 = −1, √\n                                           ta được\n𝛼 = (1 + 5)/2, 𝛽 = (1 − 5)/2 và 𝛼 − 𝛽 = 5. Hàm sinh được\nviết lại như sau\n                    (︂              )︂       ∞\n               1        1        1      1 ∑︁ 𝑛\n    𝐹 (𝑥) =                  −         =√       (𝛼 − 𝛽 𝑛 ) 𝑥𝑛\n             𝛼 − 𝛽 1 − 𝛼𝑥 1 − 𝛽𝑥          5 𝑛=0\n\n    Trieu Hai Nguyen           Discrete Mathematics               BM. KTPM–Khoa CNTT   22 / 38"
+      },
+      {
+        "slide": 23,
+        "physical": 27,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong tổ hợp\n\n\n\nXử lý các dãy truy hồi\n\n\nDãy số Fibonacci\nCông thức tính số hạng tổng quát của dãy Fibonacci là\n                    1\n               𝑓𝑛 = √ (𝛼𝑛 − 𝛽 𝑛 )\n                     5\n                       [︃(︃      √ )︃𝑛 (︃      √ )︃𝑛 ]︃\n                    1       (1 + 5)       (1 − 5)\n                  =√                  −\n                     5          2             2\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics               BM. KTPM–Khoa CNTT   23 / 38"
+      },
+      {
+        "slide": 24,
+        "physical": 28,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong tổ hợp\n\n\n\nMột số dãy truy hồi loại khác\n\n\nBài tập về nhà\nXác định dãy số 𝑢𝑛 , 𝑛 ≥ 0, biết rằng\n                {︃\n                  𝑢0 = 𝑢1 = 1,\n                  𝑢𝑛 = 𝑎𝑢𝑛−1 + 𝑏𝑢𝑛−2 , ∀𝑛 ≥ 2\n\ntrong các trường hợp sau: (𝑎, 𝑏) = (1, 2), (𝑎, 𝑏) = (3, −4)\n                1−𝑎𝑥+𝑥\nGợi ý: 𝐹 (𝑥) = 1−𝑎𝑥−𝑏𝑥 2.\n\n\n\n\n     Trieu Hai Nguyen       Discrete Mathematics               BM. KTPM–Khoa CNTT   24 / 38"
+      },
+      {
+        "slide": 25,
+        "physical": 29,
+        "text": "Hàm sinh   Một số dãy truy hồi loại khác\n\n\n\nMột số dãy truy hồi loại khác\n\nBài tập nâng cao\nTìm số hạng tổng quát của dãy 𝑥𝑛 thỏa mãn\n               {︃\n                 𝑥0 = 𝑥1 = 0,\n                 𝑥𝑛+2 − 6𝑥𝑛+1 + 9𝑥𝑛 = 2𝑛 + 𝑛\n                           (︁                     )︁\n                  𝑥2              1      𝑥\nGợi ý: 𝑓 (𝑥) = (1−3𝑥)2          1−2𝑥\n                                     + (1−𝑥) 2         . Công thức tính số hạng\ntổng quát của dãy là:\n\n                             2𝑛+2 + 𝑛 + 1 + 5(𝑛 − 3)3𝑛\n                        𝑥𝑛 =\n                                         4\n\n     Trieu Hai Nguyen               Discrete Mathematics                 BM. KTPM–Khoa CNTT   25 / 38"
+      },
+      {
+        "slide": 26,
+        "physical": 30,
+        "text": "Hàm sinh    Một số dãy truy hồi loại khác\n\n\n\nMột số dãy truy hồi loại khác\n\nBài tập nâng cao\nTìm dãy 𝑎𝑛 thỏa mãn\n                  {︃\n                    𝑎0 = 0, 𝑎1 = 2\n                    𝑎𝑛+2 = −4𝑎𝑛+1 − 8𝑎𝑛\n\nGợi ý: 𝑓 = 2𝑖1 𝑛≥0 [(−2 + 2𝑖)𝑛 − (−2 − 2𝑖)𝑛 ] 𝑥𝑛 . Công thức tính\n              ∑︀\n\nsố hạng tổng quát của dãy là:\n\n                (−2 + 2𝑖)𝑛 − (−2 − 2𝑖)𝑛      √        𝑛𝜋\n           𝑎𝑛 =                         = (−2 2)𝑛 𝑠𝑖𝑛\n                           2𝑖                          4\n\n\n    Trieu Hai Nguyen        Discrete Mathematics                 BM. KTPM–Khoa CNTT   26 / 38"
+      },
+      {
+        "slide": 27,
+        "physical": 31,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong các bài toán đếm\n\n\n\nỨng dụng hàm sinh trong các bài toán đếm\n\nÝ tưởng dùng hàm sinh của những bài toán đếm là đi tìm hệ số\ncủa 𝑥𝑘 trong khai triển của hàm sinh với 𝑘 là số phần tử được\nchọn ra từ 𝑛 đối tượng với điều kiện ràng buộc cho trước.\n\nBài toán chọn các phần tử phân biệt\nCó bao nhiêu cách chọn 𝑘 phần tử phân biệt từ tập hợp 𝑛 phần\ntử bằng cách sử dụng hàm sinh. Để giải quyết bài toán này, đầu\ntiên ta hãy xét tập hợp có một phần tử {𝑎1 }:\n1 cách chọn 0 phần tử\n1 cách chọn 1 phần tử\n0 cách chọn 2 phần tử trở lên\nVậy hàm sinh cho số cách chọn 𝑘 phần tử từ tập {𝑎1 } là 1 + 𝑥.\n\n    Trieu Hai Nguyen      Discrete Mathematics               BM. KTPM–Khoa CNTT   27 / 38"
+      },
+      {
+        "slide": 28,
+        "physical": 32,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong các bài toán đếm\n\n\n\nỨng dụng hàm sinh trong các bài toán đếm\nBài toán chọn các phần tử phân biệt\nTiếp tục xét tập 2 phần tử {𝑎1 , 𝑎2 } ta có:\n1 cách chọn 0 phần tử\n2 cách chọn 1 phần tử\n1 cách chọn 2 phần tử\n0 cách chọn 3 phần tử trở lên\nHàm sinh cho số cách chọn 𝑘 phần tử từ tập {𝑎1 , 𝑎2 } là:\n\n                  1 + 2𝑥 + 𝑥2 = (1 + 𝑥)2 = (1 + 𝑥)(1 + 𝑥)\n\nTiếp tục áp dụng quy tắc này ta sẽ thu được hàm sinh cho số\ncách chọn các phần tử từ tập 𝑛 phần tử:\n\n                       (1 + 𝑥)(1 + 𝑥)...(1 + 𝑥) = (1 + 𝑥)𝑛\n    Trieu Hai Nguyen              Discrete Mathematics               BM. KTPM–Khoa CNTT   28 / 38"
+      },
+      {
+        "slide": 29,
+        "physical": 33,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong các bài toán đếm\n\n\n\nỨng dụng hàm sinh trong các bài toán đếm\nBài toán chọn các phần tử phân biệt\nNhư vậy hệ số của 𝑥𝑛 trong (1 + 𝑥)𝑛 là 𝐶𝑛𝑘 (trong khai triển đa\nthức phần trước đã học) và bằng số cách chọn 𝑘 phần tử phân biệt\ntừ tập 𝑛 phần tử.\n\nVí dụ 6.8\nTrong một buổi quyên góp sách cho các trẻ em nghèo của Đại học\nNha Trang, chỉ tiêu của Hội sinh viên đề ra là phải quyên góp\nđược 10 quyển sách. Có 15 bạn quyên góp sách với 13 người đầu\nchỉ có 1 quyển sách ( nghĩa là tối đa quyên góp được 1 quyển), 2\nngười sau chỉ có 2 quyển sách ( nghĩa là tối đa quyên góp được 2\nquyển). Tìm số cách quyên góp sách bằng cách sử dụng hàm sinh\nsao cho thỏa yêu cầu của Hội sinh viên.\n    Trieu Hai Nguyen      Discrete Mathematics               BM. KTPM–Khoa CNTT   29 / 38"
+      },
+      {
+        "slide": 30,
+        "physical": 34,
+        "text": "Hàm sinh    Ứng dụng hàm sinh trong các bài toán đếm\n\n\n\nỨng dụng hàm sinh trong các bài toán đếm\nHướng dẫn ví dụ 6.8\n𝐹 (𝑥) = (1 + 𝑥)13 , 𝐺(𝑥) = (1 + 𝑥 + 𝑥2 )2 lần lượt là hàm sinh cho\ncách chọn tối đa 1 quyển sách từ 13 người và 2 quyển sách từ 2\nngười. Từ đó ta có cách chọn ra 10 quyển sách thỏa yêu cầu đề\nbài là hệ số của 𝑥10 trong khai triển\n\n        𝐹 (𝑥)𝐺(𝑥) = (1 + 𝑥)13 (1 + 𝑥 + 𝑥2 )2\n                            13\n                           ∑︁\n                                  𝑖 13−𝑖\n                       =         𝐶13 𝑥   .(𝑥4 + 2𝑥3 + 3𝑥2 + 2𝑥 + 1)\n                           𝑖=0\n\n\nTừ đó suy ra được hệ số của 𝑥10 là\n                        3      4      5      6     7\n                       𝐶13 + 2𝐶13 + 3𝐶13 + 2𝐶13 + 𝐶13\n    Trieu Hai Nguyen                Discrete Mathematics               BM. KTPM–Khoa CNTT   30 / 38"
+      },
+      {
+        "slide": 31,
+        "physical": 35,
+        "text": "The characteristic Root technique\n\n\nThe characteristic Root Technique\nNgoài phương pháp Hàm sinh, chúng ta có thể tìm nghiệm tổng\nquát của một hệ thức truy hồi bằng phương pháp Nghiệm đặc\ntrưng.\n\nCho một hệ thức truy hồi dạng tuyến tính-thuần nhất với hệ số\nhằng bậc 𝑘:\n\n                       𝑎𝑛 = 𝑐1 𝑎𝑛−1 + 𝑐2 𝑎𝑛−2 + · · · + 𝑐𝑘 𝑎𝑛−𝑘 .                      (1)\n\nChúng ta cần xác định công thức nghiệm tổng quát 𝑎𝑛 của\ndãy số {𝑎𝑛 } thỏa mãn biểu diễn ở Eq.1. Giả sử, nghiệm của hệ\nthức sẽ được biểu diễn dưới dạng\n\n                                              𝑎𝑛 = 𝑟 𝑛 ,                               (2)\n\nvới 𝑟 là hằng số.\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   31 / 38"
+      },
+      {
+        "slide": 32,
+        "physical": 36,
+        "text": "The characteristic Root technique\n\n\n\n\nThay Eq.2 vào Eq.1, ta thu được phương trình đặc trưng:\n\n                  𝑟𝑛 − 𝑐1 𝑟𝑛−1 − 𝑐2 𝑟𝑛−2 − · · · − 𝑐𝑘 𝑟𝑛−𝑘 = 0.                        (3)\n\nGiải phương trình trên ta thu được nghiệm đặc trưng. Chúng\nta sử dụng nghiệm đặc trưng để xây dựng công thức nghiệm của\nhệ truy hồi tương ứng. Để đơn giản, xét trường hợp 𝑘 = 2.\nPhương trình Eq.3 có dạng\n\n                               𝑟𝑛 − 𝑐1 𝑟𝑛−1 − 𝑐2 𝑟𝑛−2 = 0                              (4)\n\n\n\n\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   32 / 38"
+      },
+      {
+        "slide": 33,
+        "physical": 37,
+        "text": "The characteristic Root technique\n\n\n\nĐịnh lý 7.1 (Characteristic Roots)\nPhương trình Eq.4 được viết lại dưới dạng 𝑟2 − 𝑐1 𝑟 − 𝑐2 = 0 với\ngiả thuyết có hai nghiệm phân biệt 𝑟1 , 𝑟2 . Khi đó,\n𝑎𝑛 = 𝑐1 𝑎𝑛−1 + 𝑐2 𝑎𝑛−2 là nghiệm của hệ thức truy hồi khi là chỉ khi\n\n                                     𝑎𝑛 = 𝛼1 𝑟1𝑛 + 𝛼2 𝑟2𝑛 ,                            (5)\n\nvới 𝛼1 , 𝛼2 là các hằng số được xác định bằng điều kiện đầu 𝑎0 , 𝑎1 .\n\nVí dụ 7.1\nXác định công thức nghiệm tổng quát của dãy sau\n               {︃\n                 𝑎0 = 2, 𝑎1 = 3\n                 𝑎𝑛 = 7𝑎𝑛−1 − 10𝑎𝑛−2 , ∀𝑛 ≥ 2.\n\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   33 / 38"
+      },
+      {
+        "slide": 34,
+        "physical": 38,
+        "text": "The characteristic Root technique\n\n\n\n\nHướng dẫn giải ví dụ 7.3\nTa có phương trình đặc trưng 𝑟2 − 7𝑟 + 10 = 0, 𝑟1 = 2, 𝑟2 = 5 là 2\nnghiệm đặc trưng. Nghiệm tổng quát dãy truy hồi có dạng\n\n                                     𝑎𝑛 = 𝛼1 2𝑛 + 𝛼2 5𝑛 .\n\nVới các điều kiện đầu: 𝑎0 = 2, 𝑎1 = 3, ta thu được hệ phương\ntrình:                  {︃\n                          𝛼1 + 𝛼2 = 2\n                          2𝛼1 + 5𝛼2 = 3.\nGiải hệ trên ta tìm được, 𝛼1 = 7/3, 𝛼2 = −1/3. Vậy nghiệm tổng\nquát của hệ thức truy hồi là:\n                                          7    1\n                                      𝑎𝑛 = 2𝑛 − 5𝑛 .\n                                          3    3\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   34 / 38"
+      },
+      {
+        "slide": 35,
+        "physical": 39,
+        "text": "The characteristic Root technique\n\n\n\n\nVí dụ 7.2\nXác định công thức nghiệm tổng quát của dãy Fibonacci bằng\nphương pháp đặc trưng.\n                 {︃\n                   𝑎0 = 0, 𝑎1 = 1\n                   𝑎𝑛 = 𝑎𝑛−1 + 𝑎𝑛−2 , ∀𝑛 ≥ 2.\n\n\n\n\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   35 / 38"
+      },
+      {
+        "slide": 36,
+        "physical": 40,
+        "text": "The characteristic Root technique\n\n\n\n\nCharacteristic Root Technique for Repeated Roots\nNhận xét, Định lý 7.1 không áp dụng được cho loại hệ thức truy\nhồi khi phương trình đặc trưng của nó có nghiệm kép.\n\nĐịnh lý 7.2 (Characteristic Roots)\nPhương trình có dạng 𝑟2 − 𝑐1 𝑟 − 𝑐2 = 0 (𝑐2 ̸= 0) với giả thuyết có\nnghiệm kép 𝑟. Khi đó, 𝑎𝑛 = 𝑐1 𝑎𝑛−1 + 𝑐2 𝑎𝑛−2 là nghiệm của hệ\nthức truy hồi khi là chỉ khi\n\n                                    𝑎𝑛 = 𝛼1 𝑟𝑛 + 𝛼2 𝑛𝑟𝑛 ,                              (6)\n\nvới 𝛼1 , 𝛼2 là các hằng số được xác định bằng điều kiện đầu 𝑎0 , 𝑎1 .\n\n\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   36 / 38"
+      },
+      {
+        "slide": 37,
+        "physical": 41,
+        "text": "The characteristic Root technique\n\n\n\nVí dụ 7.3\nXác định công thức nghiệm tổng quát của dãy {𝑎𝑛 } bằng phương\npháp đặc trưng.\n                {︃\n                  𝑎0 = 1, 𝑎1 = 6\n                  𝑎𝑛 = 6𝑎𝑛−1 − 9𝑎𝑛−2 , ∀𝑛 ≥ 2.\n\n\nNhận xét\nTrong trường hợp tổng quát cho 𝑘 ∈ Z với phương trình đặc trưng\n𝑟𝑘 − 𝑐1 𝑟𝑘−1 − 𝑐2 𝑟𝑘−2 − · · · − 𝑐𝑘 = 0 có 𝑘 nghiệm phân biệt\n𝑟1 , 𝑟2 , . . . , 𝑟𝑘 . Theo định lý Abel, chúng ta không thể tìm được\nnghiệm đại số (biểu diễn bằng các phép toán đại số thông\n                               √\nthường như +,-, ×, /, ) của phương trình đa thức tổng quát bậc\n5 trở lên.\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   37 / 38"
+      },
+      {
+        "slide": 38,
+        "physical": 42,
+        "text": "The characteristic Root technique   Tài liệu tham khảo\n\n\n\nTài liệu tham khảo\n\n\n   L.V. Luyen\n   Bài giảng Toán Rời Rạc. Trường ĐH KHTN Tp.HCM.\n   (2018), chương 3.\n   Giáo trình Toán rời rạc\n   Giáo trình Toán Rời Rạc. Trường ĐHSP Huế. (2003), 22-35.\n   N.T. Nhựt\n   Bài giảng Toán Rời Rạc. Trường ĐH KHTN Tp.HCM. (2011).\n\n\n\n\n   Trieu Hai Nguyen                       Discrete Mathematics             BM. KTPM–Khoa CNTT   38 / 38"
+      }
+    ],
+    "allPages": [
+      {
+        "physical": 1,
+        "slide": 1,
+        "text": "TOÁN RỜI RẠC\n                      PHƯƠNG PHÁP ĐẾM\n\n                           NGUYỄN HẢI TRIỀU1\n                            1 Bộ môn Kỹ thuật phần mềm,\n\n                   Khoa Công nghệ thông tin, Trường ĐH Nha Trang\n\n\n\n\n                              NhaTrang, February 2022\n\n\n\n\nTrieu Hai Nguyen                  Discrete Mathematics      BM. KTPM–Khoa CNTT   1 / 38"
+      },
+      {
+        "physical": 2,
+        "slide": 2,
+        "text": "Tổng quan\n1   Các nguyên lý đếm cơ bản\n\n2   Giải tích tổ hợp\n\n3   Chỉnh hợp và tổ hợp suy rộng\n\n4   Sinh các hoán vị và tổ hợp\n\n5   Hệ thức truy hồi\n\n6   Hàm sinh\n\n7   The characteristic Root technique\n     Trieu Hai Nguyen   Discrete Mathematics   BM. KTPM–Khoa CNTT   2 / 38"
+      },
+      {
+        "physical": 3,
+        "slide": 3,
+        "text": "Hệ thức truy hồi\n\n\n\nHệ thức truy hồi\n\nĐịnh nghĩa 5.1\nXét dãy số {𝑎1 , 𝑎2 , ..., 𝑎𝑛 , ...} trong đó 𝑎𝑛 là phần tử thứ 𝑛 của dãy\nsố. Hệ thức truy hồi của dãy số {𝑎𝑛 } là hệ thức biểu diễn số hạng\ntổng quát 𝑎𝑛 qua một hay nhiều số hạng đứng trước nó. Nghiệm\ncủa hệ thức truy hồi của {𝑎𝑛 } là công thức biểu diễn của 𝑎𝑛 qua\ngiá trị của 𝑛.\n\nVí dụ 5.1\nMột quần thể Corona virus sinh trưởng với số lượng tăng gấp đôi\nsau mỗi giờ. Nếu ban đầu chỉ có 1 cá thể thì sau 24 giờ số lượng\ncủa chúng là bao nhiêu?\n\n     Trieu Hai Nguyen           Discrete Mathematics   BM. KTPM–Khoa CNTT   3 / 38"
+      },
+      {
+        "physical": 4,
+        "slide": 4,
+        "text": "Hệ thức truy hồi\n\n\n\n\nGiải ví dụ 5.1\nSố lượng cá thể virus theo giờ là một dãy số: 1, 2, 4, 8, 16,...Để xác\nđịnh hệ thức truy hồi cho dãy số này, gọi 𝑎𝑛 là số virus sau n giờ\n(𝑛 ≥ 0), khi đó 𝑎𝑛−1 là số virus sau 𝑛 − 1 giờ. Ta có hệ thức sau:\n                          {︃\n                            𝑎0 = 1,\n                            𝑎𝑛 = 2𝑎𝑛−1 .\n\nCông thức nghiệm cho dãy {𝑎𝑛 } là\n\n                 𝑎𝑛 = 2𝑎𝑛−1 = 22 𝑎𝑛−2 = 23 𝑎𝑛−3 = ... = 2𝑛 𝑎0\n\nTrong đó, 𝑎0 = 1 được gọi là điều kiện ban đầu hay điều kiện\ndừng của biểu thức đệ quy, 𝑎𝑛 = 2𝑎𝑛−1 , (𝑛 = 1, 2, 3...) được gọi là\nthành phần truy hồi hay thành phần đệ quy.\n\n     Trieu Hai Nguyen              Discrete Mathematics   BM. KTPM–Khoa CNTT   4 / 38"
+      },
+      {
+        "physical": 5,
+        "slide": 5,
+        "text": "Hệ thức truy hồi\n\n\n\n\nVí dụ 5.2\nXác định số hạng tiếp theo của dãy số 1, 3, 7, 15, ?\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics   BM. KTPM–Khoa CNTT   5 / 38"
+      },
+      {
+        "physical": 6,
+        "slide": 5,
+        "text": "Hệ thức truy hồi\n\n\n\n\nVí dụ 5.2\nXác định số hạng tiếp theo của dãy số 1, 3, 7, 15, ?\nGợi ý: Hệ thức truy hồi cho dãy là:\n                       {︃\n                         𝑎1 = 1,\n                         𝑎𝑛 = 2𝑎𝑛−1 + 1.\n\nCông thức nghiệm của dãy là 𝑎𝑛 = 2𝑛 − 1, 𝑛 = 1, 2, 3... Vậy\n𝑎5 = 31\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics   BM. KTPM–Khoa CNTT   5 / 38"
+      },
+      {
+        "physical": 7,
+        "slide": 6,
+        "text": "Hệ thức truy hồi   Giải hệ thức truy hồi\n\n\n\nGiải hệ thức truy hồi\n\nCác bài toán đếm thường được biểu diễn bằng một hệ thức truy\nhồi. Từ hệ thức truy hồi đó làm thể nào để xác định công thức\nnghiệm của nó? Và một hệ thức truy hồi có thể có nhiều nghiệm\nkhác nhau.\n\nVí dụ 5.3\nChứng minh rằng 𝑎𝑛 = 5, 𝑎𝑛 = 3𝑛 là các nghiệm của hệ thức truy\nhồi 𝑎𝑛 = 2𝑎𝑛−1 − 𝑎𝑛−2 .\n\nGiải hệ thức truy hồi thường sử dụng 2 cách sau:\n    Phương pháp lặp tìm nghiệm của hệ thức truy hồi\n    Phương pháp tổng quát tìm nghiệm của hệ thức truy hồi\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   6 / 38"
+      },
+      {
+        "physical": 8,
+        "slide": 7,
+        "text": "Hệ thức truy hồi   Giải hệ thức truy hồi\n\n\n\nPhương pháp lặp tìm nghiệm\nVí dụ 5.4\nBài toán lãi kép: một người gửi 𝑀 = 10000 USD vào tài khoản\ncủa mình với lãi suất 𝑥 = 10% mỗi năm. Hỏi, sau 30 năm anh ta\ncó bao nhiêu tiền trong tài khoản?\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   7 / 38"
+      },
+      {
+        "physical": 9,
+        "slide": 7,
+        "text": "Hệ thức truy hồi   Giải hệ thức truy hồi\n\n\n\nPhương pháp lặp tìm nghiệm\nVí dụ 5.4\nBài toán lãi kép: một người gửi 𝑀 = 10000 USD vào tài khoản\ncủa mình với lãi suất 𝑥 = 10% mỗi năm. Hỏi, sau 30 năm anh ta\ncó bao nhiêu tiền trong tài khoản?\nGọi 𝑎𝑛 là số tiền có trong tài khoản sau 𝑛 năm. Số tiền này bằng\nsố tiền trong tài khoản của năm thứ 𝑛 − 1 là 𝑎𝑛−1 cộng với tiền lãi\ncủa năm thứ 𝑛, tức là 𝑥𝑎𝑛−1 . Vậy ta nhận được hệ thức truy hồi\nsau:\n            𝑎0 = 𝑀, 𝑎𝑛 = (1 + 𝑥)𝑎𝑛−1 , 𝑛 = 1, 2, 3...\nBằng phương pháp lặp các phần tử của dãy từ hệ thức truy hồi, ta\nthu được nghiệm như sau\n\n                          𝑎𝑛 = (1 + 𝑥)𝑛 𝑀\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   7 / 38"
+      },
+      {
+        "physical": 10,
+        "slide": 8,
+        "text": "Hệ thức truy hồi   Giải hệ thức truy hồi\n\n\n\nPhương pháp lặp tìm nghiệm\nVí dụ 5.5\nBài toán Tháp Hà Nội: có 3 tháp A, B, C và n đĩa với đường kính\nđôi một khác nhau. Nguyên tắc đặt đĩa vào tháp là: mỗi đĩa chỉ\nđược chồng lên đĩa lớn hơn nó và mỗi lần chỉ chuyển một đĩa từ\ntháp này sang tháp khác. Hãy xác định số lần chuyển 𝑛 ≥ 1 đĩa ở\ntháp A sang tháp C thông qua tháp trung gian B.\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   8 / 38"
+      },
+      {
+        "physical": 11,
+        "slide": 9,
+        "text": "Hệ thức truy hồi   Giải hệ thức truy hồi\n\n\n\nBài toán Tháp Hà Nội\n\n𝑛=1\nGọi 𝑎𝑛 là số lần phải chuyển 𝑛 đĩa từ A sang C mượn B làm trung\ngian. Với 𝑛 = 1 thì 𝑎1 = 1 là điều đầu của dãy truy hồi.\n\n𝑛>1\nNguyên tắc chuyển như sau:\n   ta cần chuyển 𝑛 − 1 đĩa trên cùng (để lại đĩa to nhất) từ A\n   sang B mượn C làm trung gian, số lần phải chuyển là 𝑎𝑛−1 .\n   chuyển đĩa to nhất còn lại ở A sang C mất 1 lần chuyển..\n   chuyển 𝑛 − 1 đĩa từ B sang C mượn A làm trung gian, số lần\n   phải chuyển là 𝑎𝑛−1\n\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   9 / 38"
+      },
+      {
+        "physical": 12,
+        "slide": 10,
+        "text": "Hệ thức truy hồi   Giải hệ thức truy hồi\n\n\n\nBài toán Tháp Hà Nội\n\n𝑛>1\nNhư vậy, số lần chuyển 𝑛 đĩa từ A sang C mượn B làm trung gian\nlà\n                𝑎𝑛 = 2𝑎𝑛−1 + 1, 𝑎1 = 1, 𝑛 ≥ 1.\nSử dụng phép lặp các phần tử của hệ thức trên:\n𝑎1 = 1\n𝑎2 = 2𝑎1 + 1 = 2 + 1\n𝑎3 = 2𝑎2 + 1 = 2(2 + 1) + 1 = 22 + 2 + 1\nMột cách qui nạp, ta được:\n\n          𝑎𝑛 = 2𝑛−1 + 2𝑛−2 + ... + 2 + 1 = 2𝑛 − 1,                    𝑛 ≥ 1.\n\n\n    Trieu Hai Nguyen           Discrete Mathematics                BM. KTPM–Khoa CNTT   10 / 38"
+      },
+      {
+        "physical": 13,
+        "slide": 11,
+        "text": "Hàm sinh   Định nghĩa hàm sinh\n\n\n\nĐịnh nghĩa hàm sinh\n\nTrong thực tế, một số bài toán rời rạc về dãy số, tập hợp thường\nrất khó giải quyết. Vì vậy chúng ta có thể sử dụng hàm sinh\nchuyển những bài toán này thành những bài toán về hàm số để dễ\ndàng giải quyết hơn.\n\nĐịnh nghĩa 6.1\nHàm sinh thường của dãy số vô hạn 𝑎𝑛 = {𝑎0 , 𝑎1 , 𝑎2 , ...}, 𝑛 ≥ 0 là\nchuỗi\n                         ∞\n                        ∑︁\n             𝐺(𝑥) =           𝑎𝑛 𝑥𝑛 = 𝑎0 + 𝑎1 𝑥 + 𝑎2 𝑥2 + 𝑎3 𝑥3 + ...\n                        𝑛=0\n\n\n\n     Trieu Hai Nguyen               Discrete Mathematics             BM. KTPM–Khoa CNTT   11 / 38"
+      },
+      {
+        "physical": 14,
+        "slide": 12,
+        "text": "Hàm sinh   Định nghĩa hàm sinh\n\n\n\nĐịnh nghĩa hàm sinh\nNếu dãy là hữu hạn 𝑎𝑚 = 𝑎0 , 𝑎1 , ..., 𝑎𝑚 thì các hệ số từ 𝑎𝑚+1 trở đi\nsẽ bằng 0. Hàm sinh của dãy trở thành đa thức bậc 𝑚.\n\nĐịnh nghĩa 6.2\nSự tương ứng giữa một dãy số và hàm sinh bằng dấu được kí hiệu\nbằng dấu ⇔\n\nVí dụ 6.1\n    {0, 0, 0, 0, ..., } ⇔ 0 + 0.𝑥 + 0.𝑥2 + 0.𝑥3 + ... = 0\n    {3, 4, 1, 8, 0, ..., }\n    ⇔ 3 + 4.𝑥 + 1.𝑥2 + 8.𝑥3 + 0.𝑥4 + ... = 8𝑥3 + 𝑥2 + 4𝑥 + 3\n    What sequence is represented by the generating series\n                           5\n    3 + 8𝑥2 + 𝑥3 + 𝑥7 + 100𝑥6 + · · ·?\n     Trieu Hai Nguyen       Discrete Mathematics             BM. KTPM–Khoa CNTT   12 / 38"
+      },
+      {
+        "physical": 15,
+        "slide": 13,
+        "text": "Hàm sinh   Định nghĩa hàm sinh\n\n\n\nBuilding Generating Functions\nVí dụ 6.2\nCông thức tính tổng của cấp số nhân lùi vô hạn có dạng\n                                                      1\n                        1 + 𝑧 + 𝑧 2 + ... =\n                                                     1−𝑧\n\nvới |𝑧| < 1. Công thức này cho chúng ta công thức tường minh cho\nhàm sinh của các dãy số\n     {1, 1, 1, 1, ...} ⇔ 1 + 𝑥 + 𝑥2 + 𝑥3 + ... = 1/(1 − 𝑥)\n     {1, −1, 1, −1, ...} ⇔ 1 − 𝑥 + 𝑥2 − 𝑥3 + ... = 1/(1 + 𝑥)\n     {1, 𝑎, 𝑎2 , 𝑎3 , ...} ⇔ 1 + 𝑎𝑥 + 𝑎2 𝑥2 + 𝑎3 𝑥3 + ... = 1/(1 − 𝑎𝑥)\n     {1, 0, 1, 0, ...} ⇔ 1 + 𝑥2 + 𝑥4 + ... = 1/(1 − 𝑥2 )\n     Tìm hàm sinh cho đa thức 1 + 3𝑥 + 9𝑥2 + 27𝑥3 + · · ·\n\n     Trieu Hai Nguyen         Discrete Mathematics             BM. KTPM–Khoa CNTT   13 / 38"
+      },
+      {
+        "physical": 16,
+        "slide": 13,
+        "text": "Hàm sinh   Định nghĩa hàm sinh\n\n\n\nBuilding Generating Functions\nVí dụ 6.2\nCông thức tính tổng của cấp số nhân lùi vô hạn có dạng\n                                                      1\n                        1 + 𝑧 + 𝑧 2 + ... =\n                                                     1−𝑧\n\nvới |𝑧| < 1. Công thức này cho chúng ta công thức tường minh cho\nhàm sinh của các dãy số\n     {1, 1, 1, 1, ...} ⇔ 1 + 𝑥 + 𝑥2 + 𝑥3 + ... = 1/(1 − 𝑥)\n     {1, −1, 1, −1, ...} ⇔ 1 − 𝑥 + 𝑥2 − 𝑥3 + ... = 1/(1 + 𝑥)\n     {1, 𝑎, 𝑎2 , 𝑎3 , ...} ⇔ 1 + 𝑎𝑥 + 𝑎2 𝑥2 + 𝑎3 𝑥3 + ... = 1/(1 − 𝑎𝑥)\n     {1, 0, 1, 0, ...} ⇔ 1 + 𝑥2 + 𝑥4 + ... = 1/(1 − 𝑥2 )\n     Tìm hàm sinh cho đa thức 1 + 3𝑥 + 9𝑥2 + 27𝑥3 + · · ·\n          1\n     → 1−3𝑥\n     Trieu Hai Nguyen         Discrete Mathematics             BM. KTPM–Khoa CNTT   13 / 38"
+      },
+      {
+        "physical": 17,
+        "slide": 14,
+        "text": "Hàm sinh    Định nghĩa hàm sinh\n\n\n\nVí dụ 6.3\nTìm công thức tổng quát cho dãy (𝑦𝑛 , 𝑛 ≥ 0) với 𝑦0 = 1 và\n𝑦𝑛 = 𝑎𝑦𝑛−1 + 𝑏𝑛 , ∀𝑛 ≥ 1.\n\n\n\n\n    Trieu Hai Nguyen       Discrete Mathematics             BM. KTPM–Khoa CNTT   14 / 38"
+      },
+      {
+        "physical": 18,
+        "slide": 14,
+        "text": "Hàm sinh    Định nghĩa hàm sinh\n\n\n\nVí dụ 6.3\nTìm công thức tổng quát cho dãy (𝑦𝑛 , 𝑛 ≥ 0) với 𝑦0 = 1 và\n𝑦𝑛 = 𝑎𝑦𝑛−1 + 𝑏𝑛 , ∀𝑛 ≥ 1.\nGợi ý\n    Đặt hàm sinh của dãy 𝑦𝑛 là 𝐺(𝑥) = ∞              𝑛\n                                         ∑︀\n                                            𝑛=0 𝑦𝑛 𝑥\n  1\n\n  2 Sau một vài biến đổi, sử dụng phương pháp đồng nhất hệ số,\n    ta thu được hàm sinh tổng quát\n                                   ∞\n                                  ∑︁ 𝑎𝑛+1 − 𝑏𝑛+1\n                         𝐺(𝑥) =                               𝑥𝑛\n                                  𝑛=0\n                                             𝑎−𝑏\n\n  3   Vậy công thức tổng quát của dãy\n\n                                 𝑎𝑛+1 − 𝑏𝑛+1\n                            𝑦𝑛 =\n                                    𝑎−𝑏\n      Trieu Hai Nguyen      Discrete Mathematics               BM. KTPM–Khoa CNTT   14 / 38"
+      },
+      {
+        "physical": 19,
+        "slide": 15,
+        "text": "Hàm sinh   Các phép toán trên hàm sinh\n\n\n\nCác phép toán trên hàm sinh\n\nCác phép toán thực hiện trên dãy số thì cũng có thể thực hiện\ntrên hàm sinh tương ứng của chúng. Cho 𝐹 (𝑥), 𝐺(𝑥) là hàm sinh\ncủa 𝑎𝑛 và 𝑏𝑛 , các phép toán:\n     nhân với hằng số\n                                     ∞\n                                    ∑︁\n                           𝑐𝐹 (𝑥) =    𝑐𝑎𝑛 𝑥𝑛\n                                          𝑛=0\n\n\nVí dụ 6.4\n                           1                               2\n𝑎𝑛 = {1, 1, 1, 1, ...} ⇔ 1−𝑥 ⇒ 2𝑎𝑛 = {2, 2, 2, 2, ...} ⇔ 1−𝑥\n                          1                                   𝑎\n𝑎𝑛 = {1, 𝑎, 𝑎2 , 𝑎3 } ⇔ 1−𝑎𝑥 ⇒ 𝑎𝑎𝑛 = {𝑎, 𝑎2 , 3𝑎3 , 3𝑎4 } ⇔ 1−𝑎𝑥\n\n\n     Trieu Hai Nguyen        Discrete Mathematics               BM. KTPM–Khoa CNTT   15 / 38"
+      },
+      {
+        "physical": 20,
+        "slide": 16,
+        "text": "Hàm sinh    Các phép toán trên hàm sinh\n\n\n\n\n     cộng hai hàm sinh tương ứng với việc cộng các số hạng của\n     dãy số theo đúng chỉ số\n                                              ∞\n                                             ∑︁\n                        𝐹 (𝑥) + 𝐺(𝑥) =          (𝑎𝑛 + 𝑏𝑛 )𝑥𝑛\n                                             𝑛=0\n\n\n\nVí dụ 6.5\n                                  1\n𝑎𝑛 = {1, 1, 1, 1, ...} ⇔ 𝐹 (𝑥) = 1−𝑥 ;         𝑏𝑛 = {1, −1, 1, −1, ...} ⇔\n          1\n𝐺(𝑥) = 1+𝑥\n                              2\n           𝐹 (𝑥) + 𝐺(𝑥) =          ⇔ 𝑎𝑛 + 𝑏𝑛 = {2, 0, 2, 0, ...}\n                            1 − 𝑥2\n\n\n     Trieu Hai Nguyen          Discrete Mathematics               BM. KTPM–Khoa CNTT   16 / 38"
+      },
+      {
+        "physical": 21,
+        "slide": 17,
+        "text": "Hàm sinh   Các phép toán trên hàm sinh\n\n\n\n\n    dịch chuyển sang phải 𝑘 bước bằng cách thêm 𝑘 số 0 vào đầu.\n                                           ∞\n                                          ∑︁\n                          𝑥𝑘 𝐹 (𝑥) =            𝑎𝑛−𝑘 𝑥𝑛\n                                          𝑛=𝑘\n\n\n\nVí dụ 6.6\n                                 1\nCho 𝑎𝑛 = {1, 1, 1, 1, ...} ⇔ 1−𝑥    , dịch chuyển 𝑎𝑛 sang phải 𝑘 bước:\n                                                          𝑥𝑘\n𝑎𝑛 = {0, 0, ..., 0, 1, 1, 1, 1} ⇔ 𝑥 (1 + 𝑥 + 𝑥2 + 𝑥3 ) = 1−𝑥\n                                   𝑘\n\n\nNhận xét: thêm 𝑘 số 0 vào đầu dãy số tương ứng với việc hàm\nsinh nhân với 𝑥𝑘 .\n\n\n\n     Trieu Hai Nguyen        Discrete Mathematics               BM. KTPM–Khoa CNTT   17 / 38"
+      },
+      {
+        "physical": 22,
+        "slide": 18,
+        "text": "Hàm sinh   Các phép toán trên hàm sinh\n\n\n\n\n     đạo hàm: nếu dãy 𝑎𝑛 = {𝑎0 , 𝑎1 , 𝑎2 , ...} ⇔ 𝐹 (𝑥) thì\n                                 ∞\n                        𝑑𝐹 (𝑥) ∑︁\n                              =     𝑛𝑎𝑛 𝑥𝑛−1 ⇔ {𝑎1 , 2𝑎2 , 3𝑎3 , ...}\n                         𝑑𝑥     𝑛=1\n\n\n\nVí dụ 6.7\n      𝑑                                                 1\n        [︀                                                 ]︀\nTính 𝑑𝑥    {1, 1, 1, 1, ...} ⇔ 1 + 𝑥 + 𝑥2 + 𝑥3 + ... = 1−𝑥\n                                                                 1\n                        1 + 2𝑥 + 3𝑥2 + 4𝑥3 + ... =\n                                                              (1 − 𝑥)2\n                                                         1\n                              {1, 2, 3, 4, ...} ⇔\n                                                      (1 − 𝑥)2\nTa tìm được hàm sinh cho dãy số {1, 2, 3, 4, ...}\n\n     Trieu Hai Nguyen                Discrete Mathematics               BM. KTPM–Khoa CNTT   18 / 38"
+      },
+      {
+        "physical": 23,
+        "slide": 19,
+        "text": "Hàm sinh    Các phép toán trên hàm sinh\n\n\n\n\nquy tắc xoắn (nhân): cho hai chuỗi hội tụ 𝑎𝑛 , 𝑏𝑛 . Chuỗi 𝑐𝑛\nđược gọi là chuỗi tích của 2 chuỗi 𝑎𝑛 , 𝑏𝑛 khi\n                                   𝑛\n                                  ∑︁\n                       𝑐𝑛 =             𝑎𝑘 𝑏𝑛−𝑘 .\n                                  𝑘=0\n\n\nVậy chuỗi lũy thừa tích của hai hàm sinh F(x) và G(x) là\n                         ∞\n                           (︃ 𝑛         )︃\n                        ∑︁   ∑︁\n                𝐶(𝑥) =           𝑎𝑘 𝑏𝑛−𝑘 𝑥𝑛 .\n                          𝑛=0      𝑘=0\n\n\n\n\nTrieu Hai Nguyen       Discrete Mathematics                BM. KTPM–Khoa CNTT   19 / 38"
+      },
+      {
+        "physical": 24,
+        "slide": 20,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong tổ hợp\n\n\n\nXử lý các dãy truy hồi\n\n        ∑︀∞số 𝑎𝑛 ,𝑛ta xét hàm sinh bởi dãy 𝑎𝑛 là\nĐể tìm dãy\n𝐹 (𝑥) = 𝑛=0 𝑎𝑛 𝑥 . Dựa vào đặc điểm truy hồi của dãy 𝑎𝑛 ta tìm\nđược 𝐹 (𝑥), sau đó sử dụng đồng nhất thức sẽ thu được dãy 𝑎𝑛 .\n\nDãy số Fibonacci\nDãy Fibonacci được xác định bởi công thức truy hồi\n\n            𝑓0 = 0;    𝑓1 = 1;      𝑓𝑛 = 𝑓𝑛−1 + 𝑓𝑛−2 ,                ∀𝑛 ≥ 2\n\nĐể tìm công thức tổng quát của dãy Fibonacci, ta sẽ thực hiện 2\nbước sau:\n  1 Tìm hàm sinh cho dãy số Fibonacci.\n  2 Tìm công thức tổng quát cho các hệ số của hàm sinh.\n    Trieu Hai Nguyen             Discrete Mathematics               BM. KTPM–Khoa CNTT   20 / 38"
+      },
+      {
+        "physical": 25,
+        "slide": 21,
+        "text": "Hàm sinh       Ứng dụng hàm sinh trong tổ hợp\n\n\n\nXử lý các dãy truy hồi\nDãy số Fibonacci\nTìm hàm sinh cho dãy số Fibonacci:\n                         ∞\n                        ∑︁                                      ∞\n                                                               ∑︁\n                                 𝑛\n            𝐹 (𝑥) =           𝑓𝑛 𝑥 = 𝑓0 + 𝑓1 𝑥 +                     (𝑓𝑛−1 + 𝑓𝑛−2 )𝑥𝑛\n                        𝑛=0                                    𝑛=2\n                                 ∞\n                                ∑︁                                ∞\n                                                                 ∑︁\n                       =𝑥+𝑥           𝑓𝑛−1 𝑥𝑛−1 + 𝑥            2\n                                                                        𝑓𝑛−2 𝑥𝑛−2\n                                𝑛=2                               𝑛=2\n                                 ∞\n                                ∑︁                         ∞\n                                                          ∑︁\n                       =𝑥+𝑥           𝑓 𝑛 𝑥𝑛 + 𝑥2                𝑓 𝑛 𝑥𝑛\n                                𝑛=1                       𝑛=0\n                                                 2\n               = 𝑥 + 𝑥𝐹 (𝑥) + 𝑥 𝐹 (𝑥)\n                      𝑥\n       ⇒ 𝐹 (𝑥) =\n                 1 − 𝑥 − 𝑥2\n    Trieu Hai Nguyen                  Discrete Mathematics                   BM. KTPM–Khoa CNTT   21 / 38"
+      },
+      {
+        "physical": 26,
+        "slide": 22,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong tổ hợp\n\n\n\nXử lý các dãy truy hồi\n\nDãy số Fibonacci\nTìm công thức tổng quát cho các hệ số của hàm sinh: sử dụng\nphương pháp đồng nhất hệ số, phân tích hàm F(x) thành tổng\ncủa hai phân số. Đặt mẫu của F(x)\n\n                       1 − 𝑥 − 𝑥2 = (1 − 𝛼𝑥)(1 − 𝛽𝑥)\n\nGiải hệ phương\n          √      trình 𝛼 + 𝛽√= 1, 𝛼𝛽 = −1, √\n                                           ta được\n𝛼 = (1 + 5)/2, 𝛽 = (1 − 5)/2 và 𝛼 − 𝛽 = 5. Hàm sinh được\nviết lại như sau\n                    (︂              )︂       ∞\n               1        1        1      1 ∑︁ 𝑛\n    𝐹 (𝑥) =                  −         =√       (𝛼 − 𝛽 𝑛 ) 𝑥𝑛\n             𝛼 − 𝛽 1 − 𝛼𝑥 1 − 𝛽𝑥          5 𝑛=0\n\n    Trieu Hai Nguyen           Discrete Mathematics               BM. KTPM–Khoa CNTT   22 / 38"
+      },
+      {
+        "physical": 27,
+        "slide": 23,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong tổ hợp\n\n\n\nXử lý các dãy truy hồi\n\n\nDãy số Fibonacci\nCông thức tính số hạng tổng quát của dãy Fibonacci là\n                    1\n               𝑓𝑛 = √ (𝛼𝑛 − 𝛽 𝑛 )\n                     5\n                       [︃(︃      √ )︃𝑛 (︃      √ )︃𝑛 ]︃\n                    1       (1 + 5)       (1 − 5)\n                  =√                  −\n                     5          2             2\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics               BM. KTPM–Khoa CNTT   23 / 38"
+      },
+      {
+        "physical": 28,
+        "slide": 24,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong tổ hợp\n\n\n\nMột số dãy truy hồi loại khác\n\n\nBài tập về nhà\nXác định dãy số 𝑢𝑛 , 𝑛 ≥ 0, biết rằng\n                {︃\n                  𝑢0 = 𝑢1 = 1,\n                  𝑢𝑛 = 𝑎𝑢𝑛−1 + 𝑏𝑢𝑛−2 , ∀𝑛 ≥ 2\n\ntrong các trường hợp sau: (𝑎, 𝑏) = (1, 2), (𝑎, 𝑏) = (3, −4)\n                1−𝑎𝑥+𝑥\nGợi ý: 𝐹 (𝑥) = 1−𝑎𝑥−𝑏𝑥 2.\n\n\n\n\n     Trieu Hai Nguyen       Discrete Mathematics               BM. KTPM–Khoa CNTT   24 / 38"
+      },
+      {
+        "physical": 29,
+        "slide": 25,
+        "text": "Hàm sinh   Một số dãy truy hồi loại khác\n\n\n\nMột số dãy truy hồi loại khác\n\nBài tập nâng cao\nTìm số hạng tổng quát của dãy 𝑥𝑛 thỏa mãn\n               {︃\n                 𝑥0 = 𝑥1 = 0,\n                 𝑥𝑛+2 − 6𝑥𝑛+1 + 9𝑥𝑛 = 2𝑛 + 𝑛\n                           (︁                     )︁\n                  𝑥2              1      𝑥\nGợi ý: 𝑓 (𝑥) = (1−3𝑥)2          1−2𝑥\n                                     + (1−𝑥) 2         . Công thức tính số hạng\ntổng quát của dãy là:\n\n                             2𝑛+2 + 𝑛 + 1 + 5(𝑛 − 3)3𝑛\n                        𝑥𝑛 =\n                                         4\n\n     Trieu Hai Nguyen               Discrete Mathematics                 BM. KTPM–Khoa CNTT   25 / 38"
+      },
+      {
+        "physical": 30,
+        "slide": 26,
+        "text": "Hàm sinh    Một số dãy truy hồi loại khác\n\n\n\nMột số dãy truy hồi loại khác\n\nBài tập nâng cao\nTìm dãy 𝑎𝑛 thỏa mãn\n                  {︃\n                    𝑎0 = 0, 𝑎1 = 2\n                    𝑎𝑛+2 = −4𝑎𝑛+1 − 8𝑎𝑛\n\nGợi ý: 𝑓 = 2𝑖1 𝑛≥0 [(−2 + 2𝑖)𝑛 − (−2 − 2𝑖)𝑛 ] 𝑥𝑛 . Công thức tính\n              ∑︀\n\nsố hạng tổng quát của dãy là:\n\n                (−2 + 2𝑖)𝑛 − (−2 − 2𝑖)𝑛      √        𝑛𝜋\n           𝑎𝑛 =                         = (−2 2)𝑛 𝑠𝑖𝑛\n                           2𝑖                          4\n\n\n    Trieu Hai Nguyen        Discrete Mathematics                 BM. KTPM–Khoa CNTT   26 / 38"
+      },
+      {
+        "physical": 31,
+        "slide": 27,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong các bài toán đếm\n\n\n\nỨng dụng hàm sinh trong các bài toán đếm\n\nÝ tưởng dùng hàm sinh của những bài toán đếm là đi tìm hệ số\ncủa 𝑥𝑘 trong khai triển của hàm sinh với 𝑘 là số phần tử được\nchọn ra từ 𝑛 đối tượng với điều kiện ràng buộc cho trước.\n\nBài toán chọn các phần tử phân biệt\nCó bao nhiêu cách chọn 𝑘 phần tử phân biệt từ tập hợp 𝑛 phần\ntử bằng cách sử dụng hàm sinh. Để giải quyết bài toán này, đầu\ntiên ta hãy xét tập hợp có một phần tử {𝑎1 }:\n1 cách chọn 0 phần tử\n1 cách chọn 1 phần tử\n0 cách chọn 2 phần tử trở lên\nVậy hàm sinh cho số cách chọn 𝑘 phần tử từ tập {𝑎1 } là 1 + 𝑥.\n\n    Trieu Hai Nguyen      Discrete Mathematics               BM. KTPM–Khoa CNTT   27 / 38"
+      },
+      {
+        "physical": 32,
+        "slide": 28,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong các bài toán đếm\n\n\n\nỨng dụng hàm sinh trong các bài toán đếm\nBài toán chọn các phần tử phân biệt\nTiếp tục xét tập 2 phần tử {𝑎1 , 𝑎2 } ta có:\n1 cách chọn 0 phần tử\n2 cách chọn 1 phần tử\n1 cách chọn 2 phần tử\n0 cách chọn 3 phần tử trở lên\nHàm sinh cho số cách chọn 𝑘 phần tử từ tập {𝑎1 , 𝑎2 } là:\n\n                  1 + 2𝑥 + 𝑥2 = (1 + 𝑥)2 = (1 + 𝑥)(1 + 𝑥)\n\nTiếp tục áp dụng quy tắc này ta sẽ thu được hàm sinh cho số\ncách chọn các phần tử từ tập 𝑛 phần tử:\n\n                       (1 + 𝑥)(1 + 𝑥)...(1 + 𝑥) = (1 + 𝑥)𝑛\n    Trieu Hai Nguyen              Discrete Mathematics               BM. KTPM–Khoa CNTT   28 / 38"
+      },
+      {
+        "physical": 33,
+        "slide": 29,
+        "text": "Hàm sinh   Ứng dụng hàm sinh trong các bài toán đếm\n\n\n\nỨng dụng hàm sinh trong các bài toán đếm\nBài toán chọn các phần tử phân biệt\nNhư vậy hệ số của 𝑥𝑛 trong (1 + 𝑥)𝑛 là 𝐶𝑛𝑘 (trong khai triển đa\nthức phần trước đã học) và bằng số cách chọn 𝑘 phần tử phân biệt\ntừ tập 𝑛 phần tử.\n\nVí dụ 6.8\nTrong một buổi quyên góp sách cho các trẻ em nghèo của Đại học\nNha Trang, chỉ tiêu của Hội sinh viên đề ra là phải quyên góp\nđược 10 quyển sách. Có 15 bạn quyên góp sách với 13 người đầu\nchỉ có 1 quyển sách ( nghĩa là tối đa quyên góp được 1 quyển), 2\nngười sau chỉ có 2 quyển sách ( nghĩa là tối đa quyên góp được 2\nquyển). Tìm số cách quyên góp sách bằng cách sử dụng hàm sinh\nsao cho thỏa yêu cầu của Hội sinh viên.\n    Trieu Hai Nguyen      Discrete Mathematics               BM. KTPM–Khoa CNTT   29 / 38"
+      },
+      {
+        "physical": 34,
+        "slide": 30,
+        "text": "Hàm sinh    Ứng dụng hàm sinh trong các bài toán đếm\n\n\n\nỨng dụng hàm sinh trong các bài toán đếm\nHướng dẫn ví dụ 6.8\n𝐹 (𝑥) = (1 + 𝑥)13 , 𝐺(𝑥) = (1 + 𝑥 + 𝑥2 )2 lần lượt là hàm sinh cho\ncách chọn tối đa 1 quyển sách từ 13 người và 2 quyển sách từ 2\nngười. Từ đó ta có cách chọn ra 10 quyển sách thỏa yêu cầu đề\nbài là hệ số của 𝑥10 trong khai triển\n\n        𝐹 (𝑥)𝐺(𝑥) = (1 + 𝑥)13 (1 + 𝑥 + 𝑥2 )2\n                            13\n                           ∑︁\n                                  𝑖 13−𝑖\n                       =         𝐶13 𝑥   .(𝑥4 + 2𝑥3 + 3𝑥2 + 2𝑥 + 1)\n                           𝑖=0\n\n\nTừ đó suy ra được hệ số của 𝑥10 là\n                        3      4      5      6     7\n                       𝐶13 + 2𝐶13 + 3𝐶13 + 2𝐶13 + 𝐶13\n    Trieu Hai Nguyen                Discrete Mathematics               BM. KTPM–Khoa CNTT   30 / 38"
+      },
+      {
+        "physical": 35,
+        "slide": 31,
+        "text": "The characteristic Root technique\n\n\nThe characteristic Root Technique\nNgoài phương pháp Hàm sinh, chúng ta có thể tìm nghiệm tổng\nquát của một hệ thức truy hồi bằng phương pháp Nghiệm đặc\ntrưng.\n\nCho một hệ thức truy hồi dạng tuyến tính-thuần nhất với hệ số\nhằng bậc 𝑘:\n\n                       𝑎𝑛 = 𝑐1 𝑎𝑛−1 + 𝑐2 𝑎𝑛−2 + · · · + 𝑐𝑘 𝑎𝑛−𝑘 .                      (1)\n\nChúng ta cần xác định công thức nghiệm tổng quát 𝑎𝑛 của\ndãy số {𝑎𝑛 } thỏa mãn biểu diễn ở Eq.1. Giả sử, nghiệm của hệ\nthức sẽ được biểu diễn dưới dạng\n\n                                              𝑎𝑛 = 𝑟 𝑛 ,                               (2)\n\nvới 𝑟 là hằng số.\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   31 / 38"
+      },
+      {
+        "physical": 36,
+        "slide": 32,
+        "text": "The characteristic Root technique\n\n\n\n\nThay Eq.2 vào Eq.1, ta thu được phương trình đặc trưng:\n\n                  𝑟𝑛 − 𝑐1 𝑟𝑛−1 − 𝑐2 𝑟𝑛−2 − · · · − 𝑐𝑘 𝑟𝑛−𝑘 = 0.                        (3)\n\nGiải phương trình trên ta thu được nghiệm đặc trưng. Chúng\nta sử dụng nghiệm đặc trưng để xây dựng công thức nghiệm của\nhệ truy hồi tương ứng. Để đơn giản, xét trường hợp 𝑘 = 2.\nPhương trình Eq.3 có dạng\n\n                               𝑟𝑛 − 𝑐1 𝑟𝑛−1 − 𝑐2 𝑟𝑛−2 = 0                              (4)\n\n\n\n\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   32 / 38"
+      },
+      {
+        "physical": 37,
+        "slide": 33,
+        "text": "The characteristic Root technique\n\n\n\nĐịnh lý 7.1 (Characteristic Roots)\nPhương trình Eq.4 được viết lại dưới dạng 𝑟2 − 𝑐1 𝑟 − 𝑐2 = 0 với\ngiả thuyết có hai nghiệm phân biệt 𝑟1 , 𝑟2 . Khi đó,\n𝑎𝑛 = 𝑐1 𝑎𝑛−1 + 𝑐2 𝑎𝑛−2 là nghiệm của hệ thức truy hồi khi là chỉ khi\n\n                                     𝑎𝑛 = 𝛼1 𝑟1𝑛 + 𝛼2 𝑟2𝑛 ,                            (5)\n\nvới 𝛼1 , 𝛼2 là các hằng số được xác định bằng điều kiện đầu 𝑎0 , 𝑎1 .\n\nVí dụ 7.1\nXác định công thức nghiệm tổng quát của dãy sau\n               {︃\n                 𝑎0 = 2, 𝑎1 = 3\n                 𝑎𝑛 = 7𝑎𝑛−1 − 10𝑎𝑛−2 , ∀𝑛 ≥ 2.\n\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   33 / 38"
+      },
+      {
+        "physical": 38,
+        "slide": 34,
+        "text": "The characteristic Root technique\n\n\n\n\nHướng dẫn giải ví dụ 7.3\nTa có phương trình đặc trưng 𝑟2 − 7𝑟 + 10 = 0, 𝑟1 = 2, 𝑟2 = 5 là 2\nnghiệm đặc trưng. Nghiệm tổng quát dãy truy hồi có dạng\n\n                                     𝑎𝑛 = 𝛼1 2𝑛 + 𝛼2 5𝑛 .\n\nVới các điều kiện đầu: 𝑎0 = 2, 𝑎1 = 3, ta thu được hệ phương\ntrình:                  {︃\n                          𝛼1 + 𝛼2 = 2\n                          2𝛼1 + 5𝛼2 = 3.\nGiải hệ trên ta tìm được, 𝛼1 = 7/3, 𝛼2 = −1/3. Vậy nghiệm tổng\nquát của hệ thức truy hồi là:\n                                          7    1\n                                      𝑎𝑛 = 2𝑛 − 5𝑛 .\n                                          3    3\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   34 / 38"
+      },
+      {
+        "physical": 39,
+        "slide": 35,
+        "text": "The characteristic Root technique\n\n\n\n\nVí dụ 7.2\nXác định công thức nghiệm tổng quát của dãy Fibonacci bằng\nphương pháp đặc trưng.\n                 {︃\n                   𝑎0 = 0, 𝑎1 = 1\n                   𝑎𝑛 = 𝑎𝑛−1 + 𝑎𝑛−2 , ∀𝑛 ≥ 2.\n\n\n\n\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   35 / 38"
+      },
+      {
+        "physical": 40,
+        "slide": 36,
+        "text": "The characteristic Root technique\n\n\n\n\nCharacteristic Root Technique for Repeated Roots\nNhận xét, Định lý 7.1 không áp dụng được cho loại hệ thức truy\nhồi khi phương trình đặc trưng của nó có nghiệm kép.\n\nĐịnh lý 7.2 (Characteristic Roots)\nPhương trình có dạng 𝑟2 − 𝑐1 𝑟 − 𝑐2 = 0 (𝑐2 ̸= 0) với giả thuyết có\nnghiệm kép 𝑟. Khi đó, 𝑎𝑛 = 𝑐1 𝑎𝑛−1 + 𝑐2 𝑎𝑛−2 là nghiệm của hệ\nthức truy hồi khi là chỉ khi\n\n                                    𝑎𝑛 = 𝛼1 𝑟𝑛 + 𝛼2 𝑛𝑟𝑛 ,                              (6)\n\nvới 𝛼1 , 𝛼2 là các hằng số được xác định bằng điều kiện đầu 𝑎0 , 𝑎1 .\n\n\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   36 / 38"
+      },
+      {
+        "physical": 41,
+        "slide": 37,
+        "text": "The characteristic Root technique\n\n\n\nVí dụ 7.3\nXác định công thức nghiệm tổng quát của dãy {𝑎𝑛 } bằng phương\npháp đặc trưng.\n                {︃\n                  𝑎0 = 1, 𝑎1 = 6\n                  𝑎𝑛 = 6𝑎𝑛−1 − 9𝑎𝑛−2 , ∀𝑛 ≥ 2.\n\n\nNhận xét\nTrong trường hợp tổng quát cho 𝑘 ∈ Z với phương trình đặc trưng\n𝑟𝑘 − 𝑐1 𝑟𝑘−1 − 𝑐2 𝑟𝑘−2 − · · · − 𝑐𝑘 = 0 có 𝑘 nghiệm phân biệt\n𝑟1 , 𝑟2 , . . . , 𝑟𝑘 . Theo định lý Abel, chúng ta không thể tìm được\nnghiệm đại số (biểu diễn bằng các phép toán đại số thông\n                               √\nthường như +,-, ×, /, ) của phương trình đa thức tổng quát bậc\n5 trở lên.\n    Trieu Hai Nguyen                       Discrete Mathematics   BM. KTPM–Khoa CNTT   37 / 38"
+      },
+      {
+        "physical": 42,
+        "slide": 38,
+        "text": "The characteristic Root technique   Tài liệu tham khảo\n\n\n\nTài liệu tham khảo\n\n\n   L.V. Luyen\n   Bài giảng Toán Rời Rạc. Trường ĐH KHTN Tp.HCM.\n   (2018), chương 3.\n   Giáo trình Toán rời rạc\n   Giáo trình Toán Rời Rạc. Trường ĐHSP Huế. (2003), 22-35.\n   N.T. Nhựt\n   Bài giảng Toán Rời Rạc. Trường ĐH KHTN Tp.HCM. (2011).\n\n\n\n\n   Trieu Hai Nguyen                       Discrete Mathematics             BM. KTPM–Khoa CNTT   38 / 38"
+      }
+    ]
+  },
+  {
+    "id": "toi-uu",
+    "title": "Liệt kê, quay lui và tối ưu",
+    "file": "Trieu_presentation (2)(2).pdf",
+    "asset": "math-assets/toi-uu.pdf",
+    "physicalPages": 37,
+    "slides": [
+      {
+        "slide": 1,
+        "physical": 1,
+        "text": "TOÁN RỜI RẠC\n                      Bài toán liệt kê, tối ưu\n\n                           NGUYỄN HẢI TRIỀU1\n                            1 Bộ môn Kỹ thuật phần mềm,\n\n                   Khoa Công nghệ thông tin, Trường ĐH Nha Trang\n\n\n\n\n                              NhaTrang, February 2022\n\n\n\n\nTrieu Hai Nguyen                  Discrete Mathematics     BM. KTPM–Khoa CNTT   1 / 33"
+      },
+      {
+        "slide": 2,
+        "physical": 2,
+        "text": "Tổng quan\n\n\n\n1   Bài toán liệt kê\n\n2   Bài toán tối ưu\n\n3   Sinh viên viết báo cáo\n\n\n\n\n     Trieu Hai Nguyen    Discrete Mathematics   BM. KTPM–Khoa CNTT   2 / 33"
+      },
+      {
+        "slide": 3,
+        "physical": 3,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nCó nhiều bài toán liệt kê mà chúng ta không thể xây dựng được\nthuật toán sinh. Trong trường hợp như vậy, thuật toán quay lui\n(backtracking algorithm) là giải pháp thường được sử dụng.\n\nNội dung chính của thuật toán quay lui là xây dựng tuần tự từng\ncấu hình. Mỗi cấu hình được xây dựng bằng cách thử từng thành\nphần của nó với tất cả các khả năng có thể xảy ra. Giả thiết rằng,\nmỗi cấu hình cần xác định là (𝑥1 , 𝑥2 , . . . , 𝑥𝑛 ).\n    Giả sử ta đã xây dựng được 𝑘 thành phần đầu tiên của nó là\n    (𝑥1 , 𝑥2 , . . . , 𝑥𝑘 ). Xác định thành phần 𝑥𝑘+1 bằng cách duyệt\n    tất cả các khả năng còn lại có thể để đề cử cho nó.\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics               BM. KTPM–Khoa CNTT   3 / 33"
+      },
+      {
+        "slide": 4,
+        "physical": 4,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nVới mỗi khả năng 𝑗 (thuộc tập đề cử 1, 𝑛𝑘+1 ) được đề cử cho 𝑥𝑘+1 ,\ncần kiểm tra 𝑗 có được chấp nhận không, có hai trường hợp xảy\nra:\n    Nếu chấp nhận 𝑗 thì xác định 𝑥𝑘+1 := 𝑗. Sau đó, nếu 𝑘 = 𝑛\n    thì ta nhận được một cấu hình, ngược lại ta tiến hành việc\n    xác định 𝑥𝑘+2 ,...\n    Ngược lại, nếu thử tất cả các khả năng mà không có khả\n    năng nào được chấp nhận, thì quay lui lại bước trước để đề\n    cử lại giá trị khác cho 𝑥𝑘 .\nQuá trình tìm kiếm lời giải các cấu hình cần liệt kê theo thuật\ntoán quay lui được mô tả bởi cây tìm kiếm lời giải như trên hình\n1. Nhánh của cây có đủ 𝑛 thành phần sẽ là cấu hình cần tìm.\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics               BM. KTPM–Khoa CNTT   4 / 33"
+      },
+      {
+        "slide": 5,
+        "physical": 5,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nHình 1: Cây liệt kê lời giải của thuật toán quay lui: nút đầu tiên là gốc\nxem như nút cấp 0, các nút xuất phát từ gốc được gọi là nút cấp 1, là\ncác giá trị được đề cử cho thành phần 𝑥1 , các nút xuất phát từ các nút\ncấp 1 được gọi là nút cấp 2. Thuật toán quay lui thực hiện tuần tự từ\ntrên xuống dưới, từ trái sang phải theo cơ chế Stack.\n\n\n     Trieu Hai Nguyen           Discrete Mathematics               BM. KTPM–Khoa CNTT   5 / 33"
+      },
+      {
+        "slide": 6,
+        "physical": 7,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nVí dụ 1.1\nLiệt kê các khả năng xảy ra kết quả trận đấu bóng chuyền giữa hai\nđội A và B thi đấu 5 hiệp, đội thắng trước 3 hiệp sẽ là đội thắng\nchung cuộc.\n\n\n\n\n       Hình 2: Cây liệt kê lời giải với đề cử đội A thắng hiệp 1.\n    Trieu Hai Nguyen           Discrete Mathematics               BM. KTPM–Khoa CNTT   6 / 33"
+      },
+      {
+        "slide": 7,
+        "physical": 9,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nVí dụ 1.2\nLiệt kê các dãy nhị phân 𝑛 bit.\nGợi ý: liệt kê dãy nhị phân 𝑥 = (𝑥1 , 𝑥2 , . . . , 𝑥𝑛 ) với tập đề cử cho\nmỗi bit 𝑥𝑘 (𝑘 = 1, 𝑛) là 𝐵 = {0, 1}.\n\n\n\n\n                        Hình 3: Liệt kê các dãy nhị phân 3 bit.\n\n\n     Trieu Hai Nguyen                  Discrete Mathematics               BM. KTPM–Khoa CNTT   7 / 33"
+      },
+      {
+        "slide": 8,
+        "physical": 11,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nVí dụ 1.3\nLiệt kê các hoán vị của tập 𝑋 = {1, 2, . . . , 𝑛}.\nGợi ý: Liệt kê các hoán vị của tập 𝑋 = {1, 2, . . . , 𝑛} với tập đề cử\ncho 𝑥𝑘 là 𝐵 = {1, 2, . . . , 𝑛}.\n\n\n\n\n                        Hình 4: Liệt kê các hoán vị của tập X.\n\n     Trieu Hai Nguyen                  Discrete Mathematics               BM. KTPM–Khoa CNTT   8 / 33"
+      },
+      {
+        "slide": 9,
+        "physical": 13,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nVí dụ 1.4\nLiệt kê các tổ hợp chập 𝑚 của 𝑛 phần tử của tập\n𝑋 = {1, 2, . . . , 𝑛}.\n\n\n\n\n            Hình 5: Liệt kê các tổ hợp chập 3 của {1, 2, 3, 4, 5}\n\n\n    Trieu Hai Nguyen              Discrete Mathematics               BM. KTPM–Khoa CNTT   9 / 33"
+      },
+      {
+        "slide": 10,
+        "physical": 14,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nN-Queens\n\n\n\nVí dụ 1.5\nLiệt kê tất cả các cách xếp 𝑛 quân hậu trên bàn cờ 𝑛 × 𝑛 sao cho\nchúng không ăn được lẫn nhau. Biết rằng hai quân hậu ăn được\nnhau nếu chúng nằm trên cùng một hàng, một cột hoặc một đường\nchéo. Bài toán đặt ra là tìm cách đặt 𝑛 quân hậu trên bàn cờ sao\ncho mỗi hàng, mỗi cột và mỗi đường chéo có đúng một quân hậu.\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics               BM. KTPM–Khoa CNTT   10 / 33"
+      },
+      {
+        "slide": 11,
+        "physical": 15,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nN-Queens\n\n\nĐặt tập đề cử là 𝐼 = {1, 2, . . . , 𝑛}, vậy lời giải của bài toán là\n𝑋 = {𝑥1 , 𝑥2 , . . . , 𝑥𝑛 } trong đó 𝑥𝑖 = 𝑗 biểu thị quân hậu ở dòng 𝑖\nđược xếp vào cột 𝑗 (𝑖, 𝑗 ∈ 𝐼).\n\nlời giải bằng thuật toán quay lui\nLần lượt đề cử cho 𝑥𝑖 , (𝑖 = 1, 𝑛) nhận giá trị 𝑗 trong 𝐼. Ở mỗi\nbước đề cử giá trị 𝑗 cho 𝑥𝑖 sẽ được chấp nhận nếu ô (𝑖, 𝑗) chưa bị\ncác quân hậu trước đó khống chế, nghĩa là không cùng hàng, cột\nvà đường chéo với các quân hậu trước đó đã được đặt lên bàn cờ.\n\n\n\n     Trieu Hai Nguyen          Discrete Mathematics               BM. KTPM–Khoa CNTT   11 / 33"
+      },
+      {
+        "slide": 12,
+        "physical": 16,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\n                                                                 Hình 6: Given 4 × 4\n                                                                 chessboard.\n\n\n\n\nExample\nWe have to arrange four queens, Q1, Q2, Q3 and Q4 in 4 × 4\nchess board.\n    Let us start with position (1, 1). Q1 is the only queen, so\n    there is no issue. partial solution is <1>\n    We cannot place Q2 at positions (2, 1) or (2, 2). Position (2,\n    3) is acceptable. partial solution is <1, 3>.\n\n    Trieu Hai Nguyen          Discrete Mathematics                 BM. KTPM–Khoa CNTT   12 / 33"
+      },
+      {
+        "slide": 13,
+        "physical": 17,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nExample\n   Next, Q3 cannot be placed in position (3, 1) as Q1 attacks\n   her. And it cannot be placed at (3, 2), (3, 3) or (3, 4) as Q2\n   attacks her. There is no way to put Q3 in third row. Hence,\n   the algorithm backtracks and goes back to the\n   previous solution and readjusts the position of queen\n   Q2. Q2 is moved from positions (2, 3) to (2, 4). Partial\n   solution is <1, 4>\n   Now, Q3 can be placed at position (3, 2). Partial solution is\n   <1, 4, 3>.\n   Queen Q4 cannot be placed anywhere in row four. So again,\n   backtrack to the previous solution and readjust the position\n   of Q3. Q3 cannot be placed on (3, 3) or(3, 4). So the\n   algorithm backtracks even further.\n\n   Trieu Hai Nguyen         Discrete Mathematics               BM. KTPM–Khoa CNTT   13 / 33"
+      },
+      {
+        "slide": 14,
+        "physical": 18,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nExample\n   All possible choices for Q2 are already explored, hence the\n   algorithm goes back to partial solution <1> and moves the\n   queen Q1 from (1, 1) to (1, 2). And this process continues\n   until a solution is found.\n\n\n\n\n                  Hình 7: All possible solutions for 4-queen\n\n\n   Trieu Hai Nguyen               Discrete Mathematics               BM. KTPM–Khoa CNTT   14 / 33"
+      },
+      {
+        "slide": 15,
+        "physical": 19,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nỨng dụng\nThuật toán quay lui (quay lui-cải tiến) có thể giải được nhiều bài\ntoán liệt kê tổ hợp rời rạc mà chúng ta không có phương pháp để\ngiải, chẳng hạn như bài toán đặt 2𝑛 điểm trên lưới 𝑛 × 𝑛, bài toán\nhình lục giác thần bí, bài toán xếp hậu, bài toán người du lịch,\nbài toán cái túi . . .\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics               BM. KTPM–Khoa CNTT   15 / 33"
+      },
+      {
+        "slide": 16,
+        "physical": 20,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nBài toán đặt 2𝑛 điểm trên lưới 𝑛 × 𝑛\nCho một lưới ô vuông kích thước 𝑛 × 𝑛 điểm. Hỏi, có thể đặt 2𝑛\nđiểm lên lưới sao cho mỗi hàng, mỗi cột, mỗi đường chéo có chính\nxác 2 điểm được hay không?\n\nBài toán trên chỉ có thể được giải bởi thuật toán quay lui có độ\nphức tạp thời gian tính toán 𝑂(𝑛!). Hiện nay đã có lời giải của bài\ntoán này với 𝑛 ≤ 15.\n\n\n                                                                 Hình 8: Một lời giải\n                                                                 của bài toán lưới\n                                                                 vuông với 𝑛 = 6\n\n\n    Trieu Hai Nguyen          Discrete Mathematics                 BM. KTPM–Khoa CNTT   16 / 33"
+      },
+      {
+        "slide": 17,
+        "physical": 21,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nBài toán hình lục giác thần bí\n\nĐiền các số từ 1 đến 19 vào các ô của hình lục giác bên dưới sao\ncho tổng các ô theo các hướng của lục giác đều bằng nhau.\n\n\n\n\n                                                                Hình 9: Hình lục giác\n                                                                thần bí.\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics                 BM. KTPM–Khoa CNTT   17 / 33"
+      },
+      {
+        "slide": 18,
+        "physical": 22,
+        "text": "Bài toán tối ưu   Ví dụ các bài toán tối ưu\n\n\n\n\nBài toán tối ưu: Là bài toán tìm ra tổ hợp tốt nhất trong những\ntổ hợp có thể tạo ra, thỏa mãn yêu cầu cho trước. Tối ưu tổ hợp\ncó rất nhiều ứng dụng trong thực tế như:\n     Xếp ba lô (1): có 1 chiếc ba lô, mang được không quá trọng\n     lượng b. Có n đồ vật với trọng lượng: 𝑎1 ...𝑎𝑛 và giá trị 𝑐1 ...𝑐𝑛\n     tương ứng. Hỏi ta xếp vào ba lô những vật nào để mang được\n     giá trị lớn nhất?\n     Xếp ba lô (2): tương tự như bài 1 nhưng mỗi loại đồ vật có\n     thể mang theo từ 0 → 𝑚 lần\n\n\n\n\n     Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   18 / 33"
+      },
+      {
+        "slide": 19,
+        "physical": 23,
+        "text": "Bài toán tối ưu   Ví dụ các bài toán tối ưu\n\n\n\n\nBài toán người bán hàng:\n    1 người bán hàng cần giao hàng đến n điểm: 𝑇1 , ..., 𝑇𝑛 .\n    Đường đi: Xuất phát từ một địa điểm 𝑇𝑖 , đi qua tất cả các\n    điểm còn lại, mỗi nơi đi qua đúng 1 lần rồi quay trở lại vị trí\n    xuất phát.\n    Biết 𝐶𝑖𝑗 là chi phí đi từ địa điểm 𝑇𝑖 đến 𝑇𝑗 .\n    Yêu cầu: Hãy tìm một hành trình thỏa mãn yêu cầu có tổng\n    chi phí nhỏ nhất\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   19 / 33"
+      },
+      {
+        "slide": 20,
+        "physical": 24,
+        "text": "Bài toán tối ưu   Ví dụ các bài toán tối ưu\n\n\n\n\nBài toán phân công\n    Có n công việc và n thợ. 𝐶𝑖𝑗 là chi phí để trả cho thợ i làm\n    công việc j.\n    Hãy tìm cách thuê thợ sao cho tổng chi phí là nhỏ nhất.\n    Lưu ý: mỗi thợ chỉ làm 1 việc và 1 việc chỉ làm bởi 1 thợ.\n\nBài toán trả tiền ATM\n    Khách hàng yêu cầu rút số tiền n. Trong cây ATM có các loại\n    tiền với mệnh giá: 𝑎1 , ..., 𝑎𝑚 . Tính xem cây phải trả tiền như\n    thế nào để số tờ tiền là ít nhất?\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   20 / 33"
+      },
+      {
+        "slide": 21,
+        "physical": 25,
+        "text": "Bài toán tối ưu   Định nghĩa\n\n\n\n\nĐịnh nghĩa 2.1\nCho tập hữu hạn phần tử 𝐷. Hàm mục tiêu 𝑓 (𝑋) xác định trên\n𝐷. Mỗi phần tử 𝑋 ∈ 𝐷 có dạng 𝑋 = (𝑥1 , 𝑥2 , ..., 𝑥𝑛 ) được gọi là 1\nphương án. Tìm phương án 𝑋0 sao cho 𝑓 (𝑋0 ) đạt cực đại (cực\ntiểu) trên D. Phương án 𝑋0 được gọi là phương án tối ưu.\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics     BM. KTPM–Khoa CNTT   21 / 33"
+      },
+      {
+        "slide": 22,
+        "physical": 26,
+        "text": "Bài toán tối ưu   Định nghĩa\n\n\n\n\nVí dụ 2.1\nBài toán xếp ba lô 1 (mỗi đồ vật chọn không quá 1 lần):\n    Tập phương án (D): Tập các bộ n phần tử (𝑥1 , ..., 𝑥𝑛 ) trong\n    đó 𝑥𝑖 = 0 nếu không chọn vật thứ 𝑖 và bằng 1 nếu chọn.\n    Hàm mục ∑︀ tiêu (f): Tổng giá trị các đồ vật xếp được\n    𝑓 (𝑥) = 𝑛𝑖=1 𝑥𝑖 𝑐𝑖 .\n    Điều kiện: Tổng khối lượng không quá b: 𝑛𝑖=1 𝑥𝑖 𝑎𝑖 ≤ 𝑏.\n                                               ∑︀\n\n    Yêu cầu: Tìm phương án thỏa mãn điều kiện và làm hàm\n    mục tiêu đạt cực đại\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics     BM. KTPM–Khoa CNTT   22 / 33"
+      },
+      {
+        "slide": 23,
+        "physical": 27,
+        "text": "Bài toán tối ưu   Định nghĩa\n\n\n\n\nVí dụ 2.2\nTìm nghiệm nguyên không âm (𝑥, 𝑦, 𝑧) của phương trình\n𝑥 + 𝑦 + 𝑧 = 9 sao cho 𝑥𝑦𝑧 là lớn nhất?\n\nMỗi nghiệm của phương trình hay một phương án của bài toán đã\ncho có dạng (𝑥, 𝑦, 𝑧). Tập phương án của bài toán là\n𝐷 = {(0, 0, 9), (0, 1, 8), ..., (8, 1, 0), (9, 0, 0)}, hàm mục tiêu của bài\ntoán là 𝑓 (𝑥, 𝑦, 𝑧) = 𝑥𝑦𝑧. Theo bất đẳng thức Cauchy, phương án\ntối ưu của bài toán là 𝑋𝑚𝑎𝑥 = (3, 3, 3) và giá trị tối ưu là\n𝑓 (𝑋𝑚𝑎𝑥 ) = 27.\n\n\n\n\n     Trieu Hai Nguyen            Discrete Mathematics     BM. KTPM–Khoa CNTT   23 / 33"
+      },
+      {
+        "slide": 24,
+        "physical": 28,
+        "text": "Bài toán tối ưu   Phương pháp giải bài toán tối ưu tổ hợp\n\n\n\n\nPhương pháp dễ nhận biết để giải một bài toán tối ưu tổ hợp là\ntrên cơ sở thuật toán quay lui liệt kê các cấu hình tổ hợp, với mỗi\nphương án tìm được\n     tính giá trị hàm mục tiêu tại đó\n     so sánh các giá trị hàm mục tiêu của các phương án đã tìm\n     được để chọn ra phương án tối ưu\n\nThực tế, phương pháp duyệt toàn bộ hay phương pháp vét cạn\ntoàn bộ các cấu hình tổ hợp là khó để thực hiện bởi số lượng cấu\nhình tổ hợp thường khá lớn. Để lựa chọn phương pháp giải các\nbài toán tối ưu tổ hợp theo yêu cầu và phù hợp với thực tế, sử\ndụng lý thuyết NP-C (Non-Deterministic Polynomial-Complete)\n\n\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   24 / 33"
+      },
+      {
+        "slide": 25,
+        "physical": 29,
+        "text": "Bài toán tối ưu   Bài toán dễ, bài toán khó\n\n\n\n\nTrong lý thuyết NP-C, các bài toán tối ưu tổ hợp được chia\nthành hai lớp, đó là lớp các bài toán dễ và lớp các bài toán khó:\n  1 dễ nếu phương án tối ưu của bài toán được xác định bởi một\n    thuật toán đa thức có độ phức tạp thời gian tính toán 𝑂(𝑛𝑘 ),\n    𝑛 là kích thước của dữ liệu đầu vào, 𝑘 ∈ 𝑁 + .\n  2 khó nếu phương án tối ưu của bài toán trong trường hợp\n    tổng quát được xác định bởi thuật toán mũ có độ phức tạp\n    thời gian tính toán 𝑂(𝑘 𝑛 ) hoặc 𝑂(𝑛!). Lớp các bài toán tối\n    ưu tổ hợp khó được ký hiệu bởi NP-Hard\n    (Non-Deterministic Polynomial-Hard).\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics                BM. KTPM–Khoa CNTT   25 / 33"
+      },
+      {
+        "slide": 26,
+        "physical": 30,
+        "text": "Bài toán tối ưu   Các kĩ thuật giải\n\n\n\n\nPhương pháp quy hoạch động\nPhương pháp quy hoạch động giải quyết các bài toán tối ưu tổ hợp\nbằng cách tổ hợp lời giải của các bài toán con có cùng cấu trúc\nđể từ đó suy ra lời giải của bài toán đã cho. Thường được sử dụng\nđể giải các bài toán tối ưu tổ hợp thuộc lớp NP-Hard.\n\nPhương pháp nhánh-cận\nLà một sự cải tiến của thuật toán quay lui dựa trên cơ sở xác\nđịnh cận dưới/trên tương ứng với bài toán min/max cho từng\nphương án bộ phận. Thay vì duyệt tất cả các trường hợp, nếu ta\nđến một vị trí mà giá trị của hàm mục tiêu tại đó và các điểm về\nsau chắc chắn không tốt nhất thì quay lại.\n\n\n    Trieu Hai Nguyen         Discrete Mathematics            BM. KTPM–Khoa CNTT   26 / 33"
+      },
+      {
+        "slide": 27,
+        "physical": 31,
+        "text": "Bài toán tối ưu   Các kĩ thuật giải\n\n\n\n\nĐịnh nghĩa 2.2 (Phương pháp nhánh-cận)\nXét bài toán: tìm min {𝑓 (𝑥)|𝑥 ∈ 𝐷},\n𝐷 = {𝑥 = (𝑥1 , ..., 𝑥𝑛 ) ∈ 𝐴1 × ... × 𝐴𝑛 }. Chúng ta sử dụng thuật\ntoán quay lui để xây dựng các phương án 𝑥 của bài toán. Một bộ\n(𝑎1 , ..., 𝑎𝑘 ) là phương án bộ phận cấp 𝑘, tập các phương án bộ phận\ncấp 𝑘 được ký hiệu là 𝐷𝑘 . Giả sử tồn tại hàm 𝑔 thỏa mãn:\n\n           𝑔(𝑎1 , ..., 𝑎𝑘 ) ≤ 𝑚𝑖𝑛{𝑓 (𝑥)|𝑥 ∈ 𝐷, 𝑥𝑖 = 𝑎𝑖 , 𝑖 = 1, 𝑘}\n\nKhi đó giá trị hàm 𝑔 tại phương án bộ phận không vượt quá giá trị\nnhỏ nhất của hàm mục tiêu trên nhánh đó và 𝑔(𝑎1 , ..., 𝑎𝑘 ) là cận\ndưới của nhánh chứa phương án bộ phận (𝑎1 , ..., 𝑎𝑘 )\n\n\n\n    Trieu Hai Nguyen             Discrete Mathematics            BM. KTPM–Khoa CNTT   27 / 33"
+      },
+      {
+        "slide": 28,
+        "physical": 32,
+        "text": "Bài toán tối ưu   Các kĩ thuật giải\n\n\n\nPhương pháp nhánh-cận\nGiả sử đã có hàm 𝑔. Trong quá trình thực hiện thuật toán quay\nlui, ta gọi:\n      𝑥 là phương án tốt nhất đã tìm được\n      𝑓 = 𝑓 (𝑥) là kỷ lục\n      Nếu tại bước 𝑘, ta có phương án bộ phận (𝑎1 , ..., 𝑎𝑘 ) mà\n      𝑔(𝑎1 , ..., 𝑎𝑘 ) > 𝑓 =⇒ tập con của D chứa các phương án mở\n      rộng của (𝑎1 , ..., 𝑎𝑘 ) sẽ không phải là kết quả tốt nhất =⇒\n      quay lui.\n\nVấn đề phát sinh với hàm 𝑔\n    Tính giá trị của 𝑔 phải đơn giản hơn việc tìm phương án tối\n    ưu trong nhánh\n    Kết quả của hàm g phải gần với kết quả tối ưu của nhánh\n    Trieu Hai Nguyen          Discrete Mathematics            BM. KTPM–Khoa CNTT   28 / 33"
+      },
+      {
+        "slide": 29,
+        "physical": 33,
+        "text": "Bài toán tối ưu   Các bài toán tối ưu SV thuyết trình nhóm\n\n\n\nBài toán người du lịch - TSP (Travelling\nSalesman Problem)\n\n\nBài toán phát biểu như sau: Có 𝑛 thành phố 1, 2,..., n . Xuất\nphát từ một thành phố nào đó, người du lịch muốn đi tham quan\ntất cả các thành phố, mỗi thành phố một lần, rồi quay trở về\nthành phố xuất phát. Cho biết 𝑐𝑖𝑗 là chi phí đi từ thành phố 𝑖 đến\nthành phố 𝑗 (𝑖, 𝑗 = 1,2, ..., n). Xác định một hành trình du lịch\nsao cho tổng chi phí là nhỏ nhất.\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics                BM. KTPM–Khoa CNTT   29 / 33"
+      },
+      {
+        "slide": 30,
+        "physical": 34,
+        "text": "Bài toán tối ưu   Các bài toán tối ưu SV thuyết trình nhóm\n\n\n\nBài toán lập lịch gia công chi tiết - SP\n(Scheduling Problem)\n\n\n\nCó n chi tiết 𝐷1 , 𝐷2 , ..., 𝐷𝑛 lần lượt được gia công trên m máy\n𝑀1 , 𝑀2 , ..., 𝑀𝑚 . Cho biết thời gian gia công chi tiết 𝐷𝑖 trên máy\n𝑀𝑗 là 𝑡𝑖𝑗 , hãy xác định lịch trình (thứ tự) gia công các chi tiết\ntrên các máy sao cho hoàn thành công việc sớm nhất.\n\n\n\n\n     Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   30 / 33"
+      },
+      {
+        "slide": 31,
+        "physical": 35,
+        "text": "Sinh viên viết báo cáo   Chủ đề viết báo cáo\n\n\n\n\nSinh viên viết báo cáo tổng quan về các kỹ thuật quy hoạch động,\nnhánh cận, so sánh ưu và nhược điểm của hai kỹ thuật. Chọn 3\nbài toán trong các bài toán dưới đây để viết báo cáo.\n\n  1   Bài toán Tháp Hà Nội, N-Queens\n  2   Bài toán người du lịch - TSP (Travelling Salesman Problem)\n  3   Bài toán người bán hàng\n  4   Bài toán xếp ba lô 1, 2\n  5   Bài toán hình lục giác thần bí, bài toán trả tiền ATM\n  6   Bài toán lập lịch gia công chi tiết- SP (Scheduling Problem)\n  7   Phương pháp người láng giềng gần nhất cho bài toán TSP.\n\n\n\n      Trieu Hai Nguyen                Discrete Mathematics              BM. KTPM–Khoa CNTT   31 / 33"
+      },
+      {
+        "slide": 32,
+        "physical": 36,
+        "text": "Sinh viên viết báo cáo   Chủ đề viết báo cáo\n\n\n\nYêu cầu\n\n\n\n\nSinh viên cần:\n    viết rõ lý thuyết của các kỹ thuật giải, giải thích chi tiết code.\n    nghiêm cấm sao chép. Các bài có độ tương đồng >= 90% sẽ\n    được 0 điểm cho tất cả.\n\n\n\n\n     Trieu Hai Nguyen                Discrete Mathematics              BM. KTPM–Khoa CNTT   32 / 33"
+      },
+      {
+        "slide": 33,
+        "physical": 37,
+        "text": "Sinh viên viết báo cáo   Tài liệu tham khảo\n\n\n\nTài liệu tham khảo\n\n\n\n   Đ.N. An\n   Giáo Trình Toán Rời Rạc. Trường ĐH Nha Trang, (2021).\n   Giáo trình Toán rời rạc\n   Giáo trình Toán Rời Rạc. Trường ĐHSP Huế. (2003), 22-35.\n   N.T. Nhựt\n   Bài giảng Toán Rời Rạc. Trường ĐH KHTN Tp.HCM. (2011).\n\n\n\n\n   Trieu Hai Nguyen                Discrete Mathematics             BM. KTPM–Khoa CNTT   33 / 33"
+      }
+    ],
+    "allPages": [
+      {
+        "physical": 1,
+        "slide": 1,
+        "text": "TOÁN RỜI RẠC\n                      Bài toán liệt kê, tối ưu\n\n                           NGUYỄN HẢI TRIỀU1\n                            1 Bộ môn Kỹ thuật phần mềm,\n\n                   Khoa Công nghệ thông tin, Trường ĐH Nha Trang\n\n\n\n\n                              NhaTrang, February 2022\n\n\n\n\nTrieu Hai Nguyen                  Discrete Mathematics     BM. KTPM–Khoa CNTT   1 / 33"
+      },
+      {
+        "physical": 2,
+        "slide": 2,
+        "text": "Tổng quan\n\n\n\n1   Bài toán liệt kê\n\n2   Bài toán tối ưu\n\n3   Sinh viên viết báo cáo\n\n\n\n\n     Trieu Hai Nguyen    Discrete Mathematics   BM. KTPM–Khoa CNTT   2 / 33"
+      },
+      {
+        "physical": 3,
+        "slide": 3,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nCó nhiều bài toán liệt kê mà chúng ta không thể xây dựng được\nthuật toán sinh. Trong trường hợp như vậy, thuật toán quay lui\n(backtracking algorithm) là giải pháp thường được sử dụng.\n\nNội dung chính của thuật toán quay lui là xây dựng tuần tự từng\ncấu hình. Mỗi cấu hình được xây dựng bằng cách thử từng thành\nphần của nó với tất cả các khả năng có thể xảy ra. Giả thiết rằng,\nmỗi cấu hình cần xác định là (𝑥1 , 𝑥2 , . . . , 𝑥𝑛 ).\n    Giả sử ta đã xây dựng được 𝑘 thành phần đầu tiên của nó là\n    (𝑥1 , 𝑥2 , . . . , 𝑥𝑘 ). Xác định thành phần 𝑥𝑘+1 bằng cách duyệt\n    tất cả các khả năng còn lại có thể để đề cử cho nó.\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics               BM. KTPM–Khoa CNTT   3 / 33"
+      },
+      {
+        "physical": 4,
+        "slide": 4,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nVới mỗi khả năng 𝑗 (thuộc tập đề cử 1, 𝑛𝑘+1 ) được đề cử cho 𝑥𝑘+1 ,\ncần kiểm tra 𝑗 có được chấp nhận không, có hai trường hợp xảy\nra:\n    Nếu chấp nhận 𝑗 thì xác định 𝑥𝑘+1 := 𝑗. Sau đó, nếu 𝑘 = 𝑛\n    thì ta nhận được một cấu hình, ngược lại ta tiến hành việc\n    xác định 𝑥𝑘+2 ,...\n    Ngược lại, nếu thử tất cả các khả năng mà không có khả\n    năng nào được chấp nhận, thì quay lui lại bước trước để đề\n    cử lại giá trị khác cho 𝑥𝑘 .\nQuá trình tìm kiếm lời giải các cấu hình cần liệt kê theo thuật\ntoán quay lui được mô tả bởi cây tìm kiếm lời giải như trên hình\n1. Nhánh của cây có đủ 𝑛 thành phần sẽ là cấu hình cần tìm.\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics               BM. KTPM–Khoa CNTT   4 / 33"
+      },
+      {
+        "physical": 5,
+        "slide": 5,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nHình 1: Cây liệt kê lời giải của thuật toán quay lui: nút đầu tiên là gốc\nxem như nút cấp 0, các nút xuất phát từ gốc được gọi là nút cấp 1, là\ncác giá trị được đề cử cho thành phần 𝑥1 , các nút xuất phát từ các nút\ncấp 1 được gọi là nút cấp 2. Thuật toán quay lui thực hiện tuần tự từ\ntrên xuống dưới, từ trái sang phải theo cơ chế Stack.\n\n\n     Trieu Hai Nguyen           Discrete Mathematics               BM. KTPM–Khoa CNTT   5 / 33"
+      },
+      {
+        "physical": 6,
+        "slide": 6,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nVí dụ 1.1\nLiệt kê các khả năng xảy ra kết quả trận đấu bóng chuyền giữa hai\nđội A và B thi đấu 5 hiệp, đội thắng trước 3 hiệp sẽ là đội thắng\nchung cuộc.\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics               BM. KTPM–Khoa CNTT   6 / 33"
+      },
+      {
+        "physical": 7,
+        "slide": 6,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nVí dụ 1.1\nLiệt kê các khả năng xảy ra kết quả trận đấu bóng chuyền giữa hai\nđội A và B thi đấu 5 hiệp, đội thắng trước 3 hiệp sẽ là đội thắng\nchung cuộc.\n\n\n\n\n       Hình 2: Cây liệt kê lời giải với đề cử đội A thắng hiệp 1.\n    Trieu Hai Nguyen           Discrete Mathematics               BM. KTPM–Khoa CNTT   6 / 33"
+      },
+      {
+        "physical": 8,
+        "slide": 7,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nVí dụ 1.2\nLiệt kê các dãy nhị phân 𝑛 bit.\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics               BM. KTPM–Khoa CNTT   7 / 33"
+      },
+      {
+        "physical": 9,
+        "slide": 7,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nVí dụ 1.2\nLiệt kê các dãy nhị phân 𝑛 bit.\nGợi ý: liệt kê dãy nhị phân 𝑥 = (𝑥1 , 𝑥2 , . . . , 𝑥𝑛 ) với tập đề cử cho\nmỗi bit 𝑥𝑘 (𝑘 = 1, 𝑛) là 𝐵 = {0, 1}.\n\n\n\n\n                        Hình 3: Liệt kê các dãy nhị phân 3 bit.\n\n\n     Trieu Hai Nguyen                  Discrete Mathematics               BM. KTPM–Khoa CNTT   7 / 33"
+      },
+      {
+        "physical": 10,
+        "slide": 8,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nVí dụ 1.3\nLiệt kê các hoán vị của tập 𝑋 = {1, 2, . . . , 𝑛}.\n\n\n\n\n     Trieu Hai Nguyen          Discrete Mathematics               BM. KTPM–Khoa CNTT   8 / 33"
+      },
+      {
+        "physical": 11,
+        "slide": 8,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nVí dụ 1.3\nLiệt kê các hoán vị của tập 𝑋 = {1, 2, . . . , 𝑛}.\nGợi ý: Liệt kê các hoán vị của tập 𝑋 = {1, 2, . . . , 𝑛} với tập đề cử\ncho 𝑥𝑘 là 𝐵 = {1, 2, . . . , 𝑛}.\n\n\n\n\n                        Hình 4: Liệt kê các hoán vị của tập X.\n\n     Trieu Hai Nguyen                  Discrete Mathematics               BM. KTPM–Khoa CNTT   8 / 33"
+      },
+      {
+        "physical": 12,
+        "slide": 9,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nVí dụ 1.4\nLiệt kê các tổ hợp chập 𝑚 của 𝑛 phần tử của tập\n𝑋 = {1, 2, . . . , 𝑛}.\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics               BM. KTPM–Khoa CNTT   9 / 33"
+      },
+      {
+        "physical": 13,
+        "slide": 9,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nVí dụ 1.4\nLiệt kê các tổ hợp chập 𝑚 của 𝑛 phần tử của tập\n𝑋 = {1, 2, . . . , 𝑛}.\n\n\n\n\n            Hình 5: Liệt kê các tổ hợp chập 3 của {1, 2, 3, 4, 5}\n\n\n    Trieu Hai Nguyen              Discrete Mathematics               BM. KTPM–Khoa CNTT   9 / 33"
+      },
+      {
+        "physical": 14,
+        "slide": 10,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nN-Queens\n\n\n\nVí dụ 1.5\nLiệt kê tất cả các cách xếp 𝑛 quân hậu trên bàn cờ 𝑛 × 𝑛 sao cho\nchúng không ăn được lẫn nhau. Biết rằng hai quân hậu ăn được\nnhau nếu chúng nằm trên cùng một hàng, một cột hoặc một đường\nchéo. Bài toán đặt ra là tìm cách đặt 𝑛 quân hậu trên bàn cờ sao\ncho mỗi hàng, mỗi cột và mỗi đường chéo có đúng một quân hậu.\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics               BM. KTPM–Khoa CNTT   10 / 33"
+      },
+      {
+        "physical": 15,
+        "slide": 11,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nN-Queens\n\n\nĐặt tập đề cử là 𝐼 = {1, 2, . . . , 𝑛}, vậy lời giải của bài toán là\n𝑋 = {𝑥1 , 𝑥2 , . . . , 𝑥𝑛 } trong đó 𝑥𝑖 = 𝑗 biểu thị quân hậu ở dòng 𝑖\nđược xếp vào cột 𝑗 (𝑖, 𝑗 ∈ 𝐼).\n\nlời giải bằng thuật toán quay lui\nLần lượt đề cử cho 𝑥𝑖 , (𝑖 = 1, 𝑛) nhận giá trị 𝑗 trong 𝐼. Ở mỗi\nbước đề cử giá trị 𝑗 cho 𝑥𝑖 sẽ được chấp nhận nếu ô (𝑖, 𝑗) chưa bị\ncác quân hậu trước đó khống chế, nghĩa là không cùng hàng, cột\nvà đường chéo với các quân hậu trước đó đã được đặt lên bàn cờ.\n\n\n\n     Trieu Hai Nguyen          Discrete Mathematics               BM. KTPM–Khoa CNTT   11 / 33"
+      },
+      {
+        "physical": 16,
+        "slide": 12,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\n                                                                 Hình 6: Given 4 × 4\n                                                                 chessboard.\n\n\n\n\nExample\nWe have to arrange four queens, Q1, Q2, Q3 and Q4 in 4 × 4\nchess board.\n    Let us start with position (1, 1). Q1 is the only queen, so\n    there is no issue. partial solution is <1>\n    We cannot place Q2 at positions (2, 1) or (2, 2). Position (2,\n    3) is acceptable. partial solution is <1, 3>.\n\n    Trieu Hai Nguyen          Discrete Mathematics                 BM. KTPM–Khoa CNTT   12 / 33"
+      },
+      {
+        "physical": 17,
+        "slide": 13,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nExample\n   Next, Q3 cannot be placed in position (3, 1) as Q1 attacks\n   her. And it cannot be placed at (3, 2), (3, 3) or (3, 4) as Q2\n   attacks her. There is no way to put Q3 in third row. Hence,\n   the algorithm backtracks and goes back to the\n   previous solution and readjusts the position of queen\n   Q2. Q2 is moved from positions (2, 3) to (2, 4). Partial\n   solution is <1, 4>\n   Now, Q3 can be placed at position (3, 2). Partial solution is\n   <1, 4, 3>.\n   Queen Q4 cannot be placed anywhere in row four. So again,\n   backtrack to the previous solution and readjust the position\n   of Q3. Q3 cannot be placed on (3, 3) or(3, 4). So the\n   algorithm backtracks even further.\n\n   Trieu Hai Nguyen         Discrete Mathematics               BM. KTPM–Khoa CNTT   13 / 33"
+      },
+      {
+        "physical": 18,
+        "slide": 14,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nExample\n   All possible choices for Q2 are already explored, hence the\n   algorithm goes back to partial solution <1> and moves the\n   queen Q1 from (1, 1) to (1, 2). And this process continues\n   until a solution is found.\n\n\n\n\n                  Hình 7: All possible solutions for 4-queen\n\n\n   Trieu Hai Nguyen               Discrete Mathematics               BM. KTPM–Khoa CNTT   14 / 33"
+      },
+      {
+        "physical": 19,
+        "slide": 15,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\n\nỨng dụng\nThuật toán quay lui (quay lui-cải tiến) có thể giải được nhiều bài\ntoán liệt kê tổ hợp rời rạc mà chúng ta không có phương pháp để\ngiải, chẳng hạn như bài toán đặt 2𝑛 điểm trên lưới 𝑛 × 𝑛, bài toán\nhình lục giác thần bí, bài toán xếp hậu, bài toán người du lịch,\nbài toán cái túi . . .\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics               BM. KTPM–Khoa CNTT   15 / 33"
+      },
+      {
+        "physical": 20,
+        "slide": 16,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nBài toán đặt 2𝑛 điểm trên lưới 𝑛 × 𝑛\nCho một lưới ô vuông kích thước 𝑛 × 𝑛 điểm. Hỏi, có thể đặt 2𝑛\nđiểm lên lưới sao cho mỗi hàng, mỗi cột, mỗi đường chéo có chính\nxác 2 điểm được hay không?\n\nBài toán trên chỉ có thể được giải bởi thuật toán quay lui có độ\nphức tạp thời gian tính toán 𝑂(𝑛!). Hiện nay đã có lời giải của bài\ntoán này với 𝑛 ≤ 15.\n\n\n                                                                 Hình 8: Một lời giải\n                                                                 của bài toán lưới\n                                                                 vuông với 𝑛 = 6\n\n\n    Trieu Hai Nguyen          Discrete Mathematics                 BM. KTPM–Khoa CNTT   16 / 33"
+      },
+      {
+        "physical": 21,
+        "slide": 17,
+        "text": "Bài toán liệt kê   Thuật toán quay lui\n\n\n\nBài toán hình lục giác thần bí\n\nĐiền các số từ 1 đến 19 vào các ô của hình lục giác bên dưới sao\ncho tổng các ô theo các hướng của lục giác đều bằng nhau.\n\n\n\n\n                                                                Hình 9: Hình lục giác\n                                                                thần bí.\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics                 BM. KTPM–Khoa CNTT   17 / 33"
+      },
+      {
+        "physical": 22,
+        "slide": 18,
+        "text": "Bài toán tối ưu   Ví dụ các bài toán tối ưu\n\n\n\n\nBài toán tối ưu: Là bài toán tìm ra tổ hợp tốt nhất trong những\ntổ hợp có thể tạo ra, thỏa mãn yêu cầu cho trước. Tối ưu tổ hợp\ncó rất nhiều ứng dụng trong thực tế như:\n     Xếp ba lô (1): có 1 chiếc ba lô, mang được không quá trọng\n     lượng b. Có n đồ vật với trọng lượng: 𝑎1 ...𝑎𝑛 và giá trị 𝑐1 ...𝑐𝑛\n     tương ứng. Hỏi ta xếp vào ba lô những vật nào để mang được\n     giá trị lớn nhất?\n     Xếp ba lô (2): tương tự như bài 1 nhưng mỗi loại đồ vật có\n     thể mang theo từ 0 → 𝑚 lần\n\n\n\n\n     Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   18 / 33"
+      },
+      {
+        "physical": 23,
+        "slide": 19,
+        "text": "Bài toán tối ưu   Ví dụ các bài toán tối ưu\n\n\n\n\nBài toán người bán hàng:\n    1 người bán hàng cần giao hàng đến n điểm: 𝑇1 , ..., 𝑇𝑛 .\n    Đường đi: Xuất phát từ một địa điểm 𝑇𝑖 , đi qua tất cả các\n    điểm còn lại, mỗi nơi đi qua đúng 1 lần rồi quay trở lại vị trí\n    xuất phát.\n    Biết 𝐶𝑖𝑗 là chi phí đi từ địa điểm 𝑇𝑖 đến 𝑇𝑗 .\n    Yêu cầu: Hãy tìm một hành trình thỏa mãn yêu cầu có tổng\n    chi phí nhỏ nhất\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   19 / 33"
+      },
+      {
+        "physical": 24,
+        "slide": 20,
+        "text": "Bài toán tối ưu   Ví dụ các bài toán tối ưu\n\n\n\n\nBài toán phân công\n    Có n công việc và n thợ. 𝐶𝑖𝑗 là chi phí để trả cho thợ i làm\n    công việc j.\n    Hãy tìm cách thuê thợ sao cho tổng chi phí là nhỏ nhất.\n    Lưu ý: mỗi thợ chỉ làm 1 việc và 1 việc chỉ làm bởi 1 thợ.\n\nBài toán trả tiền ATM\n    Khách hàng yêu cầu rút số tiền n. Trong cây ATM có các loại\n    tiền với mệnh giá: 𝑎1 , ..., 𝑎𝑚 . Tính xem cây phải trả tiền như\n    thế nào để số tờ tiền là ít nhất?\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   20 / 33"
+      },
+      {
+        "physical": 25,
+        "slide": 21,
+        "text": "Bài toán tối ưu   Định nghĩa\n\n\n\n\nĐịnh nghĩa 2.1\nCho tập hữu hạn phần tử 𝐷. Hàm mục tiêu 𝑓 (𝑋) xác định trên\n𝐷. Mỗi phần tử 𝑋 ∈ 𝐷 có dạng 𝑋 = (𝑥1 , 𝑥2 , ..., 𝑥𝑛 ) được gọi là 1\nphương án. Tìm phương án 𝑋0 sao cho 𝑓 (𝑋0 ) đạt cực đại (cực\ntiểu) trên D. Phương án 𝑋0 được gọi là phương án tối ưu.\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics     BM. KTPM–Khoa CNTT   21 / 33"
+      },
+      {
+        "physical": 26,
+        "slide": 22,
+        "text": "Bài toán tối ưu   Định nghĩa\n\n\n\n\nVí dụ 2.1\nBài toán xếp ba lô 1 (mỗi đồ vật chọn không quá 1 lần):\n    Tập phương án (D): Tập các bộ n phần tử (𝑥1 , ..., 𝑥𝑛 ) trong\n    đó 𝑥𝑖 = 0 nếu không chọn vật thứ 𝑖 và bằng 1 nếu chọn.\n    Hàm mục ∑︀ tiêu (f): Tổng giá trị các đồ vật xếp được\n    𝑓 (𝑥) = 𝑛𝑖=1 𝑥𝑖 𝑐𝑖 .\n    Điều kiện: Tổng khối lượng không quá b: 𝑛𝑖=1 𝑥𝑖 𝑎𝑖 ≤ 𝑏.\n                                               ∑︀\n\n    Yêu cầu: Tìm phương án thỏa mãn điều kiện và làm hàm\n    mục tiêu đạt cực đại\n\n\n\n\n    Trieu Hai Nguyen          Discrete Mathematics     BM. KTPM–Khoa CNTT   22 / 33"
+      },
+      {
+        "physical": 27,
+        "slide": 23,
+        "text": "Bài toán tối ưu   Định nghĩa\n\n\n\n\nVí dụ 2.2\nTìm nghiệm nguyên không âm (𝑥, 𝑦, 𝑧) của phương trình\n𝑥 + 𝑦 + 𝑧 = 9 sao cho 𝑥𝑦𝑧 là lớn nhất?\n\nMỗi nghiệm của phương trình hay một phương án của bài toán đã\ncho có dạng (𝑥, 𝑦, 𝑧). Tập phương án của bài toán là\n𝐷 = {(0, 0, 9), (0, 1, 8), ..., (8, 1, 0), (9, 0, 0)}, hàm mục tiêu của bài\ntoán là 𝑓 (𝑥, 𝑦, 𝑧) = 𝑥𝑦𝑧. Theo bất đẳng thức Cauchy, phương án\ntối ưu của bài toán là 𝑋𝑚𝑎𝑥 = (3, 3, 3) và giá trị tối ưu là\n𝑓 (𝑋𝑚𝑎𝑥 ) = 27.\n\n\n\n\n     Trieu Hai Nguyen            Discrete Mathematics     BM. KTPM–Khoa CNTT   23 / 33"
+      },
+      {
+        "physical": 28,
+        "slide": 24,
+        "text": "Bài toán tối ưu   Phương pháp giải bài toán tối ưu tổ hợp\n\n\n\n\nPhương pháp dễ nhận biết để giải một bài toán tối ưu tổ hợp là\ntrên cơ sở thuật toán quay lui liệt kê các cấu hình tổ hợp, với mỗi\nphương án tìm được\n     tính giá trị hàm mục tiêu tại đó\n     so sánh các giá trị hàm mục tiêu của các phương án đã tìm\n     được để chọn ra phương án tối ưu\n\nThực tế, phương pháp duyệt toàn bộ hay phương pháp vét cạn\ntoàn bộ các cấu hình tổ hợp là khó để thực hiện bởi số lượng cấu\nhình tổ hợp thường khá lớn. Để lựa chọn phương pháp giải các\nbài toán tối ưu tổ hợp theo yêu cầu và phù hợp với thực tế, sử\ndụng lý thuyết NP-C (Non-Deterministic Polynomial-Complete)\n\n\n    Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   24 / 33"
+      },
+      {
+        "physical": 29,
+        "slide": 25,
+        "text": "Bài toán tối ưu   Bài toán dễ, bài toán khó\n\n\n\n\nTrong lý thuyết NP-C, các bài toán tối ưu tổ hợp được chia\nthành hai lớp, đó là lớp các bài toán dễ và lớp các bài toán khó:\n  1 dễ nếu phương án tối ưu của bài toán được xác định bởi một\n    thuật toán đa thức có độ phức tạp thời gian tính toán 𝑂(𝑛𝑘 ),\n    𝑛 là kích thước của dữ liệu đầu vào, 𝑘 ∈ 𝑁 + .\n  2 khó nếu phương án tối ưu của bài toán trong trường hợp\n    tổng quát được xác định bởi thuật toán mũ có độ phức tạp\n    thời gian tính toán 𝑂(𝑘 𝑛 ) hoặc 𝑂(𝑛!). Lớp các bài toán tối\n    ưu tổ hợp khó được ký hiệu bởi NP-Hard\n    (Non-Deterministic Polynomial-Hard).\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics                BM. KTPM–Khoa CNTT   25 / 33"
+      },
+      {
+        "physical": 30,
+        "slide": 26,
+        "text": "Bài toán tối ưu   Các kĩ thuật giải\n\n\n\n\nPhương pháp quy hoạch động\nPhương pháp quy hoạch động giải quyết các bài toán tối ưu tổ hợp\nbằng cách tổ hợp lời giải của các bài toán con có cùng cấu trúc\nđể từ đó suy ra lời giải của bài toán đã cho. Thường được sử dụng\nđể giải các bài toán tối ưu tổ hợp thuộc lớp NP-Hard.\n\nPhương pháp nhánh-cận\nLà một sự cải tiến của thuật toán quay lui dựa trên cơ sở xác\nđịnh cận dưới/trên tương ứng với bài toán min/max cho từng\nphương án bộ phận. Thay vì duyệt tất cả các trường hợp, nếu ta\nđến một vị trí mà giá trị của hàm mục tiêu tại đó và các điểm về\nsau chắc chắn không tốt nhất thì quay lại.\n\n\n    Trieu Hai Nguyen         Discrete Mathematics            BM. KTPM–Khoa CNTT   26 / 33"
+      },
+      {
+        "physical": 31,
+        "slide": 27,
+        "text": "Bài toán tối ưu   Các kĩ thuật giải\n\n\n\n\nĐịnh nghĩa 2.2 (Phương pháp nhánh-cận)\nXét bài toán: tìm min {𝑓 (𝑥)|𝑥 ∈ 𝐷},\n𝐷 = {𝑥 = (𝑥1 , ..., 𝑥𝑛 ) ∈ 𝐴1 × ... × 𝐴𝑛 }. Chúng ta sử dụng thuật\ntoán quay lui để xây dựng các phương án 𝑥 của bài toán. Một bộ\n(𝑎1 , ..., 𝑎𝑘 ) là phương án bộ phận cấp 𝑘, tập các phương án bộ phận\ncấp 𝑘 được ký hiệu là 𝐷𝑘 . Giả sử tồn tại hàm 𝑔 thỏa mãn:\n\n           𝑔(𝑎1 , ..., 𝑎𝑘 ) ≤ 𝑚𝑖𝑛{𝑓 (𝑥)|𝑥 ∈ 𝐷, 𝑥𝑖 = 𝑎𝑖 , 𝑖 = 1, 𝑘}\n\nKhi đó giá trị hàm 𝑔 tại phương án bộ phận không vượt quá giá trị\nnhỏ nhất của hàm mục tiêu trên nhánh đó và 𝑔(𝑎1 , ..., 𝑎𝑘 ) là cận\ndưới của nhánh chứa phương án bộ phận (𝑎1 , ..., 𝑎𝑘 )\n\n\n\n    Trieu Hai Nguyen             Discrete Mathematics            BM. KTPM–Khoa CNTT   27 / 33"
+      },
+      {
+        "physical": 32,
+        "slide": 28,
+        "text": "Bài toán tối ưu   Các kĩ thuật giải\n\n\n\nPhương pháp nhánh-cận\nGiả sử đã có hàm 𝑔. Trong quá trình thực hiện thuật toán quay\nlui, ta gọi:\n      𝑥 là phương án tốt nhất đã tìm được\n      𝑓 = 𝑓 (𝑥) là kỷ lục\n      Nếu tại bước 𝑘, ta có phương án bộ phận (𝑎1 , ..., 𝑎𝑘 ) mà\n      𝑔(𝑎1 , ..., 𝑎𝑘 ) > 𝑓 =⇒ tập con của D chứa các phương án mở\n      rộng của (𝑎1 , ..., 𝑎𝑘 ) sẽ không phải là kết quả tốt nhất =⇒\n      quay lui.\n\nVấn đề phát sinh với hàm 𝑔\n    Tính giá trị của 𝑔 phải đơn giản hơn việc tìm phương án tối\n    ưu trong nhánh\n    Kết quả của hàm g phải gần với kết quả tối ưu của nhánh\n    Trieu Hai Nguyen          Discrete Mathematics            BM. KTPM–Khoa CNTT   28 / 33"
+      },
+      {
+        "physical": 33,
+        "slide": 29,
+        "text": "Bài toán tối ưu   Các bài toán tối ưu SV thuyết trình nhóm\n\n\n\nBài toán người du lịch - TSP (Travelling\nSalesman Problem)\n\n\nBài toán phát biểu như sau: Có 𝑛 thành phố 1, 2,..., n . Xuất\nphát từ một thành phố nào đó, người du lịch muốn đi tham quan\ntất cả các thành phố, mỗi thành phố một lần, rồi quay trở về\nthành phố xuất phát. Cho biết 𝑐𝑖𝑗 là chi phí đi từ thành phố 𝑖 đến\nthành phố 𝑗 (𝑖, 𝑗 = 1,2, ..., n). Xác định một hành trình du lịch\nsao cho tổng chi phí là nhỏ nhất.\n\n\n\n\n    Trieu Hai Nguyen         Discrete Mathematics                BM. KTPM–Khoa CNTT   29 / 33"
+      },
+      {
+        "physical": 34,
+        "slide": 30,
+        "text": "Bài toán tối ưu   Các bài toán tối ưu SV thuyết trình nhóm\n\n\n\nBài toán lập lịch gia công chi tiết - SP\n(Scheduling Problem)\n\n\n\nCó n chi tiết 𝐷1 , 𝐷2 , ..., 𝐷𝑛 lần lượt được gia công trên m máy\n𝑀1 , 𝑀2 , ..., 𝑀𝑚 . Cho biết thời gian gia công chi tiết 𝐷𝑖 trên máy\n𝑀𝑗 là 𝑡𝑖𝑗 , hãy xác định lịch trình (thứ tự) gia công các chi tiết\ntrên các máy sao cho hoàn thành công việc sớm nhất.\n\n\n\n\n     Trieu Hai Nguyen          Discrete Mathematics                BM. KTPM–Khoa CNTT   30 / 33"
+      },
+      {
+        "physical": 35,
+        "slide": 31,
+        "text": "Sinh viên viết báo cáo   Chủ đề viết báo cáo\n\n\n\n\nSinh viên viết báo cáo tổng quan về các kỹ thuật quy hoạch động,\nnhánh cận, so sánh ưu và nhược điểm của hai kỹ thuật. Chọn 3\nbài toán trong các bài toán dưới đây để viết báo cáo.\n\n  1   Bài toán Tháp Hà Nội, N-Queens\n  2   Bài toán người du lịch - TSP (Travelling Salesman Problem)\n  3   Bài toán người bán hàng\n  4   Bài toán xếp ba lô 1, 2\n  5   Bài toán hình lục giác thần bí, bài toán trả tiền ATM\n  6   Bài toán lập lịch gia công chi tiết- SP (Scheduling Problem)\n  7   Phương pháp người láng giềng gần nhất cho bài toán TSP.\n\n\n\n      Trieu Hai Nguyen                Discrete Mathematics              BM. KTPM–Khoa CNTT   31 / 33"
+      },
+      {
+        "physical": 36,
+        "slide": 32,
+        "text": "Sinh viên viết báo cáo   Chủ đề viết báo cáo\n\n\n\nYêu cầu\n\n\n\n\nSinh viên cần:\n    viết rõ lý thuyết của các kỹ thuật giải, giải thích chi tiết code.\n    nghiêm cấm sao chép. Các bài có độ tương đồng >= 90% sẽ\n    được 0 điểm cho tất cả.\n\n\n\n\n     Trieu Hai Nguyen                Discrete Mathematics              BM. KTPM–Khoa CNTT   32 / 33"
+      },
+      {
+        "physical": 37,
+        "slide": 33,
+        "text": "Sinh viên viết báo cáo   Tài liệu tham khảo\n\n\n\nTài liệu tham khảo\n\n\n\n   Đ.N. An\n   Giáo Trình Toán Rời Rạc. Trường ĐH Nha Trang, (2021).\n   Giáo trình Toán rời rạc\n   Giáo trình Toán Rời Rạc. Trường ĐHSP Huế. (2003), 22-35.\n   N.T. Nhựt\n   Bài giảng Toán Rời Rạc. Trường ĐH KHTN Tp.HCM. (2011).\n\n\n\n\n   Trieu Hai Nguyen                Discrete Mathematics             BM. KTPM–Khoa CNTT   33 / 33"
+      }
+    ]
+  }
+]

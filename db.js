@@ -124,7 +124,7 @@ window.syncCourseShell=function(){
  document.querySelector('.progress-title').textContent='Tiến độ '+(db?'Cơ sở dữ liệu':'Toán rời rạc');
 };
 function studyProgressPanel(first,firstTotal,second,secondTotal,course){
- const db=course==='db',metrics=db?[['Kiến thức đã nắm',first,firstTotal],['Bài giữa kỳ đã nắm',second,secondTotal],['Bài ôn tập đã nắm',dbProgress().practice.length,DB_PRACTICE.length]]:[['Đề mẫu đã nắm',first,firstTotal],['Bài ôn tập đã nắm',second,secondTotal]];
+ const db=course==='db',metrics=db?[['Kiến thức đã nắm',first,firstTotal],['Bài giữa kỳ đã nắm',second,secondTotal],['Bài ôn tập đã nắm',dbProgress().practice.length,DB_PRACTICE.length]]:[['Lý thuyết đã nắm',mathProgress().length,MATH_KNOWLEDGE.length],['Đề mẫu đã nắm',first,firstTotal],['Bài ôn tập đã nắm',second,secondTotal]];
  const done=metrics.reduce((n,m)=>n+m[1],0),total=metrics.reduce((n,m)=>n+m[2],0),percent=Math.round(done*100/total);
  return `<section class="learning-progress" aria-label="Tiến độ ${db?'Cơ sở dữ liệu':'Toán rời rạc'}"><div class="progress-overview"><div class="eyebrow">TIẾN ĐỘ CỦA BẠN</div><h2>Từng bước vững kiến thức</h2><p>Mỗi nội dung đã nắm là một bước tiến.</p><div class="progress-total"><strong>${percent}<span>%</span></strong><span>${done} / ${total} nội dung hoàn thành</span></div></div><div class="progress-breakdown">${metrics.map(([name,n,t])=>`<div class="progress-metric"><div class="metric-label"><strong>${name}</strong><span>${n} <small>/ ${t}</small></span></div><progress value="${n}" max="${t}" aria-label="${name}">${n} / ${t}</progress></div>`).join('')}<div class="progress-footnote">Đánh dấu “Đã nắm” khi bạn có thể tự trình bày lại. Tiến độ được lưu trên trình duyệt này.</div></div></section>`;
 }

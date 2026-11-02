@@ -1,4 +1,4 @@
-# Sủi Study Lab v9
+# Sủi Study Lab v10
 
 Website ôn tập bốn môn độc lập: **Toán rời rạc**, **Cơ sở dữ liệu**, **Lập trình hướng đối tượng (OOP/C#)**, **Cấu trúc dữ liệu & giải thuật (DSA/C++11)**. Giao diện sáng/tối,cỡ chữ,danh mục và tiến độ thống nhất. Website hoạt động offline,không cần npm hay đăng nhập.
 
@@ -7,6 +7,12 @@ Website ôn tập bốn môn độc lập: **Toán rời rạc**, **Cơ sở d�
 Giải nén ZIP rồi upload **các file và thư mục bên trong** vào thư mục gốc repository,ghi đè file cùng tên và giữ các file mới. `index.html` nằm ngay thư mục gốc; giữ cả `oop-code`, `dsa-code` và `dsa-assets` và `math-assets` để tải mã nguồn, PDF, PowerPoint và hình đối chiếu. Không upload nguyên ZIP thay cho bộ mã.
 
 Commit lên nhánh GitHub Pages đang dùng,chờ triển khai rồi tải lại trang. Tiến độ cũ được giữ khi mở cùng địa chỉ trên cùng trình duyệt và không xóa dữ liệu trang.
+
+## Cập nhật v10
+
+CSDL: đáp án gọn theo dạng bài, KaTeX offline kèm font trong `vendor`, ngắt dòng tại phép toán; giữ nguyên 44 đề bài, 22 mục kiến thức và tiến độ. Khi upload GitHub hãy giữ cả thư mục `vendor` và `csdl-assets`.
+
+Xem kiểm tra và giới hạn tại `CSDL_PRESENTATION.md`.
 
 ## Cập nhật v9
 

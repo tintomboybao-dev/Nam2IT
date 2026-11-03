@@ -62,9 +62,9 @@ function dbHome() {
  ${studyProgressPanel(progress.knowledge.length,DB_KNOWLEDGE.length,progress.samples.length,DB_PROBLEMS.length,'db')}
  <section class="reading-card db-source-note"><h2>Học cùng tài liệu gốc</h2><p>Bài ôn tập có ghi trang hoặc slide của từng tài liệu. Với bài mở, lời giải nêu rõ giả thiết và dữ liệu minh họa. Số slide là vị trí trong tệp PowerPoint; số in ở chân slide có thể khác.</p><a class="backlink" href="#/db/sources">Đối chiếu bài giảng theo chủ đề →</a></section>`;
 }
-function dbKnowledge(chapter) {
+function dbKnowledge(chapter, selected=null) {
  const progress=dbProgress();
- return dbTitle('Kiến thức và tổng hợp công thức','Hiểu bằng lời → các bước áp dụng → ví dụ → tự kiểm tra. Mở phần giải thích của mục đang học, rồi đánh dấu khi đã nắm.')+dbToolbar('knowledge',chapter)+DB_KNOWLEDGE.map((k,i)=>`<article class="formula-item db-knowledge db-filter-item" data-chapter="${k.chapter}" data-db-item="${i}"><div class="formula-top"><h2>${dbEsc(k.title)}</h2><span class="formula-num">CHỦ ĐỀ ${k.chapter}</span></div><div class="db-equation">${dbEsc(k.formula)}</div><p>${dbEsc(k.explain)}</p><details class="db-disclosure db-knowledge-detail"><summary>Giải thích, cách làm và ví dụ</summary><div class="db-disclosure-body">${k.detail}</div></details><details class="db-disclosure db-selfcheck"><summary>Tự kiểm tra: ${dbEsc(k.selfTest.question)}</summary><div class="db-disclosure-body"><p>${dbEsc(k.selfTest.answer)}</p></div></details><div class="db-related"><strong>Luyện ngay:</strong>${k.practice.map(id=>{const p=DB_PRACTICE.find(x=>x.id===id);return p?`<a href="#/db/practice/${p.id}">${dbEsc(p.title)} →</a>`:'';}).join('')}</div>${dbSource(k.chapter)}<div class="detail-actions">${dbDoneButton('knowledge',i)}</div></article>`).join('')+'<p class="empty" id="db-empty" hidden>Không có mục phù hợp. Thử đổi từ khóa, chủ đề hoặc trạng thái tiến độ.</p>';
+ return dbTitle('Kiến thức và tổng hợp công thức','Hiểu bằng lời → các bước áp dụng → ví dụ → tự kiểm tra. Mở phần giải thích của mục đang học, rồi đánh dấu khi đã nắm.')+dbToolbar('knowledge',chapter)+DB_KNOWLEDGE.map((k,i)=>selected!==null&&i!==selected?'':`<article class="formula-item db-knowledge db-filter-item" data-chapter="${k.chapter}" data-db-item="${i}"><div class="formula-top"><h2>${dbEsc(k.title)}</h2><span class="formula-num">CHỦ ĐỀ ${k.chapter}</span></div><div class="db-equation">${dbEsc(k.formula)}</div><p>${dbEsc(k.explain)}</p><details class="db-disclosure db-knowledge-detail"><summary>Giải thích, cách làm và ví dụ</summary><div class="db-disclosure-body">${k.detail}</div></details><details class="db-disclosure db-selfcheck"><summary>Tự kiểm tra: ${dbEsc(k.selfTest.question)}</summary><div class="db-disclosure-body"><p>${dbEsc(k.selfTest.answer)}</p></div></details><div class="db-related"><strong>Luyện ngay:</strong>${k.practice.map(id=>{const p=DB_PRACTICE.find(x=>x.id===id);return p?`<a href="#/db/practice/${p.id}">${dbEsc(p.title)} →</a>`:'';}).join('')}</div>${dbSource(k.chapter)}<div class="detail-actions">${dbDoneButton('knowledge',i)}</div></article>`).join('')+'<p class="empty" id="db-empty" hidden>Không có mục phù hợp. Thử đổi từ khóa, chủ đề hoặc trạng thái tiến độ.</p>';
 }
 function dbPracticeList(chapter) {
  const progress=dbProgress();
@@ -74,6 +74,7 @@ window.dbRender=function() {
  const path=location.hash.split('/'),page=path[2]||'home',id=path[3]||'',chapter=Number(id),view=document.getElementById('view');
  let body='',filterKind='';
  if(page==='home')body=dbHome();
+ else if(page==='lesson'&&DB_KNOWLEDGE[Number(id)])body=dbKnowledge(0,Number(id));
  else if(page==='knowledge'){body=dbKnowledge(chapter>=1&&chapter<=4?chapter:0);filterKind='knowledge';}
  else if(page==='practice'&&(!id||id==='topic')){body=dbPracticeList(Number(path[4])>=1&&Number(path[4])<=4?Number(path[4]):0);filterKind='practice';}
  else if(page==='practice'||page==='samples'&&id){
